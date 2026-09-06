@@ -44,7 +44,8 @@ a última cópia completa no volume. Um push sozinho não atualiza o site.
 
 1. Gerar, validar, revisar e enviar os arquivos exatos da mudança para `main`.
 2. Confirmar que o pacote disponível no GitHub corresponde ao build local.
-3. Reiniciar apenas o container do site usando a configuração privada existente.
+3. Definir `MESCLA_SITE_REF` no Compose privado com o commit validado e recriar
+   apenas o serviço do site. A URL imutável evita o cache da branch no GitHub.
 4. Confirmar HTTP 200, conteúdo esperado e atualização do `Last-Modified` na
    Home, nas landing pages e nos assets.
 
@@ -56,6 +57,7 @@ Mudanças no comando de inicialização exigem atualizar o Compose privado e
 recriar somente o serviço do site. Fazer backup da configuração anterior e
 validar o Compose antes. Escapar `$` como `$$` ao incorporar o script no Compose.
 Não reiniciar outros serviços nem alterar o Traefik para uma publicação estática.
+O script aceita `main` como fallback quando `MESCLA_SITE_REF` não foi definido.
 
 ## Medição e validação
 

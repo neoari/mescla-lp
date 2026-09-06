@@ -5,7 +5,8 @@ mescla_stage=/site/staging
 mescla_archive=/site/site.tar.gz.new
 mescla_manifest=/site/files.new
 mescla_valid=0
-if wget -q --timeout=30 -O "$mescla_archive" https://raw.githubusercontent.com/neoari/mescla-lp/main/site.tar.gz; then
+mescla_ref="${MESCLA_SITE_REF:-main}"
+if wget -q --timeout=30 -O "$mescla_archive" "https://raw.githubusercontent.com/neoari/mescla-lp/$mescla_ref/site.tar.gz"; then
   if tar -tzf "$mescla_archive" > "$mescla_manifest"; then
     mescla_valid=1
     while IFS= read -r mescla_file; do
