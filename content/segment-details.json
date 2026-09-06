@@ -86,6 +86,7 @@
     "tools": [
       ["googledrive", "Google Drive", "Documentos e materiais do projeto com acesso definido."],
       ["googlesheets", "Google Sheets", "Matrizes de análise e consolidação de informações."],
+      ["microsoftpowerpoint", "PowerPoint", "Apresentações editáveis para transformar a análise em uma conversa com o cliente."],
       ["notion", "Notion", "Método, referências e memória dos projetos."],
       ["zoom", "Zoom", "Registros e transcrições autorizados como material de entrada."]
     ],
@@ -153,10 +154,10 @@
     "tools_title": "Do acervo do escritório à revisão do advogado.",
     "tools_intro": "Arquivos e permissões são definidos antes de colocar o processo para funcionar.",
     "tools": [
+      ["microsoftword", "Word", "Minutas e estruturas editáveis para revisão do advogado."],
+      ["adobeacrobatreader", "PDF / Acrobat", "Leitura e organização dos documentos recebidos, com indicação das fontes."],
       ["googledrive", "Google Drive", "Pastas e documentos cujo uso foi autorizado pelo escritório."],
-      ["googledocs", "Google Docs", "Estruturas e materiais que a equipe pode revisar."],
-      ["googlesheets", "Google Sheets", "Cronologias, índices e controles de trabalho."],
-      ["notion", "Notion", "Procedimentos internos e referências autorizadas."]
+      ["googlesheets", "Google Sheets", "Cronologias, índices e controles de trabalho."]
     ],
     "tools_note": "Word e PDF podem entrar por arquivos. Sistemas jurídicos e portais de tribunais exigem análise específica; acesso, protocolo ou gestão automática de prazos não estão implícitos na oferta.",
     "ai_title": "Uma resposta de IA precisa voltar à fonte.",

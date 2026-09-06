@@ -47,6 +47,7 @@ de tela. Não representam parceria ou certificação.
 - Revisão `777807a262bb7384ff406fd4b35fdcd02e9514c3`: Google Drive, Google Docs,
   Google Sheets, Notion, YouTube, Instagram, Trello, WhatsApp, Claude, Gemini e Zoom.
 - Versão `13.0.0`: Canva, OpenAI e Slack.
+- Versão `11.15.0`: Microsoft Word, Microsoft PowerPoint e Adobe Acrobat Reader.
 - Licença do acervo: https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md
 
 As marcas continuam pertencendo aos respectivos titulares. Novos assets devem
