@@ -1,56 +1,60 @@
-# mescla.ai — landing page
+# mescla.ai — site e páginas por segmento
 
-Site de uma página só. A fonte da verdade é **`index.html`** na branch `main`.
+Repositório **público**. Nunca incluir coordenadas de infraestrutura, IDs de
+contas, IPs, credenciais ou dados de contatos. A infraestrutura fica no
+repositório privado `neoari/mescla`.
 
-Repositório **público** — aqui não entra coordenada de infraestrutura, ID de
-conta, IP ou chave. Isso vive em `neoari/mescla`, que é privado, junto com o resto
-da aplicação.
+## Fontes e build
 
-## Como o site é publicado
+- `index.html`: Home e tema compartilhado.
+- `content/segments.json`: conteúdo das cinco landing pages.
+- `assets/segments.css`: estilos das páginas e dos cards.
+- `assets/measurement.js`: atribuição de campanha, contato e eventos.
+- `assets/measurement-config.js`: configuração pública; integrações inativas
+  enquanto os respectivos valores não estiverem definidos e revisados.
+- `scripts/build-site.py`: atualiza os cards, gera as landing pages, a página de
+  privacidade e o pacote determinístico `site.tar.gz`.
 
-```
-index.html (GitHub: neoari/mescla-lp, main)
-   ↓ wget no start do container
-container nginx "mescla-lp" na VPS
-   ↓
-Traefik (TLS Let's Encrypt)
-   ↓
-proxy Cloudflare  →  https://mescla.ai
-```
-
-## Deploy — os três passos são obrigatórios
-
-O container baixa o `index.html` do GitHub **apenas quando inicia**. Um `git push`
-sozinho não muda nada no ar.
+Não editar diretamente os HTMLs em `para/` e `privacidade/`: são gerados.
 
 ```bash
-git add index.html && git commit -m "..." && git push
-ssh vps 'docker restart mescla-lp'
-curl -sI https://mescla.ai | grep -i last-modified
+python3 scripts/build-site.py
+python3 scripts/check-site.py
+node --check assets/measurement.js
+node scripts/check-attribution.cjs
+sh -n scripts/container-start.sh
+git diff --check
 ```
 
-O terceiro passo não é opcional. Se o `wget` falhar, o compose faz fallback para a
-cópia anterior no volume: **o site continua no ar servindo a versão velha, sem erro
-visível**. O `last-modified` é a única confirmação de que o deploy pegou.
+O build usa apenas a biblioteca padrão do Python. A validação HTML usa `lxml`.
+O pacote público contém apenas as sete páginas e três arquivos de assets;
+documentação e fontes de geração não são servidas pelo site.
 
-Se o `last-modified` não avançou, veja o que aconteceu:
+## Publicação
 
-```bash
-ssh vps 'docker logs --tail 30 mescla-lp'
-```
+A branch `main` é a fonte publicada. No início do container, o comando de
+`scripts/container-start.sh` baixa `site.tar.gz` do GitHub, valida os caminhos e
+os arquivos esperados e substitui o site completo. Se o download falhar, mantém
+a última cópia completa no volume. Um push sozinho não atualiza o site.
 
-Alterou o `docker-compose.yml`? Aí `docker restart` não basta — ele não relê o
-arquivo. Use `docker compose up -d --force-recreate`.
+1. Gerar, validar, revisar e enviar os arquivos exatos da mudança para `main`.
+2. Confirmar que o pacote disponível no GitHub corresponde ao build local.
+3. Reiniciar apenas o container do site usando a configuração privada existente.
+4. Confirmar HTTP 200, conteúdo esperado e atualização do `Last-Modified` na
+   Home, nas landing pages e nos assets.
 
-## Cuidado
+`Last-Modified` sozinho não comprova a versão: comparar também um conteúdo ou
+marcador da alteração. A Cloudflare pode ofuscar e-mails no HTML; isso não é
+necessariamente divergência de fonte.
 
-A mesma VPS hospeda outros serviços não relacionados. Mexer em Traefik ou
-reiniciar containers fora do `mescla-lp` afeta coisas que não têm a ver com o site.
+Mudanças no comando de inicialização exigem atualizar o Compose privado e
+recriar somente o serviço do site. Fazer backup da configuração anterior e
+validar o Compose antes. Escapar `$` como `$$` ao incorporar o script no Compose.
+Não reiniciar outros serviços nem alterar o Traefik para uma publicação estática.
 
-A Cloudflare injeta ofuscação de e-mail no HTML servido — por isso o que o `curl`
-devolve difere do arquivo local por algumas linhas. Isso é esperado, não é drift.
+## Medição e validação
 
-## Coordenadas
-
-Ficam no `CLAUDE.md` de `neoari/mescla` (privado): IDs de VPS, IPs, conta e zona
-Cloudflare, e o mapa das máquinas.
+Ver `docs/medicao.md` e `docs/validacao.md`. Abrir WhatsApp é uma intenção de
+contato; nunca registrar esse clique como entrevista agendada ou venda.
+Não incluir respostas livres, nomes, telefones ou e-mails nos eventos analíticos.
+Ativar um coletor exige revisar suas tags e atualizar o aviso de privacidade.

@@ -1,0 +1,24 @@
+const assert = require('node:assert/strict');
+const m = require('../assets/measurement.js');
+const now = 1_000_000;
+const first = m.attribution('?utm_source=meta&utm_campaign=creators-v1&utm_content=video-a&fbclid=CLICK123', null, now);
+assert.equal(first.values.utm_source, 'meta');
+assert.equal(first.values.fbclid, 'CLICK123');
+assert.deepEqual(m.attribution('', first, now + 1_000), first);
+assert.deepEqual(m.attribution('', first, now + m.TTL).values, {});
+assert.deepEqual(m.attribution('?utm_source=google&gclid=NEW', first, now + 100).values, {utm_source:'google',gclid:'NEW'});
+assert.equal(m.attribution('?utm_source=', first, now + 100).values.utm_source, undefined);
+assert.equal(m.attribution('?utm_source='+ 'a'.repeat(500),null,now).values.utm_source.length,120);
+assert.equal(m.attribution('?utm_source=one%0Atwo',null,now).values.utm_source,'onetwo');
+const tagged=m.tagLink('/para/creators/#conversar','https://mescla.ai/',first);
+assert.equal(new URL(tagged,'https://mescla.ai').hash,'#conversar');
+assert.equal(new URL(tagged,'https://mescla.ai').searchParams.get('fbclid'),'CLICK123');
+assert.equal(m.tagLink('https://example.org/path','https://mescla.ai/',first),'https://example.org/path');
+assert.equal(m.tagLink('javascript:alert(1)','https://mescla.ai/',first),'javascript:alert(1)');
+const text=m.message('Quero conversar.','Creators',{team:'Só eu',interest:'Roteiros',goal:'Minha ideia <teste> & revisão'},first,'v1');
+assert.ok(text.includes('Segmento: Creators'));
+assert.ok(text.includes('utm_campaign=creators-v1'));
+assert.ok(!text.includes('CLICK123')); // click IDs are retained on-site, not pasted into WhatsApp.
+const url=new URL(m.contactUrl(text));
+assert.equal(url.origin,'https://wa.me');assert.equal(url.pathname,'/5561993973584');assert.equal(url.searchParams.get('text'),text);
+console.log('Attribution checks passed: session expiry, new campaigns, click IDs, local links, input limits and WhatsApp encoding.');
