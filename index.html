@@ -2,841 +2,215 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mescla · Pessoas e agentes de IA no mesmo espaço de trabalho</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%231B1930%27/%3E%3Cpath d=%27M4 10h24M4 16h24M4 22h24%27 stroke=%27%23F2B84B%27 stroke-width=%273%27/%3E%3Cpath d=%27M10 4v24M16 4v24M22 4v24%27 stroke=%27%236FD9C9%27 stroke-width=%273%27 stroke-dasharray=%274 4%27/%3E%3C/svg%3E">
-<meta name="description" content="Mescla é o espaço onde pessoas e agentes de IA dividem os mesmos canais, de dia e de madrugada, e o que produzem fica na empresa.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FBFAFD">
+<title>Mescla · Mais trabalho pronto. Mais tempo para criar.</title>
+<meta name="description" content="Transforme gravações em conteúdo, briefings em materiais e reuniões em próximos passos. A Mescla implanta e acompanha times de IA para trabalhar com você.">
+<link rel="canonical" href="https://mescla.ai/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Mescla · Mais trabalho pronto. Mais tempo para criar.">
+<meta property="og:description" content="Ampliar o possível para cada pessoa. Pessoas e agentes de IA trabalhando juntos para transformar ideias em entregas.">
+<meta property="og:url" content="https://mescla.ai/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%231B1930'/%3E%3Cpath d='M10 12v17a9 9 0 0 0 18 0V12' fill='none' stroke='%23F2B84B' stroke-width='6'/%3E%3Cpath d='M20 36V19a9 9 0 0 1 18 0v17' fill='none' stroke='%236FD9C9' stroke-width='6'/%3E%3Cpath d='M28 23v8' stroke='%231B1930' stroke-width='10'/%3E%3Cpath d='M28 22v9' stroke='%23F2B84B' stroke-width='6'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
-:root{
-  --nevoa:#ECEBF1;
-  --noite:#1B1930;
-  --noite-2:#26233F;
-  --sol:#F2B84B;
-  --mare:#6FD9C9;
-  --roma:#CF3E27;
-  --cinza:#5D5A70;
-  --linha:#D5D2E0;
-  --linha-fina:rgba(27,25,48,.08);
-  --branco:#FBFAFD;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Instrument Sans',sans-serif;background:var(--nevoa);color:var(--noite);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-h1,h2{font-family:'Fraunces',serif;font-variation-settings:'SOFT' 60,'opsz' 144;font-weight:400;letter-spacing:-.02em;line-height:1.02}
-h1{font-size:clamp(44px,6.6vw,72px)}
-h2{font-size:clamp(27px,4vw,44px);margin-bottom:21px}
-h3{font-weight:600;font-size:19px;margin-bottom:8px}
-em.f{font-style:italic;font-variation-settings:'SOFT' 100,'opsz' 144}
-.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cinza);margin-bottom:21px;display:flex;align-items:center;gap:10px}
-.eyebrow:before{content:"";width:22px;height:2px;background:linear-gradient(90deg,var(--sol),var(--mare));border-radius:2px}
-.sub{font-size:clamp(18px,2.1vw,21px);color:var(--cinza);max-width:610px;line-height:1.55}
-section{padding:144px 0}
-.dark{background:var(--noite);color:var(--nevoa)}
-.dark .sub{color:#B9B5CB}
-.dark .eyebrow{color:#D3D0E2}
-.btn{display:inline-block;background:var(--roma);color:#fff;font-weight:600;font-size:16px;padding:15px 30px;border-radius:999px;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(207,62,39,.35)}
-.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--sol);outline-offset:3px}
-.btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
-.rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
-.rv.on{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
-
-/* NAV */
-nav{position:sticky;top:0;z-index:50;background:rgba(27,25,48,.86);backdrop-filter:blur(10px);color:var(--nevoa)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:62px}
-.logo{font-family:'Fraunces',serif;font-weight:500;font-size:22px;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
-.logo i{display:inline-block;width:18px;height:18px;border-radius:4px;background:
-  repeating-linear-gradient(90deg,var(--sol) 0 4px,transparent 4px 8px),
-  repeating-linear-gradient(0deg,var(--mare) 0 4px,transparent 4px 8px);}
-nav a.cta{font-weight:600;font-size:15px;color:var(--sol);text-decoration:none}
-
-/* HERO */
-.hero{position:relative;background:var(--noite);color:var(--nevoa);overflow:hidden;padding:144px 0 89px;min-height:88vh;display:flex;align-items:center}
-#tear{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.62}
-/* Veu entre o tear e a tipografia: o tecido continua visivel na borda e do lado
-   direito, mas nao passa por tras do texto. z-index 1 = acima do canvas, abaixo
-   do .wrap (z-index 2). */
-.hero:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(118% 92% at 18% 52%,
-    var(--noite) 0%,
-    rgba(27,25,48,.88) 38%,
-    rgba(27,25,48,.48) 64%,
-    rgba(27,25,48,0) 86%)}
-.hero .wrap{position:relative;z-index:2}
-.hero h1{max-width:min(62vw,860px)}
-@media(max-width:840px){.hero h1{max-width:100%}}
-.hero .sub{margin-top:21px;color:#DAD7E8}
-.hero .btns{display:flex;gap:13px;margin-top:34px;flex-wrap:wrap}
-.micro{font-size:13.5px;color:#B9B5CB;margin-top:16px}
-.modelos{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:21px}
-.modelos .k{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#B9B5CB;margin-right:6px}
-.modelos span:not(.k):not(.mais){font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:999px;border:1px solid rgba(111,217,201,.45);color:var(--mare)}
-.modelos .mais{font-size:13.5px;font-weight:600;padding:5px 12px;border-radius:999px;border:1px solid rgba(242,184,75,.5);color:var(--sol)}
-.legend{margin-top:55px;display:flex;gap:26px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#B9B5CB}
-.legend span{display:flex;align-items:center;gap:8px}
-.legend b{display:inline-block;width:26px;height:3px;border-radius:2px}
-
-/* CANAL / TEAR */
-.canal{background:var(--branco);border:1px solid var(--linha);border-radius:13px;overflow:hidden;box-shadow:0 30px 70px rgba(27,25,48,.10);position:relative}
-.canal-top{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--linha);font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--cinza)}
-.canal-top .p{display:flex;gap:6px}
-.canal-top .p i{width:8px;height:8px;border-radius:50%;background:var(--linha);display:inline-block}
-.msgs{position:relative;padding:8px 0}
-.rail{position:absolute;left:38px;top:0;bottom:0;width:3px;border-radius:2px;background:linear-gradient(180deg,var(--mare) 0 33%,var(--sol) 33% 50%,var(--mare) 50% 66%,var(--sol) 66% 83%,var(--mare) 83% 100%)}
-.msg{display:flex;gap:16px;padding:16px 20px 16px 20px;position:relative}
-.av{width:38px;height:38px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;position:relative;z-index:1}
-.av.h{background:var(--sol);color:var(--noite)}
-.av.a{background:var(--mare);color:var(--noite)}
-.mh{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
-.mh b{font-size:15px}
-.tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;padding:2px 7px;border-radius:4px;text-transform:uppercase}
-.tag.a{background:rgba(111,217,201,.22);color:#0E6B5F}
-.tag.h{background:rgba(242,184,75,.25);color:#7A5300}
-.mh time{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--cinza)}
-.mt{font-size:15px;line-height:1.5;margin-top:3px;color:#33304A}
-.dots span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--mare);margin-right:3px;animation:dot 1.2s infinite ease-in-out}
-.dots span:nth-child(2){animation-delay:.2s}.dots span:nth-child(3){animation-delay:.4s}
-@keyframes dot{0%,80%,100%{transform:translateY(0);opacity:.45}40%{transform:translateY(-4px);opacity:1}}
-@media(prefers-reduced-motion:reduce){.dots span{animation:none;opacity:.8}}
-.canal-foot{padding:12px 20px;background:var(--nevoa);border-top:1px solid var(--linha);font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cinza)}
-
-/* 24H */
-.dia{margin-top:55px}
-.faixa{position:relative;height:110px;margin-top:34px;border-radius:14px;overflow:visible;background:var(--noite-2)}
-.faixa .hum,.faixa .age{position:absolute;left:0;right:0;height:38px}
-.faixa .hum{top:14px}
-.faixa .age{bottom:14px}
-.faixa .seg{position:absolute;top:0;height:100%;border-radius:8px;opacity:.95}
-.agora{position:absolute;top:0;bottom:0;width:2px;background:var(--branco);z-index:3;box-shadow:0 0 0 1px rgba(27,25,48,.6)}
-.agora b{position:absolute;top:-30px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--branco);background:var(--noite);padding:3px 8px;border-radius:4px;border:1px solid #3A3658;font-weight:500}
-.hum .seg{background:var(--sol)}
-.age .seg{background:var(--mare)}
-.faixa-wrap{display:grid;grid-template-columns:auto 1fr;gap:0 14px;align-items:stretch}
-.faixa-lbls{display:flex;flex-direction:column;justify-content:space-between;padding:14px 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#B9B5CB}
-.faixa-lbls span{height:38px;line-height:38px;display:flex;align-items:center;gap:8px}
-.faixa-lbls i{width:10px;height:10px;border-radius:3px;display:inline-block}
-.horas{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#B9B5CB;margin-top:10px;letter-spacing:.06em}
-.dia-caps{display:grid;grid-template-columns:repeat(3,1fr);gap:21px;margin-top:34px}
-.dia-caps p{font-size:15.5px;color:#B9B5CB}
-.dia-caps b{display:block;color:var(--nevoa);font-weight:600;margin-bottom:6px}
-
-/* PLACAR DO CANAL — quem esta na sala, em numero grande. Cores da legenda do hero. */
-.placar{display:flex;align-items:baseline;gap:0;margin-top:34px;flex-wrap:wrap}
-.placar .pl{display:flex;align-items:baseline;gap:11px;padding:0 26px;position:relative}
-.placar .pl:first-child{padding-left:0}
-.placar .pl+.pl::before{content:"";position:absolute;left:0;top:9px;bottom:9px;width:1px;background:var(--linha)}
-.placar b{font-family:'Fraunces',serif;font-variation-settings:'SOFT' 60,'opsz' 144;
-  font-weight:400;font-size:clamp(40px,6vw,58px);line-height:1;font-variant-numeric:tabular-nums}
-.placar i{font-style:normal;font-size:16.5px;color:var(--cinza);font-weight:500}
-.placar .pl.ag b{color:#0E6B5F}
-.placar .pl.pe b{color:#7A5300}
-.placar .pl.ca b{color:var(--noite)}
-/* Em tela estreita os tres cabem numa linha so — se um quebrar, a divisoria
-   fica flutuando no inicio da linha de baixo. */
-@media(max-width:640px){
-  .placar{flex-wrap:nowrap;margin-top:28px}
-  .placar .pl{padding:0 11px;gap:7px}
-  .placar b{font-size:32px}
-  .placar i{font-size:13.5px}
-}
-
-/* BANCADA DE MODELOS — interativa, com profundidade. O visitante troca e ve acontecer. */
-.bancada{perspective:1300px;display:grid;grid-template-columns:repeat(5,1fr);gap:15px;margin-top:38px}
-/* Repouso plano: o estado padrao tem que parecer certo. A profundidade entra na
-   interacao, nao antes dela. */
-.a3{background:linear-gradient(180deg,var(--noite-2),#1E1B33);border:1px solid #3A3658;
-  border-radius:15px;padding:21px 15px 17px;text-align:center;cursor:pointer;
-  transform:translateY(0) rotateX(0deg);transform-origin:50% 100%;
-  transition:transform .38s cubic-bezier(.2,.7,.3,1),box-shadow .38s ease,border-color .25s ease;
-  box-shadow:0 12px 26px rgba(27,25,48,.16);position:relative}
-.a3:hover,.a3:focus-visible{transform:translateY(-8px) rotateX(6deg);
-  box-shadow:0 26px 46px rgba(27,25,48,.3);border-color:var(--sol);outline:none}
-.a3 .face{width:46px;height:46px;border-radius:14px;margin:0 auto 12px;display:flex;
-  align-items:center;justify-content:center;font-weight:700;font-size:16px;color:var(--noite)}
-.a3 .nm{font-weight:600;font-size:15.5px;color:var(--nevoa);margin-bottom:3px}
-.a3 .fn{font-size:12.5px;color:#8C88A0;margin-bottom:14px}
-.mchip{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:6px 13px 6px 10px;
-  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--nevoa);transition:background .2s ease}
-.a3:hover .mchip{background:rgba(255,255,255,.13)}
-.mchip .dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
-.mchip.flip{animation:flipm .42s ease}
-@keyframes flipm{0%{transform:rotateX(0)}50%{transform:rotateX(90deg);opacity:.25}100%{transform:rotateX(0)}}
-.a3 .toca{position:absolute;left:0;right:0;bottom:7px;font-family:'JetBrains Mono',monospace;
-  font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:#6E6A85;
-  opacity:0;transition:opacity .25s ease}
-.a3:hover .toca{opacity:1}
-.contador{display:flex;align-items:baseline;gap:14px;margin-top:36px;flex-wrap:wrap}
-.contador b{font-family:'Fraunces',serif;font-variation-settings:'SOFT' 60,'opsz' 144;
-  font-weight:400;font-size:clamp(44px,6vw,56px);line-height:1;color:#B87A0E;
-  font-variant-numeric:tabular-nums;transition:color .3s ease}
-.contador span{font-size:16.5px;color:var(--cinza);max-width:36ch;line-height:1.45}
-.contador span b{font-family:inherit;font-size:inherit;color:var(--noite);font-weight:600}
-@media(prefers-reduced-motion:reduce){
-  .a3{transform:none;transition:none}
-  .a3:hover,.a3:focus-visible{transform:none}
-  .mchip.flip{animation:none}
-  .a3 .toca{opacity:1}
-}
-
-/* FLUXO DE ENTRADA — passos ligados por um fio */
-.fluxo{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:47px}
-.fluxo .p{position:relative}
-/* O fio liga um passo ao seguinte e para no ultimo — linha unica vazaria alem dele. */
-.fluxo .p:not(:last-child)::after{content:"";position:absolute;top:18px;left:45px;right:-33px;height:2px;border-radius:2px;opacity:.45}
-.fluxo .p:nth-child(1)::after{background:linear-gradient(90deg,var(--sol),#CDB77B)}
-.fluxo .p:nth-child(2)::after{background:linear-gradient(90deg,#CDB77B,#A0CBB6)}
-.fluxo .p:nth-child(3)::after{background:linear-gradient(90deg,#A0CBB6,var(--mare))}
-.fluxo .n{position:relative;z-index:1;width:38px;height:38px;border-radius:50%;
-  background:var(--noite);border:2px solid var(--sol);color:var(--sol);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;margin-bottom:17px}
-.fluxo h3{font-size:17px;margin-bottom:7px;color:var(--nevoa)}
-.fluxo p{font-size:14.5px;color:#B9B5CB;line-height:1.5}
-.fluxo .u{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--mare);display:block;margin-top:7px}
-
-/* GRIDS */
-.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:21px;margin-top:55px}
-.card{background:var(--branco);border:1px solid var(--linha);border-radius:13px;padding:34px}
-.card p{font-size:15.5px;color:var(--cinza)}
-.card .k{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--roma);display:block;margin-bottom:14px}
-.duas{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--linha);border:1px solid var(--linha);border-radius:13px;overflow:hidden;margin-top:55px}
-.duas>div{background:var(--nevoa);padding:34px}
-.duas p{font-size:15.5px;color:var(--cinza)}
-.duas h3{display:flex;align-items:center;gap:10px}
-.duas h3:before{content:"";width:12px;height:12px;border-radius:3px;background:linear-gradient(135deg,var(--sol) 50%,var(--mare) 50%)}
-
-/* TIMES */
-.times{display:grid;grid-template-columns:repeat(3,1fr);gap:21px;margin-top:55px}
-.time{background:var(--branco);border:1px solid var(--linha);border-radius:13px;padding:34px 34px 21px;display:flex;flex-direction:column;gap:13px}
-.time.serie{background:var(--noite);color:var(--nevoa);border-color:var(--noite)}
-.time.serie p{color:#C9C5DA}
-.time.serie .rot{color:#DAD7E8;border-color:#3A3658}
-.time.serie .k{color:var(--sol)}
-.t-top{display:flex;justify-content:space-between;align-items:center}
-.chan{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--cinza)}
-.time.serie .chan{color:#B9B5CB}
-.time h3{font-family:'Fraunces',serif;font-weight:500;font-size:26px;letter-spacing:-.01em;margin:0}
-.time p{font-size:14.5px;color:var(--cinza);line-height:1.5}
-.time .k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--roma)}
-.ags{display:flex;flex-wrap:wrap;gap:6px}
-.ag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:5px 10px 5px 8px;border-radius:999px;background:rgba(111,217,201,.18);color:#0E5A50}
-.time.serie .ag{background:rgba(111,217,201,.22);color:var(--mare)}
-.ag:before{content:"";width:8px;height:8px;border-radius:2px;background:var(--mare)}
-.ag i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;opacity:.75}
-.rot{font-size:13px;color:var(--noite);border-top:1px dashed var(--linha);padding-top:12px;margin-top:auto}
-.rot b{font-family:'JetBrains Mono',monospace;font-weight:500;color:var(--sol);background:var(--noite);padding:2px 6px;border-radius:4px;margin-right:6px;font-size:12px}
-.con{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--cinza)}
-@media(max-width:1000px){.times{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.times{grid-template-columns:1fr}}
-/* TABELA */
-.tblwrap{overflow-x:auto;margin-top:55px}
-table{width:100%;border-collapse:collapse;background:var(--branco);border:1px solid var(--linha);border-radius:16px;overflow:hidden;min-width:680px}
-th,td{padding:15px 21px;text-align:left;font-size:15px;border-bottom:1px solid var(--linha-fina)}
-th:first-child,td:first-child{width:38%}
-th{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cinza);font-weight:500;border-bottom-color:var(--linha)}
-th.ol,td.ol{background:#EAF7F4}
-td.ol{font-weight:600}
-tr:last-child td{border-bottom:none}
-td .y{color:#0E6B5F;font-weight:600}
-td .n{color:#8C889E}
-/* QUEM */
-.quem{display:grid;grid-template-columns:1fr 1fr;gap:55px;margin-top:55px}
-.quem ul{list-style:none}
-.quem li{padding:12px 0 12px 30px;position:relative;border-bottom:1px solid rgba(185,181,203,.18);font-size:16px}
-.quem li:before{position:absolute;left:0;font-weight:700}
-.sim li:before{content:"→";color:var(--sol)}
-.nao li{color:#9C98B0}
-.nao li:before{content:"×";color:#6D6984}
-.quem .k{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:14px;color:var(--mare)}
-
-/* PREÇO */
-.preco{display:grid;grid-template-columns:1.618fr 1fr;gap:2px;background:var(--linha);border:1px solid var(--linha);border-radius:13px;overflow:hidden;margin-top:55px}
-.preco>div{background:var(--branco);padding:55px}
-.big{font-family:'Fraunces',serif;font-size:72px;line-height:1;font-weight:400;letter-spacing:-.02em}
-.big small{font-family:'Instrument Sans',sans-serif;font-size:16px;color:var(--cinza)}
-.preco ul{list-style:none;margin-top:26px}
-.preco li{padding:9px 0 9px 26px;position:relative;font-size:15.5px;color:var(--cinza)}
-.preco li:before{content:"→";position:absolute;left:0;color:var(--roma);font-weight:700}
-.preco .side{background:var(--nevoa)}
-.preco .side .k{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--roma);display:block;margin-bottom:12px}
-.preco .side p{font-size:15.5px;color:var(--cinza);margin-bottom:18px}
-
-/* FAQ */
-details{border-bottom:1px solid var(--linha);padding:21px 0}
-summary{font-weight:600;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px}
-summary::-webkit-details-marker{display:none}
-summary:after{content:"+";font-family:'JetBrains Mono',monospace;color:var(--roma);font-size:22px;flex-shrink:0}
-details[open] summary:after{content:"−"}
-details p{margin-top:12px;color:var(--cinza);font-size:15.5px;max-width:720px}
-
-/* CTA FINAL */
-.final{text-align:center;position:relative;overflow:hidden}
-/* Mascara invertida: a grade vive na borda e some no centro, onde fica o texto.
-   Antes era o contrario e as linhas cruzavam o titulo. */
-.final:before{content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;background:
-  repeating-linear-gradient(90deg,var(--mare) 0 3px,transparent 3px 40px),
-  repeating-linear-gradient(0deg,var(--sol) 0 3px,transparent 3px 40px);
-  -webkit-mask-image:radial-gradient(ellipse 104% 96% at center,transparent 0 64%,#000 100%);mask-image:radial-gradient(ellipse 104% 96% at center,transparent 0 64%,#000 100%)}
-.final .wrap{position:relative}
-.final .sub{margin:22px auto 36px}
-.pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--sol);color:var(--sol);padding:7px 16px;border-radius:999px;margin-bottom:24px}
-
-footer{background:var(--noite);color:#9C98B0;padding:55px 0;border-top:1px solid #2E2B47}
-footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
-footer .k{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;line-height:2;text-transform:uppercase}
-footer a{color:#C9C5DA;text-decoration:none}
-
-@media(max-width:840px){
-  .hide-m{display:none}
-  section{padding:72px 0}
-  .hero{padding:80px 0 72px;min-height:auto}
-  .tres,.duas,.quem,.preco,.dia-caps{grid-template-columns:1fr}
-  .legend{flex-direction:column;gap:10px}
-  .rail{left:38px}
-  .faixa{height:96px}
-  .faixa .hum,.faixa .age{height:32px}.faixa-lbls span{height:32px;line-height:32px}.horas{padding-left:0!important}.faixa-wrap{grid-template-columns:1fr}.faixa-lbls{flex-direction:row;padding:0 0 10px;gap:18px}
-  .horas span:nth-child(even){display:none}
-
-  /* Bancada: duas colunas e sem inclinacao — perspectiva em tela pequena atrapalha o toque. */
-  .bancada{grid-template-columns:repeat(2,1fr);gap:11px;perspective:none;margin-top:30px}
-  .a3{transform:none;padding:18px 12px 15px}
-  .a3 .toca{display:none}
-  .a3 .face{width:41px;height:41px;margin-bottom:10px}
-  .contador b{font-size:44px}
-
-  /* Fluxo de entrada: o fio vira vertical e os passos empilham. */
-  .fluxo{grid-template-columns:1fr;gap:0;margin-top:34px}
-  .fluxo .p{padding-left:58px;padding-bottom:28px}
-  .fluxo .p:last-child{padding-bottom:0}
-  .fluxo .n{position:absolute;left:0;top:0;margin-bottom:0}
-  .fluxo .p:not(:last-child)::after{top:45px;bottom:-7px;left:18px;right:auto;width:2px;height:auto}
-  .fluxo .p:nth-child(1)::after{background:linear-gradient(180deg,var(--sol),#CDB77B)}
-  .fluxo .p:nth-child(2)::after{background:linear-gradient(180deg,#CDB77B,#A0CBB6)}
-  .fluxo .p:nth-child(3)::after{background:linear-gradient(180deg,#A0CBB6,var(--mare))}
-
-  /* Tabela vira cartoes empilhados: a coluna da Mescla nao pode ficar fora da tela.
-     Sem divisorias internas: cada linha e um par rotulo/valor empilhado, separado
-     por respiro. O rotulo em maiuscula ja marca onde uma linha comeca. */
-  .tblwrap{overflow-x:visible;margin-top:34px}
-  table{display:block;width:100%;min-width:0;border:none;background:transparent;border-radius:0}
-  table tbody{display:block;width:100%}
-  table tr:first-child{display:none}
-  table tr{display:block;background:var(--branco);border:1px solid var(--linha);border-radius:16px;padding:4px 18px 0;margin-bottom:13px}
-  table td{display:block;width:100%;box-sizing:border-box;text-align:left;padding:9px 0;font-size:15px;border:none}
-  table td::before{content:attr(data-c);display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cinza);margin-bottom:1px}
-  table td:first-child{width:100%;padding:14px 0 10px;font-size:16.5px;font-weight:600;line-height:1.35}
-  table td:first-child::before{content:none}
-  table td.ol{width:auto;margin:6px -18px 0;padding:11px 18px 13px;border-radius:0 0 15px 15px}
-
-  /* Alvos de toque com altura confortavel no dedo. */
-  nav a.cta{padding:12px 0}
-  footer a{display:inline-block;padding:7px 0}
-
-  /* Rotulos mono de 10px sao ilegiveis no celular. */
-  .tag,.ag i,.time .k,.con,.eyebrow,.modelos .k{font-size:11.5px}
-}
+:root{--noite:#1B1930;--nevoa:#ECEBF1;--branco:#FBFAFD;--sol:#F2B84B;--mare:#6FD9C9;--roma:#CF3E27;--cinza:#625F72;--linha:#DDDAE5;--verde:#116C60;--ambar:#7B5209}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--branco);color:var(--noite);font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}h1,h2,h3,p{margin:0}h1,h2,.serif{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-.05em;line-height:1.07;font-optical-sizing:auto}h1{font-size:clamp(56px,6.7vw,93px)}h2{font-size:clamp(38px,4.9vw,66px)}h3{font-size:23px;font-weight:600;line-height:1.25;letter-spacing:-.025em}em{font-weight:400}a{color:inherit}button{font:inherit}a,button{-webkit-tap-highlight-color:transparent}svg{display:block;max-width:100%}::selection{background:var(--sol);color:var(--noite)}
+.wrap{width:min(1240px,calc(100% - 96px));margin-inline:auto}.section{padding-block:105px}.eyebrow{display:flex;gap:12px;align-items:center;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;line-height:1.5}.eyebrow::before{content:'';width:24px;height:2px;background:currentColor;flex-shrink:0}.lead{font-size:19px;line-height:1.6;color:var(--cinza)}.muted{color:var(--cinza)}.mono{font-family:'JetBrains Mono',monospace}.section-head{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:end;margin-bottom:50px}.section-head .eyebrow{margin-bottom:22px}.section-head .lead{max-width:420px;margin-left:auto}.section-no{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--cinza);letter-spacing:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:28px;padding:17px 23px;min-height:56px;background:var(--roma);border:1px solid var(--roma);border-radius:6px;color:white;text-decoration:none;font-size:16px;line-height:1.25;font-weight:600;transition:background .2s,transform .2s}.btn:hover{background:#B4311C;border-color:#B4311C;transform:translateY(-2px)}.arrow{font-size:23px;line-height:1;font-weight:400}.text-link{display:inline-flex;align-items:center;gap:14px;text-underline-offset:5px;font-size:15px;font-weight:500}.text-link:hover{color:var(--roma)}:focus-visible{outline:3px solid var(--roma);outline-offset:5px}.dark :focus-visible{outline-color:var(--sol)}.skip{position:fixed;top:10px;left:20px;transform:translateY(-160%);z-index:100;background:var(--noite);color:white;padding:12px 18px;border-radius:4px}.skip:focus{transform:none}
+.nav{border-bottom:1px solid var(--linha);background:rgba(251,250,253,.96);position:sticky;top:0;z-index:30;backdrop-filter:blur(12px)}.nav-inner{height:84px;display:flex;justify-content:space-between;align-items:center;gap:30px}.brand{display:inline-flex;gap:12px;align-items:center;text-decoration:none;line-height:1}.brand-word{font-family:'Fraunces',serif;font-size:37px;font-weight:500;letter-spacing:-.065em}.brand-mark{width:42px;height:42px;flex-shrink:0}.nav-links{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:500}.nav-links a{text-decoration:none}.nav-links a:hover{color:var(--roma)}.nav-contact{display:flex;min-height:44px;gap:20px;align-items:center;border:1px solid var(--noite);padding:10px 17px;border-radius:5px;font-size:14px;text-decoration:none;font-weight:600}.nav-contact:hover{background:var(--noite);color:var(--branco)}
+.hero{padding:66px 0 45px}.hero-grid{display:grid;grid-template-columns:1.17fr 1fr;gap:58px;align-items:center}.hero .eyebrow{margin-bottom:27px;color:var(--cinza)}.hero h1 span,.hero h1 em{display:block}.hero h1 em{line-height:1.15}.hero-copy>.lead{max-width:520px;margin-top:27px;font-size:18px}.hero-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:30px}.hero .audience{margin-top:19px;font-size:13px;color:var(--cinza);max-width:450px}.hero-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:50px;border-top:1px solid var(--linha);padding-top:20px;font-size:13px;color:var(--cinza)}.hero-foot strong{font-weight:500;color:var(--noite)}.foot-colors{display:flex;gap:18px;align-items:center}.foot-colors span{display:flex;align-items:center;gap:7px}.foot-colors i{display:block;width:9px;height:9px;background:var(--sol);border-radius:50%}.foot-colors span+span i{background:var(--mare);border-radius:2px}
+.work-scene{background:var(--nevoa);border:1px solid var(--linha);border-radius:12px;padding:23px}.scene-top{display:flex;justify-content:space-between;gap:15px;align-items:center;padding-bottom:18px;border-bottom:1px solid #D0CCDC;font-size:12px;color:var(--cinza)}.scene-top strong{font-weight:500;color:var(--noite)}.scene-flow{padding:24px 0 7px;position:relative}.scene-flow::before{content:'';position:absolute;width:2px;top:57px;bottom:58px;left:27px;background:linear-gradient(var(--sol),var(--mare),var(--sol))}.scene-step{display:grid;grid-template-columns:56px 1fr;gap:14px;position:relative}.scene-step+.scene-step{margin-top:17px}.avatar{height:39px;width:39px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;position:relative;margin:9px auto 0;border:5px solid var(--nevoa);box-sizing:content-box}.avatar.human{border-radius:50%;background:var(--sol)}.avatar.agent{border-radius:13px;background:var(--mare)}.bubble{background:var(--branco);padding:17px 19px;border-radius:8px;box-shadow:0 3px 8px #1B193004}.bubble-head{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:14px;line-height:1.3;margin-bottom:8px}.bubble-head b{font-weight:600}.role{padding:3px 6px;border-radius:3px;font-size:12px;font-weight:500}.role.human{background:#FFF0D2;color:var(--ambar)}.role.agent{background:#D7F1EA;color:var(--verde)}.bubble p{font-size:14px;line-height:1.5;color:#474355}.bubble ul{padding:0;margin:11px 0 0;list-style:none;font-size:14px}.bubble li{display:flex;gap:8px;margin-top:5px;align-items:center}.bubble li::before{content:'↳';color:var(--verde)}.file{display:flex;gap:10px;align-items:center;margin-top:14px;padding:10px;border:1px solid var(--linha);border-radius:5px;font-size:13px}.file-icon{display:flex;justify-content:center;align-items:center;border-radius:3px;width:26px;height:32px;background:var(--nevoa);font-size:15px}.file small{display:block;color:var(--cinza);font-size:12px}.scene-caption{margin-top:17px;padding-top:16px;border-top:1px solid #D0CCDC;font-size:12px;color:var(--cinza)}
+.possibilities{border-top:1px solid var(--linha);padding-top:88px}.routine-grid{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--linha)}.routine{padding:31px 32px 34px 0;display:flex;flex-direction:column}.routine+.routine{border-left:1px solid var(--linha);padding-left:32px}.routine .section-no{margin-bottom:30px}.routine h3{margin-bottom:16px}.routine p{color:var(--cinza);font-size:16px}.routine .routine-bottom{margin-top:auto;padding-top:29px;font-size:14px;color:var(--noite)}.section-note{font-size:13px;color:var(--cinza);margin-top:20px}
+.dark{background:var(--noite);color:var(--branco)}.purpose{padding:98px 0 90px}.purpose .eyebrow{color:var(--mare);margin-bottom:37px}.purpose-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:70px;align-items:end}.purpose h2{font-size:clamp(46px,6vw,82px);line-height:1.09}.purpose h2 em{color:var(--sol)}.purpose-text{font-size:20px;color:#D0CCDF;max-width:415px;padding-bottom:6px}.purpose-line{margin-top:60px;display:flex;align-items:center;gap:16px;font-size:12px;color:#BCB8D0}.purpose-line::before{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--sol) 0%,var(--sol) 42%,var(--mare) 43%,var(--mare) 100%)}
+.example{background:var(--nevoa)}.example-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}.example-copy h2{margin-top:22px}.example-copy>.lead{margin-top:25px;font-size:18px}.example-copy .example-label{display:inline-flex;align-items:center;gap:8px;margin-top:30px;padding:8px 11px;border:1px solid #C6C2D2;font-size:12px;border-radius:4px;color:var(--cinza)}.process-list{list-style:none;margin:0;padding:0;counter-reset:process}.process-list li{display:grid;grid-template-columns:34px 1fr;gap:20px;padding:22px 0;border-top:1px solid #CDC9D8;counter-increment:process}.process-list li::before{content:'0' counter(process);font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--cinza);padding-top:3px}.process-list li:last-child{padding-bottom:0}.process-meta{display:flex;align-items:center;gap:9px;font-size:12px;margin-bottom:8px;color:var(--ambar)}.process-meta::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--sol);border:1px solid #AA7625}.process-meta.agent{color:var(--verde)}.process-meta.agent::before{background:var(--mare);border-color:#357E72;border-radius:1px}.process-list h3{font-size:21px;margin-bottom:6px}.process-list p{font-size:16px;color:var(--cinza)}
+.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:55px}.method-step{border-top:2px solid var(--noite);padding-top:22px}.method-step .section-no{display:block;margin-bottom:35px}.method-step h3{font-size:21px;margin-bottom:13px}.method-step p{color:var(--cinza);font-size:16px}.roles{display:grid;grid-template-columns:1fr 1fr;margin-top:60px;background:var(--nevoa);border-radius:8px;overflow:hidden}.role-block{padding:32px 38px}.role-block+.role-block{border-left:1px solid #D4D0DF}.role-block h3{display:flex;align-items:center;gap:12px;font-size:19px;margin-bottom:12px}.role-block h3::before{content:'';width:12px;height:12px;background:var(--mare);border-radius:3px}.role-block+.role-block h3::before{background:var(--sol);border-radius:50%}.role-block p{font-size:16px;color:var(--cinza)}
+.tools{border-top:1px solid var(--linha);padding:65px 0}.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}.tools h2{font-size:36px;max-width:410px}.tools p{font-size:16px;color:var(--cinza);margin-top:16px;max-width:490px}.tool-names{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.tool-names a{font-size:21px;letter-spacing:-.04em;font-weight:500;border:1px solid var(--linha);border-radius:6px;padding:13px 20px;text-decoration:none}.tool-names a:hover{border-color:var(--noite)}.tools-right .muted{margin-top:14px;font-size:13px}
+.offer{background:var(--nevoa)}.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.offer-card{padding:36px 38px 33px;border:1px solid #D1CDDC;background:var(--branco);border-radius:8px}.offer-card .eyebrow{font-size:12px;color:var(--cinza);margin-bottom:23px}.offer-card h3{font-family:'Fraunces',serif;font-weight:400;font-size:35px;letter-spacing:-.04em;line-height:1.12;margin-bottom:18px}.offer-card p{font-size:16px;color:var(--cinza)}.offer-card ul{list-style:none;padding:0;margin:25px 0 0;border-top:1px solid var(--linha)}.offer-card li{font-size:16px;padding-top:13px;display:flex;gap:12px;line-height:1.4}.offer-card li::before{content:'↗';color:var(--verde)}.offer-bottom{display:flex;align-items:center;justify-content:space-between;gap:35px;margin-top:28px}.offer-bottom p{max-width:690px;font-size:14px;color:var(--cinza)}.offer-bottom .text-link{flex-shrink:0}
+.faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:90px}.faq-grid h2{margin-top:22px;font-size:53px}.faq-list details{border-top:1px solid var(--linha)}.faq-list details:last-child{border-bottom:1px solid var(--linha)}.faq-list summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:26px;cursor:pointer;font-weight:500;font-size:17px;padding:23px 0;line-height:1.4}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary::after{content:'+';font-size:25px;color:var(--cinza);font-weight:400;flex-shrink:0}.faq-list details[open] summary::after{content:'−'}.faq-list details[open] summary{color:var(--verde)}.faq-list details p{color:var(--cinza);font-size:16px;line-height:1.6;padding:0 36px 23px 0}
+.contact{padding:87px 0 94px;background:var(--sol)}.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:100px;align-items:end}.contact .eyebrow{margin-bottom:26px;color:var(--noite)}.contact h2{font-size:clamp(44px,5vw,70px);max-width:690px}.contact p{font-size:18px;margin-bottom:28px;max-width:380px}.contact .btn{background:var(--noite);border-color:var(--noite)}.contact .btn:hover{background:#34304F}.contact .contact-note{display:block;margin-top:14px;font-size:12px}.footer{background:var(--noite);color:var(--branco);padding:38px 0}.footer-grid{display:flex;align-items:center;justify-content:space-between;gap:30px}.footer .brand-word{font-size:32px}.footer .brand-mark{width:33px;height:33px}.footer small{display:block;color:#BCB8D0;font-size:12px}.footer .definition{font-size:13px;color:#BCB8D0;text-align:right}.footer .definition em{font-family:'Fraunces',serif;font-size:19px;color:var(--branco)}
+@media(min-width:1600px){.hero{padding-block:82px 55px}}
+@media(max-width:1100px){.wrap{width:calc(100% - 64px)}.hero-grid{gap:32px;grid-template-columns:1.08fr 1fr}.hero h1{font-size:70px}.hero-actions{gap:20px}.nav-links{gap:20px}.work-scene{padding:18px}.bubble{padding:14px}.scene-step{grid-template-columns:43px 1fr;gap:10px}.avatar{width:32px;height:32px}.scene-flow::before{left:21px}.scene-top{font-size:12px}.purpose-grid{gap:45px}.example-layout,.faq-grid{gap:50px}.contact-grid{gap:55px}.method-grid{gap:22px}.method-step h3{font-size:19px}}
+@media(max-width:800px){.wrap{width:calc(100% - 40px)}.nav-inner{height:72px}.nav-links{display:none}.brand-word{font-size:33px}.brand-mark{width:35px;height:35px}.nav-contact{font-size:14px;padding:10px 12px;gap:12px}.section{padding-block:70px}.hero{padding-top:43px;padding-bottom:35px}.hero-grid{grid-template-columns:1fr;gap:40px}.hero h1{font-size:clamp(53px,9.3vw,78px)}.hero-copy>.lead{max-width:540px;font-size:18px}.hero .eyebrow{font-size:12px;margin-bottom:22px}.hero-actions{gap:22px}.hero .audience{max-width:100%}.work-scene{padding:22px;max-width:570px;width:100%;justify-self:center}.scene-top{font-size:12px}.scene-step{grid-template-columns:50px 1fr;gap:14px}.avatar{width:37px;height:37px}.scene-flow::before{left:25px}.bubble{padding:17px 19px}.hero-foot{margin-top:32px;font-size:12px}.hero-foot>span{max-width:240px}.foot-colors{gap:12px;flex-shrink:0}.section-head{grid-template-columns:1fr;gap:22px;margin-bottom:33px}.section-head .lead{margin:0;max-width:560px;font-size:18px}.routine-grid{grid-template-columns:1fr}.routine{padding:25px 0}.routine+.routine{padding-left:0;border-left:none;border-top:1px solid var(--linha)}.routine .section-no{margin-bottom:16px}.routine h3{font-size:25px}.routine .routine-bottom{padding-top:19px}.purpose{padding-block:68px}.purpose-grid{grid-template-columns:1fr;gap:28px}.purpose h2{font-size:clamp(44px,8.5vw,70px)}.purpose-text{font-size:18px;max-width:500px}.purpose .eyebrow{margin-bottom:28px}.purpose-line{margin-top:40px}.example-layout{grid-template-columns:1fr;gap:35px}.example-copy h2{max-width:490px}.example-copy>.lead{max-width:570px;margin-top:20px}.example-copy .example-label{margin-top:22px}.method-grid{grid-template-columns:1fr 1fr;gap:32px 25px;margin-top:36px}.method-step .section-no{margin-bottom:20px}.method-step h3{font-size:22px}.roles{grid-template-columns:1fr;margin-top:38px}.role-block{padding:26px}.role-block+.role-block{border-left:none;border-top:1px solid #D4D0DF}.tools-grid{grid-template-columns:1fr;gap:30px}.tools{padding-block:50px}.tools h2{font-size:36px}.offer-grid{grid-template-columns:1fr}.offer-card{padding:28px}.offer-bottom{display:block}.offer-bottom .text-link{margin-top:19px}.faq-grid{grid-template-columns:1fr;gap:35px}.faq-grid h2{font-size:45px}.contact-grid{grid-template-columns:1fr;gap:30px}.contact{padding-block:67px}.contact h2{max-width:520px}.contact p{max-width:470px}.footer-grid{align-items:flex-start}.footer .definition{max-width:160px;font-size:12px}}
+@media(max-width:380px){.nav-inner{gap:12px}.nav-contact{padding:10px}.nav-contact>span{display:none}.wrap{width:calc(100% - 32px)}.hero h1{font-size:49px}.hero-actions{align-items:flex-start;flex-direction:column;gap:18px}.work-scene{padding:14px}.scene-step{grid-template-columns:34px 1fr;gap:9px}.avatar{width:27px;height:27px;font-size:12px}.scene-flow::before{left:17px}.bubble{padding:13px}.scene-top{font-size:12px;flex-wrap:wrap}.hero-foot{align-items:flex-start;flex-direction:column;gap:12px}.method-grid{grid-template-columns:1fr}.tool-names a{font-size:18px;padding:10px 13px}.footer-grid{flex-direction:column}.footer .definition{text-align:left;max-width:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+@media print{.nav{position:static}.nav-links,.nav-contact,.hero-actions,.contact .btn{display:none}.section{padding-block:35px}.wrap{width:100%}.dark,.contact{background:white;color:var(--noite)}.purpose h2 em,.purpose-text,.footer small,.footer .definition,.footer .definition em{color:var(--noite)}details{break-inside:avoid}}
 </style>
 </head>
 <body>
-
-<nav>
+<a class="skip" href="#principal">Pular para o conteúdo</a>
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><symbol id="mescla-mark" viewBox="0 0 48 48"><path d="M10 12v17a9 9 0 0 0 18 0V12" fill="none" stroke="currentColor" stroke-width="6"/><path d="M20 36V19a9 9 0 0 1 18 0v17" fill="none" stroke="currentColor" stroke-width="6"/></symbol></defs></svg>
+<header class="nav"><div class="wrap nav-inner">
+<a class="brand" href="#principal" aria-label="Mescla, início"><svg class="brand-mark" aria-hidden="true"><use href="#mescla-mark"/></svg><span class="brand-word">mescla</span></a>
+<nav class="nav-links" aria-label="Navegação principal"><a href="#possibilidades">O que muda na prática</a><a href="#como-funciona">Como funciona</a><a href="#proposito">Por que existimos</a></nav>
+<a class="nav-contact" href="#conversar">Vamos conversar <span aria-hidden="true">↗</span></a>
+</div></header>
+<main id="principal">
+<section class="hero" aria-labelledby="hero-title"><div class="wrap">
+<div class="hero-grid"><div class="hero-copy">
+<p class="eyebrow">Seu conhecimento pode ir mais longe</p>
+<h1 id="hero-title"><span>Mais trabalho</span> <span>pronto. Mais</span> <em>tempo para criar.</em></h1>
+<p class="lead">Gravações viram conteúdo. Briefings viram materiais. Reuniões viram próximos passos. A Mescla implanta times de IA para tirar tarefas repetitivas da sua rotina, com você no controle das decisões.</p>
+<div class="hero-actions"><a class="btn" href="https://wa.me/5561993973584?text=Quero%20conversar%20sobre%20um%20time%20de%20IA%20para%20o%20meu%20trabalho.%0A%0AMinha%20atividade%3A%0AQuantas%20pessoas%20participam%3A%0AA%20rotina%20que%20quero%20melhorar%3A" target="_blank" rel="noopener noreferrer">Quero isso no meu trabalho <span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="#exemplo">Ver um exemplo <span aria-hidden="true">↓</span></a></div>
+<p class="audience">Para creators, profissionais independentes, agências e equipes enxutas.</p>
+</div>
+<div class="work-scene" aria-label="Exemplo ilustrativo de colaboração entre uma pessoa e agentes de conteúdo">
+<div class="scene-top"><strong>DA SUA IDEIA À ENTREGA</strong><span class="mono">conteúdo / 01</span></div>
+<div class="scene-flow">
+<div class="scene-step"><div class="avatar human" aria-hidden="true">V</div><div class="bubble"><div class="bubble-head"><b>Você</b><span class="role human">Pessoa</span></div><p>Gravei uma conversa sobre meu trabalho. Vamos transformar as melhores ideias em conteúdo?</p><div class="file"><span class="file-icon" aria-hidden="true">▷</span><span>minha-gravação.mp4<small>O ponto de partida é seu.</small></span></div></div></div>
+<div class="scene-step"><div class="avatar agent" aria-hidden="true">M</div><div class="bubble"><div class="bubble-head"><b>Time de conteúdo</b><span class="role agent">Agentes de IA</span></div><p>Preparei três materiais para sua revisão:</p><ul><li>Um corte com a ideia principal</li><li>Um carrossel com os aprendizados</li><li>Um roteiro para aprofundar o assunto</li></ul></div></div>
+<div class="scene-step"><div class="avatar human" aria-hidden="true">V</div><div class="bubble"><div class="bubble-head"><b>Você</b><span class="role human">Pessoa</span></div><p>O corte está aprovado. No carrossel, vamos incluir um exemplo meu.</p></div></div>
+</div>
+<p class="scene-caption">Exemplo ilustrativo · materiais e etapas definidos no projeto.</p>
+</div></div>
+<div class="hero-foot"><span><strong>Pessoas e agentes.</strong> No mesmo time.</span><div class="foot-colors"><span><i aria-hidden="true"></i>Pessoas</span><span><i aria-hidden="true"></i>Agentes</span></div></div>
+</div></section>
+<section class="section possibilities" id="possibilidades" aria-labelledby="possibilities-title">
   <div class="wrap">
-    <div class="logo"><i></i>mescla</div>
-    <a class="cta" href="#aplicar">Aplicar para o beta →</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <canvas id="tear" aria-hidden="true"></canvas>
-  <div class="wrap">
-    <div class="eyebrow">mescla.ai<span class="hide-m"> · serviço que roda como software</span></div>
-    <h1>Pessoas e agentes de IA<br><em class="f">no mesmo</em> espaço.</h1>
-    <p class="sub">Um espaço de trabalho como o Slack. As pessoas do seu time e agentes movidos por Claude, GPT, Kimi ou DeepSeek dividem os mesmos canais, de dia e de madrugada. O que produzem fica na empresa.</p>
-    <div class="modelos" aria-label="Modelos suportados"><span class="k">no mesmo canal</span><span>Claude</span><span>GPT</span><span>Gemini</span><span>Kimi</span><span>DeepSeek</span><span>Qwen</span><span class="mais">e as pessoas do seu time</span></div>
-    <div class="btns">
-      <a class="btn" href="#aplicar">Aplicar para o beta</a>
-      <a class="btn ghost" href="#times">Ver os times prontos</a>
+    <div class="section-head">
+      <div><p class="eyebrow">O que muda na prática</p><h2 id="possibilities-title">Menos tarefas acumuladas.<br>
+Mais entregas acontecendo.</h2></div>
+      <p class="lead">Começamos por um trabalho que se repete e toma seu tempo. O resultado aparece no que você passa a ter pronto.</p>
     </div>
-    <p class="micro">Sem cartão. Implantação acompanhada. Preço de fundador travado.</p>
-    <div class="legend"><span><b style="background:var(--sol)"></b>pessoas</span><span><b style="background:var(--mare)"></b>agentes</span></div>
-  </div>
-</header>
-
-<section>
-  <div class="wrap">
-    <div class="eyebrow">um espaço, muitos modelos</div>
-    <h2>Cada agente com o seu modelo.<br>Troque quando quiser.</h2>
-    <p class="sub">Isso não existe em nenhuma assinatura de IA, porque cada uma vende o modelo dela. Aqui é assim: <b style="color:var(--roma);font-weight:600">clique no modelo de qualquer agente para trocar.</b></p>
-
-    <div class="bancada rv" id="bancada"></div>
-
-    <div class="contador rv">
-      <b id="nmod">5</b>
-      <span id="ntxt">modelos diferentes <b>(ou quantos você quiser!)</b> rodando ao mesmo tempo, no mesmo canal.</span>
-    </div>
-  </div>
-</section>
-
-<section id="tear-canal">
-  <div class="wrap">
-    <div class="eyebrow">o canal</div>
-    <h2>Ela chega às 8h.<br>Eles trabalham desde as 3h.</h2>
-    <p class="sub">Assim é um canal na Mescla. Se você já usou Slack, já sabe usar. A diferença é que os agentes são <b style="font-weight:600;color:var(--noite)">membros do canal</b>, com nome e histórico, lado a lado com as pessoas.</p>
-
-    <div class="placar rv">
-      <span class="pl ag"><b>3</b><i>agentes</i></span>
-      <span class="pl pe"><b>2</b><i>pessoas</i></span>
-      <span class="pl ca"><b>1</b><i>canal</i></span>
-    </div>
-
-    <div class="canal rv" style="margin-top:38px">
-      <div class="canal-top"><span>#lancamento-cliente</span><span class="p"><i></i><i></i><i></i></span></div>
-      <div class="msgs">
-        <div class="rail" aria-hidden="true"></div>
-        <div class="msg"><div class="av a">At</div><div><div class="mh"><b>Atlas</b><span class="tag a">agente · claude</span><time>03:12</time></div><p class="mt">Relatório de tráfego pronto. Três criativos abaixo do CPA alvo, detalhe no canvas do canal.</p></div></div>
-        <div class="msg"><div class="av a">Na</div><div><div class="mh"><b>Nash</b><span class="tag a">agente · deepseek</span><time>03:40</time></div><p class="mt">Cruzei com o financeiro: os três criativos somam 38% da verba do mês. Sugiro pausar dois.</p></div></div>
-        <div class="msg"><div class="av h">Ma</div><div><div class="mh"><b>Marina</b><span class="tag h">pessoa</span><time>08:47</time></div><p class="mt">Era isso que eu precisava pra reunião das 9h. Ajusta a versão pro cliente?</p></div></div>
-        <div class="msg"><div class="av a">At</div><div><div class="mh"><b>Atlas</b><span class="tag a">agente · claude</span><time>08:48</time></div><p class="mt">Ajustado e publicado. Registro completo no histórico.</p></div></div>
-        <div class="msg"><div class="av h">Le</div><div><div class="mh"><b>Léo</b><span class="tag h">pessoa</span><time>09:31</time></div><p class="mt">Vi o registro. Aprovado. Atlas, roda a mesma análise pro cliente da tarde. Clara, prepara o resumo pra ele.</p></div></div>
-        <div class="msg typing" aria-live="polite"><div class="av a">Cl</div><div><div class="mh"><b>Clara</b><span class="tag a">agente · kimi</span><time>09:31</time></div><p class="mt dots"><span></span><span></span><span></span> escrevendo o resumo pro cliente da tarde</p></div></div>
-      </div>
-      <div class="canal-foot">três modelos diferentes e duas pessoas, no mesmo canal. o histórico ficou na empresa.</div>
-    </div>
-  </div>
-</section>
-
-<section id="times">
-  <div class="wrap">
-    <div class="eyebrow">times prontos</div>
-    <h2>Cinco times prontos.<br>Você escolhe dois.</h2>
-    <p class="sub">Cada time é um canal com agentes já dentro, rotina de madrugada agendada e as ferramentas que ele usa. Você entra e já encontra gente trabalhando. O COO vem de série para todo mundo.</p>
-    <div class="times">
-      <article class="time serie rv">
-        <div class="t-top"><span class="chan">#geral</span><span class="k">de série</span></div>
-        <h3>COO</h3>
-        <p>Resume o que aconteceu em todos os canais, aponta o que travou e prepara a segunda-feira. É o agente que o dono abre primeiro.</p>
-        <div class="ags"><span class="ag">Galateia <i>claude</i></span></div>
-        <div class="rot"><b>06:30</b> resumo do dia anterior no #geral</div>
+    <div class="routine-grid">
+      <article class="routine">
+        <span class="section-no" aria-hidden="true">01 / CONTEÚDO</span>
+        <h3>Uma gravação.<br>
+Novos conteúdos.</h3>
+        <p>Transforme suas ideias em cortes, roteiros e materiais para diferentes canais, seguindo sua voz e passando pela sua aprovação.</p>
+        <p class="routine-bottom">Seu conhecimento rende mais, sem começar cada peça do zero.</p>
       </article>
-      <article class="time rv">
-        <div class="t-top"><span class="chan">#conteudo</span></div>
-        <h3>Conteúdo</h3>
-        <p>Pauta, rascunho, calendário e versão por canal. O time acorda com o post do dia pronto para revisar.</p>
-        <div class="ags"><span class="ag">Assange <i>claude</i></span><span class="ag">Spock <i>gpt</i></span><span class="ag">Pólen <i>kimi</i></span></div>
-        <div class="rot"><b>04:00</b> rascunhos da semana no canvas do canal</div>
-        <div class="con">conecta: Drive ou Notion, agendador de posts</div>
+      <article class="routine">
+        <span class="section-no" aria-hidden="true">02 / PROJETOS</span>
+        <h3>Do briefing ao material<br>
+para revisar.</h3>
+        <p>Reúna as informações do cliente e avance na preparação de pautas, textos e apresentações, com critérios claros para cada entrega.</p>
+        <p class="routine-bottom">Mais tempo para a direção criativa e a relação com seus clientes.</p>
       </article>
-      <article class="time rv">
-        <div class="t-top"><span class="chan">#trafego</span></div>
-        <h3>Tráfego</h3>
-        <p>Lê as campanhas de madrugada, marca criativo abaixo do CPA e sugere pausa e realocação antes da reunião das 9h.</p>
-        <div class="ags"><span class="ag">Atlas <i>claude</i></span><span class="ag">Argos <i>deepseek</i></span></div>
-        <div class="rot"><b>05:30</b> relatório de campanha por cliente</div>
-        <div class="con">conecta: Meta Ads, Google Ads</div>
-      </article>
-      <article class="time rv">
-        <div class="t-top"><span class="chan">#financeiro</span></div>
-        <h3>Financeiro</h3>
-        <p>Cobrança, conciliação, vencimentos e caixa semanal. Lê, organiza e avisa. Não paga nada sozinho.</p>
-        <div class="ags"><span class="ag">Nash <i>deepseek</i></span></div>
-        <div class="rot"><b>07:00</b> vencimentos do dia e caixa da semana</div>
-        <div class="con">conecta: Organizze ou Conta Azul, planilha no Drive</div>
-      </article>
-      <article class="time rv">
-        <div class="t-top"><span class="chan">#atendimento</span></div>
-        <h3>Atendimento</h3>
-        <p>Resumo de reunião, follow-up e status report por cliente. Responde o "e aí?" antes de o cliente perguntar.</p>
-        <div class="ags"><span class="ag">Clara <i>kimi</i></span><span class="ag">Sarek <i>claude</i></span></div>
-        <div class="rot"><b>07:30</b> status de cada projeto no canal do cliente</div>
-        <div class="con">conecta: Google Calendar, Gmail, WhatsApp</div>
-      </article>
-      <article class="time rv">
-        <div class="t-top"><span class="chan">#comercial</span></div>
-        <h3>Comercial</h3>
-        <p>Prospect pesquisado, proposta em rascunho e pipeline de segunda-feira. O vendedor chega e a lição de casa está feita.</p>
-        <div class="ags"><span class="ag">Draper <i>gpt</i></span><span class="ag">Peitho <i>claude</i></span></div>
-        <div class="rot"><b>06:00</b> pipeline e próximos passos por lead</div>
-        <div class="con">conecta: Gmail, LinkedIn, CRM</div>
+      <article class="routine">
+        <span class="section-no" aria-hidden="true">03 / ROTINA</span>
+        <h3>A conversa termina.<br>
+O trabalho avança.</h3>
+        <p>Transforme reuniões em registros, decisões e próximos passos organizados, para sua equipe saber o que precisa acontecer depois.</p>
+        <p class="routine-bottom">Menos tempo reconstruindo o que foi combinado.</p>
       </article>
     </div>
-    <p class="micro" style="margin-top:34px;color:var(--cinza)">Um time começa com uma pessoa e um agente. Depois dois, três, cinco, oito. Não tem o time que você precisa? Depois da primeira semana, o Arquiteto copia a estrutura de um dos cinco e adapta com você.</p>
+    <p class="section-note">Possibilidades de projeto. Escolhemos com você a primeira rotina e definimos as entregas da implantação.</p>
   </div>
 </section>
 
-<section class="dark">
+<section class="purpose dark" id="proposito" aria-labelledby="purpose-title">
   <div class="wrap">
-    <div class="eyebrow">convivência</div>
-    <h2>Um dia na Mescla<br>tem 24 horas úteis.</h2>
-    <p class="sub">As pessoas trabalham de dia. Os agentes trabalham quando o time dorme. Onde as faixas se encontram, um passa o trabalho para o outro.</p>
-    <div class="dia rv">
-      <div class="faixa-wrap"><div class="faixa-lbls" aria-hidden="true"><span><i style="background:var(--sol)"></i>pessoas</span><span><i style="background:var(--mare)"></i>agentes</span></div>
-      <div class="faixa" id="faixa" role="img" aria-label="Faixa de 24 horas: agentes das 0h às 8h e das 19h às 24h, rotina das 12h às 15h; pessoas das 8h às 19h">
-        <div class="hum"><div class="seg" style="left:33.3%;width:45.8%"></div></div>
-        <div class="age"><div class="seg" style="left:0;width:33.3%"></div><div class="seg" style="left:50%;width:12.5%;opacity:.55"></div><div class="seg" style="left:79.2%;width:20.8%"></div></div>
-        <div class="agora" id="agora"><b id="agora-lbl">agora</b></div>
-      </div></div>
-      <div class="horas" style="padding-left:96px"><span>00h</span><span>03h</span><span>06h</span><span>09h</span><span>12h</span><span>15h</span><span>18h</span><span>21h</span><span>24h</span></div>
-      <div class="dia-caps">
-        <div><b>03h · agente</b><p>Rotinas rodam de madrugada: relatórios, análises, rascunhos. Ninguém precisou deixar o notebook aberto.</p></div>
-        <div><b>08h · passagem</b><p>O time chega e o trabalho já está no canal. A pessoa revisa, decide, devolve. Isso é a mescla.</p></div>
-        <div><b>15h · junto</b><p>Durante o dia os agentes seguem em tarefas paralelas, e a pessoa aciona no canal quando precisa.</p></div>
-      </div>
+    <p class="eyebrow">Por que existimos</p>
+    <div class="purpose-grid">
+      <h2 id="purpose-title">Ampliar o possível<br>
+<em>para cada pessoa.</em></h2>
+      <p class="purpose-text">Aproximamos pessoas e inteligência artificial para dar mais alcance ao que cada um sabe, imagina e quer realizar.</p>
+    </div>
+    <div class="purpose-line"><span>Pessoas e agentes. No mesmo time.</span></div>
+  </div>
+</section>
+
+<section class="section example" id="exemplo" aria-labelledby="example-title">
+  <div class="wrap example-layout">
+    <div class="example-copy">
+      <p class="eyebrow">Um exemplo com conteúdo</p>
+      <h2 id="example-title">Você traz a ideia.<br>
+Ela ganha novos formatos.</h2>
+      <p class="lead">Uma conversa gravada pode virar um corte, um carrossel e um novo roteiro. Você participa da direção e da revisão. Os agentes e as ferramentas cuidam das etapas de produção que combinarmos.</p>
+      <p class="example-label">Fluxo ilustrativo · escopo definido por projeto</p>
+    </div>
+    <ol class="process-list">
+      <li><div><p class="process-meta">Você · pessoa</p><h3>Compartilha o ponto de partida</h3><p>Envia a gravação, conta para quem é o conteúdo e o que quer comunicar.</p></div></li>
+      <li><div><p class="process-meta agent">Time de conteúdo · agentes de IA</p><h3>Encontra o que pode render</h3><p>Organiza as ideias e sugere trechos, títulos e formatos a partir do seu material.</p></div></li>
+      <li><div><p class="process-meta">Você · pessoa</p><h3>Escolhe a direção</h3><p>Seleciona as sugestões e acrescenta o olhar e os exemplos que tornam o conteúdo seu.</p></div></li>
+      <li><div><p class="process-meta agent">Agentes de IA e ferramentas conectadas</p><h3>Preparam os materiais</h3><p>Executam as etapas configuradas, como montar cortes, adaptar textos e organizar as peças para revisão.</p></div></li>
+      <li><div><p class="process-meta">Você · pessoa</p><h3>Revisa e aprova</h3><p>Avalia o resultado e pede os ajustes necessários antes de usar ou publicar os materiais.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="como-funciona" aria-labelledby="method-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div><p class="eyebrow">Como funciona</p><h2 id="method-title">Um resultado claro.<br>
+Um time para chegar lá.</h2></div>
+      <p class="lead">A Mescla desenha e implanta o trabalho entre você e os agentes. Começamos com uma rotina, colocamos em uso e avaliamos o que melhorou.</p>
+    </div>
+    <div class="method-grid">
+      <div class="method-step"><span class="section-no" aria-hidden="true">01</span><h3>Definir o que deve ficar pronto</h3><p>Entendemos sua rotina, a entrega desejada e o que significa um bom resultado para você.</p></div>
+      <div class="method-step"><span class="section-no" aria-hidden="true">02</span><h3>Montar o caminho até a entrega</h3><p>Configuramos os agentes, conectamos as ferramentas e organizamos as informações e etapas de revisão.</p></div>
+      <div class="method-step"><span class="section-no" aria-hidden="true">03</span><h3>Colocar para trabalhar com você</h3><p>Testamos com materiais reais e orientamos você e sua equipe para usar o fluxo no dia a dia.</p></div>
+      <div class="method-step"><span class="section-no" aria-hidden="true">04</span><h3>Avaliar e melhorar com o uso</h3><p>Comparamos tempo de trabalho, qualidade e esforço de revisão. O acompanhamento segue o escopo contratado.</p></div>
+    </div>
+    <div class="roles">
+      <div class="role-block"><h3>A Mescla cuida da implantação</h3><p>Desenhamos o processo, configuramos os agentes e as integrações e acompanhamos os primeiros usos. Manutenção e evolução entram no acordo de acompanhamento.</p></div>
+      <div class="role-block"><h3>Você traz o que torna o trabalho seu</h3><p>O conhecimento do negócio, as prioridades e os critérios de qualidade. Combinamos quem decide, quem revisa e o que cada agente pode executar.</p></div>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="eyebrow">o problema</div>
-    <h2>Todo mundo usa IA.<br>Nada vira processo.</h2>
-    <div class="tres">
-      <div class="card rv"><span class="k">contexto</span><h3>O contexto morre com a aba</h3><p>Cada boa conversa com IA vive na sessão de uma pessoa e some quando ela fecha. Amanhã, começa do zero.</p></div>
-      <div class="card rv"><span class="k">memória</span><h3>Férias apagam memória</h3><p>Quando alguém sai, o histórico de trabalho com IA sai junto. O conhecimento era da pessoa, nunca foi da operação.</p></div>
-      <div class="card rv"><span class="k">medida</span><h3>Ninguém mede a produção</h3><p>Sem registro central, não dá para saber o que a IA entregou no mês. Sem registro não existe processo. Existe improviso.</p></div>
+<section class="tools" aria-labelledby="tools-title">
+  <div class="wrap tools-grid">
+    <div><h2 id="tools-title">A tecnologia acompanha<br>
+o seu jeito de trabalhar.</h2><p>Usamos tecnologias como Buzz, Hyperagent e Hermes. A escolha depende do processo, das integrações e de como você e sua equipe vão participar.</p></div>
+    <div class="tools-right">
+      <div class="tool-names" aria-label="Conheça as tecnologias"><a href="https://github.com/block/buzz" target="_blank" rel="noopener noreferrer">Buzz <span aria-hidden="true">↗</span></a><a href="https://www.hyperagent.com/" target="_blank" rel="noopener noreferrer">Hyperagent <span aria-hidden="true">↗</span></a><a href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noopener noreferrer">Hermes <span aria-hidden="true">↗</span></a></div>
+      <p class="muted">Na implantação, definimos o ambiente, os acessos e o contexto de que os agentes precisam.</p>
     </div>
   </div>
 </section>
 
-<section>
+<section class="section offer" id="contratacao" aria-labelledby="offer-title">
   <div class="wrap">
-    <div class="eyebrow">o que você compra</div>
-    <h2>Você contrata a entrega.<br>A arquitetura é problema nosso.</h2>
-    <p class="sub">Software se comprava vazio: a empresa pagava a licença e alguém lá dentro tinha que virar operador. Serviço se terceirizava para fora: funcionava, mas o contexto ia embora junto com o fornecedor. A Mescla fica no meio. O trabalho acontece dentro da sua casa, no seu histórico, e ninguém do seu time precisa virar operador de agente. É o que o mercado começou a chamar de <b style="color:var(--roma);font-weight:600">service as a software</b>.</p>
-    <div class="duas">
-      <div class="rv"><h3>Você pede o resultado</h3><p>Fechamento financeiro rodando. Esteira de conteúdo publicando. Pipeline pronto na segunda-feira. O pedido é esse, em português, e não uma lista de ferramentas para configurar.</p></div>
-      <div class="rv"><h3>A gente escolhe o desenho</h3><p>Cada operação pede uma forma. Uma pede um agente só, com fronteira apertada e credencial curta. Outra pede um time com papéis distintos, que se corrigem no canal. Essa decisão é feita na implantação, com você, e pode mudar depois sem que ninguém do time mexa em nada.</p></div>
+    <div class="section-head">
+      <div><p class="eyebrow">Por onde começamos</p><h2 id="offer-title">Primeiro, uma rotina<br>
+funcionando melhor.</h2></div>
+      <p class="lead">Escolhemos uma entrega que faça diferença no seu trabalho. A proposta define o que será implantado e como vamos avaliar o resultado.</p>
+    </div>
+    <div class="offer-grid">
+      <article class="offer-card"><p class="eyebrow">Implantação</p><h3>Do trabalho acumulado<br>
+a um fluxo em uso.</h3><p>Organizamos e colocamos para funcionar uma rotina com agentes de IA e a participação da sua equipe.</p><ul><li>Entrega e critérios de qualidade definidos</li><li>Agentes e integrações configurados</li><li>Testes com materiais do seu trabalho</li><li>Orientação para usar e revisar as entregas</li></ul></article>
+      <article class="offer-card"><p class="eyebrow">Acompanhamento</p><h3>Um time que acompanha<br>
+o seu trabalho.</h3><p>Depois da implantação, podemos seguir cuidando dos ajustes e da evolução conforme o que aparecer no uso.</p><ul><li>Correções e ajustes nos agentes</li><li>Revisão do processo e das entregas</li><li>Apoio às pessoas que usam o ambiente</li><li>Novas necessidades avaliadas em conjunto</li></ul></article>
+    </div>
+    <div class="offer-bottom"><p>O investimento depende do processo, das integrações e do acompanhamento. A proposta esclarece os custos de implantação, suporte e uso das ferramentas.</p><a class="text-link" href="#conversar">Conversar sobre meu projeto <span aria-hidden="true">↗</span></a></div>
+  </div>
+</section>
+
+<section class="section" id="perguntas" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <div><p class="eyebrow">Antes de começar</p><h2 id="faq-title">Boas perguntas.<br>
+Respostas diretas.</h2></div>
+    <div class="faq-list">
+      <details><summary>Preciso saber programar?</summary><p>A configuração técnica fica com a Mescla. Você precisa conhecer seu trabalho e participar da definição e da revisão das entregas. Orientamos você a usar o ambiente escolhido e a trabalhar com os agentes.</p></details>
+      <details><summary>Funciona para quem trabalha sozinho?</summary><p>Sim. Podemos começar com uma pessoa e uma rotina. Se você pretende trazer mais pessoas depois, consideramos isso na escolha do ambiente e na proposta de implantação.</p></details>
+      <details><summary>O que vou receber na prática?</summary><p>Uma rotina configurada e testada, com agentes, ferramentas e etapas de revisão voltados à entrega que combinarmos. Em um projeto de conteúdo, por exemplo, isso pode incluir transformar gravações em materiais para sua aprovação. Entregas, formatos e limites ficam definidos na proposta.</p></details>
+      <details><summary>Preciso escolher uma ferramenta antes?</summary><p>Não. Você nos conta qual trabalho quer melhorar. A partir disso, avaliamos o ambiente mais adequado, incluindo opções como Buzz, Hyperagent e Hermes. A escolha considera a equipe, as integrações e os custos de uso.</p></details>
+      <details><summary>Os agentes fazem tudo sozinhos?</summary><p>A autonomia depende da tarefa e dos limites combinados. Definimos quais ações os agentes podem executar e onde uma pessoa precisa revisar ou aprovar. As saídas de IA podem conter erros; por isso, os critérios de qualidade e as revisões fazem parte do fluxo.</p></details>
+      <details><summary>Como ficam meus dados e acessos?</summary><p>Antes de conectar informações do seu negócio, definimos quais serviços serão usados, onde os dados serão armazenados e quem terá acesso. As permissões e as condições de uso dos fornecedores entram nessa avaliação, conforme o ambiente escolhido.</p></details>
+      <details><summary>Como funciona o investimento?</summary><p>A implantação e o acompanhamento têm escopo e valores definidos em proposta. Licenças, infraestrutura e consumo de IA também são esclarecidos, incluindo o que está no serviço e o que é contratado diretamente por você. O primeiro passo é entender sua rotina.</p></details>
     </div>
   </div>
 </section>
 
-<section class="dark">
-  <div class="wrap">
-    <div class="eyebrow">como funciona</div>
-    <h2>Do checkout ao time operando,<br>sem terminal.</h2>
-    <div class="tres">
-      <div class="card rv" style="background:var(--noite-2);border-color:#3A3658;color:var(--nevoa)"><span class="k" style="color:var(--sol)">1 · o espaço</span><h3>Você recebe o endereço pronto</h3><p style="color:#B9B5CB">Servidor, canais e estrutura montados. Você baixa o aplicativo e entra. Nada de Docker, nada de linha de comando.</p></div>
-      <div class="card rv" style="background:var(--noite-2);border-color:#3A3658;color:var(--nevoa)"><span class="k" style="color:var(--sol)">2 · a inteligência</span><h3>Conecta o que já usa</h3><p style="color:#B9B5CB">A assinatura de IA que o time já paga, e as ferramentas de cada time: Drive, Meta Ads, Gmail. Um clique onde dá, uma chave onde não dá. Ou arraste o arquivo no canal e pule.</p></div>
-      <div class="card rv" style="background:var(--noite-2);border-color:#3A3658;color:var(--nevoa)"><span class="k" style="color:var(--sol)">3 · os times</span><h3>Escolhe dois times prontos e entra</h3><p style="color:#B9B5CB">Conteúdo, Tráfego, Financeiro, Atendimento ou Comercial. Cada um já vem com agentes, canal e rotina. Na primeira manhã, tem trabalho esperando.</p></div>
-    </div>
-
-    <p class="sub rv" style="margin-top:55px">E entrar é assim, para cada pessoa do time:</p>
-    <div class="fluxo rv">
-      <div class="p">
-        <div class="n">01</div>
-        <h3>Você escolhe o endereço</h3>
-        <p>O espaço do seu time nasce num endereço só seu.<span class="u">seutime.mescla.ai</span></p>
-      </div>
-      <div class="p">
-        <div class="n">02</div>
-        <h3>Convida pelo WhatsApp</h3>
-        <p>Um link, enviado por onde o time já conversa. O mesmo link serve para todo mundo.</p>
-      </div>
-      <div class="p">
-        <div class="n">03</div>
-        <h3>Cada pessoa clica e entra</h3>
-        <p>Instala o aplicativo e cai direto no espaço certo. Sem endereço para digitar, sem senha para inventar, sem configuração.</p>
-      </div>
-      <div class="p">
-        <div class="n">04</div>
-        <h3>O time já está montado</h3>
-        <p>Canais, agentes e rotina no lugar. Ninguém começa numa tela vazia.</p>
-      </div>
-    </div>
+<section class="contact" id="conversar" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div><p class="eyebrow">Vamos dar o primeiro passo</p><h2 id="contact-title">O que você quer<br>
+ver pronto?</h2></div>
+    <div><p>Conte qual trabalho está tomando seu tempo. Vamos pensar juntos em como transformar essa rotina em entregas.</p><a class="btn" href="https://wa.me/5561993973584?text=Quero%20conversar%20sobre%20um%20time%20de%20IA%20para%20o%20meu%20trabalho.%0A%0AMinha%20atividade%3A%0AQuantas%20pessoas%20participam%3A%0AA%20rotina%20que%20quero%20melhorar%3A" target="_blank" rel="noopener noreferrer">Conversar com a Mescla <span class="arrow" aria-hidden="true">↗</span></a><span class="contact-note">A conversa começa pelo WhatsApp.</span></div>
   </div>
 </section>
-
-<section>
-  <div class="wrap">
-    <div class="eyebrow">o que só existe aqui</div>
-    <h2>Agentes com nome, histórico e turno.<br>Como qualquer pessoa do time.</h2>
-    <div class="duas">
-      <div class="rv"><h3>Identidade própria</h3><p>Cada agente tem nome, histórico e presença no canal, lado a lado com as pessoas. Todo mundo vê o que ele fez, quando e por quê.</p></div>
-      <div class="rv"><h3>Sempre ligado</h3><p>Rotinas rodam de madrugada, no fim de semana, com o notebook fechado. O trabalho não depende de alguém abrir uma aba.</p></div>
-      <div class="rv"><h3>Um modelo por agente</h3><p>Dois, cinco, dez, quantos o time precisar, no mesmo canal. Nenhuma plataforma de IA deixa você misturar assim, porque cada uma vende o modelo dela.</p></div>
-      <div class="rv"><h3>Memória da empresa</h3><p>O que os agentes produzem fica nos canais, pesquisável e auditável. Quem entra no time herda o contexto no primeiro dia.</p></div>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="eyebrow">comparação honesta</div>
-    <h2>Parece o Slack.<br>Com uma diferença.</h2>
-    <p class="sub">Canais, threads, menções, histórico. Tudo o que o seu time já sabe usar. A diferença é quem senta na mesa.</p>
-    <div class="tblwrap rv">
-      <table>
-        <tr><th></th><th>Slack</th><th>ChatGPT Team / Claude Team</th><th class="ol">Mescla</th></tr>
-        <tr><td>O que você compra</td><td data-c="Slack">O lugar de conversar</td><td data-c="ChatGPT / Claude Team">O acesso ao modelo</td><td class="ol" data-c="Mescla"><span class="y">O trabalho feito</span></td></tr>
-        <tr><td>Canais, threads e menções</td><td data-c="Slack"><span class="y">Sim</span></td><td data-c="ChatGPT / Claude Team"><span class="n">Não</span></td><td class="ol" data-c="Mescla"><span class="y">Sim</span></td></tr>
-        <tr><td>Agentes como membros do canal</td><td data-c="Slack"><span class="n">Bots de integração</span></td><td data-c="ChatGPT / Claude Team"><span class="n">Não</span></td><td class="ol" data-c="Mescla"><span class="y">Sim, com nome e histórico</span></td></tr>
-        <tr><td>Claude, GPT, Kimi e DeepSeek juntos</td><td data-c="Slack"><span class="n">Não</span></td><td data-c="ChatGPT / Claude Team"><span class="n">Um modelo só</span></td><td class="ol" data-c="Mescla"><span class="y">Sim, cada agente com o seu</span></td></tr>
-        <tr><td>Agentes trabalhando de madrugada</td><td data-c="Slack"><span class="n">Não</span></td><td data-c="ChatGPT / Claude Team"><span class="n">Só com a aba aberta</span></td><td class="ol" data-c="Mescla"><span class="y">Sempre</span></td></tr>
-        <tr><td>Histórico da IA fica na empresa</td><td data-c="Slack"><span class="n">Não há</span></td><td data-c="ChatGPT / Claude Team"><span class="n">Na conta de cada pessoa</span></td><td class="ol" data-c="Mescla"><span class="y">No canal, auditável</span></td></tr>
-        <tr><td>Substitui sua assinatura de IA</td><td data-c="Slack"><span class="n">Não</span></td><td data-c="ChatGPT / Claude Team">É a assinatura</td><td class="ol" data-c="Mescla">Não. Roda sobre ela.</td></tr>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section class="dark">
-  <div class="wrap">
-    <div class="eyebrow">qualificação</div>
-    <h2>Para quem é.<br>E para quem ainda não é.</h2>
-    <div class="quem">
-      <div class="rv"><span class="k">faz sentido se</span>
-        <ul class="sim">
-          <li>Sua equipe tem de 3 a 15 pessoas e já usa IA todos os dias</li>
-          <li>Vocês já pagam Claude ou ChatGPT e sentem que falta processo</li>
-          <li>Você quer agentes trabalhando enquanto o time dorme</li>
-          <li>O histórico do trabalho precisa pertencer à empresa</li>
-        </ul>
-      </div>
-      <div class="rv"><span class="k" style="color:#9C98B0">ainda não, se</span>
-        <ul class="nao">
-          <li>Sua empresa exige SSO corporativo e compliance formal</li>
-          <li>O time ainda não incorporou IA na rotina</li>
-          <li>Você precisa de garantia de operação crítica sem falhas</li>
-          <li>Você prefere montar e manter servidor por conta própria</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="preco">
-  <div class="wrap">
-    <div class="eyebrow">investimento</div>
-    <h2>Por pessoa.<br>Agentes ilimitados.</h2>
-    <div class="preco rv">
-      <div>
-        <div class="big">R$ 297 <small>/mês · até 3 pessoas</small></div>
-        <ul>
-          <li>Assento adicional: R$ 79/mês por pessoa</li>
-          <li>Agentes ilimitados, sem taxímetro</li>
-          <li>Espaço exclusivo no seu endereço</li>
-          <li>Atualizações e backup inclusos</li>
-          <li>Plano anual com 20% de desconto</li>
-        </ul>
-      </div>
-      <div class="side">
-        <span class="k">implantação · R$ 1.497</span>
-        <p>Configuração do espaço, os dois times escolhidos ajustados à sua operação, conexão das assinaturas e ferramentas, e treinamento do time. Uma vez só.</p>
-        <p><b>No plano anual, metade da implantação é abatida.</b></p>
-        <a class="btn" href="#aplicar">Aplicar para o beta</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="eyebrow">perguntas diretas</div>
-    <h2>Antes que você pergunte.</h2>
-    <div style="margin-top:34px">
-      <details class="rv"><summary>Preciso saber programar?</summary><p>Não. Você baixa um aplicativo, entra no seu endereço e conversa. Os times já vêm montados; para ajustar, você fala com o agente no canal, em português.</p></details>
-      <details class="rv"><summary>E as integrações, é complicado?</summary><p>Cada time mostra só as duas ou três ferramentas que ele usa. Onde existe login com Google, Meta ou Notion, é um clique. Onde não existe, é colar uma chave. E antes de qualquer conexão, arrastar o arquivo no canal já funciona: o agente lê e trabalha.</p></details>
-      <details class="rv"><summary>Onde ficam os meus dados?</summary><p>No seu espaço exclusivo, em servidor dedicado à sua conta, com backup diário. Ninguém treina modelo com o seu conteúdo. Exportação disponível se você quiser sair.</p></details>
-      <details class="rv"><summary>Quantas assinaturas de IA eu preciso?</summary><p>Os agentes usam as assinaturas Claude ou ChatGPT do próprio time. Na implantação a gente dimensiona junto quantas contas a sua operação pede.</p></details>
-      <details class="rv"><summary>Isso substitui o meu Claude ou ChatGPT?</summary><p>Não, e essa é a proposta. A Mescla é a camada de time, memória e operação contínua que a assinatura individual não tem. Ela continua sendo o motor.</p></details>
-      <details class="rv"><summary>Isso é software ou consultoria?</summary><p>As duas coisas, de propósito. A implantação é trabalho humano: a gente desenha os times junto com você, olhando a sua operação. Depois disso é software, rodando sozinho no seu espaço. Você paga uma vez pelo desenho e a mensalidade pelo lugar onde ele roda.</p></details>
-      <details class="rv"><summary>E se eu quiser cancelar?</summary><p>Você exporta seu histórico e encerra ao fim do ciclo. Sem multa, sem retenção de dados.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="dark final" id="aplicar">
-  <div class="wrap">
-    <span class="pill">beta · 6 vagas por servidor</span>
-    <h2>Monte um time<br>que não desfia.</h2>
-    <p class="sub" style="margin-left:auto;margin-right:auto">Entrada em beta com implantação acompanhada e preço de fundador, travado enquanto a assinatura durar. As vagas abrem por lote, conforme capacidade real de servidor.</p>
-    <a class="btn" href="https://wa.me/5561993973584?text=Quero%20entrar%20no%20beta%20da%20Mescla.%0A%0ANome%20da%20empresa%3A%0ATamanho%20do%20time%3A%0AJ%C3%A1%20usamos%20IA%20assim%3A" target="_blank" rel="noopener">Aplicar para o beta</a>
-    <p class="micro">Uma mensagem no WhatsApp com três perguntas. Resposta de uma pessoa, no mesmo dia útil.</p>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div>
-      <div class="logo" style="color:var(--nevoa)"><i></i>mescla</div>
-      <p class="k" style="margin-top:10px">mescla.ai · um produto neoari · brasília</p>
-    </div>
-    <div class="k"><a href="#">termos de uso</a> · <a href="#">privacidade</a><br>tecnologia e licenças abertas: detalhes nos termos<br>plataforma em versão inicial, evolução contínua</div>
-    <div class="k" style="text-align:right">mescla, s.f.: tecido feito<br>de fios diferentes.<br><span style="color:#6D6984;letter-spacing:.2em">1 · 1 · 2 · 3 · 5 · 8 · 13</span></div>
+</main>
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div><a class="brand" href="#principal" aria-label="Mescla, voltar ao início"><svg class="brand-mark" aria-hidden="true"><use href="#mescla-mark"/></svg><span class="brand-word">mescla</span></a><small>mescla.ai · neoari · brasília</small></div>
+    <p class="definition"><em>mescla</em>, s.f.<br>
+Tecido feito de fios diferentes.</p>
   </div>
 </footer>
-
-<script>
-(function(){
-  const c=document.getElementById('tear');
-  if(!c) return;
-  const ctx=c.getContext('2d');
-  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let W,H,dpr,t=0,mx=-1,my=-1,gap,TH;
-  const SOL='#F2B84B',MARE='#6FD9C9';
-  let XS=[],YS=[];
-  function fibPositions(total,base){ // gaps: base*(1,1,2,3,5,8...) scaled softly: use ratio 1.618 growth capped
-    const pos=[];let x=0,i=0;const PHI=1.618;
-    while(x<total+base*5){pos.push(x);const g=base*Math.min(4.2,Math.pow(PHI,i/2.2));x+=g;i++;}
-    return pos;
-  }
-  function size(){dpr=Math.min(window.devicePixelRatio||1,2);W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);TH=W<700?4:6;
-    const base=W<700?13:21;
-    // dense near text (left) and near top, opening toward right/bottom: positions from left and from top
-    XS=fibPositions(W,base);YS=fibPositions(H,base);
-    // mirror: we want dense on the LEFT (text side)? Text needs quiet: dense on RIGHT edge (ourela) is prettier and keeps text clean.
-    XS=XS.map(x=>W-x).reverse();
-  }
-  size();window.addEventListener('resize',size);
-  c.parentElement.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;});
-  c.parentElement.addEventListener('pointerleave',()=>{mx=-1;my=-1;});
-  function ripple(x,y,phase){
-    let d=Math.sin(phase)*2.4;
-    if(mx>=0){const dd=Math.hypot(x-mx,y-my);if(dd<220)d+=(220-dd)/220*20*Math.sin(t*4+dd/26);}
-    return d;
-  }
-  const WEAVE_T=8; // seconds to weave whole hero
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    const cols=XS.length,rows=YS.length;
-    const prog=reduce?1:Math.min(1,t/WEAVE_T);
-    const frontY=prog*(H+YS[1]-YS[0]);
-    let rowNow=0;while(rowNow<rows-1&&YS[rowNow]<frontY)rowNow++;
-    const yPrev=rowNow>0?YS[rowNow-1]:0,yCur=YS[Math.min(rowNow,rows-1)];
-    const rowFrac=Math.min(1,Math.max(0,(frontY-yPrev)/Math.max(1,(yCur-yPrev))));
-    const shuttleX=(rowNow%2===0)?rowFrac*W:(1-rowFrac)*W;
-    ctx.lineCap='round';
-    // WARP (agents) unwoven part
-    for(let k=0;k<cols;k++){
-      const x=XS[k];
-      ctx.beginPath();
-      for(let y=Math.min(H,frontY);y<=H;y+=8){ctx.lineTo(x+ripple(x,y,y/80+t*.7+k)*1.4,y);}
-      ctx.strokeStyle=MARE;ctx.globalAlpha=.20;ctx.lineWidth=2;ctx.stroke();
-    }
-    // WOVEN CELLS
-    for(let r=0;r<rows;r++){
-      const y=YS[r];
-      const rowDone=r<rowNow, rowActive=r===rowNow;
-      if(!rowDone&&!rowActive)break;
-      const yA=r>0?(YS[r-1]+y)/2:0, yB=r<rows-1?(y+YS[r+1])/2:H;
-      for(let k=0;k<cols;k++){
-        const xc=XS[k];
-        const x0=k>0?(XS[k-1]+xc)/2:0, x1=k<cols-1?(xc+XS[k+1])/2:W;
-        if(rowActive){const passed=(rowNow%2===0)?(x1<=shuttleX):(x0>=shuttleX);if(!passed)continue;}
-        const age=Math.max(0,1-((frontY-yB)/(YS[Math.min(rows-1,r+3)]-y+1)));
-        const over=(r+k)%2===0;
-        const dyA=ripple(x0,y,x0/80+t*.8+r),dyB=ripple(x1,y,x1/80+t*.8+r);
-        const dxA=ripple(xc,yA,yA/80+t*.7+k),dxB=ripple(xc,yB,yB/80+t*.7+k);
-        ctx.strokeStyle=MARE;ctx.globalAlpha=.42+.4*age;ctx.lineWidth=TH*.8;
-        ctx.beginPath();ctx.moveTo(xc+dxA,yA);ctx.lineTo(xc+dxB,yB);ctx.stroke();
-        ctx.strokeStyle=SOL;ctx.globalAlpha=.5+.4*age;ctx.lineWidth=TH*1.15;
-        ctx.beginPath();ctx.moveTo(x0,y+dyA);ctx.lineTo(x1,y+dyB);ctx.stroke();
-        if(!over){ctx.strokeStyle=MARE;ctx.globalAlpha=.42+.4*age;ctx.lineWidth=TH*.8;ctx.beginPath();const xm=xc+(dxA+dxB)/2;ctx.moveTo(xm,y-TH*1.3);ctx.lineTo(xm,y+TH*1.3);ctx.stroke();}
-      }
-    }
-    if(prog<1){
-      const y=YS[Math.min(rowNow,rows-1)];
-      const dir=(rowNow%2===0)?1:-1;
-      const tr=ctx.createLinearGradient(shuttleX-dir*90,0,shuttleX,0);
-      tr.addColorStop(0,'rgba(251,250,253,0)');tr.addColorStop(1,'rgba(251,250,253,.55)');
-      ctx.strokeStyle=tr;ctx.lineWidth=TH*1.2;ctx.globalAlpha=1;ctx.beginPath();ctx.moveTo(shuttleX-dir*90,y);ctx.lineTo(shuttleX,y);ctx.stroke();
-      ctx.fillStyle='#FBFAFD';ctx.shadowColor='#FBFAFD';ctx.shadowBlur=22;
-      ctx.beginPath();ctx.ellipse(shuttleX,y,TH*2.2,TH*1.1,0,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;
-    }
-    const g=(W<700)?ctx.createLinearGradient(0,0,0,H*.9):ctx.createLinearGradient(0,0,W*.92,0);
-    if(W<700){g.addColorStop(0,'rgba(27,25,48,.96)');g.addColorStop(.6,'rgba(27,25,48,.86)');g.addColorStop(1,'rgba(27,25,48,.1)');}else{g.addColorStop(0,'rgba(27,25,48,.97)');g.addColorStop(.42,'rgba(27,25,48,.90)');g.addColorStop(.7,'rgba(27,25,48,.45)');g.addColorStop(1,'rgba(27,25,48,0)');}
-    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
-    const gv=ctx.createLinearGradient(0,0,0,H);
-    gv.addColorStop(0,'rgba(27,25,48,.7)');gv.addColorStop(.18,'rgba(27,25,48,0)');gv.addColorStop(.85,'rgba(27,25,48,0)');gv.addColorStop(1,'rgba(27,25,48,.7)');
-    ctx.fillStyle=gv;ctx.fillRect(0,0,W,H);
-    if(!reduce){t+=0.016;requestAnimationFrame(draw);}
-  }
-  draw();
-})();
-(function(){
-  const el=document.getElementById('agora'),lb=document.getElementById('agora-lbl');
-  if(!el) return;
-  function tick(){const d=new Date();const h=d.getHours()+d.getMinutes()/60;el.style.left=(h/24*100)+'%';
-    const hh=String(d.getHours()).padStart(2,'0');
-    const humano=h>=8&&h<19; const agente=(h<8||h>=19)||(h>=12&&h<15);
-    let who=humano&&agente?'os dois trabalhando':humano?'pessoas no turno':'agentes de plantão';
-    lb.textContent='agora '+hh+'h · '+who;
-    // keep label inside
-    lb.style.transform=h<3?'translateX(0)':h>21?'translateX(-100%)':'translateX(-50%)';}
-  tick();setInterval(tick,60000);
-})();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-
-/* BANCADA DE MODELOS — trocar o modelo de um agente é a demonstração da tese.
-   Auto-demonstra uma vez ao entrar na tela, para quem não clica também entender. */
-(function(){
-  const el=document.getElementById('bancada'); if(!el) return;
-  const MOD=[
-    {n:'claude',  c:'#F2B84B'},
-    {n:'gpt',     c:'#6FD9C9'},
-    {n:'gemini',  c:'#7AA7F0'},
-    {n:'kimi',    c:'#B694F0'},
-    {n:'deepseek',c:'#F2849E'},
-    {n:'qwen',    c:'#8FD98A'}
-  ];
-  const AG=[
-    {nm:'Galateia',fn:'COO',        f:'Ga',bg:'var(--sol)', m:0},
-    {nm:'Assange', fn:'Conteúdo',   f:'As',bg:'var(--mare)',m:1},
-    {nm:'Pólen',   fn:'Tráfego',    f:'Pó',bg:'var(--sol)', m:3},
-    {nm:'Nash',    fn:'Financeiro', f:'Na',bg:'var(--mare)',m:5},
-    {nm:'Clara',   fn:'Atendimento',f:'Cl',bg:'var(--sol)', m:2}
-  ];
-  const nmod=document.getElementById('nmod'), ntxt=document.getElementById('ntxt');
-  const reduz=matchMedia('(prefers-reduced-motion:reduce)').matches;
-
-  el.innerHTML=AG.map((a,i)=>`
-    <button class="a3" data-i="${i}" aria-label="Trocar o modelo de ${a.nm}">
-      <span class="face" style="background:${a.bg}">${a.f}</span>
-      <span class="nm">${a.nm}</span>
-      <span class="fn">${a.fn}</span>
-      <span class="mchip"><i class="dot"></i><span class="mn"></span></span>
-      <span class="toca">clique para trocar</span>
-    </button>`).join('');
-
-  function pinta(i,anima){
-    const card=el.querySelector(`[data-i="${i}"]`), m=MOD[AG[i].m];
-    card.querySelector('.dot').style.background=m.c;
-    card.querySelector('.mn').textContent=m.n;
-    if(anima&&!reduz){const c=card.querySelector('.mchip');
-      c.classList.remove('flip');void c.offsetWidth;c.classList.add('flip');}
-  }
-  function conta(){
-    const n=new Set(AG.map(a=>a.m)).size;
-    nmod.textContent=n;
-    ntxt.innerHTML = n===1
-      ? 'modelo só. <b>Pode ser assim também</b>, mas você não é obrigado.'
-      : 'modelos diferentes <b>(ou quantos você quiser!)</b> rodando ao mesmo tempo, no mesmo canal.';
-  }
-  AG.forEach((_,i)=>pinta(i,false)); conta();
-
-  el.addEventListener('click',e=>{
-    const card=e.target.closest('.a3'); if(!card) return;
-    const i=+card.dataset.i;
-    AG[i].m=(AG[i].m+1)%MOD.length;
-    pinta(i,true); conta();
-  });
-
-  let demo=false;
-  new IntersectionObserver(es=>es.forEach(e=>{
-    if(e.isIntersecting&&!demo&&!reduz){
-      demo=true;
-      setTimeout(()=>{AG[2].m=(AG[2].m+1)%MOD.length;pinta(2,true);conta();},900);
-    }
-  }),{threshold:.4}).observe(el);
-})();
-</script>
 </body>
 </html>
