@@ -3,3 +3,97 @@
 @media(max-width:800px){.segment-grid{grid-template-columns:1fr 1fr}.segment-card,.segment-card:nth-child(n+4){grid-column:auto}.segment-card:last-child{grid-column:1/-1}.lp-hero{padding:43px 0 60px}.lp-hero .hero-grid{grid-template-columns:1fr;gap:30px}.lp-hero h1{font-size:clamp(43px,8vw,67px)}.lp-aside{max-width:600px;width:100%}.lp-steps{grid-template-columns:1fr;gap:28px}.lp-cta .contact-grid{grid-template-columns:1fr;gap:20px}.lp-nav .back-home{display:none}.lp-faq .faq-grid{gap:30px}.qualifier{padding:24px}}
 @media(max-width:500px){.segment-grid{grid-template-columns:1fr}.segment-card:last-child{grid-column:auto}.segment-card p{font-size:29px}.lp-hero h1{font-size:45px}.lp-aside{padding:25px}.qualifier{padding:20px}}
 .measurement-consent{position:fixed;bottom:20px;left:20px;right:20px;max-width:660px;z-index:80;background:var(--branco);border:1px solid var(--noite);border-radius:8px;padding:22px;box-shadow:0 6px 25px #1B193022}.measurement-consent[hidden]{display:none}.measurement-consent p{font-size:15px;margin-bottom:14px}.measurement-consent button{font:inherit;font-size:14px;padding:12px 14px;margin:0 10px 10px 0;border:1px solid var(--noite);border-radius:5px;background:white;color:var(--noite);cursor:pointer}.measurement-consent a{display:block;font-size:13px}.manage-consent{background:none;border:0;color:inherit;font:inherit;font-size:13px;text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:8px 0}
+
+.tool-icon{width:24px;height:24px;fill:currentColor;flex:none}.segment-surface{min-width:0}.surface-label{display:flex;justify-content:space-between;gap:16px;font:12px/1.4 "JetBrains Mono",monospace;letter-spacing:.035em}.creator-studio{background:#211d33;color:#fbfafd;padding:30px;transform:rotate(1deg)}.creator-studio .surface-label{color:#c5bfd5}.source-record{padding:36px 0 28px;border-bottom:1px solid #ffffff30}.source-record>span:not(.record-dot){font-size:14px}.record-dot{display:inline-block;width:8px;height:8px;background:#f2b84b;border-radius:50%;margin-right:8px}.source-record strong{display:block;font:500 38px/1.1 Fraunces,serif;max-width:350px;margin-top:22px}.source-record p{font-size:15px;color:#d1cbdf;margin-top:15px}.content-tracks>div{display:flex;gap:18px;align-items:center;padding:18px 0;border-bottom:1px solid #ffffff20}.content-tracks .tool-icon{color:#6fd9c9}.content-tracks strong,.content-tracks small{display:block}.content-tracks strong{font-size:16px;font-weight:600}.content-tracks small{font-size:14px;margin-top:3px;color:#c5bfd5}.surface-foot{font-size:14px;margin:22px 0 0}.creator-studio .surface-foot{color:#f2b84b}@media(max-width:600px){.creator-studio{padding:22px;transform:none}.source-record strong{font-size:32px}.surface-label{font-size:12px}}
+
+/* Each audience has its own composition while keeping the Mescla type and palette. */
+body[data-segment="empreendedores"]{--segment-accent:#90600d;--segment-tint:#fff6df}
+body[data-segment="creators"]{--segment-accent:#68518d;--segment-tint:#f0ecf6}
+body[data-segment="consultorias"]{--segment-accent:#246163;--segment-tint:#e8f3f1}
+body[data-segment="agencias"]{--segment-accent:#aa3425;--segment-tint:#fff0eb}
+body[data-segment="advocacia"]{--segment-accent:#6b3343;--segment-tint:#f4edf0}
+.lp-hero h1 em{color:var(--segment-accent);font-style:normal}
+.lp-hero .hero-grid{grid-template-columns:1.04fr 1fr;gap:54px}
+.lp-hero h1{font-size:clamp(46px,4.8vw,68px)}
+.lp-hero .audience{font-size:14px}
+.segment-surface h2{font-size:36px;letter-spacing:-.035em}
+.segment-value{border-top:1px solid var(--linha)}
+.segment-value .section-head h2,.tool-section h2,.pilot-section h2{font-size:clamp(35px,3.6vw,50px);max-width:620px}
+.segment-value .section-head{align-items:start}
+.founder-desk{background:var(--segment-tint);padding:30px;border-top:5px solid var(--sol)}
+.founder-desk h2{margin:30px 0}
+.desk-row{display:grid;grid-template-columns:26px 1fr;gap:13px;padding:19px 0;border-top:1px solid #dbcba7}
+.desk-row .tool-icon{color:#795721}
+.desk-row strong,.desk-row span{display:block}
+.desk-row strong{font-size:16px}.desk-row span{font-size:14px;color:#635539;margin-top:4px}
+.desk-row b{grid-column:2;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.04em}
+.desk-bottom{background:var(--sol);padding:18px;margin:10px -10px -10px;font-size:14px}
+.desk-bottom strong{display:block;margin-top:3px;font-size:16px}
+.value-ledger{border-top:1px solid var(--noite)}
+.value-ledger article{display:grid;grid-template-columns:.6fr 1fr 1.2fr;gap:35px;padding:28px 0;border-bottom:1px solid var(--linha)}
+.value-ledger h3{font-size:24px}.value-ledger p{font-size:16px}
+.value-ledger article>div:first-of-type p{color:var(--cinza)}
+.value-label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--segment-accent);margin-bottom:10px}
+body[data-segment="creators"] .lp-hero{background:linear-gradient(180deg,var(--branco) 75%,#f0ecf6)}
+body[data-segment="creators"] .lp-hero h1{font-size:clamp(48px,5.1vw,73px)}
+.format-shelf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.format-shelf article{display:flex;flex-direction:column;padding:28px;background:#211d33;color:#fbfafd;min-height:315px}
+.format-shelf article:nth-child(2){background:#eadfff;color:#2c2040;margin-top:24px;margin-bottom:-24px}
+.format-shelf article:nth-child(3){background:#f5c667;color:#2e2517}
+.format-number{font:12px "JetBrains Mono",monospace;margin-top:26px;opacity:.85}
+.format-shelf h3{font:400 35px/1.1 Fraunces,serif;margin:14px 0}
+.format-shelf p{font-size:16px}.format-origin{border-top:1px solid currentColor;font-size:12px;margin-top:auto;padding-top:14px;opacity:.85}
+.format-shelf p+.format-origin{margin-top:28px}
+.consulting-memo{background:white;padding:32px;border:1px solid #ceddda;box-shadow:8px 8px 0 #e0ece9}
+.consulting-memo .surface-label{color:#43645e}.memo-kicker{font-size:14px;color:#43645e;margin:28px 0 10px}
+.consulting-memo h2{margin-bottom:28px}
+.evidence-row{display:flex;gap:20px;border-top:1px solid #dce5e2;padding:17px 0}
+.evidence-row>span{font:14px "JetBrains Mono",monospace;color:#4a7870}
+.evidence-row strong{font-size:16px}.evidence-row p{font-size:14px;color:var(--cinza);margin:5px 0 9px}
+.evidence-row small{display:flex;align-items:center;gap:8px;font-size:12px;color:#43645e}.evidence-row .tool-icon{width:15px;height:15px}
+.memo-signoff{border-top:2px solid #286265;padding-top:18px;font-size:14px;display:flex;flex-wrap:wrap;gap:8px}
+.consulting-findings{border-top:1px solid #97afaa}
+.consulting-findings article{display:grid;grid-template-columns:50px 1.2fr .8fr;gap:30px;padding:32px 0;border-bottom:1px solid #ccdcd7}
+.finding-number{font:24px Fraunces,serif;color:#286265}.consulting-findings h3{margin-bottom:12px}
+.consulting-findings p{font-size:17px;max-width:600px}.consulting-findings aside{font-size:15px;color:var(--cinza);border-left:2px solid #9fcfc4;padding-left:25px}
+body[data-segment="consultorias"] .example{background:#e8f3f1}
+.agency-board{padding:26px;background:#e8e4ed;border-top:6px solid var(--roma)}
+.board-account{padding:24px 0}.board-account>span{font-size:14px;color:var(--cinza)}.board-account strong{display:block;font-size:38px;line-height:1.1;letter-spacing:-.035em;margin-top:12px}
+.board-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.board-columns h3{font-size:14px;font-weight:500;margin-bottom:12px}
+.board-columns article{padding:15px 13px;background:white;border-top:3px solid #d9a03b;min-height:220px}
+.board-columns>div:nth-child(2) article{border-color:#286c62}.board-columns>div:nth-child(3) article{border-color:#aa3425}
+.board-columns strong{display:block;font-size:15px;line-height:1.3;margin:15px 0 10px}
+.board-columns p{font-size:14px;line-height:1.45;color:var(--cinza)}.board-columns small{display:block;font-size:12px;margin-top:18px;color:#5a4c6e}
+.agency-lanes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--linha)}
+.agency-lanes article{padding:30px}.agency-lanes article+article{border-left:1px solid var(--linha)}
+.lane-title{display:flex;align-items:center;gap:16px;margin-bottom:25px}.lane-title span{color:var(--roma);font:14px "JetBrains Mono",monospace}
+.agency-lanes p{font-size:16px}.lane-friction{color:var(--cinza);padding-bottom:20px;margin-bottom:20px;border-bottom:1px dashed var(--linha)}
+body[data-segment="agencias"] .example{background:#fff0eb}
+body[data-segment="agencias"] .lp-hero .hero-grid{grid-template-columns:.9fr 1.1fr;gap:45px}
+body[data-segment="agencias"] .lp-hero h1{font-size:clamp(48px,5.1vw,73px)}
+.legal-file{padding:30px;background:#fff;border:1px solid #dfd5d8;border-left:5px solid #6b3343}
+.legal-file .surface-label{color:#72525e}.legal-heading{padding:30px 0 25px;border-bottom:1px solid #bca5ad}.legal-heading>span{font:12px "JetBrains Mono",monospace;color:#72525e;letter-spacing:.06em}.legal-heading h2{margin-top:13px;font-size:37px}
+.document-index{list-style:none;padding:0;margin:0}.document-index li{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid #e4dbe0}.document-index li>span{font:14px "JetBrains Mono",monospace;color:#72525e}.document-index strong{font-size:16px}.document-index p{font-size:14px;color:#695b65;margin-top:4px}
+.review-stamp{font-size:13px;letter-spacing:.015em;margin-top:25px;color:#6b3343}
+.legal-briefs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px}
+.legal-briefs article{padding-top:22px;border-top:2px solid #6b3343}.brief-no{font:12px "JetBrains Mono",monospace;color:#6b3343}.legal-briefs h3{font:400 31px/1.1 Fraunces,serif;margin:28px 0 17px}.legal-briefs p{font-size:16px}.legal-duty{font-size:13px;color:#72525e;padding-top:22px;margin-top:22px;border-top:1px solid #e4dbe0}
+body[data-segment="advocacia"] .example{background:#f4edf0}
+.tool-section{background:var(--segment-tint)}
+.stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:22px}
+.stack-tool{padding:24px 0;border-top:1px solid #1b19303a}.stack-tool>div{display:flex;gap:13px;align-items:center;margin-bottom:16px}.stack-tool h3{font-size:18px}.stack-tool .tool-icon{width:28px;height:28px}.stack-tool p{font-size:16px;line-height:1.55;color:#4b4656}
+.stack-note{font-size:16px;border-top:1px solid #1b193025;padding-top:24px;margin-top:16px;max-width:950px}
+.integration-note{font-size:13px;color:#635c6c;max-width:850px;margin-top:24px}
+.ai-section{background:#211d33;color:#fbfafd}.ai-layout{display:grid;grid-template-columns:.55fr 1.45fr;gap:80px;align-items:start}
+.ai-badges{display:flex;flex-wrap:wrap;gap:12px;align-content:start}.ai-tool{display:flex;gap:12px;align-items:center;border:1px solid #777186;padding:14px 17px;font-size:16px}.ai-caption{font-size:14px;display:block;width:100%;margin-top:12px;color:#c5bfd5}
+.ai-section h2{font-size:clamp(35px,3.6vw,51px);margin:20px 0 24px;max-width:780px}.ai-section .eyebrow{color:#6fd9c9}.ai-section .lead{color:#d8d2e3;font-size:18px}
+.platform-note{padding-top:25px;margin-top:28px;border-top:1px solid #544c65}.platform-note strong{font-size:16px;font-weight:500;color:#f2b84b}.platform-note p{font-size:15px;color:#c5bfd5;margin-top:10px}.platform-note a{text-underline-offset:4px}.ai-section :focus-visible{outline-color:#f2b84b}
+.pilot-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:start}.pilot-grid .eyebrow{margin-bottom:25px}.pilot-grid .lead{margin-top:25px;font-size:18px}
+.pilot-deliverables{list-style:none;padding:0;margin:0;border-top:2px solid var(--segment-accent)}.pilot-deliverables li{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--linha);font-size:18px}.pilot-deliverables span{font:13px "JetBrains Mono",monospace;color:var(--segment-accent);padding-top:5px}
+.measure-note{font-size:15px;line-height:1.55;background:var(--segment-tint);padding:22px;margin-top:22px}
+body[data-segment="creators"] .lp-cta{background:#eadfff}body[data-segment="consultorias"] .lp-cta{background:#c6e5dc}body[data-segment="agencias"] .lp-cta{background:#f9c6b9}body[data-segment="advocacia"] .lp-cta{background:#e5d5dd}
+.lp-cta .qualifier{border-color:#1b193030}.lp-cta .contact-note{font-size:14px}
+@media(max-width:1100px){.lp-hero .hero-grid,body[data-segment="agencias"] .lp-hero .hero-grid{gap:30px;grid-template-columns:1fr 1fr}.segment-surface h2{font-size:32px}.founder-desk,.consulting-memo,.legal-file{padding:24px}.agency-board{padding:20px}.board-columns{gap:8px}.board-columns article{padding:13px 10px}.agency-lanes article{padding:24px}.ai-layout{gap:40px}.pilot-grid{gap:45px}}
+@media(max-width:900px){.lp-hero .hero-grid,body[data-segment="agencias"] .lp-hero .hero-grid{grid-template-columns:1fr;gap:40px}.lp-hero h1,body[data-segment="creators"] .lp-hero h1,body[data-segment="agencias"] .lp-hero h1{font-size:clamp(44px,7vw,70px);max-width:760px}.segment-surface{width:100%;max-width:680px}.creator-studio{transform:none}.agency-board{max-width:760px}.value-ledger article{grid-template-columns:.6fr 1fr 1fr;gap:20px}.value-ledger h3{font-size:21px}.format-shelf{gap:14px}.format-shelf article{padding:22px}.format-shelf h3{font-size:29px}.consulting-findings article{gap:20px;grid-template-columns:35px 1fr}.consulting-findings aside{grid-column:2}.ai-layout{grid-template-columns:1fr;gap:35px}.ai-caption{margin-top:0}.pilot-grid{grid-template-columns:1fr;gap:35px}.legal-briefs{gap:24px}.agency-lanes article{padding:22px}}
+@media(max-width:650px){.value-ledger article{grid-template-columns:1fr;gap:18px;padding:26px 0}.value-ledger article>div{padding-left:17px;border-left:2px solid var(--linha)}.value-ledger article>div:last-child{border-left-color:var(--segment-accent)}.value-label{margin-bottom:5px}.format-shelf,.legal-briefs,.agency-lanes{grid-template-columns:1fr}.format-shelf article{min-height:0}.format-shelf article:nth-child(2){margin:0}.format-shelf .format-number{margin-top:20px}.format-shelf h3{font-size:34px}.agency-lanes article+article{border-left:0;border-top:1px solid var(--linha)}.stack-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px}.stack-tool>div{align-items:flex-start;flex-direction:column}.stack-tool h3{font-size:17px}.stack-tool p{font-size:15px}.legal-briefs article{padding-bottom:10px}.consulting-findings article{gap:15px}.consulting-findings aside{padding-left:15px}.source-record strong{font-size:34px}.board-columns{grid-template-columns:1fr}.board-columns>div{display:grid;grid-template-columns:70px 1fr;gap:12px;align-items:start}.board-columns h3{margin-top:12px}.board-columns article{min-height:0;display:grid;grid-template-columns:25px 1fr;gap:6px 10px;padding:14px}.board-columns strong{margin:0;font-size:16px}.board-columns p,.board-columns small{grid-column:2;margin:0}.board-columns small{margin-top:4px}.legal-heading h2{font-size:32px}.surface-label{flex-wrap:wrap}.lp-hero .hero-actions{align-items:flex-start}.lp-hero .btn{max-width:100%;gap:15px}.lp-hero h1,body[data-segment="creators"] .lp-hero h1,body[data-segment="agencias"] .lp-hero h1{font-size:clamp(40px,9.8vw,55px)}}
+@media(prefers-reduced-motion:reduce){.creator-studio{transform:none}}

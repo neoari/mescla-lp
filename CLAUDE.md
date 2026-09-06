@@ -8,6 +8,11 @@ repositório privado `neoari/mescla`.
 
 - `index.html`: Home e tema compartilhado.
 - `content/segments.json`: conteúdo das cinco landing pages.
+- `content/segment-details.json`: promessas, ferramentas, exemplos de valor e
+  critérios de avaliação específicos de cada segmento.
+- `scripts/segment_visuals.py`: composições próprias de cada público e ícones.
+- `assets/icons/`: fontes SVG incorporadas no HTML pelo build; créditos em
+  `docs/landing-pages.md`.
 - `assets/segments.css`: estilos das páginas e dos cards.
 - `assets/measurement.js`: atribuição de campanha, contato e eventos.
 - `assets/measurement-config.js`: configuração pública; integrações inativas
