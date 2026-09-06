@@ -1,7 +1,7 @@
 {
   "empreendedores": {
     "headline": ["Seu negócio não precisa", "esperar sobrar tempo."],
-    "lead": "Proposta para preparar. Cliente para responder. Uma ideia que nunca sai da lista. Monte um time de IA para fazer o trabalho andar e devolver sua atenção às decisões do negócio.",
+    "lead": "Faça propostas, organize pendências e coloque novas ofertas em movimento. Seu time de IA prepara o trabalho. Você dá a direção.",
     "description": "Tire propostas, projetos e pendências da espera. A Mescla conecta agentes de IA à rotina do seu negócio para você ganhar capacidade de execução.",
     "intro": "Para quem empreende e faz acontecer",
     "context": "Para quem trabalha sozinho ou toca o negócio com uma equipe pequena.",
@@ -34,7 +34,7 @@
   },
   "creators": {
     "headline": ["Grave com profundidade.", "Publique com constância."],
-    "lead": "Você já tem repertório, gravações e boas ideias. A Mescla organiza esse material em pautas, roteiros e sugestões de cortes para sua produção avançar sem começar do zero a cada post.",
+    "lead": "Uma gravação pode render cortes, carrosséis e novos roteiros. Monte um time de IA que trabalha a partir das suas ideias, com a sua voz.",
     "description": "Faça suas gravações renderem pautas, roteiros, cortes e novos formatos. Um fluxo de conteúdo com sua voz, suas referências e sua aprovação.",
     "intro": "Para creators com muito a dizer",
     "context": "Sua voz e sua autoria. Um time para fazer o conteúdo circular.",
@@ -69,7 +69,7 @@
   },
   "consultorias": {
     "headline": ["Seu método merece", "mais tempo de análise."],
-    "lead": "Organizar entrevistas, cruzar documentos, montar apresentações. Dê à sua equipe apoio para preparar a base do projeto e reserve o conhecimento dos consultores para interpretar, recomendar e conversar com o cliente.",
+    "lead": "Entrevistas organizadas. Evidências reunidas. Primeiras versões prontas para revisão. Mais espaço para o que seus consultores fazem melhor: analisar.",
     "description": "Amplie a capacidade da consultoria com apoio de IA para organizar evidências, preparar relatórios e dar continuidade ao conhecimento dos projetos.",
     "intro": "Para consultorias com equipes enxutas",
     "context": "Seu método orienta. Os agentes preparam. Os consultores concluem.",
@@ -104,7 +104,7 @@
   },
   "agencias": {
     "headline": ["O briefing chegou.", "Faça a entrega andar."],
-    "lead": "Mais uma conta não precisa significar mais uma fila parada. Dê ao seu time apoio para organizar briefings, preparar primeiras versões e acompanhar aprovações — com direção criativa e relacionamento nas mãos da agência.",
+    "lead": "Briefings organizados, primeiras versões encaminhadas e revisões com contexto. Faça os pedidos avançarem com a direção criativa da sua equipe.",
     "description": "Faça os briefings avançarem até a entrega. IA para preparar conteúdo, organizar informações de cada conta e apoiar a operação da agência.",
     "intro": "Para agências de publicidade e marketing",
     "context": "Da entrada do pedido à revisão. Cada conta com sua voz e seu contexto.",
@@ -139,7 +139,7 @@
   },
   "advocacia": {
     "headline": ["Mais tempo para a tese.", "Mais ordem nos documentos."],
-    "lead": "Organize o material de um caso, localize informações e prepare primeiras versões com apoio de IA. A equipe ganha uma base para trabalhar; a análise jurídica, a conferência e a decisão permanecem com o advogado.",
+    "lead": "Documentos organizados, informações localizáveis e primeiras versões para conferir. Mais tempo para a análise e a decisão do advogado.",
     "description": "Apoio de IA para escritórios de advocacia organizarem documentos, prepararem cronologias e estruturarem materiais para revisão profissional.",
     "intro": "Para escritórios de advocacia",
     "context": "Organização documental e preparação do trabalho, sob revisão profissional.",

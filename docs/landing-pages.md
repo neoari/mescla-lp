@@ -1,6 +1,6 @@
 # Personalização das landing pages
 
-Versão de página: `2026-09-v2`.
+Versão de página: `2026-09-v3`.
 
 | Público | Situação central | Composição | Valor a avaliar |
 | --- | --- | --- | --- |
@@ -36,6 +36,10 @@ verificada. Fonte: https://docs.openclaw.ai/start/teams
 - Canva: https://www.canva.dev/docs/connect/
 - Trello: https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/
 - WhatsApp: https://business.whatsapp.com/policy
+
+## Experiência visual
+
+Logos em destaque, ícones Lucide e movimento: [experiencia-visual.md](experiencia-visual.md).
 
 ## Ícones
 

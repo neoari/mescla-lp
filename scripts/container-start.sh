@@ -6,12 +6,14 @@ mescla_archive=/site/site.tar.gz.new
 mescla_manifest=/site/files.new
 mescla_valid=0
 mescla_ref="${MESCLA_SITE_REF:-main}"
+# Exact allowlist, also checked against scripts/public_bundle.py.
+mescla_expected="index.html privacidade/index.html para/empreendedores/index.html para/creators/index.html para/consultorias/index.html para/agencias/index.html para/advocacia/index.html assets/segments.css assets/measurement.js assets/measurement-config.js assets/experience.css assets/experience.js assets/ribbon-scene.js assets/platforms/buzz.svg assets/platforms/openclaw.svg assets/platforms/hyperagent.svg assets/platforms/hermes.png assets/vendor/three-0.185.1/three.module.min.js assets/vendor/three-0.185.1/three.core.min.js assets/vendor/three-0.185.1/LICENSE.txt assets/icons/lucide/LICENSE.txt"
 if wget -q --timeout=30 -O "$mescla_archive" "https://raw.githubusercontent.com/neoari/mescla-lp/$mescla_ref/site.tar.gz"; then
   if tar -tzf "$mescla_archive" > "$mescla_manifest"; then
     mescla_valid=1
     while IFS= read -r mescla_file; do
-      case "$mescla_file" in
-        index.html|privacidade/index.html|assets/segments.css|assets/measurement.js|assets/measurement-config.js|para/empreendedores/index.html|para/creators/index.html|para/consultorias/index.html|para/agencias/index.html|para/advocacia/index.html) ;;
+      case " $mescla_expected " in
+        *" $mescla_file "*) ;;
         *) mescla_valid=0 ;;
       esac
     done < "$mescla_manifest"
@@ -21,7 +23,7 @@ if [ "$mescla_valid" = 1 ]; then
   rm -rf "$mescla_stage"
   mkdir -p "$mescla_stage"
   if tar -xzf "$mescla_archive" -C "$mescla_stage"; then
-    for mescla_file in index.html privacidade/index.html assets/segments.css assets/measurement.js assets/measurement-config.js para/empreendedores/index.html para/creators/index.html para/consultorias/index.html para/agencias/index.html para/advocacia/index.html; do
+    for mescla_file in $mescla_expected; do
       if [ ! -s "$mescla_stage/$mescla_file" ]; then mescla_valid=0; fi
     done
   else
