@@ -7,7 +7,8 @@ import gzip, io, json, re, tarfile, hashlib, subprocess
 import sys
 sys.dont_write_bytecode = True
 from segment_visuals import hero_surface, value_section, tools_section, ai_section, pilot_section
-from experience import segment_card, ui_icon, motion_surface, home_value, home_flow, home_hero
+from experience import ui_icon, motion_surface, home_hero
+from home_sections import home_story
 from public_bundle import PUBLIC_FILES
 ROOT=Path(__file__).resolve().parents[1]
 subprocess.run(['npm','run','build:web'],cwd=ROOT/'motion',check=True)
@@ -17,7 +18,7 @@ details=json.loads((ROOT/'content/segment-details.json').read_text())
 for segment in segments: segment.update(details[segment['slug']])
 e=lambda s:escape(str(s),quote=True)
 version='2026-09-v7'
-home_version=version+'-hero-shared-team-v1'
+home_version=version+'-home-story-v1'
 style_href='/assets/segments.css?v='+hashlib.sha256((ROOT/'assets/segments.css').read_bytes()).hexdigest()[:12]
 experience_href='/assets/experience.css?v='+hashlib.sha256((ROOT/'assets/experience.css').read_bytes()).hexdigest()[:12]
 scene_version=hashlib.sha256((ROOT/'assets/ribbon-scene.js').read_bytes()).hexdigest()[:12]
@@ -33,17 +34,8 @@ css=re.search(r'<style>(.*?)</style>',home,re.S).group(1)
 font=re.search(r'<link href="https://fonts.googleapis.com/css2[^>]+>',home).group(0)
 brand=lambda href: f'<a class="brand" href="{href}" aria-label="Mescla, página principal"><img class="brand-mark" src="{logo}" width="44" height="36" alt="" decoding="async"><span class="brand-word">mescla</span></a>'
 footer=f'''<footer class="footer"><div class="wrap footer-grid"><div>{brand('/')}<small>mescla.ai · neoari · brasília</small><div class="footer-links"><a href="/#segmentos" data-attribution-link>Outras aplicações</a><a href="/privacidade/" data-attribution-link>Privacidade</a></div></div><p class="definition"><em>mescla</em>, s.f.<br>Tecido feito de fios diferentes.</p></div></footer>'''
-cards='\n'.join(segment_card(d) for d in segments)
-home=re.sub(r'<section class="hero(?: hero-team)?"[^>]*>.*?</section>',lambda _:home_hero(),home,count=1,flags=re.S)
-home=re.sub(r'<section class="section (?:possibilities|mescla-value)".*?</section>',lambda _:home_value(),home,count=1,flags=re.S)
-home=re.sub(r'<section class="section home-flow".*?</section>',lambda _:home_flow(),home,count=1,flags=re.S)
-block=f'''<!-- SEGMENTOS:INICIO -->
-<section class="section segments" id="segmentos" aria-labelledby="segments-title"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Encontre o seu próximo passo</p><h2 id="segments-title">Um time de IA para<br>o seu jeito de trabalhar.</h2></div><p class="lead">Veja como pessoas e agentes podem trabalhar juntos na sua rotina. Escolha uma aplicação para explorar.</p></div><div class="segment-grid">{cards}</div></div></section>
-<!-- SEGMENTOS:FIM -->'''
-if '<!-- SEGMENTOS:INICIO -->' in home:
-    home=re.sub(r'<!-- SEGMENTOS:INICIO -->.*?<!-- SEGMENTOS:FIM -->',lambda _:block,home,flags=re.S)
-else:
-    home=home.replace('<section class="purpose dark"',block+'\n\n<section class="purpose dark"',1)
+home,count=re.subn(r'<main id="principal">.*?</main>',lambda _: '<main id="principal">\n'+home_hero()+'\n'+home_story(segments,phone)+'\n</main>',home,count=1,flags=re.S)
+assert count==1, 'Home main region not found'
 if '/assets/segments.css' not in home: home=home.replace('</head>','<link rel="stylesheet" href="/assets/segments.css">\n</head>')
 home=re.sub(r'href="/assets/segments\.css(?:\?[^\"]*)?"',lambda _:f'href="{style_href}"',home)
 home=re.sub(r'href="/assets/experience\.css(?:\?[^\"]*)?"',lambda _:f'href="{experience_href}"',home)

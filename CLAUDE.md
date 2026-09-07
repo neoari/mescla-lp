@@ -7,6 +7,7 @@ repositório privado `neoari/mescla`.
 ## Fontes e build
 
 - `index.html`: Home e tema compartilhado.
+- `scripts/home_sections.py`: conteúdo e sequência da Home após a primeira dobra; regenerar pelo build.
 - `content/segments.json`: conteúdo das cinco landing pages.
 - `content/segment-details.json`: promessas, ferramentas, exemplos de valor e
   critérios de avaliação específicos de cada segmento.
