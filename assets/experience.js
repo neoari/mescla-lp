@@ -32,7 +32,7 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
 // Load one Remotion island only when its explanation approaches the viewport.
 const explanation = document.querySelector('[data-motion-scene]');
 if (explanation && !navigator.connection?.saveData) {
-  const loadExplanation = () => import('./infographics.js?v=9893178d4421').catch(() => {
+  const loadExplanation = () => import('./infographics.js?v=429e8a328daf').catch(() => {
     // The complete static explanation remains visible if loading fails.
   });
   if ('IntersectionObserver' in window) {

@@ -105,13 +105,16 @@ function Collaboration({frame}:{frame:number}) {
   return <>
     <Connector frame={frame} y={245}/>
     {[
-      {x:48,y:132,icon:'user-round',title:'Seu olhar',sub:'Objetivo + contexto',color:amber},
-      {x:233,y:187,icon:'bot',title:'Os agentes',sub:'Pesquisa + versões',color:mint},
-      {x:418,y:132,icon:'file-check-2',title:'Sua revisão',sub:'Critério + decisão',color:white}
-    ].map((item,i)=><Paper key={item.title} x={item.x} y={item.y+interpolate(frame,[i*150,i*150+35],[14,0],ease)} w={173} h={242} angle={i===0?-14:i===2?14:0} color={item.color} depth={i===phase?17:0}>
-      <Glyph name={item.icon} size={41}/><div style={{fontFamily:serif,fontSize:32,lineHeight:1.08,marginTop:32}}>{item.title}</div><div style={{fontSize:21,lineHeight:1.35,marginTop:15}}>{item.sub}</div>
+      {x:48,y:97,icon:'user-round',title:'Comercial',sub:'Registra o pedido',color:amber},
+      {x:233,y:157,icon:'bot',title:'Agente do time',sub:'Prepara a proposta',color:mint},
+      {x:418,y:97,icon:'user-round',title:'Operação',sub:'Revisa e continua',color:amber}
+    ].map((item,i)=><Paper key={item.title} x={item.x} y={item.y+interpolate(frame,[i*150,i*150+35],[14,0],ease)} w={173} h={224} angle={i===0?-14:i===2?14:0} color={item.color} depth={i===phase?17:0}>
+      <Glyph name={item.icon} size={39}/><div style={{fontFamily:serif,fontSize:29,lineHeight:1.08,marginTop:23}}>{item.title}</div><div style={{fontSize:22,lineHeight:1.3,marginTop:15}}>{item.sub}</div>
     </Paper>)}
-    <div style={{position:'absolute',left:42,top:458,right:42,textAlign:'center',fontFamily:serif,fontSize:32,lineHeight:1.1,color:ink}}>Seu repertório faz parte de cada entrega.</div>
+    <div style={{position:'absolute',left:38,right:38,top:423,padding:'18px 22px',background:ink,color:white,borderRadius:12,boxShadow:'0 7px 0 #cfdae0',borderTop:`3px solid ${phase===2?mint:'#554E66'}`,translate:interpolate(frame,[300,335],['0px 5px','0px 0px'],ease)}}>
+      <div style={{display:'flex',alignItems:'center',gap:14,fontFamily:serif,fontSize:29}}><Glyph name="file-text" size={28} color={mint}/>Memória da empresa</div>
+      <div style={{fontSize:22,color:'#dedbe7',marginTop:10}}>Processos · referências · decisões</div>
+    </div>
   </>;
 }
 

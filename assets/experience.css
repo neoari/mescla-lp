@@ -222,6 +222,11 @@ body[data-segment="consultorias"] .motion-player{box-shadow:8px 10px 0 #dcebe5;b
 .mescla-value .section-head h2{font-size:clamp(36px,4.2vw,57px)}
 .mescla-value .section-head .lead{margin-top:0}
 .mescla-value .tool-marks{margin-top:24px;justify-content:flex-start}
+.value-tools-note{margin-top:12px;font-size:.875rem;color:var(--cinza);line-height:1.5}
+.shared-memory-base{display:flex;align-items:center;gap:18px;margin-top:24px;padding:22px;background:var(--noite);color:var(--branco);border-radius:12px}
+.shared-memory-base>.ui-icon{width:32px;height:32px;flex-shrink:0;color:var(--mare)}
+.shared-memory-base strong{font-weight:500;font-size:1.125rem}
+.shared-memory-base p{margin-top:5px;font-size:1rem;color:#dedbe7}
 .value-comparison{width:100%;border-collapse:collapse;table-layout:fixed;text-align:left;font-size:1rem;line-height:1.6}
 .value-comparison thead th{padding:20px 24px;border-bottom:1px solid var(--noite);font-size:.875rem;font-weight:500}
 .value-comparison thead th:first-child{width:25%;padding-left:0}

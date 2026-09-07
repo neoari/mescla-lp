@@ -1,6 +1,6 @@
 # Personalização das landing pages
 
-Versão de página: `2026-09-v6`.
+Versão de página: `2026-09-v7`.
 
 | Público | Situação central | Composição | Valor a avaliar |
 | --- | --- | --- | --- |
@@ -60,11 +60,16 @@ nativa com base apenas na presença de um ícone.
 
 ## Por que contratar a Mescla se o cliente já usa IA?
 
-A Home compara montar uma rotina por conta própria com contratar sua implantação.
-O valor está na escolha de um processo, na preparação do contexto e das conexões,
-nos testes com material real e na orientação de quem vai usar. Acompanhamento e
-evolução dependem do escopo contratado. Cada landing page traduz isso em três
-ganhos específicos do trabalho daquele público.
+A Home apresenta o diferencial como trabalho coletivo: várias pessoas podem
+compartilhar um ou mais agentes, apoiadas na memória da empresa. A comparação
+é entre uso individual e uso organizado em equipe, não entre limites universais
+de fornecedores. A implantação continua como meio de colocar esse modelo em uso.
+Cada landing page concretiza o compartilhamento para os papéis do seu público.
+
+Memória corporativa significa fontes, modelos, processos e decisões que a empresa
+escolhe registrar. Não pressupõe captura automática de conversas pessoais nem
+acesso indiscriminado. A implantação define responsáveis, atualização, acesso e
+separação por equipe, cliente ou projeto conforme os limites da plataforma.
 
 A conta de IA pode ser suficiente para alguns visitantes; a FAQ reconhece isso.
 Não apresentar ChatGPT, Claude ou Gemini como ferramentas que apenas respondem
