@@ -1,6 +1,6 @@
 # Personalização das landing pages
 
-Versão de página: `2026-09-v5`.
+Versão de página: `2026-09-v6`.
 
 | Público | Situação central | Composição | Valor a avaliar |
 | --- | --- | --- | --- |
@@ -57,3 +57,25 @@ de tela. Não representam parceria ou certificação.
 As marcas continuam pertencendo aos respectivos titulares. Novos assets devem
 ter origem identificável; não desenhar logos aproximados nem alegar integração
 nativa com base apenas na presença de um ícone.
+
+## Por que contratar a Mescla se o cliente já usa IA?
+
+A Home compara montar uma rotina por conta própria com contratar sua implantação.
+O valor está na escolha de um processo, na preparação do contexto e das conexões,
+nos testes com material real e na orientação de quem vai usar. Acompanhamento e
+evolução dependem do escopo contratado. Cada landing page traduz isso em três
+ganhos específicos do trabalho daquele público.
+
+A conta de IA pode ser suficiente para alguns visitantes; a FAQ reconhece isso.
+Não apresentar ChatGPT, Claude ou Gemini como ferramentas que apenas respondem
+perguntas: elas já oferecem recursos de contexto e integrações. Também não
+atribuir à Mescla exclusividade de agentes, automação ou trabalho em equipe.
+
+O primeiro projeto deve comparar esforço de preparação e revisão, qualidade e
+entregas aprovadas. O site não publica percentuais de produtividade sem evidência.
+
+Referências consultadas em 6 de setembro de 2026:
+- ChatGPT Projects: https://help.openai.com/en/articles/10169521
+- Apps no ChatGPT: https://help.openai.com/en/articles/11487775-apps-in-chatgpt
+- Claude Connectors: https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities
+- Gemini e Workspace: https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/turn-google-apps-in-gemini-on-or-off

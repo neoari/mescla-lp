@@ -21,8 +21,9 @@
       ["notion", "Notion", "Processos e conhecimento que deixam de ficar só na sua cabeça."],
       ["whatsapp", "WhatsApp", "Entrada de pedidos e atendimento, com a conexão adequada ao seu número."]
     ],
-    "ai_title": "Você já pede ajuda ao ChatGPT. E depois da resposta?",
-    "ai_text": "A Mescla liga o contexto do negócio às etapas seguintes: preparar um material, atualizar uma informação e organizar o que você precisa revisar. Você orienta o trabalho sem remontar o mesmo pedido toda vez.",
+    "ai_title": "Menos tempo preparando. Mais propostas para revisar.",
+    "ai_text": "Ter uma conta de IA ajuda. A Mescla organiza suas ofertas, referências e critérios em uma rotina que vai do pedido do cliente à proposta para sua revisão.",
+    "ai_gains": [["file-text", "Propostas com o seu contexto", "Modelos, serviços e informações do pedido reunidos para preparar a primeira versão."], ["layers", "Menos instruções repetidas", "Orientações reutilizáveis para você não precisar remontar o processo a cada cliente."], ["target", "Mais atenção à negociação", "Você revisa escopo e condições e conduz a conversa com o cliente."]],
     "ai_tools": [["openai", "ChatGPT"], ["googlegemini", "Gemini"]],
     "pilot_title": "Comece por uma rotina que está travando o negócio.",
     "pilot_text": "Por exemplo, transformar um pedido de orçamento em uma proposta pronta para sua revisão.",
@@ -30,7 +31,7 @@
     "measure": "Avaliar: tempo até a primeira versão, pendências esquecidas e esforço para revisar.",
     "contact_title": "O que está esperando por você hoje?",
     "contact_text": "Conte a tarefa que mais se acumula. Vamos procurar um primeiro resultado que faça diferença no seu negócio.",
-    "faq": [["Preciso trocar minhas ferramentas?", "Começamos avaliando o que você já usa. Quando uma conexão não está disponível, podemos trabalhar com arquivos e etapas de revisão ou propor outro caminho antes da contratação."], ["Vou precisar ficar dando instruções o tempo todo?", "O objetivo é configurar contexto, modelos e rotinas reutilizáveis. Você continua nas decisões e aprovações; o teste mostra quais etapas já conseguem avançar com menos intervenção."]]
+    "faq": [["Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?", "Uma conta pode ser suficiente se você já consegue preparar suas propostas e organizar as pendências como precisa. A Mescla entra para montar e testar uma rotina recorrente com suas ofertas, modelos e ferramentas, além de orientar o uso. Avaliamos o tempo de preparação e o esforço de revisão no primeiro projeto."], ["Preciso trocar minhas ferramentas?", "Começamos avaliando o que você já usa. Quando uma conexão não está disponível, podemos trabalhar com arquivos e etapas de revisão ou propor outro caminho antes da contratação."], ["Vou precisar ficar dando instruções o tempo todo?", "O objetivo é configurar contexto, modelos e rotinas reutilizáveis. Você continua nas decisões e aprovações; o teste mostra quais etapas já conseguem avançar com menos intervenção."]]
   },
   "creators": {
     "headline": ["Grave com profundidade.", "Publique com constância."],
@@ -56,8 +57,9 @@
       ["instagram", "Instagram", "Ganchos, legendas e roteiros pensados para cada formato."]
     ],
     "tools_note": "Usa CapCut, Premiere ou DaVinci? O escopo pode incluir arquivos, marcações e instruções para seu editor. Edição automática e publicação direta são avaliadas separadamente.",
-    "ai_title": "Sua voz também precisa orientar a IA.",
-    "ai_text": "Reunimos conteúdos seus, expressões que você usa, referências e critérios editoriais. ChatGPT, Claude ou outros modelos entram no fluxo conforme a tarefa. O seu olhar continua decidindo o que merece seu nome.",
+    "ai_title": "Mais conteúdo com a sua voz, a partir do que você já criou.",
+    "ai_text": "Você pode criar esse fluxo nas suas ferramentas. Com a Mescla, ganha ajuda para preparar o percurso da gravação aos formatos escolhidos, usando seu repertório e seus critérios editoriais.",
+    "ai_gains": [["audio-lines", "Mais aproveitamento de cada gravação", "Trechos com indicação de tempo, pautas e roteiros preparados a partir das suas ideias."], ["pencil-ruler", "Menos retrabalho para soar como você", "Seus exemplos, expressões e referências orientam as primeiras versões."], ["clapperboard", "Um processo para repetir na próxima publicação", "Etapas e revisões organizadas para o próximo material entrar no mesmo fluxo."]],
     "ai_tools": [["openai", "ChatGPT"], ["claude", "Claude"]],
     "pilot_title": "Pegue uma gravação que você já tem.",
     "pilot_text": "Vamos desenhar o percurso dessa gravação até um conjunto de conteúdos que você tenha vontade de publicar.",
@@ -65,7 +67,7 @@
     "measure": "Avaliar: conteúdos aproveitados, tempo de revisão e fidelidade ao seu jeito de comunicar.",
     "contact_title": "Qual conteúdo seu pode ir mais longe?",
     "contact_text": "Conte como você produz e onde a fila trava. Vamos começar pelo seu material e pelo seu objetivo.",
-    "faq": [["Vocês também fazem a edição do vídeo?", "O projeto pode incluir etapas de edição. Primeiro definimos formatos, padrão visual, materiais de origem e o que o editor permite automatizar. Não prometemos edição final automática para qualquer tipo de vídeo."], ["Vai ficar com cara de conteúdo genérico de IA?", "O trabalho começa nas suas ideias e referências. As primeiras peças servem para calibrar linguagem, ritmo e profundidade com você. A aprovação editorial continua sendo sua."]]
+    "faq": [["Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?", "Se sua conta já resolve sua produção, ela pode bastar. A Mescla ajuda quando transformar cada gravação em conteúdo ainda exige montar tudo de novo: referências de voz, seleção de trechos, formatos e revisão. Configuramos e testamos esse processo com material seu. Edição e publicação entram apenas no escopo combinado."], ["Vocês também fazem a edição do vídeo?", "O projeto pode incluir etapas de edição. Primeiro definimos formatos, padrão visual, materiais de origem e o que o editor permite automatizar. Não prometemos edição final automática para qualquer tipo de vídeo."], ["Vai ficar com cara de conteúdo genérico de IA?", "O trabalho começa nas suas ideias e referências. As primeiras peças servem para calibrar linguagem, ritmo e profundidade com você. A aprovação editorial continua sendo sua."]]
   },
   "consultorias": {
     "headline": ["Seu método merece", "mais tempo de análise."],
@@ -91,8 +93,9 @@
       ["zoom", "Zoom", "Registros e transcrições autorizados como material de entrada."]
     ],
     "tools_note": "Relatórios em Word e apresentações em PowerPoint também podem fazer parte da entrega. Formatos, modelos e permissões são definidos no projeto.",
-    "ai_title": "Da consulta ao Claude à continuidade de um projeto.",
-    "ai_text": "Se a equipe já usa ChatGPT, Claude ou NotebookLM para estudar materiais, o próximo passo é organizar fontes, método, etapas e responsabilidades. Cada nova entrega parte do contexto do projeto, com as verificações previstas pela consultoria.",
+    "ai_title": "Mais tempo para a análise que o cliente contrata.",
+    "ai_text": "Sua equipe pode pesquisar e trabalhar com documentos na IA que já usa. A Mescla prepara um processo com o método da consultoria, as fontes do projeto e o formato de entrega esperado.",
+    "ai_gains": [["search", "Menos tempo reunindo evidências", "Documentos e entrevistas organizados por pergunta, com referências para conferência."], ["book-open", "Mais consistência entre projetos", "Suas matrizes e critérios orientam a preparação de cada entregável."], ["presentation", "Mais espaço para o julgamento do consultor", "A equipe parte de materiais estruturados para interpretar, questionar e recomendar."]],
     "ai_tools": [["claude", "Claude"], ["openai", "ChatGPT"]],
     "pilot_title": "Escolha um entregável que se repete.",
     "pilot_text": "Uma matriz de diagnóstico, um relatório de pesquisa ou uma apresentação executiva pode ser o primeiro processo.",
@@ -100,7 +103,7 @@
     "measure": "Avaliar: tempo de preparação, rastreabilidade das fontes e esforço de revisão técnica.",
     "contact_title": "Onde seus consultores perdem tempo de análise?",
     "contact_text": "Conte como um projeto passa da informação recebida ao entregável. Vamos encontrar a etapa que pode ganhar apoio.",
-    "faq": [["Conseguimos usar nosso próprio método?", "Esse é o ponto de partida. Perguntas de diagnóstico, matrizes, modelos e critérios de qualidade orientam a configuração e a avaliação das primeiras entregas."], ["As informações de um cliente podem aparecer no projeto de outro?", "Definimos fontes, acessos e separação de ambientes conforme o projeto. Materiais de clientes não viram automaticamente uma base compartilhada. A configuração precisa respeitar as autorizações da consultoria."]]
+    "faq": [["Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?", "Uma conta de IA pode apoiar muito bem pesquisa e análise. A Mescla acrescenta a implantação do seu método em uma rotina de projeto: fontes autorizadas, modelos, etapas e responsáveis pela revisão. O ganho a avaliar é quanto trabalho de preparação a equipe reduz, mantendo a qualidade e a conferência das evidências."], ["Conseguimos usar nosso próprio método?", "Esse é o ponto de partida. Perguntas de diagnóstico, matrizes, modelos e critérios de qualidade orientam a configuração e a avaliação das primeiras entregas."], ["As informações de um cliente podem aparecer no projeto de outro?", "Definimos fontes, acessos e separação de ambientes conforme o projeto. Materiais de clientes não viram automaticamente uma base compartilhada. A configuração precisa respeitar as autorizações da consultoria."]]
   },
   "agencias": {
     "headline": ["O briefing chegou.", "Faça a entrega andar."],
@@ -126,8 +129,9 @@
       ["googlesheets", "Google Sheets", "Calendários, entregas e acompanhamento das contas."]
     ],
     "tools_note": "Aprovação do cliente e publicação são etapas próprias. O projeto define quem aprova e quais ações podem ser executadas depois dessa aprovação.",
-    "ai_title": "Sua equipe já usa IA. O contexto da conta acompanha o trabalho?",
-    "ai_text": "ChatGPT na redação, Claude no planejamento, Gemini na pesquisa. A Mescla organiza o que cada agente precisa saber: voz da marca, referências, limites e etapa da entrega. A direção criativa continua com o seu time.",
+    "ai_title": "Mais ritmo entre o briefing e a entrega.",
+    "ai_text": "A criação já pode usar ChatGPT, Claude ou Gemini. A Mescla organiza a passagem do trabalho entre atendimento, produção e revisão, com referências e critérios de cada conta.",
+    "ai_gains": [["briefcase-business", "Menos contexto perdido entre pessoas", "Briefing, voz da marca e referências reunidos para orientar as etapas de produção."], ["pencil-ruler", "Primeiras versões para a criação desenvolver", "Textos e variações preparados a partir do pedido e dos critérios da conta."], ["route", "Menos idas e vindas para chegar à aprovação", "Responsáveis, pontos de revisão e destino dos materiais definidos no fluxo."]],
     "ai_tools": [["openai", "ChatGPT"], ["claude", "Claude"], ["googlegemini", "Gemini"]],
     "pilot_title": "Uma conta. Um fluxo. Um critério de qualidade.",
     "pilot_text": "Começamos por uma entrega recorrente e acompanhamos sua passagem pelo processo da agência.",
@@ -135,7 +139,7 @@
     "measure": "Avaliar: tempo até a primeira versão, rodadas de retrabalho e pedidos que avançam sem cobrança manual.",
     "contact_title": "Em qual etapa sua produção está travando?",
     "contact_text": "Briefing, primeira versão, revisão ou acompanhamento? Conte como a demanda atravessa sua agência.",
-    "faq": [["O agente vai misturar a voz dos clientes?", "A configuração considera referências, instruções e fontes de cada conta. Testamos a separação de contexto e os critérios de revisão antes de ampliar o fluxo para outras marcas."], ["O conteúdo sai publicado sem aprovação?", "A publicação automática não é pressuposta. Definimos responsáveis, aprovações e ações permitidas. O primeiro projeto pode terminar na entrega dos materiais para revisão interna."]]
+    "faq": [["Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?", "Se cada pessoa já usa IA e o trabalho flui bem, as contas podem atender. A Mescla ajuda a transformar usos individuais em um processo da agência, com contexto por conta, passagem entre etapas e revisão. Testamos em uma entrega recorrente e avaliamos tempo, ajustes e qualidade com sua equipe."], ["O agente vai misturar a voz dos clientes?", "A configuração considera referências, instruções e fontes de cada conta. Testamos a separação de contexto e os critérios de revisão antes de ampliar o fluxo para outras marcas."], ["O conteúdo sai publicado sem aprovação?", "A publicação automática não é pressuposta. Definimos responsáveis, aprovações e ações permitidas. O primeiro projeto pode terminar na entrega dos materiais para revisão interna."]]
   },
   "advocacia": {
     "headline": ["Mais tempo para a tese.", "Mais ordem nos documentos."],
@@ -160,8 +164,9 @@
       ["googlesheets", "Google Sheets", "Cronologias, índices e controles de trabalho."]
     ],
     "tools_note": "Word e PDF podem entrar por arquivos. Sistemas jurídicos e portais de tribunais exigem análise específica; acesso, protocolo ou gestão automática de prazos não estão implícitos na oferta.",
-    "ai_title": "Uma resposta de IA precisa voltar à fonte.",
-    "ai_text": "Se o escritório já usa ChatGPT ou Claude para leitura e primeiras versões, o trabalho pode ganhar uma rotina de organização, referência e conferência. Informação não encontrada permanece uma lacuna a investigar, sem virar uma citação inventada.",
+    "ai_title": "Mais tempo para analisar o caso. Menos para organizar os documentos.",
+    "ai_text": "O escritório pode usar IA para apoiar a leitura. A Mescla prepara uma rotina documental com as fontes autorizadas, os modelos do escritório e as etapas de conferência pelos profissionais.",
+    "ai_gains": [["file-text", "Informações mais fáceis de localizar", "Índice e cronologia preliminar vinculados aos materiais de origem para conferência."], ["file-check-2", "Uma preparação que segue o método do escritório", "Modelos e critérios reutilizáveis orientam a organização de cada conjunto documental."], ["scale", "Mais atenção à interpretação e à estratégia", "O profissional recebe material estruturado para conferir e desenvolver sua análise."]],
     "ai_tools": [["openai", "ChatGPT"], ["claude", "Claude"]],
     "pilot_title": "Comece por uma rotina documental delimitada.",
     "pilot_text": "Escolha um conjunto de materiais autorizado e um resultado que sua equipe consiga conferir.",
@@ -169,6 +174,6 @@
     "measure": "Avaliar: tempo para localizar informações, correspondência com as fontes e esforço de conferência.",
     "contact_title": "Qual rotina documental toma tempo do seu escritório?",
     "contact_text": "Descreva o processo, sem enviar documentos de clientes ou informações sigilosas neste primeiro contato.",
-    "faq": [["O agente pode decidir a estratégia jurídica?", "A oferta é de apoio ao trabalho. Interpretação, estratégia, conferência das fontes e aprovação dos materiais cabem aos profissionais responsáveis."], ["Vocês integram com nosso sistema jurídico?", "Avaliamos o sistema, os acessos e as integrações disponíveis antes de definir o escopo. Não presumimos conexão com portais, protocolo automático ou controle autônomo de prazos."]]
+    "faq": [["Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?", "Uma conta de IA pode ajudar na leitura de documentos. A Mescla acrescenta a implantação de uma rotina com materiais autorizados, modelos do escritório e pontos de conferência. Avaliamos esforço de organização e correspondência com as fontes. Análise jurídica, estratégia e aprovação continuam com os profissionais responsáveis."], ["O agente pode decidir a estratégia jurídica?", "A oferta é de apoio ao trabalho. Interpretação, estratégia, conferência das fontes e aprovação dos materiais cabem aos profissionais responsáveis."], ["Vocês integram com nosso sistema jurídico?", "Avaliamos o sistema, os acessos e as integrações disponíveis antes de definir o escopo. Não presumimos conexão com portais, protocolo automático ou controle autônomo de prazos."]]
   }
 }

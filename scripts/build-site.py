@@ -7,7 +7,7 @@ import gzip, io, json, re, tarfile, hashlib, subprocess
 import sys
 sys.dont_write_bytecode = True
 from segment_visuals import hero_surface, value_section, tools_section, ai_section, pilot_section
-from experience import segment_card, ui_icon, motion_surface
+from experience import segment_card, ui_icon, motion_surface, home_value
 from public_bundle import PUBLIC_FILES
 ROOT=Path(__file__).resolve().parents[1]
 subprocess.run(['npm','run','build:web'],cwd=ROOT/'motion',check=True)
@@ -16,7 +16,7 @@ segments=json.loads((ROOT/'content/segments.json').read_text())
 details=json.loads((ROOT/'content/segment-details.json').read_text())
 for segment in segments: segment.update(details[segment['slug']])
 e=lambda s:escape(str(s),quote=True)
-version='2026-09-v5'
+version='2026-09-v6'
 style_href='/assets/segments.css?v='+hashlib.sha256((ROOT/'assets/segments.css').read_bytes()).hexdigest()[:12]
 experience_href='/assets/experience.css?v='+hashlib.sha256((ROOT/'assets/experience.css').read_bytes()).hexdigest()[:12]
 scene_version=hashlib.sha256((ROOT/'assets/ribbon-scene.js').read_bytes()).hexdigest()[:12]
@@ -32,6 +32,7 @@ font=re.search(r'<link href="https://fonts.googleapis.com/css2[^>]+>',home).grou
 brand=lambda href: f'<a class="brand" href="{href}" aria-label="Mescla, página principal"><img class="brand-mark" src="{logo}" width="44" height="36" alt="" decoding="async"><span class="brand-word">mescla</span></a>'
 footer=f'''<footer class="footer"><div class="wrap footer-grid"><div>{brand('/')}<small>mescla.ai · neoari · brasília</small><div class="footer-links"><a href="/#segmentos" data-attribution-link>Outras aplicações</a><a href="/privacidade/" data-attribution-link>Privacidade</a></div></div><p class="definition"><em>mescla</em>, s.f.<br>Tecido feito de fios diferentes.</p></div></footer>'''
 cards='\n'.join(segment_card(d) for d in segments)
+home=re.sub(r'<section class="section (?:possibilities|mescla-value)".*?</section>',lambda _:home_value(),home,count=1,flags=re.S)
 block=f'''<!-- SEGMENTOS:INICIO -->
 <section class="section segments" id="segmentos" aria-labelledby="segments-title"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Encontre o seu próximo passo</p><h2 id="segments-title">Um time de IA para<br>o seu jeito de trabalhar.</h2></div><p class="lead">Veja como pessoas e agentes podem trabalhar juntos na sua rotina. Escolha uma aplicação para explorar.</p></div><div class="segment-grid">{cards}</div></div></section>
 <!-- SEGMENTOS:FIM -->'''
