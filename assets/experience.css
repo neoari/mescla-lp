@@ -229,6 +229,8 @@ body[data-segment="consultorias"] .motion-player{box-shadow:8px 10px 0 #dcebe5;b
 .shared-memory-base p{margin-top:5px;font-size:1rem;color:#dedbe7}
 .value-comparison{width:100%;border-collapse:collapse;table-layout:fixed;text-align:left;font-size:1rem;line-height:1.6}
 .value-comparison thead th{padding:20px 24px;border-bottom:1px solid var(--noite);font-size:.875rem;font-weight:500}
+.comparison-title{display:block;font-size:1.125rem;font-weight:600;line-height:1.4;color:var(--noite)}
+.comparison-subtitle{display:block;margin-top:5px;font-size:.875rem;font-weight:400;line-height:1.5;color:var(--cinza)}
 .value-comparison thead th:first-child{width:25%;padding-left:0}
 .value-comparison tbody th,.value-comparison td{padding:27px 24px;vertical-align:top;border-bottom:1px solid var(--linha)}
 .value-comparison tbody th{padding-left:0;font-weight:500;font-size:1.125rem;line-height:1.35}
