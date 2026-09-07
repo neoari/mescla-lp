@@ -1,7 +1,7 @@
 """Visual language shared by the Home and segment pages."""
 from pathlib import Path
 from html import escape
-import re
+import re, json
 
 ROOT = Path(__file__).resolve().parents[1]
 SEGMENT_ICONS = {'empreendedores': 'lightbulb', 'creators': 'clapperboard', 'consultorias': 'briefcase-business', 'agencias': 'megaphone', 'advocacia': 'scale'}
@@ -47,3 +47,13 @@ def home_flow():
     entries = [('user-round', 'Você dá a direção', 'Objetivo, referências e critérios.', 'human'), ('bot', 'Os agentes preparam', 'Pesquisa, organização e primeiras versões.', 'agent'), ('file-check-2', 'O trabalho avança', 'Sua revisão orienta a próxima entrega.', 'result')]
     nodes = ''.join(f'<li class="flow-node flow-node--{role}"><span class="flow-emblem">{ui_icon(key)}</span><h3>{title}</h3><p>{text}</p></li>' for key,title,text,role in entries)
     return f'''<section class="section home-flow" id="exemplo" aria-labelledby="example-title"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Pessoas e agentes em colaboração</p><h2 id="example-title">Sua ideia encontra<br>quem faz com você.</h2></div><p class="lead">Seu repertório orienta. Os agentes executam etapas. Você acompanha e aprova.</p></div><ol class="flow-line">{nodes}</ol><p class="flow-foot">{ui_icon('route')}Um exemplo de fluxo. As entregas e revisões são definidas com você.</p></div></section>'''
+
+
+def motion_surface(slug, fallback):
+    data=json.loads((ROOT/'content/motion-scenes.json').read_text())[slug]
+    summary=' '.join(copy for title,copy in data['phases'])
+    return f'<div class="animated-work" data-motion-scene="{slug}"><div class="motion-fallback">{fallback}</div><div class="motion-player" hidden></div><p class="motion-equivalent">{escape(data["label"])}. {escape(summary)} Exemplo ilustrativo; etapas definidas no projeto.</p></div>'
+
+def reassurance():
+    terms=''.join(f'<span>{term}</span>' for term in ['RAG','MCP','APIs','Tokens','Parâmetros','Ontologias','Repositórios'])
+    return f'<section class="section reassurance" aria-labelledby="reassurance-title"><div class="wrap reassurance-grid"><div class="reassurance-copy"><p class="eyebrow">A parte técnica fica com a Mescla</p><h2 id="reassurance-title">Você não precisa virar<br>especialista em IA.</h2><p class="lead">Você conhece seu negócio e o que quer realizar. Nós escolhemos, conectamos e configuramos a tecnologia para o trabalho acontecer.</p><p class="reassurance-outcome">{ui_icon("user-round")}Você traz a direção. A gente prepara o caminho.</p></div><div class="technical-backstage"><div class="technical-terms" aria-label="Exemplos de termos técnicos">{terms}</div><div class="backstage-divider">{ui_icon("arrow-right")}</div><div class="backstage-result">{ui_icon("file-check-2")}<strong>Um time pronto<br>para trabalhar com você.</strong><p>Com orientação para usar<br>e revisar as entregas.</p></div></div></div></section>'

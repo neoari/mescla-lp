@@ -3,7 +3,7 @@ const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const scene = document.querySelector('[data-ribbon-scene]');
 
 if (scene && !navigator.connection?.saveData) {
-  const load = () => import('./ribbon-scene.js?v=50112de69b9b').then(module => module.mountRibbon(scene, preference)).catch(() => {
+  const load = () => import('./ribbon-scene.js?v=26f024b19fdc').then(module => module.mountRibbon(scene, preference)).catch(() => {
     // Keep the original brand asset visible if WebGL or the module is unavailable.
   });
   if ('requestIdleCallback' in window) window.requestIdleCallback(load, { timeout: 1200 });
@@ -27,4 +27,20 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     surface.addEventListener('pointerleave', reset);
     preference.addEventListener('change', reset);
   });
+}
+
+// Load one Remotion island only when its explanation approaches the viewport.
+const explanation = document.querySelector('[data-motion-scene]');
+if (explanation && !navigator.connection?.saveData) {
+  const loadExplanation = () => import('./infographics.js?v=8ee2da938a3a').catch(() => {
+    // The complete static explanation remains visible if loading fails.
+  });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      observer.disconnect();
+      loadExplanation();
+    }, { rootMargin: '160px' });
+    observer.observe(explanation);
+  } else loadExplanation();
 }

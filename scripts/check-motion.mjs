@@ -47,8 +47,8 @@ assert(active.classes.has('ribbon-ready'));
 assert.equal(active.frames.size, 1);
 assert.equal(active.control.hidden, false);
 const ribbons = active.scene.children.find(object => object.isGroup);
-assert.equal(ribbons.children.length, 2);
-for (const mesh of ribbons.children) {
+assert.equal(ribbons.children.filter(mesh=>mesh.isMesh).length, 2);
+for (const mesh of ribbons.children.filter(mesh=>mesh.isMesh)) {
   for (const attribute of ['position', 'normal']) assert([...mesh.geometry.attributes[attribute].array].every(Number.isFinite));
   mesh.geometry.computeBoundingBox();
   assert(mesh.geometry.boundingBox.max.x - mesh.geometry.boundingBox.min.x > 2);
@@ -60,6 +60,22 @@ for (const [width, height] of [[540,506],[288,322],[680,391]]) {
   for (const x of [bounds.min.x,bounds.max.x]) for (const y of [bounds.min.y,bounds.max.y]) for (const z of [bounds.min.z,bounds.max.z]) {
     const point = new THREE.Vector3(x,y,z).project(active.camera);
     assert(Math.abs(point.x)<1 && Math.abs(point.y)<1, `Sculpture outside the camera view: ${width}x${height}, ${point.x}, ${point.y}; bounds ${JSON.stringify(bounds)}`);
+  }
+}
+// Test the stronger idle orbit and pointer response at the narrowest layout.
+active.host.clientWidth=288;active.host.clientHeight=322;active.resize();
+let time=0;
+for(const [clientX,clientY] of [[0,0],[288,322],[288,0],[0,322]]) {
+  active.events.get('stage:pointermove')({pointerType:'mouse',clientX,clientY});
+  for(let tick=0;tick<160;tick++) {
+    const [id,callback]=active.frames.entries().next().value;
+    active.frames.delete(id);callback(time+=50);
+    if(tick%20!==0)continue;
+    const bounds=new THREE.Box3().setFromObject(ribbons);
+    for(const x of [bounds.min.x,bounds.max.x])for(const y of [bounds.min.y,bounds.max.y])for(const z of [bounds.min.z,bounds.max.z]) {
+      const point=new THREE.Vector3(x,y,z).project(active.camera);
+      assert(Math.abs(point.x)<1 && Math.abs(point.y)<1,'Moving sculpture outside camera view');
+    }
   }
 }
 active.visibility(false); assert.equal(active.frames.size,0);

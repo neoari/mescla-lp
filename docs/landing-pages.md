@@ -1,6 +1,6 @@
 # Personalização das landing pages
 
-Versão de página: `2026-09-v3`.
+Versão de página: `2026-09-v4`.
 
 | Público | Situação central | Composição | Valor a avaliar |
 | --- | --- | --- | --- |
@@ -39,7 +39,7 @@ verificada. Fonte: https://docs.openclaw.ai/start/teams
 
 ## Experiência visual
 
-Logos em destaque, ícones Lucide e movimento: [experiencia-visual.md](experiencia-visual.md).
+Infográficos Remotion por público, logos em destaque, ícones Lucide e movimento: [experiencia-visual.md](experiencia-visual.md).
 
 ## Ícones
 

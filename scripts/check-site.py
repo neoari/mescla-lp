@@ -71,6 +71,11 @@ for path in paths:
         assert len(root.xpath('//link[starts-with(@href,"/assets/experience.css?v=")]'))==1
         assert len(root.xpath('//img[contains(@src,"/assets/platforms/")]'))==4
         assert len(root.xpath('//svg[contains(@class,"ui-icon")]'))>=10
+    if path.parent.name!='privacidade':
+        assert len(root.xpath('//*[@data-motion-scene]'))==1
+        assert root.xpath('//*[contains(@class,"motion-fallback")]')
+        assert root.xpath('//*[contains(@class,"motion-equivalent")]')
+        assert 'RAG' in path.read_text() and 'MCP' in path.read_text()
     if 'para' in path.parts:assert not root.xpath('//*[@data-ribbon-scene]')
 # All local JS module dependencies resolve inside the published allowlist.
 for asset in PUBLIC_FILES:
