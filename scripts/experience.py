@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SEGMENT_ICONS = {'empreendedores': 'lightbulb', 'creators': 'clapperboard', 'consultorias': 'briefcase-business', 'agencias': 'megaphone', 'advocacia': 'scale'}
 SEGMENT_TOOLS = {
     'empreendedores': [('whatsapp', 'WhatsApp'), ('googlesheets', 'Sheets'), ('openai', 'ChatGPT')],
-    'creators': [('youtube', 'YouTube'), ('instagram', 'Instagram'), ('canva', 'Canva')],
+    'creators': [('remotion', 'Remotion'), ('capcut', 'CapCut'), ('davinciresolve', 'DaVinci Resolve'), ('youtube', 'YouTube'), ('tiktok', 'TikTok'), ('instagram', 'Instagram')],
     'consultorias': [('microsoftpowerpoint', 'PowerPoint'), ('googledrive', 'Drive'), ('claude', 'Claude')],
     'agencias': [('trello', 'Trello'), ('slack', 'Slack'), ('canva', 'Canva')],
     'advocacia': [('microsoftword', 'Word'), ('adobeacrobatreader', 'Acrobat'), ('openai', 'ChatGPT')],

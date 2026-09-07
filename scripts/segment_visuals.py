@@ -15,11 +15,13 @@ def icon(name):
 
 def hero_surface(d):
     if d['slug'] == 'creators':
-        return f'''<div class="creator-studio segment-surface" aria-label="Exemplo de desdobramento de conteúdo">
-          <div class="surface-label"><span>Da sua voz para o mundo</span><span>Exemplo de fluxo</span></div>
-          <div class="source-record"><span class="record-dot" aria-hidden="true"></span><span>Uma conversa gravada</span><strong>Ideias que merecem circular.</strong><p>Seu repertório. Seus exemplos. Seu jeito de contar.</p></div>
-          <div class="content-tracks"><div>{icon('youtube')}<span><strong>Cortes com contexto</strong><small>Trechos, gancho e indicação de tempo</small></span></div><div>{icon('instagram')}<span><strong>Uma ideia em carrossel</strong><small>Roteiro das telas para você aprovar</small></span></div><div>{icon('notion')}<span><strong>O próximo roteiro</strong><small>Pautas que nasceram da gravação</small></span></div></div>
-          <p class="surface-foot">Você escolhe o que vale publicar.</p></div>'''
+        stages = ''.join(f'<li class="creator-stage--{role}">{ui_icon("bot" if role == "agent" else "user-round")}<strong>{escape(title)}</strong><span>{"Agente" if role == "agent" else "Pessoa"}</span></li>' for role, title, _ in d['steps'])
+        return f'''<div class="creator-studio creator-workflow segment-surface" aria-label="Exemplo de produção de vídeo em cinco etapas">
+          <div class="surface-label"><span>Do roteiro à publicação</span><span>Exemplo de fluxo</span></div>
+          <h2>Você em cena.<br>A edição com seu agente.</h2>
+          <ol class="creator-stages">{stages}</ol>
+          <p class="creator-edit-summary">Cortes · silêncios · cor · grafismos · som · legendas</p>
+          <p class="surface-foot">O agente publica depois da sua aprovação.</p></div>'''
     if d['slug'] == 'empreendedores':
         return f'''<div class="founder-desk segment-surface" aria-label="Exemplo de organização da rotina"><div class="surface-label"><span>Sua próxima decisão</span><span>Exemplo de fluxo</span></div><h2>O negócio anda.<br>Você dá a direção.</h2><div class="desk-row">{icon('googledocs')}<div><strong>Proposta comercial</strong><span>Contexto reunido → primeira versão</span></div><b>Você revisa</b></div><div class="desk-row">{icon('googlesheets')}<div><strong>Pendências de clientes</strong><span>Informações organizadas → próximo passo</span></div><b>Você prioriza</b></div><div class="desk-row">{icon('notion')}<div><strong>Uma nova oferta</strong><span>Pesquisa → material para testar</span></div><b>Você decide</b></div><div class="desk-bottom"><span>Os agentes preparam o caminho.</span><strong>A decisão continua com você.</strong></div></div>'''
     if d['slug'] == 'consultorias':
@@ -38,8 +40,8 @@ def value_section(d):
     if slug == 'empreendedores':
         body = '<div class="value-ledger">' + ''.join(f'<article><h3>{ui_icon(value_icons[i])}{esc(title)}</h3><div><span class="value-label">Onde trava</span><p>{esc(before)}</p></div><div><span class="value-label">Com apoio dos agentes</span><p>{esc(after)}</p></div></article>' for i,(title,before,after) in enumerate(cards)) + '</div>'
     elif slug == 'creators':
-        icons = ['youtube', 'instagram', 'notion']
-        body = '<div class="format-shelf">' + ''.join(f'<article>{icon(icons[i])}<h3>{esc(title)}</h3><p>{esc(after)}</p><div class="format-origin">A partir do seu conteúdo</div></article>' for i,(title,before,after) in enumerate(cards)) + '</div>'
+        body = '<div class="editing-services">' + ''.join(f'<article><span class="editing-icon">{ui_icon(key)}</span><h3>{esc(title)}</h3><p>{esc(description)}</p></article>' for title, key, description in cards) + '</div>'
+        body += f'<div class="editing-delivery">{ui_icon("file-check-2")}<p><strong>O próximo passo é a sua aprovação.</strong> {esc(d["editing_result"])}</p></div>'
     elif slug == 'consultorias':
         body = '<div class="consulting-findings">' + ''.join(f'<article><span class="finding-number">{ui_icon(value_icons[i])}</span><div><h3>{esc(title)}</h3><p>{esc(after)}</p></div><aside>{esc(before)}</aside></article>' for i,(title,before,after) in enumerate(cards)) + '</div>'
     elif slug == 'agencias':
@@ -49,9 +51,13 @@ def value_section(d):
     return f'<section class="section segment-value" aria-labelledby="outcomes-title"><div class="wrap"><div class="section-head"><div><p class="eyebrow">O valor no seu dia a dia</p><h2 id="outcomes-title">{esc(d["value_title"])}</h2></div><p class="lead">{esc(d["value_intro"])}</p></div>{body}</div></section>'
 
 def tools_section(d):
-    cards = ''.join(f'<article class="stack-tool"><div>{brand_icon(key)}<h3>{escape(name)}</h3></div><p>{escape(text)}</p></article>' for key,name,text in d['tools'])
+    def tool_cards(items):
+        return ''.join(f'<article class="stack-tool"><div>{brand_icon(key)}<h3>{escape(name)}</h3></div><p>{escape(text)}</p></article>' for key,name,text in items)
+    body = '<div class="stack-grid">' + tool_cards(d['tools']) + '</div>'
+    if d['slug'] == 'creators':
+        body = ''.join(f'<div class="creator-tool-group"><h3>{title}</h3><div class="stack-grid">{tool_cards(items)}</div></div>' for title, items in [('Edição e produção', d['tools'][:3]), ('Publicação após sua aprovação', d['tools'][3:])])
     note = f'<p class="stack-note">{escape(d["tools_note"])}</p>' if d.get('tools_note') else ''
-    return f'''<section class="section tool-section" id="ferramentas" aria-labelledby="stack-title"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Ferramentas que podem participar do fluxo</p><h2 id="stack-title">{escape(d['tools_title'])}</h2></div><p class="lead">{escape(d['tools_intro'])}</p></div><div class="stack-grid">{cards}</div>{note}<p class="integration-note">Conexões por integração ou troca de arquivos, conforme o projeto. Validamos acesso, planos e recursos disponíveis antes de definir o escopo.</p></div></section>'''
+    return f'''<section class="section tool-section" id="ferramentas" aria-labelledby="stack-title"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Ferramentas que podem participar do fluxo</p><h2 id="stack-title">{escape(d['tools_title'])}</h2></div><p class="lead">{escape(d['tools_intro'])}</p></div>{body}{note}<p class="integration-note">Conexões por integração ou troca de arquivos, conforme o projeto. Validamos acesso, planos e recursos disponíveis antes de definir o escopo.</p></div></section>'''
 
 def ai_section(d):
     badges = ''.join(f'<span class="ai-tool">{icon(key)}{escape(name)}</span>' for key,name in d['ai_tools'])

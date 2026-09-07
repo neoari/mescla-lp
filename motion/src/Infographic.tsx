@@ -9,7 +9,8 @@ export const PHASE_FRAMES = 70;
 const STORY_FRAMES = 450;
 const MotionFrame = createContext(0);
 export const FPS = 30;
-export const getPhase = (frame: number) => Math.min(2, Math.max(0, Math.floor(frame / PHASE_FRAMES)));
+export const getDuration = (scene: SceneId) => scenes[scene].phases.length * PHASE_FRAMES;
+export const getPhase = (frame: number, scene: SceneId = 'home') => Math.min(scenes[scene].phases.length - 1, Math.max(0, Math.floor(frame / PHASE_FRAMES)));
 const storyPhase = (frame: number) => Math.min(2, Math.floor(frame / 150));
 const ease = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.bezier(.22,1,.36,1)} as const;
 const ink = '#1B1930', amber = '#F2B84B', mint = '#6FD9C9', white = '#FBFAFD';
@@ -47,16 +48,35 @@ function Founder({frame}:{frame:number}) {
 }
 
 function Creator({frame}:{frame:number}) {
-  const cards=[{icon:'youtube',label:'Cortes',color:'#F2B84B',x:36,angle:-12},{icon:'instagram',label:'Carrossel',color:'#C6B7DB',x:229,angle:0},{icon:'notion',label:'Nova pauta',color:'#6FD9C9',x:420,angle:12}];
+  const phase=getPhase(frame,'creators');
+  const local=frame-phase*PHASE_FRAMES;
+  const human=scenes.creators.roles[phase]==='human';
+  const colour=human?amber:mint;
+  const cards=[
+    {title:'Um roteiro com a sua voz.',items:['Pauta e referências','Gancho e sequência','Texto para gravar']},
+    {title:'Você entra em cena.',items:['Sua presença','Suas histórias','Seu jeito de contar']},
+    {title:'A edição ganha ritmo.',items:['Cortes e montagem','Remoção de silêncios','Ajuste de cor','Grafismos e animações','Melhoria do som','Legendas sincronizadas']},
+    {title:'O vídeo passa por você.',items:['Assista à versão','Peça os ajustes','Aprove para publicar']},
+    {title:'Aprovou? Vai para o canal.',items:['YouTube','TikTok','Instagram']},
+  ];
+  const current=cards[phase];
   return <>
-    <div style={{position:'absolute',left:50,top:interpolate(frame,[250,310],[80,42],ease),width:540,padding:'24px 27px',borderRadius:15,background:'#302A42',border:'1px solid #696071',transform:`perspective(1000px) rotateX(${interpolate(frame,[0,170],[14,2],ease)}deg)`,opacity:interpolate(frame,[270,320],[1,.55],ease)}}>
-      <div style={{display:'flex',alignItems:'center',gap:12,fontSize:27,color:white}}><Glyph name="clapperboard" size={31}/>Uma conversa gravada</div>
-      <div style={{display:'flex',alignItems:'center',gap:7,height:110,marginTop:22}}>{Array.from({length:39},(_,i)=><span key={i} style={{display:'block',width:6,borderRadius:4,height:18+Math.abs(Math.sin(i*2.3))*65+(frame<270?Math.sin(frame/7+i)*16:0),background:i<interpolate(frame,[40,245],[0,39],ease)?mint:'#71657D'}}/>)}</div>
-      <div style={{fontSize:23,color:'#D1C8DE'}}>Suas ideias. Seu jeito de contar.</div>
+    <div style={{position:'absolute',left:48,top:97,width:2,height:356,background:'#665C78'}}/>
+    {scenes.creators.phases.map(([title],i)=>{
+      const person=scenes.creators.roles[i]==='human';
+      const active=i===phase;
+      const tint=person?amber:mint;
+      return <div key={title} data-creator-stage={i} data-active={active} data-role={person?'human':'agent'} style={{position:'absolute',left:30,top:89+i*76,width:220,height:66,padding:'10px 12px',display:'flex',alignItems:'center',gap:12,borderRadius:12,border:`1px solid ${active?tint:'#645A77'}`,background:active?'#3A344B':'#282238',transform:`translateX(${active?interpolate(local,[0,15],[0,7],ease):0}px)`,boxShadow:active?`0 3px 0 ${tint}40`:'none'}}>
+        <Glyph name={person?'user-round':'bot'} color={tint} size={30}/><div><div style={{fontSize:27,fontWeight:500}}>{title}</div><div style={{fontSize:20,color:tint}}>{person?'Pessoa':'Agente'}</div></div>
+      </div>;
+    })}
+    <div data-creator-delivery={phase} style={{position:'absolute',left:278,top:90,width:330,height:374,padding:24,borderRadius:15,background:'#FBFAFD',color:ink,borderBottom:`5px solid ${colour}`,boxShadow:'0 8px 0 #51445e, 0 24px 35px #0003',transform:`perspective(1000px) rotateY(${Math.sin(frame*.06)*4}deg) rotateX(4deg) translateY(${Math.sin(frame*.085)*4}px)`}}>
+      <div style={{display:'flex',alignItems:'center',gap:10,fontSize:22,fontWeight:500,color:'#51465E'}}><Glyph name={human?'user-round':'bot'} size={28}/>{human?'Você decide':'Seu agente executa'}</div>
+      <div style={{fontFamily:serif,fontSize:34,lineHeight:1.08,letterSpacing:'-.03em',marginTop:16,minHeight:74}}>{current.title}</div>
+      <div style={{marginTop:14}}>{current.items.map((item,i)=><div key={item} style={{display:'flex',alignItems:'center',gap:10,fontSize:phase===2?23:24,lineHeight:1.18,marginTop:phase===2?3:14,translate:`${interpolate(local,[i*3,i*3+15],[9,0],ease)}px 0px`}}><span style={{width:7,height:7,borderRadius:'50%',background:human?'#936410':'#267369',flexShrink:0}}/>{item}</div>)}</div>
+      {phase!==2&&<div aria-hidden="true" style={{display:'flex',gap:5,alignItems:'center',height:44,marginTop:22}}>{Array.from({length:27},(_,i)=><span key={i} style={{width:5,height:8+Math.abs(Math.sin(i*1.9+frame*.18))*30,borderRadius:3,background:i%4===0?amber:mint}}/>)}</div>}
     </div>
-    <div style={{position:'absolute',left:73,top:375,color:'#D8D0E5',fontSize:28,opacity:interpolate(frame,[140,169,267,292],[0,1,1,0],ease),display:'flex',alignItems:'center',gap:18}}><Glyph name="bot" color={mint}/>Trechos viram novos formatos.</div>
-    {cards.map((card,i)=><Paper key={card.icon} x={card.x} y={interpolate(frame,[272+i*9,326+i*9],[520,235],ease)} w={184} h={213} color={card.color} angle={card.angle} opacity={interpolate(frame,[272+i*9,310+i*9],[0,1],ease)}><Glyph name={card.icon} size={41}/><div style={{fontFamily:serif,fontSize:33,lineHeight:1.12,marginTop:37}}>{card.label}</div></Paper>)}
-    <Approval frame={frame} label="Sua voz. Sua aprovação."/>
+    <div style={{position:'absolute',left:36,right:36,top:497,display:'flex',gap:12,alignItems:'center',fontSize:23,color:'#E0D9EA'}}><Glyph name="user-round" size={25} color={amber}/>Publicação depois da sua aprovação.</div>
   </>;
 }
 
@@ -124,8 +144,8 @@ export const InfographicFrame: React.FC<{scene:SceneId;frame:number}> = ({scene,
   const data=scenes[scene];
   return <AbsoluteFill className="motion-art" style={{background:data.tint,color:scene==='creators'?white:ink,fontFamily:"'Instrument Sans', Arial, sans-serif",overflow:'hidden',perspective:1100,lineHeight:1.2}}>
     <div style={{position:'absolute',left:36,right:36,top:29,display:'flex',alignItems:'center',justifyContent:'space-between',fontSize:23,gap:20}}><span>{data.label}</span><span style={{fontSize:18,opacity:.75}}>Exemplo de fluxo</span></div>
-    <MotionFrame.Provider value={frame}><View frame={frame*STORY_FRAMES/DURATION}/></MotionFrame.Provider>
-    <div style={{position:'absolute',left:0,bottom:0,height:4,width:interpolate(frame,[0,DURATION-1],[0,640],ease),background:scene==='creators'?mint:data.accent}}/>
+    <MotionFrame.Provider value={frame}><View frame={scene==='creators'?frame:frame*STORY_FRAMES/DURATION}/></MotionFrame.Provider>
+    <div style={{position:'absolute',left:0,bottom:0,height:4,width:interpolate(frame,[0,getDuration(scene)-1],[0,640],ease),background:scene==='creators'?mint:data.accent}}/>
   </AbsoluteFill>;
 };
 

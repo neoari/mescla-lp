@@ -1,7 +1,40 @@
 {
   "home": {"label": "Um time. Uma memória", "accent": "#116C60", "tint": "#E8F3EF", "phases": [["O time inicia", "Uma pessoa do comercial registra o pedido e as referências do cliente."], ["Agente do time", "O agente compartilhado consulta a memória do negócio e prepara a proposta."], ["O time continua", "Uma pessoa da operação revisa com o contexto do projeto. Decisões selecionadas ficam registradas na memória da empresa."]]},
   "empreendedores": {"label":"Da oportunidade à proposta", "accent":"#8A5D13", "tint":"#FFF6DF", "phases":[["Oportunidade","Um pedido do cliente chega com informações para reunir."],["Preparação","O agente organiza o contexto e estrutura a primeira proposta."],["Sua decisão","Você revisa a proposta e escolhe o próximo passo com o cliente."]]},
-  "creators": {"label":"Uma ideia, novos formatos", "accent":"#68518D", "tint":"#211D33", "phases":[["Sua gravação","O ponto de partida é uma conversa com suas ideias e sua voz."],["Desdobramento","O agente identifica trechos e prepara roteiros para novos formatos."],["Sua edição","Cortes sugeridos, carrossel e nova pauta chegam para sua avaliação."]]},
+  "creators": {
+    "label": "Do roteiro à publicação",
+    "accent": "#68518D",
+    "tint": "#211D33",
+    "phases": [
+      [
+        "Roteiro",
+        "Agente: O agente prepara o roteiro a partir da pauta, das referências e do seu jeito de comunicar."
+      ],
+      [
+        "Gravação",
+        "Pessoa: Você grava com a sua voz, seus exemplos e sua presença."
+      ],
+      [
+        "Edição",
+        "Agente: O agente faz cortes, remove silêncios, ajusta cor e som, aplica grafismos e sincroniza legendas no padrão definido."
+      ],
+      [
+        "Aprovação",
+        "Pessoa: Você assiste à versão editada, pede ajustes e aprova o conteúdo antes de publicar."
+      ],
+      [
+        "Publicação",
+        "Agente: Depois da sua aprovação, o agente publica nos canais conectados e autorizados."
+      ]
+    ],
+    "roles": [
+      "agent",
+      "human",
+      "agent",
+      "human",
+      "agent"
+    ]
+  },
   "consultorias": {"label":"Da informação à recomendação", "accent":"#246163", "tint":"#E8F3F1", "phases":[["Fontes","Entrevistas, documentos e dados autorizados entram no projeto."],["Evidências","O agente reúne informações por pergunta, mantendo as referências."],["Sua análise","O consultor confere as fontes e constrói a recomendação."]]},
   "agencias": {"label":"Do briefing à revisão criativa", "accent":"#AA3425", "tint":"#FFF0EB", "phases":[["Briefing","O pedido da conta chega com objetivo e referências da marca."],["Produção","O agente prepara pautas e primeiras versões com esse contexto."],["Direção criativa","Seu time avalia as peças e orienta os ajustes antes da aprovação."]]},
   "advocacia": {"label":"Dos documentos à conferência", "accent":"#6B3343", "tint":"#F4EDF0", "phases":[["Documentos","O escritório escolhe os materiais autorizados para o trabalho."],["Organização","O agente prepara um índice e uma cronologia com referência às fontes."],["Sua conferência","O advogado verifica o material e conduz a análise jurídica."]]}

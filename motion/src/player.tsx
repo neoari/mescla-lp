@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import {Player, type PlayerRef} from '@remotion/player';
-import {Infographic, Glyph, type SceneId, DURATION, FPS, PHASE_FRAMES, getPhase} from './Infographic';
+import {Infographic, Glyph, type SceneId, getDuration, FPS, PHASE_FRAMES, getPhase} from './Infographic';
 import scenes from '../../content/motion-scenes.json';
 
 const mount = document.querySelector<HTMLElement>('[data-motion-scene]');
@@ -25,13 +25,13 @@ function AnimatedWork({scene,host}:{scene:SceneId;host:HTMLElement}) {
     document.addEventListener('visibilitychange',visibility);
     preference.addEventListener('change',reduced);
     const current=player.current;
-    const update=()=>{if(current)setPhase(getPhase(current.getCurrentFrame()));};
+    const update=()=>{if(current)setPhase(getPhase(current.getCurrentFrame(),scene));};
     current?.addEventListener('frameupdate',update);
     if(target)target.hidden=false;
     if(fallback)fallback.hidden=true;
     host.classList.add('motion-ready');
     return ()=>{observer.disconnect();document.removeEventListener('visibilitychange',visibility);preference.removeEventListener('change',reduced);current?.removeEventListener('frameupdate',update);host.classList.remove('motion-ready');if(fallback)fallback.hidden=false;};
-  },[host,fallback,target]);
+  },[host,fallback,target,scene]);
   useEffect(()=>{
     if(!player.current)return;
     if(visible&&foreground&&!paused&&!failed)player.current.play();
@@ -47,7 +47,7 @@ function AnimatedWork({scene,host}:{scene:SceneId;host:HTMLElement}) {
   const select=(index:number)=>{setPaused(true);player.current?.pause();player.current?.seekTo(index*PHASE_FRAMES+30);setPhase(index);};
   return <>
     <div className="infographic-visual">
-      <div aria-hidden="true"><Player ref={player} component={Infographic} inputProps={{scene}} durationInFrames={DURATION} fps={FPS} compositionWidth={640} compositionHeight={560} style={{width:'100%',aspectRatio:'8 / 7'}} controls={false} autoPlay={false} loop initiallyMuted numberOfSharedAudioTags={0} clickToPlay={false} doubleClickToFullscreen={false} spaceKeyToPlayOrPause={false} errorFallback={errorFallback}/></div>
+      <div aria-hidden="true"><Player ref={player} component={Infographic} inputProps={{scene}} durationInFrames={getDuration(scene)} fps={FPS} compositionWidth={640} compositionHeight={560} style={{width:'100%',aspectRatio:'8 / 7'}} controls={false} autoPlay={false} loop initiallyMuted numberOfSharedAudioTags={0} clickToPlay={false} doubleClickToFullscreen={false} spaceKeyToPlayOrPause={false} errorFallback={errorFallback}/></div>
       <button className="infographic-motion-control" type="button" aria-label={paused?'Reproduzir infográfico':'Pausar infográfico'} aria-pressed={paused} onClick={()=>setPaused(value=>!value)}><Glyph name={paused?'play':'pause'} size={18}/></button>
     </div>
     <div className="infographic-controls">

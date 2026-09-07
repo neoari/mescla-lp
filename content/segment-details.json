@@ -34,40 +34,143 @@
     "faq": [["Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?", "Se sua conta já atende bem, ela pode ser suficiente. A Mescla ajuda a organizar um ambiente em que você e outras pessoas compartilham agentes, referências e o contexto do trabalho. Começamos com uma rotina e uma memória do negócio que possa continuar sendo usada pela equipe. Quem trabalha sozinho também pode começar assim e planejar a entrada de colaboradores."], ["Preciso trocar minhas ferramentas?", "Começamos avaliando o que você já usa. Quando uma conexão não está disponível, podemos trabalhar com arquivos e etapas de revisão ou propor outro caminho antes da contratação."], ["Vou precisar ficar dando instruções o tempo todo?", "O objetivo é configurar contexto, modelos e rotinas reutilizáveis. Você continua nas decisões e aprovações; o teste mostra quais etapas já conseguem avançar com menos intervenção."]]
   },
   "creators": {
-    "headline": ["Grave com profundidade.", "Publique com constância."],
-    "lead": "Uma gravação pode render cortes, carrosséis e novos roteiros. Você, editor e social media trabalham com agentes compartilhados e as mesmas referências da sua voz.",
-    "description": "Faça suas gravações renderem pautas, roteiros, cortes e novos formatos. Um fluxo de conteúdo com sua voz, suas referências e sua aprovação.",
-    "intro": "Para creators com muito a dizer",
-    "context": "Sua voz e sua autoria. Um time para fazer o conteúdo circular.",
-    "cta": "Quero fazer meu conteúdo render",
-    "value_title": "Sua melhor ideia merece mais de um post.",
-    "value_intro": "Uma gravação pode alimentar diferentes formatos. Cada um precisa de uma narrativa própria.",
+    "headline": [
+      "Você grava.",
+      "Seu time de IA edita."
+    ],
+    "lead": "Você grava e aprova. Seu time de IA prepara o roteiro, edita o vídeo e publica o conteúdo aprovado, com a sua voz e o padrão que definimos juntos.",
+    "description": "Destrave a edição de vídeos com um time de IA: agentes roteirizam, editam e publicam; você grava e aprova antes da publicação.",
+    "intro": "Para creators que travam na edição",
+    "context": "Sua voz na gravação. Sua decisão na aprovação. Agentes no roteiro, na edição e na publicação.",
+    "cta": "Quero destravar minha edição",
+    "value_title": "O que seu agente faz na edição.",
+    "value_intro": "Do arquivo bruto a uma versão pronta para você aprovar. Definimos o seu padrão e configuramos o agente para executar o trabalho com as ferramentas do projeto.",
     "value_cards": [
-      ["Vídeo curto", "A parte boa fica perdida no meio da gravação.", "Seleção de trechos, indicação de tempo e sugestões de gancho para orientar a edição."],
-      ["Carrossel", "Você reescreve a mesma ideia para cada formato.", "Um argumento organizado em telas, com exemplos e direção para a peça visual."],
-      ["Próxima pauta", "A publicação termina e a folha volta a ficar em branco.", "Perguntas, recortes e novos roteiros construídos a partir do seu próprio repertório."]
+      [
+        "Cortes e montagem",
+        "clapperboard",
+        "Seleciona trechos, retira erros e repetições e monta a sequência. Sua ideia ganha ritmo, sem perder o sentido."
+      ],
+      [
+        "Remoção de silêncios",
+        "audio-lines",
+        "Encurta pausas e espaços vazios, preservando a naturalidade da fala. Menos tempo limpando a gravação."
+      ],
+      [
+        "Ajuste de cor",
+        "pencil-ruler",
+        "Ajusta exposição, balanço de branco e contraste conforme a referência. Mais consistência entre as cenas."
+      ],
+      [
+        "Grafismos e animações",
+        "layers",
+        "Aplica títulos, destaques e elementos animados com a sua identidade. O visual ajuda a explicar o conteúdo."
+      ],
+      [
+        "Melhoria do som",
+        "audio-lines",
+        "Reduz ruído, equilibra volumes e trata a voz. Uma fala mais clara e confortável de acompanhar."
+      ],
+      [
+        "Legendas sincronizadas",
+        "file-text",
+        "Transcreve a fala e sincroniza as legendas no estilo combinado. O vídeo também pode ser acompanhado sem som."
+      ]
     ],
-    "tools_title": "Do arquivo bruto ao seu jeito de publicar.",
-    "tools_intro": "O fluxo considera seu editor, seus canais e a forma como você aprova conteúdo.",
+    "tools_title": "Ferramentas de vídeo. No seu fluxo.",
+    "tools_intro": "Remotion, CapCut e DaVinci Resolve podem participar da produção. YouTube, TikTok e Instagram entram como destinos do conteúdo aprovado.",
     "tools": [
-      ["googledrive", "Google Drive", "Gravações e referências reunidas para preparar o conteúdo."],
-      ["notion", "Notion", "Banco de ideias, pautas e fila de produção."],
-      ["canva", "Canva", "Roteiros de telas e materiais para seus modelos visuais."],
-      ["youtube", "YouTube", "Títulos, descrições e desdobramentos do seu conteúdo."],
-      ["instagram", "Instagram", "Ganchos, legendas e roteiros pensados para cada formato."]
+      [
+        "remotion",
+        "Remotion",
+        "Grafismos, animações e vídeos a partir de modelos com a sua identidade."
+      ],
+      [
+        "capcut",
+        "CapCut",
+        "Edição de vídeos curtos, legendas e recursos visuais para os seus formatos."
+      ],
+      [
+        "davinciresolve",
+        "DaVinci Resolve",
+        "Montagem, tratamento de cor e acabamento de áudio conforme o projeto."
+      ],
+      [
+        "youtube",
+        "YouTube",
+        "Vídeos e Shorts aprovados, com título e descrição preparados para o canal."
+      ],
+      [
+        "tiktok",
+        "TikTok",
+        "Versões verticais, com enquadramento e legenda definidos para o formato."
+      ],
+      [
+        "instagram",
+        "Instagram",
+        "Reels aprovados, com capa e texto de publicação no padrão do perfil."
+      ]
     ],
-    "tools_note": "Usa CapCut, Premiere ou DaVinci? O escopo pode incluir arquivos, marcações e instruções para seu editor. Edição automática e publicação direta são avaliadas separadamente.",
-    "ai_title": "Sua voz acompanha o trabalho de todo o time.",
-    "ai_text": "Creator, editor e social media podem trabalhar com os mesmos agentes. Conteúdos, referências de linguagem e decisões editoriais selecionados formam a memória do projeto, disponível para quem participa da produção.",
-    "ai_gains": [["network", "Agentes compartilhados entre criação e produção", "Você traz a gravação; o editor e o social media podem continuar as etapas com o mesmo contexto."], ["book-open", "Uma memória da sua voz", "Expressões, exemplos e escolhas editoriais aprovadas orientam a preparação dos próximos materiais."], ["clapperboard", "Mais continuidade quando a equipe muda", "Quem entra encontra referências e registros do projeto, com os acessos definidos por você."]],
-    "ai_tools": [["openai", "ChatGPT"], ["claude", "Claude"]],
-    "pilot_title": "Pegue uma gravação que você já tem.",
-    "pilot_text": "Vamos desenhar o percurso dessa gravação até um conjunto de conteúdos que você tenha vontade de publicar.",
-    "deliverables": ["Referências da sua voz e decisões editoriais organizadas", "Agentes compartilhados e papéis de creator, editor e social media", "Um primeiro conjunto de materiais para sua revisão"],
-    "measure": "Avaliar: conteúdos aproveitados, tempo de revisão e fidelidade ao seu jeito de comunicar.",
-    "contact_title": "Qual conteúdo seu pode ir mais longe?",
-    "contact_text": "Conte como você produz e onde a fila trava. Vamos começar pelo seu material e pelo seu objetivo.",
-    "faq": [["Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?", "Uma conta pode bastar para sua produção individual. A Mescla ajuda você, editor e social media a trabalhar com agentes compartilhados e uma memória do projeto: sua voz, referências e escolhas editoriais registradas. Isso permite continuar a produção entre pessoas com menos repetição de contexto. Edição e publicação entram no escopo combinado."], ["Vocês também fazem a edição do vídeo?", "O projeto pode incluir etapas de edição. Primeiro definimos formatos, padrão visual, materiais de origem e o que o editor permite automatizar. Não prometemos edição final automática para qualquer tipo de vídeo."], ["Vai ficar com cara de conteúdo genérico de IA?", "O trabalho começa nas suas ideias e referências. As primeiras peças servem para calibrar linguagem, ritmo e profundidade com você. A aprovação editorial continua sendo sua."]]
+    "tools_note": "Você não precisa usar todas. Escolhemos as ferramentas conforme o seu formato e o nível de edição. A publicação pelo agente vem depois da sua aprovação, nos canais autorizados.",
+    "ai_title": "Um time de IA para a sua produção.",
+    "ai_text": "Agentes preparam o roteiro, editam e publicam. Você grava e aprova. Se outras pessoas participam da produção, trabalham com os mesmos agentes e as referências do projeto.",
+    "ai_gains": [
+      [
+        "clapperboard",
+        "A edição sai das suas mãos",
+        "O agente executa cortes, silêncios, cor, grafismos, som e legendas no fluxo configurado. Você avalia o vídeo pronto e pede os ajustes."
+      ],
+      [
+        "book-open",
+        "Uma memória da sua voz",
+        "Roteiros, referências, padrões de edição e decisões aprovadas orientam as próximas produções."
+      ],
+      [
+        "network",
+        "Uma produção que continua",
+        "Os mesmos agentes acompanham o fluxo. Você e quem participa encontram materiais, versões e aprovações no contexto do projeto."
+      ]
+    ],
+    "ai_tools": [
+      [
+        "openai",
+        "ChatGPT"
+      ],
+      [
+        "claude",
+        "Claude"
+      ]
+    ],
+    "pilot_title": "Vamos destravar sua edição.",
+    "pilot_text": "Começamos por um formato de vídeo e um padrão de edição. Configuramos as cinco etapas e testamos o fluxo com uma primeira gravação, incluindo sua aprovação antes da publicação.",
+    "deliverables": [
+      "Referências da sua voz e de cortes, cor, grafismos, som e legendas organizadas",
+      "Agentes de roteiro, edição e publicação configurados",
+      "Etapas de gravação e aprovação atribuídas à pessoa",
+      "Um primeiro vídeo editado, com aprovação antes da publicação"
+    ],
+    "measure": "Combinamos o que avaliar: tempo dedicado à edição, rodadas de ajuste e fidelidade ao seu padrão.",
+    "contact_title": "Sua gravação está esperando a edição?",
+    "contact_text": "Conte o que você grava e onde a edição trava. Vamos definir um primeiro fluxo para levar seu conteúdo até a publicação.",
+    "faq": [
+      [
+        "Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?",
+        "A Mescla implanta o fluxo de produção: roteiro, gravação, edição, aprovação e publicação. Configuramos os agentes, as ferramentas e a memória do projeto para a gravação virar vídeo editado e o conteúdo aprovado chegar aos canais definidos."
+      ],
+      [
+        "O agente faz a edição inteira?",
+        "O agente executa as tarefas de edição definidas no projeto: cortes, remoção de silêncios, ajuste de cor, grafismos, melhoria do som e legendas. Configuramos as ferramentas e testamos o resultado com as suas gravações. O acabamento depende do material e do padrão combinado; você revisa, pede ajustes e aprova antes da publicação."
+      ],
+      [
+        "O agente publica sem eu aprovar?",
+        "Não. A publicação vem depois da sua aprovação. Configuramos os canais, os acessos e a etapa de liberação para que o agente publique o conteúdo aprovado."
+      ],
+      [
+        "Vai continuar com a minha voz?",
+        "Usamos suas ideias, exemplos e referências de linguagem e edição. Você grava com sua presença e aprova a versão editada. As decisões aprovadas ajudam a orientar os próximos vídeos."
+      ]
+    ],
+    "editing_result": "Você recebe o vídeo editado para assistir, pedir ajustes e aprovar. O nível de acabamento e as tarefas entram no escopo a partir das suas gravações e referências."
   },
   "consultorias": {
     "headline": ["Seu método merece", "mais tempo de análise."],

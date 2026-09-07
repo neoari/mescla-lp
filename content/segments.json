@@ -15,19 +15,84 @@
     "contact_title": "Qual projeto está esperando por você?", "contact_text": "Conte o que quer realizar e onde falta tempo ou apoio. Vamos identificar um primeiro trabalho para colocar em movimento."
   },
   {
-    "slug": "creators", "label": "Creators", "short": "seu conteúdo", "card": "Faça suas ideias renderem mais conteúdo.",
-    "intro": "IA para quem cria conteúdo", "headline": ["Faça suas ideias", "renderem mais conteúdo."],
-    "description": "Transforme seu conhecimento em pautas, roteiros e novos formatos, com um time de IA configurado para trabalhar com a sua voz e a sua direção.",
-    "lead": "Uma boa ideia pode ir além de um único post. Tenha apoio para transformar o que você sabe em pautas, roteiros e novos formatos, com a sua voz e a sua direção em cada entrega.",
-    "context": "Para creators que querem ampliar a produção e aproveitar melhor o próprio conteúdo.",
-    "outcomes": [["Mais valor em cada ideia", "Aproveite gravações e materiais existentes para desenvolver conteúdos em diferentes formatos."], ["Uma produção mais constante", "Organize a passagem da pauta para a preparação, a revisão e os materiais prontos para publicar."], ["Mais tempo para criar", "Concentre seu olhar nas ideias, nos exemplos e na relação com a sua comunidade."]],
-    "example": "Uma gravação. Novas formas de contar.",
-    "example_intro": "Uma conversa gravada pode dar origem a sugestões de cortes, um carrossel e novos roteiros. As etapas de edição e as ferramentas entram conforme o projeto.",
-    "steps": [["human", "Você traz a ideia e a voz", "Envia a gravação, o objetivo e referências do seu jeito de comunicar."], ["agent", "Os agentes encontram os caminhos", "Organizam os aprendizados e sugerem trechos, títulos e formatos."], ["human", "Você escolhe o que faz sentido", "Seleciona as propostas e acrescenta os exemplos e o olhar que tornam o conteúdo seu."], ["agent", "O time prepara as peças", "Executa as etapas combinadas de produção e reúne os materiais para sua revisão antes da publicação."]],
-    "interests": [["reaproveitamento", "Aproveitar melhor conteúdos existentes"], ["pautas_roteiros", "Preparar pautas e roteiros"], ["video", "Organizar cortes e edição de vídeos"]],
-    "question": "O conteúdo vai continuar com a minha voz?", "answer": "Sua voz entra no contexto do time por meio de referências, exemplos e orientações. Testamos as primeiras entregas com você e ajustamos a partir da revisão. O seu julgamento continua fazendo parte da aprovação.",
-    "scope": "Um fluxo de conteúdo, com formatos, materiais de origem e etapas de produção e revisão definidos em conjunto.",
-    "contact_title": "O que suas ideias podem render?", "contact_text": "Conte como você produz hoje e em qual etapa o trabalho se acumula. Vamos desenhar um primeiro fluxo com você."
+    "slug": "creators",
+    "label": "Creators",
+    "short": "seu conteúdo",
+    "card": "Você grava. Seu time de IA edita.",
+    "intro": "Para creators que travam na edição",
+    "headline": [
+      "Você grava.",
+      "Seu time de IA edita."
+    ],
+    "description": "Destrave a edição de vídeos com um time de IA: agentes roteirizam, editam e publicam; você grava e aprova antes da publicação.",
+    "lead": "Você grava e aprova. Seu time de IA prepara o roteiro, edita o vídeo e publica o conteúdo aprovado, com a sua voz e o padrão que definimos juntos.",
+    "context": "Para creators que querem tirar a edição do caminho entre gravar e publicar.",
+    "outcomes": [
+      [
+        "Edição que avança",
+        "Transforme a gravação bruta em vídeo editado para sua aprovação."
+      ],
+      [
+        "Mais tempo para gravar",
+        "Concentre sua atenção na gravação e na avaliação do conteúdo."
+      ],
+      [
+        "Publicação após aprovação",
+        "O agente publica o material que você aprovou nos canais definidos."
+      ]
+    ],
+    "example": "Do roteiro à publicação. Você grava e aprova.",
+    "example_intro": "Cinco etapas, com os papéis definidos. A edição fica com o agente, e a publicação acontece depois da sua aprovação.",
+    "steps": [
+      [
+        "agent",
+        "Roteiro",
+        "O agente prepara o roteiro a partir da pauta, das referências e do seu jeito de comunicar."
+      ],
+      [
+        "human",
+        "Gravação",
+        "Você grava com a sua voz, seus exemplos e sua presença."
+      ],
+      [
+        "agent",
+        "Edição",
+        "O agente faz cortes, remove silêncios, ajusta cor e som, aplica grafismos e sincroniza legendas no padrão definido."
+      ],
+      [
+        "human",
+        "Aprovação",
+        "Você assiste à versão editada, pede ajustes e aprova o conteúdo antes de publicar."
+      ],
+      [
+        "agent",
+        "Publicação",
+        "Depois da sua aprovação, o agente publica nos canais conectados e autorizados."
+      ]
+    ],
+    "interests": [
+      [
+        "video",
+        "Destravar a edição de vídeos"
+      ],
+      [
+        "pautas_roteiros",
+        "Preparar pautas e roteiros"
+      ],
+      [
+        "publicacao",
+        "Publicar o conteúdo aprovado"
+      ],
+      [
+        "reaproveitamento",
+        "Reaproveitar gravações em novos vídeos"
+      ]
+    ],
+    "question": "O conteúdo vai continuar com a minha voz?",
+    "answer": "Sua voz entra no contexto do time por meio de referências, exemplos e orientações. Testamos as primeiras entregas com você e ajustamos a partir da revisão. O seu julgamento continua fazendo parte da aprovação.",
+    "scope": "Um fluxo de roteiro, gravação, edição, aprovação e publicação, com formatos, padrão de edição e canais definidos.",
+    "contact_title": "Sua gravação está esperando a edição?",
+    "contact_text": "Conte o que você grava e onde a edição trava. Vamos definir um primeiro fluxo para levar seu conteúdo até a publicação."
   },
   {
     "slug": "consultorias", "label": "Consultorias com equipes enxutas", "short": "sua consultoria", "card": "Amplie sua capacidade de entregar projetos.",

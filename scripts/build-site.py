@@ -18,7 +18,7 @@ details=json.loads((ROOT/'content/segment-details.json').read_text())
 for segment in segments: segment.update(details[segment['slug']])
 e=lambda s:escape(str(s),quote=True)
 version='2026-09-v7'
-home_version=version+'-home-story-v1'
+home_version=version+'-home-story-v2'
 style_href='/assets/segments.css?v='+hashlib.sha256((ROOT/'assets/segments.css').read_bytes()).hexdigest()[:12]
 experience_href='/assets/experience.css?v='+hashlib.sha256((ROOT/'assets/experience.css').read_bytes()).hexdigest()[:12]
 scene_version=hashlib.sha256((ROOT/'assets/ribbon-scene.js').read_bytes()).hexdigest()[:12]
@@ -54,16 +54,18 @@ if 'href="/privacidade/"' not in home:
 (ROOT/'index.html').write_text(home)
 for d in segments:
     slug=d['slug'];url=f'https://mescla.ai/para/{slug}/';title=f"Mescla para {d['label']} · {' '.join(d['headline'])}"
+    page_version='2026-09-creators-video-v1' if slug=='creators' else version
     message=f"Quero conversar sobre um time de IA para {d['short']}.\nSegmento: {d['label']}\nMinha equipe:\nO trabalho que quero melhorar:"
     wa='https://wa.me/'+phone+'?text='+quote(message)
     rows=''.join(f'<article class="routine"><span class="section-no" aria-hidden="true">0{i+1}</span><h3>{e(t)}</h3><p>{e(p)}</p></article>' for i,(t,p) in enumerate(d['outcomes']))
-    steps=''.join(f'<li><span class="process-emblem {role}">{ui_icon("bot" if role=="agent" else "user-round")}</span><div><p class="process-meta {"agent" if role=="agent" else ""}">{"Agentes de IA e ferramentas" if role=="agent" else "Você e sua equipe"}</p><h3>{e(t)}</h3><p>{e(p)}</p></div></li>' for role,t,p in d['steps'])
+    actor=lambda role: ('Agente' if role=='agent' else 'Pessoa') if slug=='creators' else ('Agentes de IA e ferramentas' if role=='agent' else 'Você e sua equipe')
+    steps=''.join(f'<li><span class="process-emblem {role}">{ui_icon("bot" if role=="agent" else "user-round")}</span><div><p class="process-meta {"agent" if role=="agent" else ""}">{actor(role)}</p><h3>{e(t)}</h3><p>{e(p)}</p></div></li>' for role,t,p in d['steps'])
     options=''.join(f'<option value="{e(key)}">{e(label)}</option>' for key,label in d['interests'])
     faq=d['faq']+ [('O que entra na memória compartilhada?', 'As referências, os processos e as decisões que sua empresa escolhe registrar para esse trabalho. Definimos fontes, responsáveis pela atualização e acessos por equipe ou projeto. Conversas pessoais e materiais de outros clientes não entram automaticamente nessa base.'), ('Preciso entender os termos técnicos da IA?', 'Não. RAG, MCP, APIs, tokens e configurações ficam com a Mescla. Você traz o conhecimento do trabalho e participa da revisão das entregas. Orientamos sua equipe a usar o ambiente, sem precisar programar.')]+[(d['question'],d['answer']),('Como começamos?',d['pilot_text']+' Na conversa, definimos entregas, ferramentas e condições antes da implantação.')]
     faq_html=''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q,a in faq)
     content=f'''<!DOCTYPE html>
 <html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#FBFAFD"><title>{e(title)}</title><meta name="description" content="{e(d['description'])}"><link rel="canonical" href="{url}"><meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(d['description'])}"><meta property="og:url" content="{url}"><link rel="icon" type="image/svg+xml" href="{favicon}"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>{font}<style>{css}</style><link rel="stylesheet" href="{style_href}"><link rel="stylesheet" href="{experience_href}"></head>
-<body data-segment="{slug}" data-segment-label="{e(d['label'])}" data-page-version="{version}">
+<body data-segment="{slug}" data-segment-label="{e(d['label'])}" data-page-version="{page_version}">
 <a class="skip" href="#principal">Pular para o conteúdo</a>
 <header class="nav lp-nav"><div class="wrap nav-inner">{brand('/')}<a class="back-home" href="/#segmentos" data-attribution-link>Conhecer a Mescla</a><a class="nav-contact" href="#conversar">Vamos conversar <span aria-hidden="true">↗</span></a></div></header>
 <main id="principal">

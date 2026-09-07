@@ -440,3 +440,18 @@ body[data-segment="home"] .hero-team-figure{margin:0;padding:28px;min-height:500
 @media(max-width:380px){.home-story .environment-content .platform-grid{grid-template-columns:1fr}.home-story .btn{font-size:.9375rem}}
 @media(prefers-reduced-motion:reduce){.home-story .application-card,.home-story .case-link>.ui-icon,.home-story .btn{transition:none}.home-story .application-card:hover .case-link>.ui-icon,.home-story .btn:hover{transform:none}}
 @media print{.home-story .application-card,.home-story .delivery-step{break-inside:avoid}.home-story .home-technology,.home-story .home-closing,.home-story .application-card--creators{print-color-adjust:exact;-webkit-print-color-adjust:exact}.home-story .section{padding-block:30px}}
+
+/* The creator card uses all five roles; other audience cards keep their own flow. */
+.home-story .application-card--creators .case-pipeline{grid-template-columns:1fr;gap:6px}
+.home-story .application-card--creators .case-pipeline li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;align-items:center;gap:10px;padding:8px 11px;font-size:.9375rem;border:1px solid #645a77;background:#302a43}
+.home-story .application-card--creators .case-pipeline li+li::before{display:none}
+.home-story .application-card--creators .case-pipeline li:nth-child(3){background:#23403e;border-color:var(--mare);border-left:3px solid var(--mare)}
+.home-story .case-actor{display:flex;align-items:center;gap:5px;font-size:.8125rem;color:var(--mare)}
+.home-story .case-actor .ui-icon{width:16px;height:16px}
+.home-story .case-stage--human .case-actor{color:var(--sol)}
+.home-story .application-card--creators .case-destination .tool-marks{gap:12px 17px}
+body[data-segment="creators"] .infographic-steps{width:100%;display:flex;justify-content:center;flex-wrap:wrap;gap:5px}
+body[data-segment="creators"] .infographic-steps button{font-size:14px;padding:8px 10px;min-height:44px}
+body[data-segment="creators"] .infographic-steps button>span{display:none}
+body[data-segment="creators"] .infographic-caption{font-size:15px;min-height:102px;color:#5d576b}
+@media(max-width:480px){body[data-segment="creators"] .infographic-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}body[data-segment="creators"] .infographic-steps button{justify-content:center;padding:8px 5px}body[data-segment="creators"] .infographic-caption{min-height:125px;padding-top:8px}}
