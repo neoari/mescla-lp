@@ -26,7 +26,8 @@ player_version=hashlib.sha256((ROOT/'assets/infographics.js').read_bytes()).hexd
 motion_path.write_text(re.sub(r"import\('./infographics\.js(?:\?[^']*)?'\)",f"import('./infographics.js?v={player_version}')",motion_path.read_text()))
 motion_href='/assets/experience.js?v='+hashlib.sha256(motion_path.read_bytes()).hexdigest()[:12]
 phone='5561993973584'
-logo='https://raw.githubusercontent.com/neoari/mescla-lp/main/assets/mescla-logo.svg'
+logo='/assets/mescla-logo.svg?v='+hashlib.sha256((ROOT/'assets/mescla-logo.svg').read_bytes()).hexdigest()[:12]
+favicon='/assets/mescla-favicon.svg?v='+hashlib.sha256((ROOT/'assets/mescla-favicon.svg').read_bytes()).hexdigest()[:12]
 css=re.search(r'<style>(.*?)</style>',home,re.S).group(1)
 font=re.search(r'<link href="https://fonts.googleapis.com/css2[^>]+>',home).group(0)
 brand=lambda href: f'<a class="brand" href="{href}" aria-label="Mescla, página principal"><img class="brand-mark" src="{logo}" width="44" height="36" alt="" decoding="async"><span class="brand-word">mescla</span></a>'
@@ -47,6 +48,9 @@ home=re.sub(r'href="/assets/experience\.css(?:\?[^\"]*)?"',lambda _:f'href="{exp
 home=re.sub(r'<script type="module" src="/assets/experience\.js[^\"]*"></script>\s*','',home)
 home=home.replace('</body>',f'<script type="module" src="{motion_href}"></script>\n</body>')
 if '/assets/measurement.js' not in home: home=home.replace('</body>','<script src="/assets/measurement-config.js"></script>\n<script src="/assets/measurement.js" defer></script>\n</body>')
+home=home.replace('https://raw.githubusercontent.com/neoari/mescla-lp/main/assets/mescla-logo.svg#escuro', '/assets/mescla-logo.svg').replace('https://raw.githubusercontent.com/neoari/mescla-lp/main/assets/mescla-logo.svg','/assets/mescla-logo.svg')
+home=re.sub(r'(src|href)="/assets/mescla-logo\.svg(?:\?[^\"]*)?"',lambda m: m.group(1)+'="'+logo+'"',home)
+home=re.sub(r'(<link rel="icon"[^>]*href=")[^"]+',lambda m:m.group(1)+favicon,home)
 home=re.sub(r'<body[^>]*>', lambda _: '<body data-segment="home" data-page-version="'+version+'">', home, count=1)
 home=home.replace('<a href="#proposito">Por que existimos</a>','<a href="#segmentos">Para o seu negócio</a>')
 # Existing contact links remain functional with JavaScript disabled.
@@ -64,7 +68,7 @@ for d in segments:
     faq=d['faq']+ [('O que entra na memória compartilhada?', 'As referências, os processos e as decisões que sua empresa escolhe registrar para esse trabalho. Definimos fontes, responsáveis pela atualização e acessos por equipe ou projeto. Conversas pessoais e materiais de outros clientes não entram automaticamente nessa base.'), ('Preciso entender os termos técnicos da IA?', 'Não. RAG, MCP, APIs, tokens e configurações ficam com a Mescla. Você traz o conhecimento do trabalho e participa da revisão das entregas. Orientamos sua equipe a usar o ambiente, sem precisar programar.')]+[(d['question'],d['answer']),('Como começamos?',d['pilot_text']+' Na conversa, definimos entregas, ferramentas e condições antes da implantação.')]
     faq_html=''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q,a in faq)
     content=f'''<!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#FBFAFD"><title>{e(title)}</title><meta name="description" content="{e(d['description'])}"><link rel="canonical" href="{url}"><meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(d['description'])}"><meta property="og:url" content="{url}"><link rel="icon" type="image/svg+xml" href="{logo}#escuro"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>{font}<style>{css}</style><link rel="stylesheet" href="{style_href}"><link rel="stylesheet" href="{experience_href}"></head>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#FBFAFD"><title>{e(title)}</title><meta name="description" content="{e(d['description'])}"><link rel="canonical" href="{url}"><meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(d['description'])}"><meta property="og:url" content="{url}"><link rel="icon" type="image/svg+xml" href="{favicon}"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>{font}<style>{css}</style><link rel="stylesheet" href="{style_href}"><link rel="stylesheet" href="{experience_href}"></head>
 <body data-segment="{slug}" data-segment-label="{e(d['label'])}" data-page-version="{version}">
 <a class="skip" href="#principal">Pular para o conteúdo</a>
 <header class="nav lp-nav"><div class="wrap nav-inner">{brand('/')}<a class="back-home" href="/#segmentos" data-attribution-link>Conhecer a Mescla</a><a class="nav-contact" href="#conversar">Vamos conversar <span aria-hidden="true">↗</span></a></div></header>

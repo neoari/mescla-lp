@@ -227,22 +227,36 @@ body[data-segment="consultorias"] .motion-player{box-shadow:8px 10px 0 #dcebe5;b
 .shared-memory-base>.ui-icon{width:32px;height:32px;flex-shrink:0;color:var(--mare)}
 .shared-memory-base strong{font-weight:500;font-size:1.125rem}
 .shared-memory-base p{margin-top:5px;font-size:1rem;color:#dedbe7}
-.value-comparison{width:100%;border-collapse:collapse;table-layout:fixed;text-align:left;font-size:1rem;line-height:1.6}
-.value-comparison thead th{padding:20px 24px;border-bottom:1px solid var(--noite);font-size:.875rem;font-weight:500}
-.comparison-title{display:block;font-size:1.125rem;font-weight:600;line-height:1.4;color:var(--noite)}
+.value-comparison{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed;text-align:left;font-size:1rem;line-height:1.6}
+.value-comparison thead th{padding:25px 28px;border-bottom:1px solid var(--linha);font-size:.8rem;font-weight:500;vertical-align:middle}
+.comparison-title{display:block;font-size:1.4rem;font-weight:600;line-height:1.3;color:var(--noite)}
 .comparison-subtitle{display:block;margin-top:5px;font-size:.875rem;font-weight:400;line-height:1.5;color:var(--cinza)}
-.value-comparison thead th:first-child{width:25%;padding-left:0}
-.value-comparison tbody th,.value-comparison td{padding:27px 24px;vertical-align:top;border-bottom:1px solid var(--linha)}
-.value-comparison tbody th{padding-left:0;font-weight:500;font-size:1.125rem;line-height:1.35}
-.value-comparison tbody th>span{display:flex;align-items:flex-start;gap:14px;max-width:215px}
+.value-comparison thead th:first-child{width:24%;padding-left:0;text-transform:uppercase;letter-spacing:.08em}
+.value-comparison tbody th,.value-comparison td{padding:29px 28px;vertical-align:top;border-bottom:1px solid var(--linha)}
+.value-comparison tbody th{padding-left:0;font-weight:600;font-size:1.125rem;line-height:1.35}
+.value-comparison tbody th>span{display:flex;flex-direction:column;align-items:flex-start;gap:15px;max-width:200px}
 .value-comparison .ui-icon{width:24px;height:24px;flex-shrink:0;color:#2b6b5d}
-.value-comparison td:nth-child(2){color:var(--cinza)}
-.value-comparison th:last-child,.value-comparison td:last-child{background:#6fd9c91c}
+.gain-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#ecebf1}
+.value-comparison .gain-icon .ui-icon{color:var(--noite);width:22px;height:22px}
+.value-comparison td:nth-child(2){color:#696577;background:#f4f3f7}
+.value-comparison thead th:nth-child(2){background:#ecebf1;border-top-left-radius:16px}
+.value-comparison thead th:last-child{background:var(--noite);border-top-right-radius:16px}
+.value-comparison thead th:last-child .comparison-title{color:var(--branco)}
+.value-comparison thead th:last-child .comparison-subtitle{color:var(--mare);font-size:.8rem}
+.comparison-brand{display:grid;grid-template-columns:43px 1fr;column-gap:12px;align-items:center}
+.comparison-brand img{grid-row:1 / 3;object-fit:contain}
+.value-comparison td:last-child{background:#e5f5ef;border-bottom-color:#c9e5db;color:#3d5650}
+.comparison-claim{display:block;font-weight:500;font-size:1.125rem;line-height:1.35;margin-bottom:10px;color:#595465}
+.value-comparison td:last-child .comparison-claim{color:var(--noite);font-weight:600;font-size:1.25rem;letter-spacing:-.015em}
+.value-comparison td p{margin:0;font-size:.9375rem;line-height:1.6}
+.value-comparison tbody tr:last-child td:nth-child(2){border-bottom-left-radius:16px}
+.value-comparison tbody tr:last-child td:last-child{border-bottom-right-radius:16px}
+.comparison-scope{font-size:.75rem;line-height:1.5;color:var(--cinza);margin:15px 0 0}
 .comparison-mobile-label{display:none}
-.value-proof{display:flex;align-items:center;gap:18px;margin-top:30px}
+.value-proof{display:flex;align-items:center;gap:18px;margin-top:30px;padding:26px 0 0}
 .value-proof-icon{display:grid;place-items:center;flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--sol)}
 .value-proof p{max-width:615px;font-size:1rem;color:var(--cinza)}
-.value-proof strong{display:block;color:var(--noite);font-weight:500}
+.value-proof strong{display:block;color:var(--noite);font-weight:600;font-size:1.125rem;margin-bottom:5px}
 .value-proof .text-link{margin-left:auto;flex-shrink:0;gap:12px}
 .ai-gains{list-style:none;padding:0;margin:30px 0 0}
 .ai-gains li{display:flex;gap:17px;padding:19px 0;border-top:1px solid #544c65}
@@ -250,4 +264,4 @@ body[data-segment="consultorias"] .motion-player{box-shadow:8px 10px 0 #dcebe5;b
 .ai-gains h3{font:500 1.125rem/1.4 'Instrument Sans',sans-serif;letter-spacing:0;color:#fbfafd}
 .ai-gains p{font-size:1rem;line-height:1.55;color:#d8d2e3;margin-top:6px}
 @media(max-width:800px){.value-proof{flex-wrap:wrap}.value-proof p{flex:1;min-width:200px}.value-proof .text-link{margin-left:66px}.value-comparison thead th,.value-comparison td{padding-left:17px;padding-right:17px}}
-@media(max-width:650px){.value-comparison,.value-comparison tbody{display:block}.value-comparison thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.value-comparison tr{display:block;padding:22px 0;border-top:1px solid var(--linha)}.value-comparison tbody th,.value-comparison td{display:block;width:100%;padding:14px 17px;border:0}.value-comparison tbody th{padding:0 0 15px}.value-comparison tbody th>span{max-width:none;align-items:center}.value-comparison td:last-child{border-left:2px solid #3b7e6d}.comparison-mobile-label{display:block;font-size:.875rem;color:var(--noite);font-weight:500;margin-bottom:6px}.value-proof{margin-top:15px}.mescla-value .tool-marks{gap:10px}}
+@media(max-width:650px){.value-comparison,.value-comparison tbody{display:block}.value-comparison thead{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.value-comparison tr{display:block;padding:24px 0;border-top:1px solid var(--linha)}.value-comparison tbody th,.value-comparison td{display:block;width:100%;padding:20px;border:0}.value-comparison tbody th{padding:0 0 18px}.value-comparison tbody th>span{max-width:none;flex-direction:row;align-items:center}.value-comparison td:nth-child(2){border-radius:12px 12px 0 0!important}.value-comparison td:last-child{border-radius:0 0 12px 12px!important;border-left:3px solid #43816e}.comparison-mobile-label{display:block;margin-bottom:17px;padding-bottom:12px;border-bottom:1px solid #1b193015}.comparison-mobile-label .comparison-title{font-size:1rem}.comparison-mobile-label .comparison-subtitle{font-size:.75rem;margin-top:3px}.value-proof{margin-top:5px;padding-top:0}.mescla-value .tool-marks{gap:10px}}

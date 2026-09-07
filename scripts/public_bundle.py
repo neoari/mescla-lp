@@ -7,6 +7,8 @@ PUBLIC_FILES = (
     'para/consultorias/index.html',
     'para/agencias/index.html',
     'para/advocacia/index.html',
+    'assets/mescla-logo.svg',
+    'assets/mescla-favicon.svg',
     'assets/segments.css',
     'assets/measurement.js',
     'assets/measurement-config.js',
