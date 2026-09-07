@@ -3,7 +3,7 @@ const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const scene = document.querySelector('[data-ribbon-scene]');
 
 if (scene && !navigator.connection?.saveData) {
-  const load = () => import('./ribbon-scene.js?v=6e545313c83c').then(module => module.mountRibbon(scene, preference)).catch(() => {
+  const load = () => import('./ribbon-scene.js?v=d99d1457d6fe').then(module => module.mountRibbon(scene, preference)).catch(() => {
     // Keep the original brand asset visible if WebGL or the module is unavailable.
   });
   if ('requestIdleCallback' in window) window.requestIdleCallback(load, { timeout: 1200 });

@@ -8,7 +8,7 @@ export function mountRibbon(host, motionPreference) {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.6));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.04;
+  renderer.toneMappingExposure = .88;
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.domElement.setAttribute('aria-hidden', 'true');
@@ -19,7 +19,7 @@ export function mountRibbon(host, motionPreference) {
   const camera = new THREE.PerspectiveCamera(32, 1, .1, 30);
   camera.position.set(0, .25, 8.9);
   camera.lookAt(0, .05, 0);
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x5e526f, 1.65));
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x332747, .95));
   // A small HDR light field gives the satin surface broad studio reflections.
   const lightPixels = new Float32Array(128 * 64 * 4);
   for (let y = 0; y < 64; y++) for (let x = 0; x < 128; x++) {
@@ -33,8 +33,8 @@ export function mountRibbon(host, motionPreference) {
   studioLight.mapping = THREE.EquirectangularReflectionMapping;
   studioLight.needsUpdate = true;
   scene.environment = studioLight;
-  scene.environmentIntensity = .8;
-  const key = new THREE.DirectionalLight(0xfff3db, 3.2);
+  scene.environmentIntensity = .42;
+  const key = new THREE.DirectionalLight(0xfff3db, 2.3);
   key.position.set(-3, 6, 5);
   key.castShadow = true;
   key.shadow.mapSize.set(512, 512);
@@ -43,9 +43,9 @@ export function mountRibbon(host, motionPreference) {
   key.shadow.normalBias = .035;
   key.shadow.bias = -.0004;
   scene.add(key);
-  const rim = new THREE.DirectionalLight(0xc7fff3, 2.2);
+  const rim = new THREE.DirectionalLight(0xc7fff3, 1.6);
   rim.position.set(4, 2, -1); scene.add(rim);
-  const fill = new THREE.DirectionalLight(0xffffff, 1.2);
+  const fill = new THREE.DirectionalLight(0xffffff, .75);
   fill.position.set(1, -2, 5); scene.add(fill);
 
   const paths = [];
@@ -62,7 +62,7 @@ export function mountRibbon(host, motionPreference) {
     shape.lineTo(x, y + r); shape.quadraticCurveTo(x, y, x + r, y);
     const path = new THREE.CatmullRomCurve3(points.map(p => new THREE.Vector3(...p)), false, 'centripetal');
     const geometry = new THREE.ExtrudeGeometry(shape, { steps: 160, bevelEnabled: false, extrudePath: path, curveSegments: 5 });
-    const material = new THREE.MeshPhysicalMaterial({ color, metalness: .28, roughness: .27, clearcoat: 1, clearcoatRoughness: .23, anisotropy: .45 });
+    const material = new THREE.MeshPhysicalMaterial({ color, metalness: .12, roughness: .38, clearcoat: .45, clearcoatRoughness: .32, anisotropy: .35 });
     const mesh = new THREE.Mesh(geometry, material);
     mesh.castShadow = true; mesh.receiveShadow = true;
     weave.add(mesh);
