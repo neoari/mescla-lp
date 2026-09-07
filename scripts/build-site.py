@@ -18,7 +18,7 @@ details=json.loads((ROOT/'content/segment-details.json').read_text())
 for segment in segments: segment.update(details[segment['slug']])
 e=lambda s:escape(str(s),quote=True)
 version='2026-09-v7'
-home_version=version+'-home-story-v2'
+home_version=version+'-home-story-v3'
 style_href='/assets/segments.css?v='+hashlib.sha256((ROOT/'assets/segments.css').read_bytes()).hexdigest()[:12]
 experience_href='/assets/experience.css?v='+hashlib.sha256((ROOT/'assets/experience.css').read_bytes()).hexdigest()[:12]
 scene_version=hashlib.sha256((ROOT/'assets/ribbon-scene.js').read_bytes()).hexdigest()[:12]
@@ -54,25 +54,30 @@ if 'href="/privacidade/"' not in home:
 (ROOT/'index.html').write_text(home)
 for d in segments:
     slug=d['slug'];url=f'https://mescla.ai/para/{slug}/';title=f"Mescla para {d['label']} · {' '.join(d['headline'])}"
-    page_version='2026-09-creators-video-v1' if slug=='creators' else version
+    page_version='2026-09-creators-video-v1' if slug=='creators' else '2026-09-'+slug+'-workflow-v1'
+    workflow_attr=' data-workflow="sector"' if d.get('tasks') else ''
     message=f"Quero conversar sobre um time de IA para {d['short']}.\nSegmento: {d['label']}\nMinha equipe:\nO trabalho que quero melhorar:"
     wa='https://wa.me/'+phone+'?text='+quote(message)
     rows=''.join(f'<article class="routine"><span class="section-no" aria-hidden="true">0{i+1}</span><h3>{e(t)}</h3><p>{e(p)}</p></article>' for i,(t,p) in enumerate(d['outcomes']))
-    actor=lambda role: ('Agente' if role=='agent' else 'Pessoa') if slug=='creators' else ('Agentes de IA e ferramentas' if role=='agent' else 'Você e sua equipe')
+    actor=lambda role: ('Agente' if role=='agent' else 'Pessoa') if slug=='creators' or d.get('tasks') else ('Agentes de IA e ferramentas' if role=='agent' else 'Você e sua equipe')
     steps=''.join(f'<li><span class="process-emblem {role}">{ui_icon("bot" if role=="agent" else "user-round")}</span><div><p class="process-meta {"agent" if role=="agent" else ""}">{actor(role)}</p><h3>{e(t)}</h3><p>{e(p)}</p></div></li>' for role,t,p in d['steps'])
     options=''.join(f'<option value="{e(key)}">{e(label)}</option>' for key,label in d['interests'])
     faq=d['faq']+ [('O que entra na memória compartilhada?', 'As referências, os processos e as decisões que sua empresa escolhe registrar para esse trabalho. Definimos fontes, responsáveis pela atualização e acessos por equipe ou projeto. Conversas pessoais e materiais de outros clientes não entram automaticamente nessa base.'), ('Preciso entender os termos técnicos da IA?', 'Não. RAG, MCP, APIs, tokens e configurações ficam com a Mescla. Você traz o conhecimento do trabalho e participa da revisão das entregas. Orientamos sua equipe a usar o ambiente, sem precisar programar.')]+[(d['question'],d['answer']),('Como começamos?',d['pilot_text']+' Na conversa, definimos entregas, ferramentas e condições antes da implantação.')]
     faq_html=''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q,a in faq)
+    contact_note=f'<p class="sector-contact-note">{e(d["contact_note"])}</p>' if d.get('contact_note') else ''
+    example_section=f'''<section class="section example" id="aplicacao" aria-labelledby="example-title"><div class="wrap example-layout"><div class="example-copy"><p class="eyebrow">Uma aplicação possível</p><h2 id="example-title">{e(d['example'])}</h2><p class="lead">{e(d['example_intro'])}</p><p class="example-label">Exemplo ilustrativo · escopo definido por projeto</p></div><ol class="process-list">{steps}</ol></div></section>'''
+    if d.get('tasks'):
+        example_section=example_section.replace('</div><ol class="process-list">', '<a class="text-link sector-flow-contact" href="#conversar">Conversar sobre esse fluxo '+ui_icon('arrow-up-right')+'</a></div><ol class="process-list">')
+    middle=(example_section+'\n'+tools_section(d)) if d.get('tasks') else (tools_section(d)+'\n'+example_section)
     content=f'''<!DOCTYPE html>
 <html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#FBFAFD"><title>{e(title)}</title><meta name="description" content="{e(d['description'])}"><link rel="canonical" href="{url}"><meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(d['description'])}"><meta property="og:url" content="{url}"><link rel="icon" type="image/svg+xml" href="{favicon}"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>{font}<style>{css}</style><link rel="stylesheet" href="{style_href}"><link rel="stylesheet" href="{experience_href}"></head>
-<body data-segment="{slug}" data-segment-label="{e(d['label'])}" data-page-version="{page_version}">
+<body data-segment="{slug}" data-segment-label="{e(d['label'])}" data-page-version="{page_version}"{workflow_attr}>
 <a class="skip" href="#principal">Pular para o conteúdo</a>
 <header class="nav lp-nav"><div class="wrap nav-inner">{brand('/')}<a class="back-home" href="/#segmentos" data-attribution-link>Conhecer a Mescla</a><a class="nav-contact" href="#conversar">Vamos conversar <span aria-hidden="true">↗</span></a></div></header>
 <main id="principal">
-<section class="hero lp-hero" aria-labelledby="hero-title"><div class="wrap hero-grid"><div class="hero-copy"><p class="eyebrow">{e(d['intro'])}</p><h1 id="hero-title"><span>{e(d['headline'][0])}</span> <em>{e(d['headline'][1])}</em></h1><p class="lead">{e(d['lead'])}</p><div class="hero-actions"><a class="btn" href="#conversar" data-intent>{e(d['cta'])} <span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="#aplicacao">Ver uma aplicação <span aria-hidden="true">↓</span></a></div><p class="audience">{e(d['context'])}</p><p class="technical-promise">{ui_icon("check")}A parte técnica fica com a Mescla.</p></div>{motion_surface(slug,hero_surface(d))}</div></section>
+<section class="hero lp-hero" aria-labelledby="hero-title"><div class="wrap hero-grid"><div class="hero-copy"><p class="eyebrow">{e(d['intro'])}</p><h1 id="hero-title"><span>{e(d['headline'][0])}</span> <em>{e(d['headline'][1])}</em></h1><p class="lead">{e(d['lead'])}</p><div class="hero-actions"><a class="btn" href="#conversar" data-intent>{e(d['cta'])} <span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="#aplicacao">{e(d.get("secondary_cta", "Ver uma aplicação"))} <span aria-hidden="true">↓</span></a></div>{contact_note}<p class="audience">{e(d['context'])}</p><p class="technical-promise">{ui_icon("check")}A parte técnica fica com a Mescla.</p></div>{motion_surface(slug,hero_surface(d))}</div></section>
 {value_section(d)}
-{tools_section(d)}
-<section class="section example" id="aplicacao" aria-labelledby="example-title"><div class="wrap example-layout"><div class="example-copy"><p class="eyebrow">Uma aplicação possível</p><h2 id="example-title">{e(d['example'])}</h2><p class="lead">{e(d['example_intro'])}</p><p class="example-label">Exemplo ilustrativo · escopo definido por projeto</p></div><ol class="process-list">{steps}</ol></div></section>
+{middle}
 {ai_section(d)}
 {pilot_section(d)}
 <section class="section lp-faq" aria-labelledby="faq-title"><div class="wrap faq-grid"><div><p class="eyebrow">Antes de começar</p><h2 id="faq-title">O que vale<br>esclarecer primeiro.</h2></div><div class="faq-list">{faq_html}</div></div></section>

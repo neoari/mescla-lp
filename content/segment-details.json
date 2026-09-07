@@ -1,37 +1,155 @@
 {
   "empreendedores": {
-    "headline": ["Seu negócio não precisa", "esperar sobrar tempo."],
-    "lead": "Faça propostas e pendências avançarem com agentes que você e sua equipe podem compartilhar. As referências e decisões ficam na memória do negócio para apoiar a próxima entrega.",
-    "description": "Tire propostas, projetos e pendências da espera. A Mescla conecta agentes de IA à rotina do seu negócio para você ganhar capacidade de execução.",
-    "intro": "Para quem empreende e faz acontecer",
-    "context": "Para quem trabalha sozinho ou toca o negócio com uma equipe pequena.",
-    "cta": "Quero destravar minha rotina",
-    "value_title": "Menos coisa na sua cabeça. Mais coisa acontecendo.",
-    "value_intro": "O valor aparece quando uma tarefa deixa de depender de você do começo ao fim.",
-    "value_cards": [
-      ["Propostas", "O pedido fica esperando você parar para escrever.", "O agente reúne o contexto e prepara uma primeira versão. Você ajusta a oferta e decide o que enviar."],
-      ["Acompanhamento", "O próximo passo se perde entre conversas e planilhas.", "Pendências, responsáveis e informações reunidos para você saber onde agir."],
-      ["Novos projetos", "Pesquisar e organizar tudo consome o tempo de executar.", "Uma base de pesquisa e um plano de trabalho para testar a ideia com mais clareza."]
+    "headline": [
+      "O pedido chegou.",
+      "Faça a proposta andar."
     ],
-    "tools_title": "O trabalho já está nas suas ferramentas.",
-    "tools_intro": "Começamos pelo que você usa para vender, organizar e atender.",
+    "lead": "Seu time de IA reúne o pedido, monta a proposta com suas ofertas e critérios comerciais e prepara o retorno ao cliente. Você confere preço, prazo e condições e conduz a negociação.",
+    "description": "Um time de IA para organizar pedidos, montar propostas comerciais e preparar retornos aos clientes. Você aprova as condições e conduz a negociação.",
+    "intro": "Para quem vende serviços e concentra o comercial",
+    "context": "Você conhece o cliente. Seus agentes preparam o próximo passo.",
+    "cta": "Quero agilizar minhas propostas",
+    "value_title": "Do pedido à proposta. Veja o que seus agentes fazem.",
+    "value_intro": "O cliente pede um orçamento enquanto você está atendendo ou entregando. Seus agentes preparam o trabalho comercial para a conversa continuar.",
+    "tools_title": "O pedido vem de onde seu cliente já fala.",
+    "tools_intro": "A proposta volta em um arquivo que você consegue revisar. O próximo retorno fica registrado para você ou outra pessoa da equipe continuar.",
     "tools": [
-      ["googledrive", "Google Drive", "Propostas, referências e arquivos como contexto do trabalho."],
-      ["googlesheets", "Google Sheets", "Pedidos, pendências e acompanhamento em uma base organizada."],
-      ["notion", "Notion", "Processos e conhecimento que deixam de ficar só na sua cabeça."],
-      ["whatsapp", "WhatsApp", "Entrada de pedidos e atendimento, com a conexão adequada ao seu número."]
+      [
+        "whatsapp",
+        "WhatsApp",
+        "Pedidos e retornos comerciais nos canais autorizados do negócio."
+      ],
+      [
+        "googledocs",
+        "Google Docs",
+        "Propostas editáveis com os seus modelos e condições."
+      ],
+      [
+        "googlesheets",
+        "Google Sheets",
+        "Ofertas, critérios comerciais e acompanhamento das propostas."
+      ],
+      [
+        "googledrive",
+        "Google Drive",
+        "Referências e arquivos comerciais com acesso definido."
+      ],
+      [
+        "trello",
+        "Trello",
+        "Próximos passos e responsáveis por cada oportunidade."
+      ]
     ],
-    "ai_title": "O negócio continua, mesmo quando a tarefa muda de mãos.",
-    "ai_text": "Você e sua equipe trabalham com os mesmos agentes e com a memória do negócio: ofertas, modelos, processos e decisões registradas. A Mescla prepara esse ambiente para o trabalho não depender de uma única pessoa.",
-    "ai_gains": [["network", "Um agente para quem participa da entrega", "Você registra o pedido; outra pessoa revisa a proposta e continua o trabalho com o contexto disponível."], ["book-open", "O conhecimento fica no negócio", "Ofertas, modelos e decisões registradas formam uma base para a equipe e os agentes consultarem."], ["route", "Mais facilidade para dividir o trabalho", "Quem entra na rotina encontra as referências e as etapas combinadas, conforme seus acessos."]],
-    "ai_tools": [["openai", "ChatGPT"], ["googlegemini", "Gemini"]],
-    "pilot_title": "Comece por uma rotina que está travando o negócio.",
-    "pilot_text": "Por exemplo, transformar um pedido de orçamento em uma proposta pronta para sua revisão.",
-    "deliverables": ["Agentes compartilhados por quem participa da rotina", "Memória do negócio com ofertas, modelos e decisões selecionadas", "Fluxo do pedido à revisão, com responsáveis e acessos definidos"],
-    "measure": "Avaliar: tempo até a primeira versão, pendências esquecidas e esforço para revisar.",
-    "contact_title": "O que está esperando por você hoje?",
-    "contact_text": "Conte a tarefa que mais se acumula. Vamos procurar um primeiro resultado que faça diferença no seu negócio.",
-    "faq": [["Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?", "Se sua conta já atende bem, ela pode ser suficiente. A Mescla ajuda a organizar um ambiente em que você e outras pessoas compartilham agentes, referências e o contexto do trabalho. Começamos com uma rotina e uma memória do negócio que possa continuar sendo usada pela equipe. Quem trabalha sozinho também pode começar assim e planejar a entrada de colaboradores."], ["Preciso trocar minhas ferramentas?", "Começamos avaliando o que você já usa. Quando uma conexão não está disponível, podemos trabalhar com arquivos e etapas de revisão ou propor outro caminho antes da contratação."], ["Vou precisar ficar dando instruções o tempo todo?", "O objetivo é configurar contexto, modelos e rotinas reutilizáveis. Você continua nas decisões e aprovações; o teste mostra quais etapas já conseguem avançar com menos intervenção."]]
+    "ai_title": "O cliente não precisa contar tudo de novo.",
+    "ai_text": "Você e quem participa do comercial usam os mesmos agentes. Ofertas, propostas aprovadas e registros autorizados do cliente acompanham a conversa até a entrega.",
+    "ai_gains": [
+      [
+        "book-open",
+        "Suas ofertas orientam a proposta",
+        "Ofertas e modelos reutilizáveis orientam o agente; históricos e condições particulares ficam no contexto de cada cliente."
+      ],
+      [
+        "network",
+        "Outra pessoa consegue continuar",
+        "O histórico autorizado e o próximo passo ficam disponíveis para quem assume o atendimento."
+      ],
+      [
+        "route",
+        "O combinado chega à entrega",
+        "Escopo e condições aprovadas ajudam a equipe que vai executar o serviço."
+      ]
+    ],
+    "ai_tools": [
+      [
+        "openai",
+        "ChatGPT"
+      ],
+      [
+        "googlegemini",
+        "Gemini"
+      ]
+    ],
+    "pilot_title": "Comece com um pedido que precisa virar proposta.",
+    "pilot_text": "Implantamos o fluxo para um tipo de serviço e o testamos com um pedido autorizado. Você revisa uma proposta real e ajustamos o processo para os próximos pedidos.",
+    "deliverables": [
+      "Agentes configurados para esse percurso comercial",
+      "Resumo do pedido e proposta editável para revisão",
+      "Mensagem e tarefa de retorno, com regras de envio definidas"
+    ],
+    "measure": "Avaliamos tempo até a proposta, correções nas condições e retornos que ficaram sem responsável.",
+    "contact_title": "Qual pedido está esperando uma proposta?",
+    "contact_text": "Conte que serviço você vende e onde o orçamento trava. Vamos escolher um primeiro fluxo de pedido, proposta e retorno.",
+    "faq": [
+      [
+        "Já uso ChatGPT. O que ganho com a Mescla?",
+        "O agente passa a trabalhar com suas ofertas, critérios e modelos em um fluxo que se repete. A Mescla configura fontes, ferramentas, retornos e participação da equipe. A primeira proposta serve para conferir se o trabalho atende ao seu padrão."
+      ],
+      [
+        "O agente pode inventar um preço ou dar desconto?",
+        "Os valores e as regras vêm de você. O fluxo pede sua conferência das condições e deixa exceções para a negociação humana. Informações faltantes aparecem como pendências a resolver."
+      ],
+      [
+        "O retorno é enviado sozinho?",
+        "Pode ser enviado pelo agente quando a regra, a mensagem e o canal estiverem autorizados. No primeiro projeto, definimos o que pode seguir automaticamente e o que exige uma nova aprovação."
+      ],
+      [
+        "Funciona se só eu cuido do comercial?",
+        "Sim. Começamos com o seu fluxo. Se outra pessoa participar depois, definimos seus acessos aos mesmos agentes e registros, conforme o ambiente escolhido."
+      ]
+    ],
+    "secondary_cta": "Ver o pedido virar proposta",
+    "contact_note": "Conte onde o orçamento trava. A conversa começa no WhatsApp.",
+    "tasks": [
+      {
+        "icon": "file-text",
+        "title": "Organizar o pedido",
+        "action": "Reúne necessidade, prazo e informações recebidas nos canais autorizados.",
+        "output": "Resumo do que o cliente precisa"
+      },
+      {
+        "icon": "book-open",
+        "title": "Consultar suas ofertas",
+        "action": "Busca ofertas, modelos e referências comerciais autorizadas que combinam com o pedido.",
+        "output": "Referências para aquele orçamento"
+      },
+      {
+        "icon": "search",
+        "title": "Identificar o que falta",
+        "action": "Aponta detalhes que precisam ser confirmados antes de montar o escopo.",
+        "output": "Perguntas para completar o pedido"
+      },
+      {
+        "icon": "file-text",
+        "title": "Montar a proposta",
+        "action": "Preenche o documento com escopo e critérios comerciais fornecidos por você.",
+        "output": "Proposta editável para sua aprovação"
+      },
+      {
+        "icon": "route",
+        "title": "Preparar o retorno",
+        "action": "Redige a mensagem que acompanha a proposta ou retoma uma conversa em aberto.",
+        "output": "Retorno vinculado ao contexto do cliente"
+      },
+      {
+        "icon": "file-check-2",
+        "title": "Registrar o próximo passo",
+        "action": "Organiza responsável e tarefa de acompanhamento, conforme o combinado.",
+        "output": "Próxima ação visível para a equipe"
+      }
+    ],
+    "task_groups": [
+      "Entender o pedido",
+      "Preparar a proposta",
+      "Continuar a conversa"
+    ],
+    "delivery_title": "Uma proposta para revisar. Um retorno para continuar.",
+    "delivery_text": "Resumo do pedido, proposta editável e mensagem de retorno ficam prontos para revisão. Você aprova as condições; o envio pelo agente segue as regras e os canais autorizados no projeto.",
+    "tools_note": "Já usa um CRM, como RD Station CRM ou Pipedrive? Avaliamos como aproveitar seus registros e manter o acompanhamento no sistema da equipe.",
+    "pilot_inputs": [
+      "Um pedido de cliente autorizado",
+      "Sua oferta e critérios comerciais",
+      "Um modelo de proposta, se já existir"
+    ]
   },
   "creators": {
     "headline": [
@@ -173,110 +291,468 @@
     "editing_result": "Você recebe o vídeo editado para assistir, pedir ajustes e aprovar. O nível de acabamento e as tarefas entram no escopo a partir das suas gravações e referências."
   },
   "consultorias": {
-    "headline": ["Seu método merece", "mais tempo de análise."],
-    "lead": "Consultores e agentes trabalhando com as mesmas referências do projeto. Evidências organizadas e decisões registradas, para a equipe dar continuidade à análise e à entrega.",
-    "description": "Amplie a capacidade da consultoria com apoio de IA para organizar evidências, preparar relatórios e dar continuidade ao conhecimento dos projetos.",
+    "headline": [
+      "Da entrevista à apresentação.",
+      "Com a sua análise no centro."
+    ],
+    "lead": "Seu time de IA organiza entrevistas, consolida dados e monta relatórios e apresentações editáveis. Os consultores conferem as evidências, formulam as recomendações e conduzem a entrega ao cliente.",
+    "description": "Agentes de IA para organizar entrevistas, consolidar dados e montar relatórios e apresentações editáveis. Consultores conferem as fontes e formulam as recomendações.",
     "intro": "Para consultorias com equipes enxutas",
-    "context": "Seu método orienta. Os agentes preparam. Os consultores concluem.",
-    "cta": "Quero ampliar nossas entregas",
-    "value_title": "Chegue à discussão com o trabalho de base feito.",
-    "value_intro": "O entregável melhora quando o consultor consegue dedicar atenção à análise e à consistência da recomendação.",
-    "value_cards": [
-      ["Pesquisa rastreável", "O material está espalhado por entrevistas, pastas e anotações.", "Evidências organizadas por pergunta, com referências para o consultor conferir."],
-      ["Entregáveis", "A equipe começa cada relatório reconstruindo a estrutura.", "Primeiras versões alinhadas ao método e aos modelos da consultoria, para revisão técnica."],
-      ["Conhecimento", "O que um projeto ensinou fica na memória de quem participou.", "Aprendizados e materiais autorizados organizados para apoiar os próximos trabalhos."]
-    ],
-    "tools_title": "Seu método, nos arquivos que sua equipe usa.",
-    "tools_intro": "O projeto define quais fontes podem ser usadas e como a análise volta para os entregáveis.",
+    "context": "Seu método orienta. Seus consultores recomendam. Os agentes preparam a entrega.",
+    "cta": "Quero agilizar meu próximo entregável",
+    "value_title": "Seu método aplicado ao trabalho de base.",
+    "value_intro": "Entrevistas, planilhas e documentos chegam em formatos diferentes. Seus agentes ajudam a transformar esse material em evidências conferíveis e arquivos para apresentar.",
+    "tools_title": "Da reunião ao arquivo que o cliente recebe.",
+    "tools_intro": "Registros, planilhas e modelos podem entrar no mesmo fluxo. A saída continua editável para a consultoria trabalhar.",
     "tools": [
-      ["googledrive", "Google Drive", "Documentos e materiais do projeto com acesso definido."],
-      ["googlesheets", "Google Sheets", "Matrizes de análise e consolidação de informações."],
-      ["microsoftpowerpoint", "PowerPoint", "Apresentações editáveis para transformar a análise em uma conversa com o cliente."],
-      ["notion", "Notion", "Método, referências e memória dos projetos."],
-      ["zoom", "Zoom", "Registros e transcrições autorizados como material de entrada."]
+      [
+        "zoom",
+        "Zoom",
+        "Registros autorizados de entrevistas e reuniões como fontes."
+      ],
+      [
+        "googledrive",
+        "Google Drive",
+        "Documentos do projeto e referências com acesso definido."
+      ],
+      [
+        "microsoftexcel",
+        "Excel / Sheets",
+        "Bases, matrizes e conferência de períodos e unidades."
+      ],
+      [
+        "microsoftword",
+        "Word",
+        "Relatórios no modelo da consultoria, editáveis para revisão."
+      ],
+      [
+        "microsoftpowerpoint",
+        "PowerPoint",
+        "Apresentações das recomendações no template escolhido."
+      ],
+      [
+        "notion",
+        "Notion",
+        "Método, perguntas e decisões que orientam cada entrega."
+      ]
     ],
-    "tools_note": "Relatórios em Word e apresentações em PowerPoint também podem fazer parte da entrega. Formatos, modelos e permissões são definidos no projeto.",
-    "ai_title": "O método pertence à consultoria. O projeto continua com o time.",
-    "ai_text": "Consultores compartilham agentes e o contexto autorizado de cada projeto. Métodos, modelos e aprendizados aprovados formam a memória da consultoria, com as informações de cada cliente nos ambientes definidos para elas.",
-    "ai_gains": [["network", "O mesmo agente apoia diferentes consultores", "Uma pessoa conduz a pesquisa e outra continua a análise usando os registros autorizados do projeto."], ["book-open", "O método fica disponível para a equipe", "Matrizes, modelos e aprendizados selecionados orientam a preparação dos próximos entregáveis."], ["presentation", "Menos contexto perdido na passagem do projeto", "Fontes e decisões registradas ajudam quem assume a próxima etapa a entender o que já foi feito."]],
-    "ai_tools": [["claude", "Claude"], ["openai", "ChatGPT"]],
-    "pilot_title": "Escolha um entregável que se repete.",
-    "pilot_text": "Uma matriz de diagnóstico, um relatório de pesquisa ou uma apresentação executiva pode ser o primeiro processo.",
-    "deliverables": ["Agentes compartilhados entre os consultores do projeto", "Memória do método, com fontes de clientes separadas conforme o escopo", "Preparação e revisão com responsáveis e acessos definidos"],
-    "measure": "Avaliar: tempo de preparação, rastreabilidade das fontes e esforço de revisão técnica.",
-    "contact_title": "Onde seus consultores perdem tempo de análise?",
-    "contact_text": "Conte como um projeto passa da informação recebida ao entregável. Vamos encontrar a etapa que pode ganhar apoio.",
-    "faq": [["Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?", "Uma conta de IA pode apoiar muito bem a análise individual. A Mescla prepara o trabalho coletivo: consultores usando agentes compartilhados, registros do projeto e uma memória do método da consultoria. Definimos o que pode ser reutilizado e mantemos as informações dos clientes nos ambientes e acessos previstos para cada projeto."], ["Conseguimos usar nosso próprio método?", "Esse é o ponto de partida. Perguntas de diagnóstico, matrizes, modelos e critérios de qualidade orientam a configuração e a avaliação das primeiras entregas."], ["As informações de um cliente podem aparecer no projeto de outro?", "Definimos fontes, acessos e separação de ambientes conforme o projeto. Materiais de clientes não viram automaticamente uma base compartilhada. A configuração precisa respeitar as autorizações da consultoria."]]
+    "tools_note": "Fontes e formatos são testados na implantação. Se o agente não consegue ler uma origem ou conciliar os dados, a pendência fica visível para o consultor resolver.",
+    "ai_title": "Seu método fica com a consultoria.",
+    "ai_text": "Os consultores compartilham agentes, modelos e referências autorizadas. Quem assume a próxima etapa encontra a origem dos achados e as decisões tomadas no projeto.",
+    "ai_gains": [
+      [
+        "book-open",
+        "O método não começa do zero",
+        "Perguntas, modelos e critérios aprovados orientam os próximos trabalhos."
+      ],
+      [
+        "network",
+        "Pesquisa e análise continuam em equipe",
+        "Os mesmos agentes apoiam quem coleta fontes, confere evidências e monta a entrega."
+      ],
+      [
+        "file-check-2",
+        "Cada cliente com seu contexto",
+        "Definimos quais referências são reutilizáveis e quais materiais ficam restritos ao projeto."
+      ]
+    ],
+    "ai_tools": [
+      [
+        "claude",
+        "Claude"
+      ],
+      [
+        "openai",
+        "ChatGPT"
+      ]
+    ],
+    "pilot_title": "Escolha um entregável que sua equipe monta toda vez.",
+    "pilot_text": "Implantamos o fluxo para um tipo de diagnóstico, usando fontes autorizadas e um modelo da consultoria. A primeira execução produz uma matriz e um arquivo editável para a equipe revisar.",
+    "deliverables": [
+      "Agentes configurados com o método e as fontes escolhidas",
+      "Matriz de evidências e pendências de conferência",
+      "Relatório ou apresentação editável com suas recomendações"
+    ],
+    "measure": "Registramos esforço de preparação, conferência das fontes e rodadas de revisão para avaliar o que melhorou.",
+    "contact_title": "Qual entrega consome horas antes da análise?",
+    "contact_text": "Conte o tipo de projeto, de onde vêm as informações e o arquivo que você precisa entregar. Vamos escolher uma primeira rotina.",
+    "faq": [
+      [
+        "Já usamos Claude ou ChatGPT. O que muda?",
+        "A Mescla configura o percurso entre fontes, matriz, análise e arquivo final. Seus consultores compartilham agentes e referências do projeto, com o método e os modelos da consultoria orientando o trabalho."
+      ],
+      [
+        "O relatório ou os slides são editáveis?",
+        "Sim, no formato definido no projeto, como Word ou PowerPoint. Testamos o modelo com a sua equipe, incluindo estilos, estrutura e modo de indicar as fontes."
+      ],
+      [
+        "Quem formula a recomendação?",
+        "Os consultores conferem e interpretam as evidências e formulam ou aprovam as conclusões. O agente organiza a base e monta o material com essas orientações."
+      ],
+      [
+        "Como conferir se a IA entendeu as fontes?",
+        "Os registros apontam o arquivo e a localização disponível, como trecho, página ou célula. Divergências e limitações de leitura entram como pendências. A revisão compara as saídas com as fontes originais."
+      ]
+    ],
+    "secondary_cta": "Ver as fontes virarem uma entrega",
+    "contact_note": "Conte qual relatório ou apresentação se repete. A conversa começa no WhatsApp.",
+    "tasks": [
+      {
+        "icon": "audio-lines",
+        "title": "Organizar entrevistas",
+        "action": "Agrupa temas e trechos de gravações ou registros autorizados.",
+        "output": "Material de entrevista organizado por tema"
+      },
+      {
+        "icon": "search",
+        "title": "Localizar evidências",
+        "action": "Relaciona cada registro ao arquivo e ao trecho, página ou célula disponível.",
+        "output": "Referências para conferir na origem"
+      },
+      {
+        "icon": "layers",
+        "title": "Consolidar planilhas",
+        "action": "Reúne dados por período e unidade, destacando diferenças para conferência.",
+        "output": "Base organizada com inconsistências sinalizadas"
+      },
+      {
+        "icon": "network",
+        "title": "Cruzar fontes",
+        "action": "Agrupa evidências pelas perguntas do seu método e aponta lacunas e divergências.",
+        "output": "Matriz de evidências por pergunta"
+      },
+      {
+        "icon": "file-text",
+        "title": "Estruturar a narrativa",
+        "action": "Organiza a sequência com evidências e conclusões formuladas ou aprovadas pelo consultor.",
+        "output": "Narrativa da entrega para revisão"
+      },
+      {
+        "icon": "presentation",
+        "title": "Montar o entregável escolhido",
+        "action": "Prepara o relatório ou a apresentação no modelo combinado, com as recomendações e fontes selecionadas.",
+        "output": "Word ou PowerPoint editável, conforme o projeto"
+      }
+    ],
+    "task_groups": [
+      "Ouvir",
+      "Cruzar",
+      "Apresentar"
+    ],
+    "delivery_title": "Da matriz de evidências à apresentação das suas recomendações.",
+    "delivery_text": "Você recebe a base de evidências e o relatório ou a apresentação escolhidos no projeto. As conclusões são dos consultores; os agentes montam os arquivos para revisão.",
+    "pilot_inputs": [
+      "Perguntas de um diagnóstico recorrente",
+      "Fontes autorizadas do projeto",
+      "Um modelo de relatório ou apresentação"
+    ]
   },
   "agencias": {
-    "headline": ["O briefing chegou.", "Faça a entrega andar."],
-    "lead": "Atendimento, criação e planejamento trabalham com agentes compartilhados. Briefings, referências e decisões de cada conta acompanham o pedido até a revisão.",
-    "description": "Faça os briefings avançarem até a entrega. IA para preparar conteúdo, organizar informações de cada conta e apoiar a operação da agência.",
-    "intro": "Para agências de publicidade e marketing",
-    "context": "Da entrada do pedido à revisão. Cada conta com sua voz e seu contexto.",
-    "cta": "Quero destravar a produção",
-    "value_title": "Mais trabalho avançando entre uma aprovação e outra.",
-    "value_intro": "O ganho aparece na passagem do briefing para a produção e da revisão para a entrega.",
-    "value_cards": [
-      ["Atendimento", "O pedido chega incompleto e a produção precisa adivinhar.", "Briefing organizado, referências reunidas e perguntas pendentes visíveis antes de começar."],
-      ["Criação", "O time gasta energia remontando contexto e primeiras versões.", "Pautas, textos e variações preparados com as orientações daquela marca."],
-      ["Operação", "A versão certa, o ajuste e o próximo responsável se perdem.", "Registros e etapas organizados para o pedido continuar andando após a revisão."]
+    "headline": [
+      "Do briefing às peças.",
+      "Com menos idas e vindas."
     ],
-    "tools_title": "O fluxo da agência continua sendo seu.",
-    "tools_intro": "Conectamos as etapas ao ambiente de trabalho escolhido com a equipe.",
+    "lead": "Seu time de IA prepara textos, adapta peças aos modelos da agência e incorpora feedbacks por versão. Criação dá a direção, atendimento coordena a rodada e o cliente aprova.",
+    "description": "Um time de IA para conferir briefings, criar textos, adaptar peças aos modelos da agência e aplicar feedbacks por versão. Criação dirige e o cliente aprova.",
+    "intro": "Para agências com produção recorrente",
+    "context": "Uma marca, suas referências e o ajuste ligado à peça certa.",
+    "cta": "Quero destravar as entregas",
+    "value_title": "Seu time de IA entre o briefing e a aprovação.",
+    "value_intro": "O pedido vem incompleto. O ajuste chega em outra conversa. A versão se perde. Organizamos a produção para que o próximo passo parta do que já foi combinado.",
+    "tools_title": "A marca e os modelos já fazem parte do trabalho.",
+    "tools_intro": "Conectamos produção e revisão às ferramentas escolhidas pela agência. Os formatos de destino orientam a preparação das peças.",
     "tools": [
-      ["trello", "Trello", "Pedidos, responsáveis e passagem entre etapas."],
-      ["slack", "Slack", "Conversas de trabalho com participação dos agentes."],
-      ["googledrive", "Google Drive", "Referências e materiais separados por conta."],
-      ["canva", "Canva", "Textos e materiais para os modelos visuais da agência."],
-      ["googlesheets", "Google Sheets", "Calendários, entregas e acompanhamento das contas."]
+      [
+        "trello",
+        "Trello",
+        "Briefings, peças, responsáveis e etapas da rodada."
+      ],
+      [
+        "slack",
+        "Slack",
+        "Direção e feedbacks de quem participa da conta."
+      ],
+      [
+        "googledrive",
+        "Google Drive",
+        "Referências, modelos e arquivos separados por marca."
+      ],
+      [
+        "canva",
+        "Canva",
+        "Modelos visuais e adaptações conforme os recursos disponíveis."
+      ],
+      [
+        "meta",
+        "Meta Ads",
+        "Referência de formatos para peças destinadas a Instagram e Facebook."
+      ],
+      [
+        "googleads",
+        "Google Ads",
+        "Referência de formatos e campos para os anúncios escolhidos."
+      ]
     ],
-    "tools_note": "Aprovação do cliente e publicação são etapas próprias. O projeto define quem aprova e quais ações podem ser executadas depois dessa aprovação.",
-    "ai_title": "A conta muda de mãos. O contexto acompanha.",
-    "ai_text": "Atendimento, planejamento e criação trabalham com os mesmos agentes e a memória de cada conta. Voz da marca, campanhas e decisões aprovadas ficam disponíveis para as pessoas autorizadas a continuar a entrega.",
-    "ai_gains": [["network", "O mesmo agente participa de várias etapas", "Atendimento registra o briefing; criação e planejamento continuam com os agentes e o histórico do projeto."], ["book-open", "A memória da marca fica na agência", "Referências e decisões registradas orientam a próxima campanha, com a separação entre contas definida no projeto."], ["route", "Mais continuidade entre atendimento e criação", "A equipe consulta o que já foi combinado para revisar materiais e seguir com a entrega."]],
-    "ai_tools": [["openai", "ChatGPT"], ["claude", "Claude"], ["googlegemini", "Gemini"]],
-    "pilot_title": "Uma conta. Um fluxo. Um critério de qualidade.",
-    "pilot_text": "Começamos por uma entrega recorrente e acompanhamos sua passagem pelo processo da agência.",
-    "deliverables": ["Memória de uma conta: marca, referências e decisões selecionadas", "Agentes compartilhados por atendimento, planejamento e criação", "Um percurso até a aprovação, com responsáveis e acessos definidos"],
-    "measure": "Avaliar: tempo até a primeira versão, rodadas de retrabalho e pedidos que avançam sem cobrança manual.",
-    "contact_title": "Em qual etapa sua produção está travando?",
-    "contact_text": "Briefing, primeira versão, revisão ou acompanhamento? Conte como a demanda atravessa sua agência.",
-    "faq": [["Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?", "Se o trabalho já flui bem com suas ferramentas, elas podem atender. A Mescla entra para organizar atendimento, criação e planejamento em um ambiente com agentes compartilhados e memória por conta. A equipe passa a continuar o trabalho usando os registros do projeto, com separação entre clientes e revisões definidas na implantação."], ["O agente vai misturar a voz dos clientes?", "A configuração considera referências, instruções e fontes de cada conta. Testamos a separação de contexto e os critérios de revisão antes de ampliar o fluxo para outras marcas."], ["O conteúdo sai publicado sem aprovação?", "A publicação automática não é pressuposta. Definimos responsáveis, aprovações e ações permitidas. O primeiro projeto pode terminar na entrega dos materiais para revisão interna."]]
+    "tools_note": "Formatos de destino não significam veiculação automática. Publicação, mídia, orçamento e acesso às contas precisam de escopo e autorização próprios.",
+    "ai_title": "A voz é da marca. A memória acompanha a conta.",
+    "ai_text": "Atendimento, planejamento e criação usam os mesmos agentes e referências autorizadas. Briefings, modelos e decisões ficam disponíveis para continuar a produção de cada cliente.",
+    "ai_gains": [
+      [
+        "book-open",
+        "A marca orienta cada versão",
+        "Voz, elementos visuais e escolhas aprovadas entram no contexto daquela conta."
+      ],
+      [
+        "network",
+        "Atendimento e criação continuam juntos",
+        "O pedido e o feedback acompanham o trabalho do agente entre as etapas."
+      ],
+      [
+        "route",
+        "O ajuste tem peça e versão",
+        "Quem assume a rodada encontra a referência do comentário e o material a revisar."
+      ]
+    ],
+    "ai_tools": [
+      [
+        "openai",
+        "ChatGPT"
+      ],
+      [
+        "claude",
+        "Claude"
+      ],
+      [
+        "googlegemini",
+        "Gemini"
+      ]
+    ],
+    "pilot_title": "Uma conta. Uma peça recorrente. Um fluxo até a aprovação.",
+    "pilot_text": "Escolhemos uma entrega, como um anúncio estático, e o modelo que a agência já usa. Configuramos os agentes e executamos uma primeira rodada com textos, adaptação visual e ajustes.",
+    "deliverables": [
+      "Agentes configurados com o contexto da conta",
+      "Textos e peça adaptada ao modelo escolhido",
+      "Rodada de ajustes com versões organizadas para aprovação"
+    ],
+    "measure": "Avaliamos horas de produção, rodadas de ajuste e pedidos parados por falta de informação ou aprovação.",
+    "contact_title": "Qual peça volta mais vezes para ajuste?",
+    "contact_text": "Conte o que sua agência produz, onde a rodada trava e como chegam os feedbacks. Vamos escolher uma entrega para começar.",
+    "faq": [
+      [
+        "A entrega inclui arte ou só texto?",
+        "O exemplo de piloto inclui texto e adaptação de uma peça a um modelo da agência. Formato, quantidade, acabamento e ferramenta entram no escopo. Uma campanha inteira ou uma nova identidade visual exigem outro recorte."
+      ],
+      [
+        "O agente consegue seguir marcas diferentes?",
+        "Cada conta recebe referências, modelos e acessos definidos. Testamos uma marca e suas primeiras versões antes de ampliar para outras. A direção criativa confere o resultado."
+      ],
+      [
+        "E quando dois feedbacks se contradizem?",
+        "O agente registra os comentários e sinaliza a divergência. A pessoa responsável decide qual orientação seguir, e a versão é ajustada com essa decisão."
+      ],
+      [
+        "A peça é publicada ou o anúncio é ativado sozinho?",
+        "Este fluxo termina na aprovação dos materiais. Publicação e operação de mídia são avaliadas separadamente, com permissões e responsáveis definidos."
+      ]
+    ],
+    "secondary_cta": "Ver uma rodada de produção",
+    "contact_note": "Conte qual peça volta mais vezes para ajuste. A conversa começa no WhatsApp.",
+    "tasks": [
+      {
+        "icon": "file-check-2",
+        "title": "Conferir o briefing",
+        "action": "Reúne objetivo, público, formato e informações que faltam antes da produção.",
+        "output": "Briefing com lacunas sinalizadas"
+      },
+      {
+        "icon": "book-open",
+        "title": "Recuperar a marca",
+        "action": "Consulta voz, referências e decisões autorizadas daquela conta.",
+        "output": "Contexto da marca para a rodada"
+      },
+      {
+        "icon": "pencil-ruler",
+        "title": "Criar textos e roteiros",
+        "action": "Prepara chamadas, textos e roteiros para o formato e o objetivo escolhidos.",
+        "output": "Primeira rodada para a criação avaliar"
+      },
+      {
+        "icon": "layers",
+        "title": "Adaptar textos e artes",
+        "action": "Aplica os modelos, elementos e dimensões definidos com a agência.",
+        "output": "Peças adaptadas aos formatos combinados"
+      },
+      {
+        "icon": "route",
+        "title": "Aplicar os feedbacks",
+        "action": "Relaciona comentários à peça e à versão e incorpora os ajustes orientados.",
+        "output": "Nova versão com o histórico do ajuste"
+      },
+      {
+        "icon": "file-check-2",
+        "title": "Preparar a aprovação",
+        "action": "Reúne arquivos, legendas e pendências da rodada para a pessoa responsável.",
+        "output": "Material organizado para aprovação"
+      }
+    ],
+    "task_groups": [
+      "Entrada",
+      "Produção",
+      "Aprovação"
+    ],
+    "delivery_title": "Uma rodada de peças para aprovar. Com cada ajuste no lugar.",
+    "delivery_text": "Textos, peças adaptadas aos modelos e registro das versões. O formato e o acabamento são definidos com a agência; criação e cliente avaliam antes de qualquer uso externo.",
+    "pilot_inputs": [
+      "Um briefing autorizado de uma conta",
+      "Voz da marca e modelo visual",
+      "Formato e critérios de aprovação"
+    ]
   },
   "advocacia": {
-    "headline": ["Mais tempo para a tese.", "Mais ordem nos documentos."],
-    "lead": "Advogados e equipe de apoio trabalhando com agentes compartilhados e os registros autorizados de cada caso. Mais continuidade na preparação e na conferência dos materiais.",
-    "description": "Apoio de IA para escritórios de advocacia organizarem documentos, prepararem cronologias e estruturarem materiais para revisão profissional.",
-    "intro": "Para escritórios de advocacia",
-    "context": "Organização documental e preparação do trabalho, sob revisão profissional.",
-    "cta": "Quero organizar nosso trabalho",
-    "value_title": "A informação certa, mais fácil de encontrar e conferir.",
-    "value_intro": "O ponto de partida é uma rotina documental com fontes definidas e revisão do escritório.",
-    "value_cards": [
-      ["Organização do caso", "Datas e acontecimentos precisam ser reconstruídos a cada consulta.", "Cronologia preliminar com referência aos documentos que sustentam cada registro."],
-      ["Leitura e comparação", "A equipe alterna entre arquivos para localizar uma informação.", "Resumos, índices e diferenças destacados para conferência no documento original."],
-      ["Preparação de materiais", "Uma primeira estrutura ocupa o tempo da análise jurídica.", "Minutas e roteiros de trabalho a partir dos modelos e das instruções do escritório."]
+    "headline": [
+      "Documentos em ordem.",
+      "Mais tempo para a estratégia."
     ],
-    "tools_title": "Do acervo do escritório à revisão do advogado.",
-    "tools_intro": "Arquivos e permissões são definidos antes de colocar o processo para funcionar.",
+    "lead": "Seu time de IA organiza documentos autorizados, monta cronologias com referências e prepara minutas orientadas pelo advogado. O escritório confere as fontes, define a estratégia e aprova o uso.",
+    "description": "Agentes de IA para organizar documentos autorizados, montar cronologias e preparar minutas orientadas pelo advogado. Fontes e materiais passam por conferência profissional.",
+    "intro": "Para escritórios com rotina documental intensa",
+    "context": "Agentes preparam. O advogado interpreta, revisa e decide.",
+    "cta": "Quero agilizar uma rotina documental",
+    "value_title": "O trabalho que vem antes da análise jurídica.",
+    "value_intro": "Arquivos espalhados, datas para reconstruir e informações para comparar. Os agentes preparam a base documental que o advogado precisa conferir.",
+    "tools_title": "Dos arquivos recebidos ao Word que você revisa.",
+    "tools_intro": "Começamos pelos documentos, modelos e permissões da rotina escolhida. A conferência permanece ligada às fontes do caso.",
     "tools": [
-      ["microsoftword", "Word", "Minutas e estruturas editáveis para revisão do advogado."],
-      ["adobeacrobatreader", "PDF / Acrobat", "Leitura e organização dos documentos recebidos, com indicação das fontes."],
-      ["googledrive", "Google Drive", "Pastas e documentos cujo uso foi autorizado pelo escritório."],
-      ["googlesheets", "Google Sheets", "Cronologias, índices e controles de trabalho."]
+      [
+        "microsoftword",
+        "Word",
+        "Minutas e estruturas editáveis com os modelos do escritório."
+      ],
+      [
+        "adobeacrobatreader",
+        "PDF / Acrobat",
+        "Documentos de origem, páginas e trechos para conferência."
+      ],
+      [
+        "googledrive",
+        "Google Drive",
+        "Pastas autorizadas e acesso definido por caso."
+      ],
+      [
+        "googlesheets",
+        "Google Sheets",
+        "Índices, cronologias e checklists documentais."
+      ]
     ],
-    "tools_note": "Word e PDF podem entrar por arquivos. Sistemas jurídicos e portais de tribunais exigem análise específica; acesso, protocolo ou gestão automática de prazos não estão implícitos na oferta.",
-    "ai_title": "O conhecimento do caso acompanha quem trabalha nele.",
-    "ai_text": "Os profissionais autorizados compartilham agentes e registros do caso. A memória do escritório reúne modelos e procedimentos aprovados; os documentos de cada cliente ficam nos ambientes e acessos definidos para o projeto.",
-    "ai_gains": [["network", "Agentes a serviço da equipe do caso", "Quem organiza documentos e quem faz a análise trabalham com os registros autorizados para aquela atuação."], ["book-open", "Modelos e procedimentos que ficam no escritório", "Referências aprovadas formam uma memória de trabalho para apoiar a preparação dos materiais."], ["scale", "Continuidade com conferência profissional", "Ao assumir uma etapa, o advogado encontra fontes e registros para conferir e desenvolver sua análise."]],
-    "ai_tools": [["openai", "ChatGPT"], ["claude", "Claude"]],
-    "pilot_title": "Comece por uma rotina documental delimitada.",
-    "pilot_text": "Escolha um conjunto de materiais autorizado e um resultado que sua equipe consiga conferir.",
-    "deliverables": ["Agentes compartilhados pelos profissionais autorizados", "Modelos do escritório e fontes dos casos organizados com acessos definidos", "Preparação documental com conferência pelo profissional responsável"],
-    "measure": "Avaliar: tempo para localizar informações, correspondência com as fontes e esforço de conferência.",
-    "contact_title": "Qual rotina documental toma tempo do seu escritório?",
-    "contact_text": "Descreva o processo, sem enviar documentos de clientes ou informações sigilosas neste primeiro contato.",
-    "faq": [["Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?", "Uma conta de IA pode ajudar na leitura individual. A Mescla organiza agentes compartilhados e a memória de trabalho do escritório, com registros dos casos acessíveis aos profissionais autorizados. Modelos e procedimentos reutilizáveis são separados dos materiais de clientes conforme o projeto. Análise jurídica, estratégia e aprovação permanecem com os responsáveis."], ["O agente pode decidir a estratégia jurídica?", "A oferta é de apoio ao trabalho. Interpretação, estratégia, conferência das fontes e aprovação dos materiais cabem aos profissionais responsáveis."], ["Vocês integram com nosso sistema jurídico?", "Avaliamos o sistema, os acessos e as integrações disponíveis antes de definir o escopo. Não presumimos conexão com portais, protocolo automático ou controle autônomo de prazos."]]
+    "tools_note": "Já usa Astrea, Projuris ou Jusbrasil? Avaliamos o papel dessas ferramentas na sua rotina. Sua presença não pressupõe integração, acesso a portais, protocolo ou controle autônomo de prazos.",
+    "ai_title": "O contexto do caso acompanha a equipe autorizada.",
+    "ai_text": "Quem organiza os documentos e quem conduz a análise trabalha com os mesmos agentes e registros permitidos. Modelos do escritório ficam separados das informações de cada cliente.",
+    "ai_gains": [
+      [
+        "network",
+        "Preparação e análise conectadas",
+        "O advogado encontra a origem dos registros que a equipe e os agentes prepararam."
+      ],
+      [
+        "book-open",
+        "Modelos que pertencem à rotina do escritório",
+        "Estruturas, checklists e procedimentos aprovados orientam o trabalho documental."
+      ],
+      [
+        "scale",
+        "A decisão permanece profissional",
+        "Agentes sinalizam informações e pendências; o advogado confere, interpreta e decide."
+      ]
+    ],
+    "ai_tools": [
+      [
+        "openai",
+        "ChatGPT"
+      ],
+      [
+        "claude",
+        "Claude"
+      ]
+    ],
+    "pilot_title": "Uma rotina documental. Um conjunto que você consegue conferir.",
+    "pilot_text": "Definimos o material autorizado e o resultado esperado antes de configurar os agentes. A primeira execução produz índice e cronologia; uma minuta pode integrar o escopo com modelo e orientação do advogado.",
+    "deliverables": [
+      "Agentes configurados para o conjunto e as permissões definidos",
+      "Índice, cronologia com referências e pendências de conferência",
+      "Minuta editável, quando incluída no escopo, para revisão profissional"
+    ],
+    "measure": "Avaliamos tempo para localizar informações, correspondência com as fontes e esforço de conferência. A leitura de documentos ruins ou incompletos é testada antes de ampliar o fluxo.",
+    "contact_title": "Onde a preparação documental toma o tempo da equipe?",
+    "contact_text": "Descreva o processo e o tipo de documento, sem enviar materiais de clientes ou informações sigilosas neste primeiro contato.",
+    "faq": [
+      [
+        "A IA decide a estratégia ou assina a peça?",
+        "Não. O agente prepara documentos a partir das instruções recebidas. Interpretação, estratégia, revisão, assinatura, prazos e protocolo permanecem sob responsabilidade do escritório."
+      ],
+      [
+        "Como conferir a origem de uma informação?",
+        "O material indica arquivo e localização disponível, como página ou trecho. Problemas de leitura, dados divergentes e origem não localizada devem aparecer como pendências para conferência no original."
+      ],
+      [
+        "Onde ficam os documentos dos clientes?",
+        "Antes de processar materiais, definimos fornecedores, armazenamento, retenção, acessos e o que pode entrar no fluxo. A configuração separa os modelos reutilizáveis dos documentos restritos de cada caso."
+      ],
+      [
+        "Qual minuta pode entrar no primeiro projeto?",
+        "Escolhemos um tipo de documento e um modelo do escritório. O advogado fornece fatos e orientação após a análise; o agente monta a estrutura editável para revisão antes do uso."
+      ]
+    ],
+    "secondary_cta": "Ver a preparação de um caso",
+    "contact_note": "Descreva a rotina, sem documentos de clientes. A conversa começa no WhatsApp.",
+    "tasks": [
+      {
+        "icon": "layers",
+        "title": "Catalogar os arquivos",
+        "action": "Identifica tipo, nome e versão dos documentos autorizados para aquele caso.",
+        "output": "Índice do conjunto documental"
+      },
+      {
+        "icon": "search",
+        "title": "Extrair os fatos",
+        "action": "Localiza partes, datas e acontecimentos nos materiais recebidos.",
+        "output": "Registros ligados ao documento de origem"
+      },
+      {
+        "icon": "route",
+        "title": "Montar a cronologia",
+        "action": "Ordena os eventos e aponta arquivo e localização quando disponíveis.",
+        "output": "Linha do tempo com referências para conferir"
+      },
+      {
+        "icon": "file-text",
+        "title": "Comparar documentos",
+        "action": "Destaca trechos e informações que divergem entre os materiais.",
+        "output": "Diferenças para análise do advogado"
+      },
+      {
+        "icon": "file-check-2",
+        "title": "Apontar o que falta",
+        "action": "Compara o conjunto com o checklist definido pelo escritório.",
+        "output": "Pendências documentais visíveis"
+      },
+      {
+        "icon": "pencil-ruler",
+        "title": "Preparar a minuta",
+        "action": "Preenche a estrutura com modelo, fatos e instruções fornecidos pelo advogado.",
+        "output": "Minuta editável para revisão profissional"
+      }
+    ],
+    "task_groups": [
+      "Localizar",
+      "Conferir",
+      "Preparar"
+    ],
+    "delivery_title": "Uma base documental para conferir e seguir com o caso.",
+    "delivery_text": "Índice, cronologia com referências e pendências. Quando escolhida no escopo, a minuta inicial vem em arquivo editável, com a orientação e a revisão do advogado.",
+    "pilot_inputs": [
+      "Descrição da rotina e perguntas do advogado",
+      "Conjunto documental autorizado",
+      "Checklist documental; modelo da minuta, quando incluída no escopo"
+    ]
   }
 }

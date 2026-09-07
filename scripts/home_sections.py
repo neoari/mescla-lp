@@ -44,11 +44,11 @@ def implementation(phone):
 
 
 APPLICATIONS = {
-    'empreendedores': ('Uma ideia com próximos passos.', ['Ideia', 'Plano inicial', 'Sua decisão']),
+    'empreendedores': ('Pedidos viram propostas. A conversa continua.', []),
     'creators': ('Você grava. Seu time de IA edita.', []),
-    'consultorias': ('Mais espaço para analisar e orientar.', ['Evidências', 'Síntese e estrutura', 'Análise do time']),
-    'agencias': ('Do briefing à criação com mais contexto.', ['Briefing', 'Primeiras versões', 'Sua direção criativa']),
-    'advocacia': ('Mais tempo da equipe para a estratégia.', ['Documentos', 'Síntese e cronologia', 'Revisão profissional']),
+    'consultorias': ('Da entrevista à apresentação.', []),
+    'agencias': ('Peças e ajustes com o contexto da conta.', []),
+    'advocacia': ('Documentos em ordem para analisar o caso.', []),
 }
 
 
@@ -58,7 +58,7 @@ def applications(segments):
         slug = data['slug']
         benefit, stages = APPLICATIONS[slug]
         flow = ''.join(f'<li><span class="case-step-number" aria-hidden="true">0{i + 1}</span><span>{escape(stage)}</span></li>' for i, stage in enumerate(stages))
-        if slug == 'creators':
+        if slug == 'creators' or data.get('tasks'):
             flow = ''.join(f'<li class="case-stage--{role}"><span class="case-step-number" aria-hidden="true">0{i + 1}</span><span>{escape(stage)}</span><small class="case-actor">{ui_icon("bot" if role == "agent" else "user-round")}{"Agente" if role == "agent" else "Pessoa"}</small></li>' for i, (role, stage, _) in enumerate(data['steps']))
         cards.append(f'''<a class="application-card application-card--{slug}" href="/para/{slug}/" data-attribution-link data-segment-link="{slug}"><div class="case-intro"><p class="case-audience">{ui_icon(SEGMENT_ICONS[slug])}<span>{escape(data['label'])}</span></p><h3>{benefit}</h3></div><ol class="case-pipeline" aria-label="Fluxo ilustrativo para {escape(data['label'], quote=True)}">{flow}</ol><div class="case-destination">{tool_marks(SEGMENT_TOOLS[slug], True)}<span class="case-link">Ver aplicação {ui_icon('arrow-up-right')}</span></div></a>''')
     return f'''<section class="section home-applications" id="segmentos" aria-labelledby="segments-title"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Aplicações para o seu negócio</p><h2 id="segments-title">Onde o trabalho<br>pode render mais?</h2></div><p class="lead">Para quem trabalha sozinho ou com uma equipe. Explore um exemplo próximo da sua rotina.</p></div><p class="applications-scope">Aplicações possíveis. As etapas e ferramentas são definidas em cada projeto.</p><div class="applications-list">{''.join(cards)}</div></div></section>'''

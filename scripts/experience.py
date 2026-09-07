@@ -7,11 +7,11 @@ import re, json
 ROOT = Path(__file__).resolve().parents[1]
 SEGMENT_ICONS = {'empreendedores': 'lightbulb', 'creators': 'clapperboard', 'consultorias': 'briefcase-business', 'agencias': 'megaphone', 'advocacia': 'scale'}
 SEGMENT_TOOLS = {
-    'empreendedores': [('whatsapp', 'WhatsApp'), ('googlesheets', 'Sheets'), ('openai', 'ChatGPT')],
+    'empreendedores': [('whatsapp', 'WhatsApp'), ('googledocs', 'Docs'), ('trello', 'Trello')],
     'creators': [('remotion', 'Remotion'), ('capcut', 'CapCut'), ('davinciresolve', 'DaVinci Resolve'), ('youtube', 'YouTube'), ('tiktok', 'TikTok'), ('instagram', 'Instagram')],
-    'consultorias': [('microsoftpowerpoint', 'PowerPoint'), ('googledrive', 'Drive'), ('claude', 'Claude')],
+    'consultorias': [('microsoftexcel', 'Excel'), ('microsoftpowerpoint', 'PowerPoint'), ('zoom', 'Zoom')],
     'agencias': [('trello', 'Trello'), ('slack', 'Slack'), ('canva', 'Canva')],
-    'advocacia': [('microsoftword', 'Word'), ('adobeacrobatreader', 'Acrobat'), ('openai', 'ChatGPT')],
+    'advocacia': [('microsoftword', 'Word'), ('adobeacrobatreader', 'Acrobat'), ('googledrive', 'Drive')],
 }
 
 def ui_icon(name):

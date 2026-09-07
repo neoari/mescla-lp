@@ -54,8 +54,8 @@ Fontes consultadas em 7/9/2026:
   pesquisa para toda consultoria de gestão.
   https://www.rdstation.com/pesquisas/panorama-marketing-vendas/edicao-2026/agencias-consultorias/cenario/
 - **Harvest, State of Professional Services 2025:** rentabilidade e gestão de
-  projetos em serviços profissionais. Fonte de fornecedor, amostra internacional
-  e multissetorial. Hipótese Mescla para consultorias pequenas: preparação
+  projetos em serviços profissionais. Fonte de fornecedor, amostra multissetorial,
+  sem recorte brasileiro identificado no material consultado. Hipótese Mescla para consultorias pequenas: preparação
   recorrente de evidências, planilhas e apresentações disputa tempo com análise.
   https://www.getharvest.com/2025-state-of-professional-services-report
   https://www.getharvest.com/hubfs/downloads/harvest-the-state-of-professional-services-2025.pdf
@@ -497,3 +497,36 @@ SHA-256 do candidato de copy final: `ba333a5c6dff97e3fe456862ff295f12c33afecd125
 
 Separar interesse no anúncio, intenção de contato, conversa realizada e
 contratação. Não usar clique como comprovação de demanda ou de resultado.
+
+## Revisão da implementação
+
+Após implementar, Sol fez uma inspeção por código, sem nova rodada de conceito.
+Encontrou uma inconsistência entre o formato do piloto de consultoria (relatório
+ou apresentação) e o nome da quarta fase, “Apresentação”. Correção aceita:
+renomear essa fase para “Entregável” e descrever a quinta como revisão e entrega
+ao cliente. O ajuste será aplicado às fontes, controles e card da Home.
+
+A pesquisa da Harvest foi descrita com maior precisão neste registro: amostra
+multissetorial, sem recorte brasileiro identificado no material consultado.
+Isso não altera a hipótese nem a nota de evidência da revisão.
+
+## Verificação concluída
+
+O registro das cinco rodadas foi commitado isoladamente em `9590572`, antes de
+qualquer alteração de produto. A implementação subsequente passou por:
+
+- TypeScript e 84 estados de composição Remotion, incluindo limites de fase,
+  responsáveis e decisões humanas antes das etapas seguintes.
+- Validação estática das sete páginas: estrutura, links, IDs acessíveis,
+  formulários e dependências locais dos módulos.
+- Conferência dos quatro segmentos: seis tarefas com saídas, insumos do piloto,
+  cinco etapas iguais no card da Home, LP e animação, ferramentas e contato.
+- Comparação com a versão anterior: Creators e o restante da Home preservados,
+  exceto as versões dos assets compartilhados e o marcador de versão da Home.
+- Testes existentes de atribuição: campanha, sessão, identificadores de clique,
+  navegação interna, limites dos campos e codificação da mensagem de WhatsApp.
+- Build reproduzível de 26 arquivos públicos; pacote e lista do deploy idênticos;
+  sintaxe do script de inicialização e ausência de erros no diff.
+
+Verificação por código e HTML estático; não foi feita inspeção visual em navegador.
+As notas das rodadas são avaliações da proposta, não medições de conversão.

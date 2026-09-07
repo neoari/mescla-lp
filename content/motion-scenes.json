@@ -1,6 +1,57 @@
 {
-  "home": {"label": "Um time. Uma memória", "accent": "#116C60", "tint": "#E8F3EF", "phases": [["O time inicia", "Uma pessoa do comercial registra o pedido e as referências do cliente."], ["Agente do time", "O agente compartilhado consulta a memória do negócio e prepara a proposta."], ["O time continua", "Uma pessoa da operação revisa com o contexto do projeto. Decisões selecionadas ficam registradas na memória da empresa."]]},
-  "empreendedores": {"label":"Da oportunidade à proposta", "accent":"#8A5D13", "tint":"#FFF6DF", "phases":[["Oportunidade","Um pedido do cliente chega com informações para reunir."],["Preparação","O agente organiza o contexto e estrutura a primeira proposta."],["Sua decisão","Você revisa a proposta e escolhe o próximo passo com o cliente."]]},
+  "home": {
+    "label": "Um time. Uma memória",
+    "accent": "#116C60",
+    "tint": "#E8F3EF",
+    "phases": [
+      [
+        "O time inicia",
+        "Uma pessoa do comercial registra o pedido e as referências do cliente."
+      ],
+      [
+        "Agente do time",
+        "O agente compartilhado consulta a memória do negócio e prepara a proposta."
+      ],
+      [
+        "O time continua",
+        "Uma pessoa da operação revisa com o contexto do projeto. Decisões selecionadas ficam registradas na memória da empresa."
+      ]
+    ]
+  },
+  "empreendedores": {
+    "label": "Do pedido ao retorno",
+    "accent": "#8A5D13",
+    "tint": "#FFF6DF",
+    "phases": [
+      [
+        "Pedido",
+        "Pessoa: Você compartilha um pedido autorizado, a oferta e os critérios de preço, prazo e escopo."
+      ],
+      [
+        "Proposta",
+        "Agente: O agente reúne as informações, sinaliza lacunas e monta a proposta editável."
+      ],
+      [
+        "Aprovação",
+        "Pessoa: Você confere escopo, preço e condições e aprova o que pode seguir ao cliente."
+      ],
+      [
+        "Retorno",
+        "Agente: O agente prepara o retorno e registra o acompanhamento. Envia apenas conforme as regras e os canais autorizados."
+      ],
+      [
+        "Negociação",
+        "Pessoa: Você negocia, decide exceções e confirma o fechamento com o cliente."
+      ]
+    ],
+    "roles": [
+      "human",
+      "agent",
+      "human",
+      "agent",
+      "human"
+    ]
+  },
   "creators": {
     "label": "Do roteiro à publicação",
     "accent": "#68518D",
@@ -35,7 +86,106 @@
       "agent"
     ]
   },
-  "consultorias": {"label":"Da informação à recomendação", "accent":"#246163", "tint":"#E8F3F1", "phases":[["Fontes","Entrevistas, documentos e dados autorizados entram no projeto."],["Evidências","O agente reúne informações por pergunta, mantendo as referências."],["Sua análise","O consultor confere as fontes e constrói a recomendação."]]},
-  "agencias": {"label":"Do briefing à revisão criativa", "accent":"#AA3425", "tint":"#FFF0EB", "phases":[["Briefing","O pedido da conta chega com objetivo e referências da marca."],["Produção","O agente prepara pautas e primeiras versões com esse contexto."],["Direção criativa","Seu time avalia as peças e orienta os ajustes antes da aprovação."]]},
-  "advocacia": {"label":"Dos documentos à conferência", "accent":"#6B3343", "tint":"#F4EDF0", "phases":[["Documentos","O escritório escolhe os materiais autorizados para o trabalho."],["Organização","O agente prepara um índice e uma cronologia com referência às fontes."],["Sua conferência","O advogado verifica o material e conduz a análise jurídica."]]}
+  "consultorias": {
+    "label": "Das fontes à apresentação",
+    "accent": "#246163",
+    "tint": "#E8F3F1",
+    "phases": [
+      [
+        "Método",
+        "Pessoa: O consultor define as perguntas, autoriza as fontes e escolhe o modelo do entregável."
+      ],
+      [
+        "Evidências",
+        "Agente: O agente consolida dados e organiza entrevistas numa matriz de evidências, com referências, lacunas e pontos para conferir."
+      ],
+      [
+        "Análise",
+        "Pessoa: O consultor confere as fontes, interpreta os achados e formula ou aprova as recomendações."
+      ],
+      [
+        "Entregável",
+        "Agente: O agente monta o relatório ou a apresentação com as conclusões e o modelo definidos."
+      ],
+      [
+        "Entrega",
+        "Pessoa: A equipe revisa o arquivo, ajusta a narrativa e conduz a entrega ao cliente."
+      ]
+    ],
+    "roles": [
+      "human",
+      "agent",
+      "human",
+      "agent",
+      "human"
+    ]
+  },
+  "agencias": {
+    "label": "Da peça ao ajuste aprovado",
+    "accent": "#AA3425",
+    "tint": "#FFF0EB",
+    "phases": [
+      [
+        "Briefing",
+        "Pessoa: Atendimento valida o pedido com o cliente e compartilha objetivo, referências e modelo da peça."
+      ],
+      [
+        "Produção",
+        "Agente: O agente prepara a primeira rodada de textos e adapta a peça ao modelo aprovado e ao formato definidos."
+      ],
+      [
+        "Direção",
+        "Pessoa: Criação avalia o caminho e orienta os ajustes. Atendimento consolida os feedbacks da rodada."
+      ],
+      [
+        "Ajustes",
+        "Agente: O agente aplica os feedbacks à versão correspondente e organiza os arquivos para aprovação."
+      ],
+      [
+        "Aprovação",
+        "Pessoa: Os responsáveis fazem a conferência interna e a aprovação com o cliente previstas no projeto, antes do uso externo."
+      ]
+    ],
+    "roles": [
+      "human",
+      "agent",
+      "human",
+      "agent",
+      "human"
+    ]
+  },
+  "advocacia": {
+    "label": "Documentos, análise e minuta",
+    "accent": "#6B3343",
+    "tint": "#F4EDF0",
+    "phases": [
+      [
+        "Documentos",
+        "Pessoa: O escritório autoriza os materiais, define as perguntas e os acessos ao caso."
+      ],
+      [
+        "Organização",
+        "Agente: O agente monta índice, cronologia, referências e pendências para conferência."
+      ],
+      [
+        "Análise",
+        "Pessoa: O advogado confere as fontes, interpreta os fatos e define o conteúdo e a orientação da minuta."
+      ],
+      [
+        "Minuta",
+        "Agente: O agente prepara a estrutura editável com os fatos, o modelo e as instruções fornecidos."
+      ],
+      [
+        "Revisão",
+        "Pessoa: O advogado revisa o material e decide seu uso. Estratégia, prazos e protocolo permanecem com o escritório."
+      ]
+    ],
+    "roles": [
+      "human",
+      "agent",
+      "human",
+      "agent",
+      "human"
+    ]
+  }
 }

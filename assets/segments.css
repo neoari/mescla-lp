@@ -125,3 +125,84 @@ body[data-segment="creators"] .lp-cta{background:#eadfff}body[data-segment="cons
 .creator-tool-group .stack-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:900px){.editing-services{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}}
 @media(max-width:600px){.editing-services{grid-template-columns:1fr}.editing-services article{padding:23px}.editing-icon{margin-bottom:18px}.editing-services h3{font-size:26px}.editing-delivery{padding:22px;gap:14px}.creator-tool-group .stack-grid{grid-template-columns:1fr}.creator-workflow{padding:22px}.creator-stages li{padding:10px;gap:10px}}
+
+/* Four industry-specific workflows: pair every task with its useful output. */
+body[data-workflow="sector"] .section{padding-block:70px}
+body[data-workflow="sector"] .section-head{align-items:start}
+body[data-workflow="sector"] .lp-hero{padding-block:60px}
+body[data-workflow="sector"] .hero-copy .lead{font-size:18px;line-height:1.6}
+body[data-workflow="sector"] .lp-hero h1{font-size:clamp(43px,4.7vw,66px);line-height:1.08}
+body[data-workflow="sector"] .lp-hero .audience{font-size:16px}
+.sector-contact-note{font-size:14px;line-height:1.5;color:#625a71;margin-top:14px;max-width:490px}
+body[data-workflow="sector"] .sector-flow-contact{margin-top:26px;display:inline-flex;min-height:44px;align-items:center;gap:12px}
+.task-heading{display:flex;gap:14px;align-items:center;min-width:0}
+.task-heading h3{font:500 23px/1.15 'Fraunces',serif;letter-spacing:-.02em;margin:0}
+.task-symbol{display:grid;place-items:center;width:42px;height:42px;flex:none;border-radius:10px;background:var(--segment-tint);color:var(--segment-accent)}
+.task-symbol .ui-icon{width:23px;height:23px}
+.task-number{font:14px/1 'JetBrains Mono',monospace;color:var(--segment-accent)}
+.task-action{font-size:16px;line-height:1.6;color:#5d576b;margin:15px 0 0}
+.task-output{border-left:3px solid var(--mare);padding:0 0 0 16px;margin-top:22px}
+.task-output>span{display:block;font-size:14px;line-height:1.4;color:#625a71;margin-bottom:7px}
+.task-output>strong{display:block;font-size:16px;line-height:1.45;font-weight:500}
+.task-ledger--empreendedores{border-top:2px solid var(--segment-accent)}
+.task-ledger--empreendedores .agent-task{display:grid;grid-template-columns:1fr .8fr;gap:10px 45px;padding:26px 0;border-bottom:1px solid #d9d2c5}
+.task-ledger--empreendedores .task-heading{grid-column:1;grid-row:1}
+.task-ledger--empreendedores .task-action{grid-column:1;grid-row:2;margin:0 0 0 56px}
+.task-ledger--empreendedores .task-output{grid-column:2;grid-row:1/3;align-self:center;margin:0;padding:18px 22px;background:#fff6df;border-color:var(--sol)}
+.task-ledger--empreendedores .task-number{display:none}
+.task-chapters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.chapter-title{display:flex;align-items:center;gap:13px;font:500 18px/1.3 'Instrument Sans',sans-serif;margin:0 0 26px;padding-bottom:16px;border-bottom:2px solid var(--segment-accent)}
+.chapter-title>span{font:14px 'JetBrains Mono',monospace}
+.task-chapter{min-width:0}
+.task-chapter .agent-task+.agent-task{border-top:1px solid #d5d9d8;margin-top:25px;padding-top:25px}
+.task-chapter .task-number{display:none}
+.task-chapters--consultorias .agent-task{border-left:1px solid #abc9be;padding-left:20px}
+.task-chapters--consultorias .task-heading{align-items:flex-start}
+.task-chapters--consultorias .task-output{padding:14px;background:#e8f3f1}
+.task-chapters--agencias{gap:0;border:1px solid #dfcfc8;border-radius:12px;overflow:hidden}
+.task-chapters--agencias .task-chapter{padding:28px;background:#fff5ef}
+.task-chapters--agencias .task-chapter:nth-child(2){background:var(--branco)}
+.task-chapters--agencias .task-chapter+.task-chapter{border-left:1px solid #dfcfc8}
+.task-chapters--agencias .task-output{border-color:var(--roma)}
+.task-ledger--advocacia{display:grid;grid-template-columns:1fr 1fr;gap:0 46px;border-top:2px solid var(--segment-accent)}
+.task-ledger--advocacia .agent-task{padding:27px 0;border-bottom:1px solid #d9cfd4}
+.task-ledger--advocacia .task-symbol{display:none}
+.task-ledger--advocacia .task-output{border-color:#8b5265}
+.task-delivery{display:flex;gap:23px;align-items:flex-start;background:var(--noite);color:var(--branco);padding:28px 32px;border-radius:10px;margin-top:30px}
+.task-delivery>.ui-icon{width:34px;height:34px;flex:none;color:var(--mare)}
+.task-delivery h3{font:500 28px/1.17 'Fraunces',serif;letter-spacing:-.02em;margin:0 0 14px;max-width:850px}
+.task-delivery p{font-size:16px;line-height:1.6;color:#d8d2e3;max-width:850px}
+.pilot-inputs{margin-top:28px;padding:23px;background:var(--segment-tint);border-radius:8px}
+.pilot-inputs h3,.pilot-result-title{font:500 17px/1.4 'Instrument Sans',sans-serif;margin:0 0 14px}
+.pilot-inputs ul{padding-left:20px;margin:0;font-size:16px;line-height:1.55}
+.pilot-inputs li+li{margin-top:9px}
+.sector-tool-group+.sector-tool-group{margin-top:27px}
+.sector-tool-group>h3{font-size:17px;color:var(--segment-accent);margin-bottom:12px}
+.sector-tool-group .stack-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.sector-tool-group:last-child .stack-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+body[data-workflow="sector"] .integration-note,body[data-workflow="sector"] .example-label,body[data-workflow="sector"] .process-meta{font-size:14px;line-height:1.5}
+body[data-workflow="sector"] .stack-tool p{font-size:16px}
+body[data-workflow="sector"] .platform-note p{font-size:16px}
+body[data-workflow="sector"] .process-list h3{font-size:23px}
+.sector-surface h2{font:500 36px/1.1 'Fraunces',serif;margin:28px 0}
+.sector-surface .surface-label{font-size:14px}
+.sector-surface .surface-foot{font-size:16px;line-height:1.5}
+.artifact-input,.artifact-output{display:flex;gap:16px;align-items:center;padding:21px;background:#fff;border:1px solid #1b193020;font-size:16px;line-height:1.5}
+.artifact-input .tool-icon,.artifact-output .tool-icon{width:29px;height:29px}
+.artifact-output{margin-top:25px}
+.proposal-fields{margin:15px 0 0}
+.proposal-fields>div{padding:18px 0;border-bottom:1px solid #d6c59d}
+.proposal-fields dt{font-size:14px;color:#795721;margin-bottom:5px}
+.proposal-fields dd{font-size:17px;margin:0}
+.evidence-sample{display:grid;gap:12px}
+.evidence-sample>div{display:grid;grid-template-columns:1fr 1fr;gap:7px 15px;padding:16px;background:#f8fcfa;border-left:3px solid #659f8d;font-size:16px}
+.evidence-sample small{grid-column:2;font-size:14px;color:#405c53}
+.piece-review>div{padding:20px;background:#fff;border:1px solid #dec5ba}
+.piece-review .piece-label{display:block;font-size:14px;margin-bottom:9px;color:#8c3b2e}
+.piece-review strong{font:500 23px/1.2 'Fraunces',serif}
+.piece-review .piece-feedback{display:flex;align-items:center;gap:15px;margin:12px 0;background:#f9dccc;font-size:17px}
+.piece-feedback .ui-icon{width:26px;height:26px;flex:none}
+.piece-feedback b{display:block;font-size:14px;font-weight:500;margin-bottom:5px}
+.sector-surface .document-index p{font-size:16px;line-height:1.5}
+@media(max-width:1000px){.task-chapters{gap:17px}.task-chapters--agencias{gap:0}.task-chapters--agencias .task-chapter{padding:23px 18px}.task-chapter .task-heading{flex-direction:column;align-items:flex-start}.task-ledger--advocacia{gap:0 28px}.sector-tool-group .stack-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){body[data-workflow="sector"] .section{padding-block:45px}body[data-workflow="sector"] .lp-hero{padding-block:40px}body[data-workflow="sector"] .lp-hero h1{font-size:clamp(36px,9vw,54px)}.task-ledger--empreendedores .agent-task{display:block;padding:24px 0}.task-ledger--empreendedores .task-action{margin:13px 0 0}.task-ledger--empreendedores .task-output{margin:18px 0 0;padding:15px}.task-chapters{grid-template-columns:1fr;gap:28px}.task-chapter .task-heading{flex-direction:row;align-items:center}.task-chapters--agencias{gap:0}.task-chapters--agencias .task-chapter{padding:25px}.task-chapters--agencias .task-chapter+.task-chapter{border-left:0;border-top:1px solid #dfcfc8}.task-ledger--advocacia{grid-template-columns:1fr;gap:0}.task-delivery{padding:23px;gap:15px}.task-delivery>.ui-icon{width:26px;height:26px}.task-delivery h3{font-size:25px}.task-heading h3{font-size:23px}.evidence-sample>div{grid-template-columns:1fr}.evidence-sample small{grid-column:auto}.sector-surface h2{font-size:32px}}

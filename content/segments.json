@@ -1,18 +1,79 @@
 [
   {
-    "slug": "empreendedores", "label": "Empreendedores", "short": "seu negócio", "card": "Tire projetos do papel e faça seu negócio avançar.",
-    "intro": "IA para quem empreende", "headline": ["Tire seus projetos", "do papel."],
-    "description": "Ganhe apoio para pesquisar, preparar materiais e organizar a execução. A Mescla monta um time de IA para fazer seus projetos avançarem com você.",
-    "lead": "Os planos crescem, mas a sua agenda continua a mesma. Tenha um time de IA para pesquisar, preparar e executar etapas do trabalho, enquanto você cuida das decisões e dos próximos movimentos do negócio.",
-    "context": "Para quem toca o próprio negócio e precisa de mais capacidade para executar.",
-    "outcomes": [["Projetos em movimento", "Transforme uma ideia em pesquisa organizada, plano de ação e primeiras entregas para avaliar."], ["Mais capacidade na rotina", "Delegue a preparação e a organização do trabalho que hoje dependem da sua disponibilidade."], ["Espaço para o próximo passo", "Dedique mais atenção aos clientes, às oportunidades e às escolhas que fazem o negócio avançar."]],
-    "example": "Uma ideia ganha um caminho para acontecer.",
-    "example_intro": "Você quer lançar uma nova oferta. O time ajuda a transformar o que você sabe em materiais e próximos passos para testar essa ideia.",
-    "steps": [["human", "Você define o objetivo", "Compartilha a ideia, o público, as referências e o que precisa descobrir."], ["agent", "Os agentes preparam a base", "Organizam informações, pesquisam referências e estruturam uma primeira proposta."], ["human", "Você escolhe a direção", "Avalia as sugestões e define prioridades e critérios para avançar."], ["agent", "O trabalho ganha forma", "O time prepara os materiais e organiza as próximas tarefas do processo combinado."]],
-    "interests": [["projetos", "Tirar um projeto do papel"], ["rotina", "Organizar e delegar a rotina"], ["comercial", "Preparar propostas e materiais comerciais"]],
-    "question": "Serve para quem ainda trabalha sozinho?", "answer": "Sim. Começamos por um objetivo e uma rotina que façam diferença para você. A escolha do ambiente considera também se outras pessoas poderão participar depois.",
-    "scope": "Um primeiro processo de pesquisa, preparação de materiais ou organização da execução, definido a partir do seu objetivo.",
-    "contact_title": "Qual projeto está esperando por você?", "contact_text": "Conte o que quer realizar e onde falta tempo ou apoio. Vamos identificar um primeiro trabalho para colocar em movimento."
+    "slug": "empreendedores",
+    "label": "Empreendedores",
+    "short": "seu negócio",
+    "card": "Pedidos viram propostas. A conversa continua.",
+    "intro": "Para quem vende serviços e concentra o comercial",
+    "headline": [
+      "O pedido chegou.",
+      "Faça a proposta andar."
+    ],
+    "description": "Um time de IA para organizar pedidos, montar propostas comerciais e preparar retornos aos clientes. Você aprova as condições e conduz a negociação.",
+    "lead": "Seu time de IA reúne o pedido, monta a proposta com suas ofertas e critérios comerciais e prepara o retorno ao cliente. Você confere preço, prazo e condições e conduz a negociação.",
+    "context": "Você conhece o cliente. Seus agentes preparam o próximo passo.",
+    "outcomes": [
+      [
+        "Projetos em movimento",
+        "Transforme uma ideia em pesquisa organizada, plano de ação e primeiras entregas para avaliar."
+      ],
+      [
+        "Mais capacidade na rotina",
+        "Delegue a preparação e a organização do trabalho que hoje dependem da sua disponibilidade."
+      ],
+      [
+        "Espaço para o próximo passo",
+        "Dedique mais atenção aos clientes, às oportunidades e às escolhas que fazem o negócio avançar."
+      ]
+    ],
+    "example": "Um pedido. Uma proposta. A conversa continua.",
+    "example_intro": "Neste exemplo, um pedido de serviço vira proposta e retorno comercial. Você fornece os critérios da oferta e mantém a negociação nas suas mãos.",
+    "steps": [
+      [
+        "human",
+        "Pedido",
+        "Você compartilha um pedido autorizado, a oferta e os critérios de preço, prazo e escopo."
+      ],
+      [
+        "agent",
+        "Proposta",
+        "O agente reúne as informações, sinaliza lacunas e monta a proposta editável."
+      ],
+      [
+        "human",
+        "Aprovação",
+        "Você confere escopo, preço e condições e aprova o que pode seguir ao cliente."
+      ],
+      [
+        "agent",
+        "Retorno",
+        "O agente prepara o retorno e registra o acompanhamento. Envia apenas conforme as regras e os canais autorizados."
+      ],
+      [
+        "human",
+        "Negociação",
+        "Você negocia, decide exceções e confirma o fechamento com o cliente."
+      ]
+    ],
+    "interests": [
+      [
+        "propostas",
+        "Montar propostas comerciais"
+      ],
+      [
+        "rotina",
+        "Acompanhar retornos aos clientes"
+      ],
+      [
+        "projetos",
+        "Organizar a passagem da venda para a entrega"
+      ]
+    ],
+    "question": "O que define o investimento?",
+    "answer": "Quantidade de fluxos, ferramentas, integrações e acompanhamento entram na proposta. Primeiro entendemos seu processo e combinamos entregas e condições para a implantação.",
+    "scope": "Um tipo de serviço, um modelo de proposta e um fluxo de retorno comercial, com critérios e acessos definidos.",
+    "contact_title": "Qual pedido está esperando uma proposta?",
+    "contact_text": "Conte que serviço você vende e onde o orçamento trava. Vamos escolher um primeiro fluxo de pedido, proposta e retorno."
   },
   {
     "slug": "creators",
@@ -95,48 +156,231 @@
     "contact_text": "Conte o que você grava e onde a edição trava. Vamos definir um primeiro fluxo para levar seu conteúdo até a publicação."
   },
   {
-    "slug": "consultorias", "label": "Consultorias com equipes enxutas", "short": "sua consultoria", "card": "Amplie sua capacidade de entregar projetos.",
-    "intro": "IA para consultorias com times pequenos", "headline": ["Amplie sua capacidade", "de entregar projetos."],
-    "description": "Dê mais alcance à sua equipe de consultoria com apoio de IA para pesquisa, organização de evidências e preparação de entregáveis, sob revisão dos consultores.",
-    "lead": "Dê mais alcance ao conhecimento do seu time. Agentes ajudam na pesquisa, na organização de evidências e na preparação dos materiais, abrindo espaço para o diagnóstico e a relação com o cliente.",
-    "context": "Para consultorias que precisam conciliar pesquisa, entregas e atenção aos clientes com uma equipe enxuta.",
-    "outcomes": [["Uma base mais organizada", "Reúna documentos, referências e evidências em materiais que sua equipe consiga avaliar e utilizar."], ["Entregáveis avançando", "Prepare estruturas de relatórios, apresentações e registros a partir do contexto de cada projeto."], ["Mais atenção ao diagnóstico", "Reserve o conhecimento dos consultores para interpretar, decidir e construir recomendações."]],
-    "example": "Da informação dispersa à base para uma recomendação.",
-    "example_intro": "Um novo projeto começa com documentos e conversas. O time ajuda a organizar o material e preparar a base para o trabalho dos consultores.",
-    "steps": [["human", "O consultor define as perguntas", "Compartilha o objetivo, o método e as fontes que podem ser utilizadas no projeto."], ["agent", "Os agentes organizam as evidências", "Reúnem referências, resumem documentos e destacam informações para conferência."], ["human", "O consultor interpreta", "Verifica as fontes, questiona os achados e constrói a análise e as recomendações."], ["agent", "O time prepara o entregável", "Estrutura o relatório ou a apresentação a partir da orientação recebida, para revisão da equipe."]],
-    "interests": [["pesquisa", "Pesquisar e organizar evidências"], ["entregaveis", "Preparar relatórios e apresentações"], ["projetos", "Organizar registros e acompanhamento dos projetos"]],
-    "question": "É possível manter nosso método de trabalho?", "answer": "Sim. Usamos seu método, modelos de documento e critérios de qualidade como referências para configurar o processo. O teste com materiais reais mostra o que precisa ser ajustado antes de ampliar o uso.",
-    "scope": "Um processo de pesquisa, preparação de entregáveis ou acompanhamento de projetos, alinhado ao método da consultoria.",
-    "contact_title": "Onde sua equipe precisa ganhar capacidade?", "contact_text": "Conte em qual etapa dos projetos o trabalho mais se acumula. Vamos identificar uma primeira aplicação para o seu time."
+    "slug": "consultorias",
+    "label": "Consultorias com equipes enxutas",
+    "short": "sua consultoria",
+    "card": "Suas recomendações, em entregáveis que avançam.",
+    "intro": "Para consultorias com equipes enxutas",
+    "headline": [
+      "Da entrevista à apresentação.",
+      "Com a sua análise no centro."
+    ],
+    "description": "Agentes de IA para organizar entrevistas, consolidar dados e montar relatórios e apresentações editáveis. Consultores conferem as fontes e formulam as recomendações.",
+    "lead": "Seu time de IA organiza entrevistas, consolida dados e monta relatórios e apresentações editáveis. Os consultores conferem as evidências, formulam as recomendações e conduzem a entrega ao cliente.",
+    "context": "Seu método orienta. Seus consultores recomendam. Os agentes preparam a entrega.",
+    "outcomes": [
+      [
+        "Uma base mais organizada",
+        "Reúna documentos, referências e evidências em materiais que sua equipe consiga avaliar e utilizar."
+      ],
+      [
+        "Entregáveis avançando",
+        "Prepare estruturas de relatórios, apresentações e registros a partir do contexto de cada projeto."
+      ],
+      [
+        "Mais atenção ao diagnóstico",
+        "Reserve o conhecimento dos consultores para interpretar, decidir e construir recomendações."
+      ]
+    ],
+    "example": "Das fontes à conversa que orienta o cliente.",
+    "example_intro": "Um diagnóstico recorrente, com o método da consultoria. Os agentes preparam a base; os consultores interpretam; o material final passa pela revisão da equipe.",
+    "steps": [
+      [
+        "human",
+        "Método",
+        "O consultor define as perguntas, autoriza as fontes e escolhe o modelo do entregável."
+      ],
+      [
+        "agent",
+        "Evidências",
+        "O agente consolida dados e organiza entrevistas numa matriz de evidências, com referências, lacunas e pontos para conferir."
+      ],
+      [
+        "human",
+        "Análise",
+        "O consultor confere as fontes, interpreta os achados e formula ou aprova as recomendações."
+      ],
+      [
+        "agent",
+        "Entregável",
+        "O agente monta o relatório ou a apresentação com as conclusões e o modelo definidos."
+      ],
+      [
+        "human",
+        "Entrega",
+        "A equipe revisa o arquivo, ajusta a narrativa e conduz a entrega ao cliente."
+      ]
+    ],
+    "interests": [
+      [
+        "pesquisa",
+        "Organizar entrevistas e evidências"
+      ],
+      [
+        "entregaveis",
+        "Montar relatórios e apresentações"
+      ],
+      [
+        "conhecimento",
+        "Reutilizar método e referências autorizadas"
+      ]
+    ],
+    "question": "Um cliente pode acessar o material de outro?",
+    "answer": "Definimos separação de ambientes, fontes e permissões por projeto. Somente modelos e aprendizados que a consultoria autorizar entram na memória reutilizável; materiais de clientes não entram automaticamente.",
+    "scope": "Um tipo de diagnóstico, uma base autorizada e um formato de entrega, com análise e revisão dos consultores.",
+    "contact_title": "Qual entrega consome horas antes da análise?",
+    "contact_text": "Conte o tipo de projeto, de onde vêm as informações e o arquivo que você precisa entregar. Vamos escolher uma primeira rotina."
   },
   {
-    "slug": "agencias", "label": "Agências de publicidade e marketing", "short": "sua agência", "card": "Dê mais alcance ao seu time e às entregas dos seus clientes.",
-    "intro": "IA para agências de publicidade e marketing", "headline": ["Dê mais alcance", "ao seu time."],
-    "description": "Amplie a capacidade de entrega da sua agência com agentes de IA para organizar briefings, preparar materiais e apoiar a operação de contas.",
-    "lead": "Entre briefings, produção e aprovações, sempre há trabalho esperando. Tenha agentes para preparar materiais e organizar etapas da operação, com a direção criativa e o relacionamento nas mãos do seu time.",
-    "context": "Para agências que querem ampliar a capacidade de atender às demandas da carteira de clientes.",
-    "outcomes": [["Briefings que fazem o trabalho avançar", "Organize referências e informações de cada conta em uma base clara para a produção."], ["Mais materiais para o time trabalhar", "Prepare pautas, primeiras versões e variações para avaliação de quem conduz a entrega."], ["Mais atenção às contas", "Ganhe apoio na organização de registros, pendências e materiais de acompanhamento dos clientes."]],
-    "example": "Do briefing à primeira versão para a equipe revisar.",
-    "example_intro": "Um novo pedido chega. O time de IA ajuda a organizar o contexto e preparar os materiais para a direção da agência avaliar.",
-    "steps": [["human", "A agência define o objetivo", "Compartilha o briefing, a voz da marca, as referências e os critérios da conta."], ["agent", "Os agentes preparam o trabalho", "Organizam o pedido, apontam informações que faltam e desenvolvem primeiras versões."], ["human", "O time dá a direção criativa", "Seleciona caminhos e orienta os ajustes com o olhar de quem conhece o cliente."], ["agent", "Os materiais avançam", "O time incorpora os ajustes e organiza a entrega para a aprovação prevista no processo."]],
-    "interests": [["briefings", "Organizar briefings e informações das contas"], ["producao", "Apoiar a preparação de conteúdo e materiais"], ["atendimento", "Organizar acompanhamento e entregas aos clientes"]],
-    "question": "Dá para trabalhar com marcas e clientes diferentes?", "answer": "O projeto define como separar contextos, referências e acessos de cada conta no ambiente escolhido. Testamos esse uso antes de ampliar a operação, incluindo a revisão dos materiais pela equipe da agência.",
-    "scope": "Um fluxo de preparação de materiais ou de operação de contas, com contexto, entregas e aprovações definidos por projeto.",
-    "contact_title": "Qual entrega precisa ganhar fôlego?", "contact_text": "Conte onde sua agência encontra mais retrabalho ou acúmulo. Vamos desenhar uma primeira aplicação para o seu time."
+    "slug": "agencias",
+    "label": "Agências de publicidade e marketing",
+    "short": "sua agência",
+    "card": "Peças e ajustes avançam com o contexto da conta.",
+    "intro": "Para agências com produção recorrente",
+    "headline": [
+      "Do briefing às peças.",
+      "Com menos idas e vindas."
+    ],
+    "description": "Um time de IA para conferir briefings, criar textos, adaptar peças aos modelos da agência e aplicar feedbacks por versão. Criação dirige e o cliente aprova.",
+    "lead": "Seu time de IA prepara textos, adapta peças aos modelos da agência e incorpora feedbacks por versão. Criação dá a direção, atendimento coordena a rodada e o cliente aprova.",
+    "context": "Uma marca, suas referências e o ajuste ligado à peça certa.",
+    "outcomes": [
+      [
+        "Briefings que fazem o trabalho avançar",
+        "Organize referências e informações de cada conta em uma base clara para a produção."
+      ],
+      [
+        "Mais materiais para o time trabalhar",
+        "Prepare pautas, primeiras versões e variações para avaliação de quem conduz a entrega."
+      ],
+      [
+        "Mais atenção às contas",
+        "Ganhe apoio na organização de registros, pendências e materiais de acompanhamento dos clientes."
+      ]
+    ],
+    "example": "Uma peça avança. O contexto acompanha o ajuste.",
+    "example_intro": "Neste exemplo, um anúncio estático parte de um modelo da agência. O agente prepara a rodada e aplica os ajustes; as pessoas dirigem e aprovam.",
+    "steps": [
+      [
+        "human",
+        "Briefing",
+        "Atendimento valida o pedido com o cliente e compartilha objetivo, referências e modelo da peça."
+      ],
+      [
+        "agent",
+        "Produção",
+        "O agente prepara a primeira rodada de textos e adapta a peça ao modelo aprovado e ao formato definidos."
+      ],
+      [
+        "human",
+        "Direção",
+        "Criação avalia o caminho e orienta os ajustes. Atendimento consolida os feedbacks da rodada."
+      ],
+      [
+        "agent",
+        "Ajustes",
+        "O agente aplica os feedbacks à versão correspondente e organiza os arquivos para aprovação."
+      ],
+      [
+        "human",
+        "Aprovação",
+        "Os responsáveis fazem a conferência interna e a aprovação com o cliente previstas no projeto, antes do uso externo."
+      ]
+    ],
+    "interests": [
+      [
+        "briefings",
+        "Completar briefings e contexto das contas"
+      ],
+      [
+        "producao",
+        "Produzir textos e adaptar peças"
+      ],
+      [
+        "atendimento",
+        "Organizar feedbacks, versões e aprovações"
+      ]
+    ],
+    "question": "Já temos IA na criação. Por que contratar a Mescla?",
+    "answer": "A implantação liga o contexto da conta ao pedido, à produção e às revisões. O valor é conseguir repetir a entrega com agentes compartilhados, modelos e versões organizadas entre atendimento e criação.",
+    "scope": "Uma conta, um formato e uma rodada de produção e ajustes com aprovação humana. Veiculação não está implícita.",
+    "contact_title": "Qual peça volta mais vezes para ajuste?",
+    "contact_text": "Conte o que sua agência produz, onde a rodada trava e como chegam os feedbacks. Vamos escolher uma entrega para começar."
   },
   {
-    "slug": "advocacia", "label": "Escritórios de advocacia", "short": "seu escritório", "card": "Abra espaço para a estratégia e a atenção a cada caso.",
-    "intro": "IA para escritórios de advocacia", "headline": ["Mais tempo para", "a estratégia de cada caso."],
-    "description": "Ganhe apoio de IA para organizar documentos, preparar sínteses e estruturar materiais de trabalho, com fontes conferidas e revisão dos profissionais do escritório.",
-    "lead": "Documentos, registros e preparação de materiais consomem parte importante da rotina. Organize esse trabalho com agentes de IA e dê mais espaço à análise, à estratégia e à atenção aos seus clientes.",
-    "context": "Para escritórios que querem apoiar a rotina da equipe com critérios claros de acesso, conferência e revisão.",
-    "outcomes": [["Documentos mais organizados", "Reúna informações e prepare cronologias e sínteses a partir dos documentos autorizados para o trabalho."], ["Uma base para a análise", "Tenha apoio para localizar informações e estruturar materiais que serão conferidos pelos profissionais."], ["Mais espaço para cada caso", "Direcione a atenção da equipe para interpretar, decidir e orientar os clientes."]],
-    "example": "Dos documentos à base organizada para a análise.",
-    "example_intro": "O escritório define os materiais e as perguntas. Os agentes ajudam a organizar o conteúdo, mantendo a conferência e as decisões com os profissionais responsáveis.",
-    "steps": [["human", "O profissional define o escopo", "Seleciona documentos autorizados, perguntas e limites de acesso para o processo."], ["agent", "Os agentes organizam o material", "Preparam sínteses e cronologias, com indicação dos documentos de origem para conferência."], ["human", "O profissional confere e interpreta", "Verifica informações e fontes, avalia lacunas e define o entendimento e a estratégia."], ["agent", "O time apoia a preparação", "Estrutura os materiais conforme as orientações recebidas, para revisão antes de qualquer uso externo."]],
-    "interests": [["documentos", "Organizar documentos e cronologias"], ["sinteses", "Preparar sínteses para análise"], ["rotina", "Organizar registros e tarefas do escritório"]],
-    "question": "Como ficam o sigilo e a revisão profissional?", "answer": "Antes de usar documentos de clientes, definimos fornecedores, acessos, armazenamento e quais informações podem entrar no fluxo. Fontes e saídas de IA precisam ser conferidas. A revisão, a estratégia e os atos profissionais continuam sob responsabilidade do escritório; envio e protocolo não são automáticos por padrão.",
-    "scope": "Um processo de organização documental ou preparação de materiais, com informações autorizadas e revisão profissional definida.",
-    "contact_title": "Onde a rotina ocupa o tempo da análise?", "contact_text": "Conte qual etapa do trabalho precisa de apoio. Nesta primeira conversa, descreva a rotina sem compartilhar documentos ou dados de clientes."
+    "slug": "advocacia",
+    "label": "Escritórios de advocacia",
+    "short": "seu escritório",
+    "card": "Do conjunto de documentos à análise do caso.",
+    "intro": "Para escritórios com rotina documental intensa",
+    "headline": [
+      "Documentos em ordem.",
+      "Mais tempo para a estratégia."
+    ],
+    "description": "Agentes de IA para organizar documentos autorizados, montar cronologias e preparar minutas orientadas pelo advogado. Fontes e materiais passam por conferência profissional.",
+    "lead": "Seu time de IA organiza documentos autorizados, monta cronologias com referências e prepara minutas orientadas pelo advogado. O escritório confere as fontes, define a estratégia e aprova o uso.",
+    "context": "Agentes preparam. O advogado interpreta, revisa e decide.",
+    "outcomes": [
+      [
+        "Documentos mais organizados",
+        "Reúna informações e prepare cronologias e sínteses a partir dos documentos autorizados para o trabalho."
+      ],
+      [
+        "Uma base para a análise",
+        "Tenha apoio para localizar informações e estruturar materiais que serão conferidos pelos profissionais."
+      ],
+      [
+        "Mais espaço para cada caso",
+        "Direcione a atenção da equipe para interpretar, decidir e orientar os clientes."
+      ]
+    ],
+    "example": "Dos documentos à minuta orientada pelo advogado.",
+    "example_intro": "Exemplo de um fluxo que inclui minuta. O escritório escolhe os materiais e a pergunta jurídica; o agente prepara a base e o documento, com análise e revisão humanas.",
+    "steps": [
+      [
+        "human",
+        "Documentos",
+        "O escritório autoriza os materiais, define as perguntas e os acessos ao caso."
+      ],
+      [
+        "agent",
+        "Organização",
+        "O agente monta índice, cronologia, referências e pendências para conferência."
+      ],
+      [
+        "human",
+        "Análise",
+        "O advogado confere as fontes, interpreta os fatos e define o conteúdo e a orientação da minuta."
+      ],
+      [
+        "agent",
+        "Minuta",
+        "O agente prepara a estrutura editável com os fatos, o modelo e as instruções fornecidos."
+      ],
+      [
+        "human",
+        "Revisão",
+        "O advogado revisa o material e decide seu uso. Estratégia, prazos e protocolo permanecem com o escritório."
+      ]
+    ],
+    "interests": [
+      [
+        "documentos",
+        "Organizar documentos e cronologias"
+      ],
+      [
+        "sinteses",
+        "Comparar materiais e preparar minutas"
+      ],
+      [
+        "rotina",
+        "Identificar pendências documentais"
+      ]
+    ],
+    "question": "Já uso uma IA jurídica. O que a Mescla acrescenta?",
+    "answer": "Organizamos o percurso entre documentos, agentes, análise e revisão da equipe. A implantação considera os modelos do escritório, as fontes permitidas e o modo de continuar o caso com os mesmos registros.",
+    "scope": "Uma rotina documental e um conjunto autorizado, com fontes e revisão profissional. Minuta somente quando escolhida no escopo.",
+    "contact_title": "Onde a preparação documental toma o tempo da equipe?",
+    "contact_text": "Descreva o processo e o tipo de documento, sem enviar materiais de clientes ou informações sigilosas neste primeiro contato."
   }
 ]

@@ -19,31 +19,36 @@ const serif = "'Fraunces', Georgia, serif";
 export const Glyph: React.FC<{name: string; size?: number; color?: string}> = ({name, size=40, color='currentColor'}) =>
   <span aria-hidden="true" style={{display:'inline-flex', flexShrink:0, width:size, height:size, color, fill:'currentColor'}} dangerouslySetInnerHTML={{__html:marks[name] || ''}} />;
 
-const Paper: React.FC<{children: React.ReactNode; x: number; y: number; w?: number; h?: number; color?: string; angle?: number; depth?: number; opacity?: number}> = ({children,x,y,w=290,h=245,color=white,angle=0,depth=0,opacity=1}) => {
+const Paper: React.FC<{children: React.ReactNode; x: number; y: number; w?: number; h?: number; color?: string; angle?: number; depth?: number; opacity?: number; padding?: number}> = ({children,x,y,w=290,h=245,color=white,angle=0,depth=0,opacity=1,padding=w<190?20:27}) => {
   const frame=useContext(MotionFrame);
   const offset=(x+y)*.012;
-  return <div style={{position:'absolute',left:x,top:y,width:w,height:h,padding:w<190?20:27,background:color,border:'1px solid #1B193024',borderRadius:12,boxShadow:'0 2px 0 #c9c3cf, 0 5px 0 #d8d2df, 0 26px 40px #1b193019',transform:`perspective(950px) translateY(${Math.sin(frame*.085+offset)*6}px) rotateY(${angle+Math.sin(frame*.055+offset)*4}deg) rotateX(${8+Math.cos(frame*.07+offset)*2}deg) translateZ(${depth}px)`,transformStyle:'preserve-3d',opacity,color:ink}}>{children}</div>;
+  return <div style={{position:'absolute',left:x,top:y,width:w,height:h,padding,background:color,border:'1px solid #1B193024',borderRadius:12,boxShadow:'0 2px 0 #c9c3cf, 0 5px 0 #d8d2df, 0 26px 40px #1b193019',transform:`perspective(950px) translateY(${Math.sin(frame*.085+offset)*6}px) rotateY(${angle+Math.sin(frame*.055+offset)*4}deg) rotateX(${8+Math.cos(frame*.07+offset)*2}deg) translateZ(${depth}px)`,transformStyle:'preserve-3d',opacity,color:ink}}>{children}</div>;
 };
-const Small: React.FC<{children: React.ReactNode}> = ({children}) => <div style={{fontSize:25,lineHeight:1.3,marginTop:15,color:'#625F72'}}>{children}</div>;
-const Heading: React.FC<{children: React.ReactNode}> = ({children}) => <div style={{fontFamily:serif,fontWeight:500,fontSize:39,lineHeight:1.08,letterSpacing:'-.035em',marginTop:18}}>{children}</div>;
-const Approval: React.FC<{label?: string; color?: string; frame: number}> = ({label='Sua revisão',color=amber,frame}) =>
-  <div style={{position:'absolute',bottom:33,left:38,display:'flex',alignItems:'center',gap:13,padding:'12px 19px',background:color,borderRadius:30,fontSize:25,color:ink,opacity:interpolate(frame,[303,328],[0,1],ease),translate:interpolate(frame,[303,328],['0px 14px','0px 0px'],ease)}}><Glyph name="user-round" size={29}/>{label}</div>;
-const Agent: React.FC<{frame:number; x?:number; y?:number; label?:string}> = ({frame,x=275,y=240,label='Preparação'}) =>
-  <div style={{position:'absolute',left:x,top:y,textAlign:'center',opacity:interpolate(frame,[140,166,280,307],[0,1,1,0],ease),translate:interpolate(frame,[140,166],['0px 20px','0px 0px'],ease)}}><div style={{width:88,height:88,display:'grid',placeItems:'center',borderRadius:25,background:mint,boxShadow:'0 8px 0 #3a9e8f, 0 18px 25px #1b19301c',transform:`perspective(600px) rotateY(${Math.sin(frame/24)*18}deg)`}}><Glyph name="bot" size={45}/></div><div style={{fontSize:23,marginTop:19,fontWeight:500}}>{label}</div></div>;
 const Connector: React.FC<{frame:number;y?:number}> = ({frame,y=292}) =>
   <svg viewBox="0 0 540 40" style={{position:'absolute',top:y,left:50,width:540,height:40,overflow:'visible'}} aria-hidden="true"><path d="M 0 20 H 540" fill="none" stroke="#9CACA4" strokeWidth="2" strokeDasharray="6 8"/><circle cx={interpolate(frame,[145,295],[0,540],ease)} cy="20" r="7" fill={mint} opacity={interpolate(frame,[140,160,288,302],[0,1,1,0],ease)}/></svg>;
 
+type SectorId = Exclude<SceneId,'home'|'creators'>;
+const SectorStage: React.FC<{scene:SectorId;frame:number}> = ({scene,frame}) => {
+  const phase=getPhase(frame,scene);
+  const person=scenes[scene].roles[phase]==='human';
+  return <div data-sector-stage={phase} data-role={person?'human':'agent'} style={{position:'absolute',left:35,right:35,bottom:25}}>
+    <div style={{display:'flex',gap:12,alignItems:'center',fontSize:25,padding:'12px 16px',borderRadius:9,background:person?'#FFF0CC':'#CCEEE5',color:ink}}><Glyph name={person?'user-round':'bot'} size={29}/><strong style={{fontWeight:500}}>{scenes[scene].phases[phase][0]}</strong><span style={{marginLeft:'auto',fontSize:22}}>{person?'Pessoa':'Agente'}</span></div>
+    <div style={{display:'flex',gap:7,marginTop:14}}>{scenes[scene].phases.map(([label],i)=><span key={label} style={{height:4,flex:1,borderRadius:4,background:i===phase?scenes[scene].accent:'#1B19302A'}}/>)}</div>
+  </div>;
+};
+
 function Founder({frame}:{frame:number}) {
+  const phase=getPhase(frame,'empreendedores');
+  const titles=['Pedido de orçamento','Proposta editável','Condições comerciais','Retorno preparado','A conversa continua'];
+  const rows=[['Necessidade do cliente','Prazo e contexto','Sua oferta de serviço'],['Resumo e lacunas','Escopo da sua oferta','Condições fornecidas'],['Escopo e preço','Prazo e condições','Sua aprovação'],['Mensagem com contexto','Tarefa de acompanhamento','Envio se autorizado'],['Negociação com o cliente','Exceções decididas por você','Condições confirmadas']];
   return <>
-    <Connector frame={frame}/>
-    <Paper x={interpolate(frame,[115,165],[156,27],ease)} y={interpolate(frame,[115,165],[125,139],ease)} w={275} h={270} angle={interpolate(frame,[0,150,300],[-12,-20,-7],ease)} opacity={interpolate(frame,[280,312],[1,.28],ease)}>
-      <Glyph name="whatsapp" size={43} color="#17813C"/><Heading>Um cliente.<br/>Um pedido.</Heading><Small>Pedido + contexto</Small>
+    <div style={{position:'absolute',left:45,right:45,top:89,display:'flex',gap:14,alignItems:'center',fontSize:25,color:'#795721'}}><Glyph name="whatsapp" color="#17813C" size={34}/>Pedido → proposta → retorno</div>
+    <Paper x={76+Math.sin(frame*.05)*8} y={145} w={490} h={290} padding={22} angle={-5+phase*2} color="#FFFCF5">
+      <div style={{display:'flex',gap:14,alignItems:'center',fontSize:24,color:'#795721'}}><Glyph name={phase===2?'user-round':'file-text'} size={32}/>{phase===2?'Você confere':'Exemplo de trabalho'}</div>
+      <div style={{fontFamily:serif,fontSize:35,lineHeight:1.08,marginTop:17}}>{titles[phase]}</div>
+      <div style={{marginTop:18}}>{rows[phase].map((line,i)=><div key={line} style={{fontSize:23,lineHeight:1.25,marginTop:7,paddingLeft:14,borderLeft:`3px solid ${i===phase%3?mint:amber}`,translate:interpolate(frame%PHASE_FRAMES,[0,15],['8px 0px','0px 0px'],ease)}}>{line}</div>)}</div>
     </Paper>
-    <Agent frame={frame} x={290} y={202} label="Organizar"/>
-    <Paper x={interpolate(frame,[255,326],[700,266],ease)} y={116} w={323} h={309} angle={interpolate(frame,[270,350],[22,3],ease)} color="#FFF9ED">
-      <Glyph name="googledocs" size={40} color="#356AC3"/><Heading>Proposta<br/>comercial</Heading><Small>Objetivo<br/>Escopo<br/>Próximo passo</Small>
-    </Paper>
-    <Approval frame={frame} label="Você decide o próximo passo"/>
+    <SectorStage scene="empreendedores" frame={frame}/>
   </>;
 }
 
@@ -81,42 +86,45 @@ function Creator({frame}:{frame:number}) {
 }
 
 function Consulting({frame}:{frame:number}) {
-  const inputs=[['googlesheets','Dados'],['file-text','Entrevistas'],['googledocs','Documentos']];
+  const phase=getPhase(frame,'consultorias');
+  const output=phase>=3;
   return <>
-    {inputs.map(([icon,label],i)=><Paper key={label} x={interpolate(frame,[120,185],[100+i*54,22+i*10],ease)} y={104+i*65} w={340} h={154} angle={-9+i*4} opacity={interpolate(frame,[265,318],[1,.24],ease)}><div style={{display:'flex',alignItems:'center',gap:20,fontSize:31}}><Glyph name={icon} color="#246163"/>{label}</div></Paper>)}
-    <Agent frame={frame} x={340} y={237} label="Conectar fontes"/>
-    <Paper x={interpolate(frame,[268,327],[650,184],ease)} y={89} w={401} h={340} angle={interpolate(frame,[275,345],[18,2],ease)} color="#F8FCFA">
-      <div style={{display:'flex',alignItems:'center',gap:15,fontSize:26,color:'#246163'}}><Glyph name="presentation" size={35}/>Caderno de projeto</div>
-      <Heading>Base para<br/>a recomendação.</Heading>
-      <div style={{marginTop:26,paddingTop:18,borderTop:'1px solid #B9D1C9',fontSize:26,lineHeight:1.6}}>Evidência → fonte<br/>Pergunta → análise</div>
+    <div style={{position:'absolute',left:38,right:38,top:90,display:'flex',justifyContent:'space-between',gap:15}}>{[['file-text','Entrevistas'],['googlesheets','Planilhas'],['googledocs','Documentos']].map(([icon,label],i)=><div key={label} style={{fontSize:22,display:'flex',gap:8,alignItems:'center',color:'#246163',translate:`0px ${Math.sin(frame*.09+i)*3}px`}}><Glyph name={icon} size={30}/>{label}</div>)}</div>
+    <Paper x={48} y={145} w={542} h={290} padding={22} angle={Math.sin(frame*.025)*5} color="#F8FCFA">
+      <div style={{display:'flex',gap:14,alignItems:'center',color:'#246163',fontSize:23}}><Glyph name={output?'presentation':'network'} size={31}/>{output?'Arquivo editável':'Base para conferir'}</div>
+      <div style={{fontFamily:serif,fontSize:35,lineHeight:1.1,marginTop:15}}>{output?'Suas recomendações.':'Matriz de evidências.'}</div>
+      <div style={{marginTop:18,borderTop:'1px solid #B5CFC4'}}>{(output?[['Estrutura','Modelo da consultoria'],['Conclusões','Formuladas pelo consultor'],['Revisão','Antes da entrega']]:[['Entrevista','Tema + trecho'],['Planilha','Dado + origem'],['Conferência','Lacunas e divergências']]).map(([left,right],i)=><div key={left} style={{display:'grid',gridTemplateColumns:'140px 1fr',gap:17,padding:'7px 5px',borderBottom:'1px solid #CDDFD7',background:i===phase%3?'#DBEEE6':'transparent',fontSize:23}}><strong style={{fontWeight:500}}>{left}</strong><span>{right}</span></div>)}</div>
     </Paper>
-    <Approval frame={frame} label="O consultor interpreta" color={mint}/>
+    <SectorStage scene="consultorias" frame={frame}/>
   </>;
 }
 
 function Agency({frame}:{frame:number}) {
-  const phase=storyPhase(frame);
+  const phase=getPhase(frame,'agencias');
+  const lane=phase===0?0:phase===4?2:1;
   return <>
-    <div style={{position:'absolute',left:35,top:102,width:570,display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:15,transform:`perspective(1000px) rotateX(${12+Math.sin(frame/38)*3}deg) rotateY(${Math.sin(frame/45)*2}deg)`,transformStyle:'preserve-3d'}}>{['Briefing','Produção','Revisão'].map((label,i)=><div key={label} style={{background:i===phase?'#E8CBC0':'#EDE6E5',height:308,borderRadius:10,borderTop:`4px solid ${[amber,mint,'#CF3E27'][i]}`,padding:'21px 14px',fontSize:25,color:'#5E4544'}}>{label}</div>)}</div>
-    <Paper x={interpolate(frame,[115,170,270,330],[47,237,237,424],ease)} y={174} w={165} h={224} angle={interpolate(frame,[0,115,170,270,330],[-10,-10,8,8,0],ease)} color={phase===2?'#FFF8F1':white}>
-      <Glyph name={phase===0?'trello':phase===1?'file-text':'pencil-ruler'} size={34} color="#AA3425"/>
-      <div style={{fontFamily:serif,fontSize:29,lineHeight:1.12,marginTop:26}}>{phase===0?'Contexto da conta':phase===1?'Primeiras versões':'Escolha criativa'}</div>
+    <div style={{position:'absolute',left:35,top:88,width:570,display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12,transform:`perspective(1000px) rotateX(${7+Math.sin(frame*.04)*3}deg)`}}>{['Entrada','Produção','Aprovação'].map((label,i)=><div key={label} style={{height:326,padding:'20px 12px',background:i===lane?'#F2D5C8':'#EFE5E0',borderTop:`4px solid ${i===lane?'#AA3425':'#C7A99D'}`,borderRadius:10,fontSize:24,color:'#763C30'}}>{label}</div>)}</div>
+    <Paper x={54+lane*145+interpolate(frame%PHASE_FRAMES,[0,18],[-15,0],ease)} y={145} w={270} h={282} padding={22} angle={lane===0?-8:lane===2?5:-2} color="#FFFCF8">
+      <div style={{display:'flex',gap:10,alignItems:'center',fontSize:20,color:'#8C3B2E'}}><Glyph name={phase===2?'pencil-ruler':'file-text'} size={27}/>Peça de exemplo</div>
+      <div style={{fontFamily:serif,fontSize:29,lineHeight:1.13,marginTop:18}}>{['Briefing e modelo','Texto + peça adaptada','Trocar a chamada','Ajuste aplicado','Versão para aprovar'][phase]}</div>
+      <div style={{fontSize:22,lineHeight:1.3,marginTop:18,paddingTop:14,borderTop:'1px solid #DBB9A9'}}>{['Objetivo + referências','Primeira rodada','Feedback da criação','Na versão correspondente','Conferência e liberação'][phase]}</div>
     </Paper>
-    <div style={{position:'absolute',left:38,top:440,fontSize:24,color:'#8C3B2E',opacity:interpolate(frame,[125,163,280,306],[0,1,1,0],ease),display:'flex',alignItems:'center',gap:12}}><Glyph name="bot" size={31}/>O contexto da marca acompanha.</div>
-    <Approval frame={frame} label="A direção criativa é sua" color="#F9C6B9"/>
+    <SectorStage scene="agencias" frame={frame}/>
   </>;
 }
 
 function Legal({frame}:{frame:number}) {
+  const phase=getPhase(frame,'advocacia');
+  const titles=['Documentos autorizados','Índice e cronologia','Análise do advogado','Minuta orientada','Revisão profissional'];
+  const rows=[['Materiais do caso','Perguntas e permissões','Modelo do escritório'],['Registro → documento','Localização disponível','Lacunas para conferir'],['Fontes conferidas','Fatos interpretados','Orientação da minuta'],['Fatos + instruções','Modelo do escritório','Arquivo editável'],['Conferir texto e fontes','Decidir o uso','Prazos e protocolo: pessoa']];
   return <>
-    {[['adobeacrobatreader','Documentos'],['microsoftword','Modelos']].map(([icon,label],i)=><Paper key={label} x={interpolate(frame,[120,177],[130+i*55,30+i*20],ease)} y={123+i*80} w={305} h={188} angle={-14+i*13} opacity={interpolate(frame,[268,313],[1,.2],ease)}><Glyph name={icon} size={36} color="#6B3343"/><div style={{fontFamily:serif,fontSize:36,marginTop:18}}>{label}</div></Paper>)}
-    <Agent frame={frame} x={360} y={230} label="Referenciar"/>
-    <Paper x={interpolate(frame,[267,326],[650,190],ease)} y={91} w={399} h={343} color="#FFFCFD" angle={interpolate(frame,[270,345],[20,0],ease)}>
-      <div style={{display:'flex',gap:15,alignItems:'center',color:'#6B3343',fontSize:27}}><Glyph name="scale" size={37}/>Material de trabalho</div>
-      <Heading>Cada informação,<br/>com sua origem.</Heading>
-      <div style={{fontSize:25,lineHeight:1.5,marginTop:23,paddingLeft:17,borderLeft:'3px solid #A47A89'}}>Índice documental<br/>Cronologia preliminar<br/>Pontos para conferir</div>
+    <div style={{position:'absolute',left:45,top:91,display:'flex',gap:12,alignItems:'center',fontSize:23,color:'#6B3343'}}><Glyph name="scale" size={32}/>Preparação com conferência profissional</div>
+    <Paper x={65} y={145} w={510} h={290} padding={22} color="#FFFCFD" angle={-4+Math.sin(frame*.03)*4}>
+      <div style={{display:'flex',gap:13,alignItems:'center',fontSize:22,color:'#6B3343'}}><Glyph name={phase>=3?'microsoftword':'adobeacrobatreader'} size={31}/>{phase>=3?'Documento para revisar':'Material de trabalho'}</div>
+      <div style={{fontFamily:serif,fontSize:35,lineHeight:1.08,marginTop:17}}>{titles[phase]}</div>
+      <div style={{marginTop:18}}>{rows[phase].map((line,i)=><div key={line} style={{display:'flex',gap:16,fontSize:23,lineHeight:1.25,marginTop:8,borderBottom:'1px solid #E0D4DA',paddingBottom:5}}><span style={{color:'#865466',fontSize:21}}>{i+1}</span>{line}</div>)}</div>
     </Paper>
-    <Approval frame={frame} label="Conferência pelo advogado" color="#E5D5DD"/>
+    <SectorStage scene="advocacia" frame={frame}/>
   </>;
 }
 
@@ -143,8 +151,8 @@ export const InfographicFrame: React.FC<{scene:SceneId;frame:number}> = ({scene,
   const View=views[scene];
   const data=scenes[scene];
   return <AbsoluteFill className="motion-art" style={{background:data.tint,color:scene==='creators'?white:ink,fontFamily:"'Instrument Sans', Arial, sans-serif",overflow:'hidden',perspective:1100,lineHeight:1.2}}>
-    <div style={{position:'absolute',left:36,right:36,top:29,display:'flex',alignItems:'center',justifyContent:'space-between',fontSize:23,gap:20}}><span>{data.label}</span><span style={{fontSize:18,opacity:.75}}>Exemplo de fluxo</span></div>
-    <MotionFrame.Provider value={frame}><View frame={scene==='creators'?frame:frame*STORY_FRAMES/DURATION}/></MotionFrame.Provider>
+    <div style={{position:'absolute',left:36,right:36,top:29,display:'flex',alignItems:'center',justifyContent:'space-between',fontSize:23,gap:20}}><span>{data.label}</span><span style={{fontSize:18,opacity:.75}}>{scene==='advocacia'?'Exemplo com minuta':'Exemplo de fluxo'}</span></div>
+    <MotionFrame.Provider value={frame}><View frame={scene==='home'?frame*STORY_FRAMES/DURATION:frame}/></MotionFrame.Provider>
     <div style={{position:'absolute',left:0,bottom:0,height:4,width:interpolate(frame,[0,getDuration(scene)-1],[0,640],ease),background:scene==='creators'?mint:data.accent}}/>
   </AbsoluteFill>;
 };

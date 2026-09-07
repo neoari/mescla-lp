@@ -1,14 +1,15 @@
 # Personalização das landing pages
 
-Versão geral: `2026-09-v7`. Creators: `2026-09-creators-video-v1`.
+Versão geral: `2026-09-v7`. Home: `2026-09-v7-home-story-v3`.
+Creators: `2026-09-creators-video-v1`. Demais segmentos: `2026-09-{slug}-workflow-v1`.
 
 | Público | Situação central | Composição | Valor a avaliar |
 | --- | --- | --- | --- |
-| Empreendedores | Propostas e pendências esperando pelo dono | Mesa de decisões e comparação por rotina | Tempo até a primeira versão e esforço de revisão |
+| Empreendedores | Pedido de serviço parado antes da proposta ou do retorno | Proposta comercial; seis tarefas ligadas às suas saídas | Tempo até a proposta revisada e continuidade do retorno |
 | Creators | Gravações paradas na edição | Fluxo de cinco etapas e seis operações de edição | Tempo dedicado à edição, rodadas de ajuste e fidelidade ao padrão |
-| Consultorias | Material disperso antes da análise | Caderno de projeto e evidências por pergunta | Preparação, rastreabilidade e revisão técnica |
-| Agências | Demanda atravessando briefing, produção e revisão | Quadro de produção e etapas por função | Avanço do pedido e rodadas de retrabalho |
-| Advocacia | Reconstrução de fatos e leitura documental | Índice documental e notas de trabalho | Localização de informações e correspondência com as fontes |
+| Consultorias | Preparação de evidências e entregáveis disputando tempo com a análise | Matriz de evidências; capítulos de fontes, análise e entrega | Preparação, correspondência com as fontes e revisão técnica |
+| Agências | Peças presas em briefings incompletos e refações | Quadro de versões; entrada, produção e aprovação | Tempo até a rodada aprovada e motivo dos ajustes |
+| Advocacia | Leitura e organização repetida de materiais do caso | Índice documental; tarefas de extração, conferência e minuta | Localização de informações e correspondência com as fontes |
 
 As superfícies são exemplos de fluxos, não screenshots de produtos da Mescla
 nem resultados de clientes. Não contêm métricas inventadas, garantias de ganho
@@ -57,10 +58,34 @@ YouTube, TikTok e Instagram, no de publicação após aprovação. A presença d
 logo não afirma integração pronta ou API universal. A mudança é na apresentação
 do serviço no site; não configura uma operação real de edição ou publicação.
 
-O infográfico de Creators tem cinco fases de 70 frames (350 frames a 30 fps).
-As demais cenas mantêm três fases e sua duração anterior. `motion/src/check.tsx`
-verifica os limites de cada fase, a seleção das cinco etapas, os responsáveis
-e a apresentação da publicação somente na etapa posterior à aprovação.
+Todos os infográficos de segmentos têm cinco fases de 70 frames (350 frames
+a 30 fps). A Home mantém três fases e sua duração anterior. `motion/src/check.tsx`
+verifica 84 estados: início, meio e fim de cada fase, correspondência com as
+etapas e os responsáveis da página, e decisões humanas antes do trabalho seguinte.
+
+## Quatro segmentos: pesquisa e cinco rodadas
+
+A revisão de 7/9/2026 foi registrada antes de implementar, com GPT‑5.6 Sol como
+adversarial. Fontes, limites da pesquisa, evolução das propostas e perguntas de
+entrevista estão no [registro das cinco rodadas](segmentos-loop-2026-09-07.md).
+As dores escolhidas são hipóteses de validação, não uma classificação universal
+dos maiores problemas de cada mercado.
+
+Cada página descreve seis tarefas dos agentes, suas saídas, cinco etapas com
+responsáveis, ferramentas reconhecíveis, insumos e entregas do primeiro projeto.
+Os quatro cards da Home repetem as mesmas etapas. O conteúdo de Creators foi
+preservado. Nas demais LPs, o fluxo vem antes das ferramentas e oferece um
+caminho de contato no meio da página.
+
+- Empreendedores: proposta editável e retorno comercial. A pessoa aprova preço,
+  prazo e condições; referências reutilizáveis ficam separadas do histórico de clientes.
+- Consultorias: matriz de evidências e um relatório **ou** apresentação escolhido
+  no piloto. As recomendações vêm dos consultores.
+- Agências: uma conta, um formato e uma rodada de peças e ajustes. Canva, arquivos
+  e permissões dependem do projeto; Meta Ads e Google Ads são formatos de destino,
+  sem promessa implícita de veiculação automática.
+- Advocacia: índice, cronologia e pendências documentais. Minuta é opcional no
+  escopo, depende da orientação do advogado e passa por sua revisão.
 
 ## Experiência visual
 
@@ -75,9 +100,10 @@ de tela. Não representam parceria ou certificação.
 
 - Revisão `777807a262bb7384ff406fd4b35fdcd02e9514c3`: Google Drive, Google Docs,
   Google Sheets, Notion, YouTube, Instagram, Trello, WhatsApp, Claude, Gemini,
-  Zoom, DaVinci Resolve e TikTok.
+  Zoom, DaVinci Resolve, TikTok, Meta e Google Ads.
 - Versão `13.0.0`: Canva, OpenAI e Slack.
-- Versão `11.15.0`: Microsoft Word, Microsoft PowerPoint e Adobe Acrobat Reader.
+- Versão `11.15.0`: Microsoft Word, Microsoft PowerPoint, Microsoft Excel e
+  Adobe Acrobat Reader.
 - Licença do acervo: https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md
 - Remotion: símbolo vetorial do repositório oficial, revisão
   `670b222bf46c4d73e590f0995c28b7dc43221953`, arquivo
