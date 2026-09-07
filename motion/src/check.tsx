@@ -3,9 +3,9 @@ import {renderToStaticMarkup} from 'react-dom/server';
 import {InfographicFrame,getPhase, type SceneId} from './Infographic';
 import scenes from '../../content/motion-scenes.json';
 import {marks} from './marks';
-assert.equal(getPhase(0),0);assert.equal(getPhase(149),0);assert.equal(getPhase(150),1);assert.equal(getPhase(299),1);assert.equal(getPhase(300),2);assert.equal(getPhase(449),2);
+assert.equal(getPhase(0),0);assert.equal(getPhase(69),0);assert.equal(getPhase(70),1);assert.equal(getPhase(139),1);assert.equal(getPhase(140),2);assert.equal(getPhase(209),2);
 for(const scene of Object.keys(scenes) as SceneId[]) {
-  for(const frame of [0,70,149,150,220,299,300,370,449]) {
+  for(const frame of [0,30,69,70,100,139,140,170,209]) {
     const output=renderToStaticMarkup(<InfographicFrame scene={scene} frame={frame}/>);
     assert(!/NaN|Infinity|undefined/.test(output),`${scene}, frame ${frame}: invalid value`);
     assert(output.includes(scenes[scene].label),`${scene}: missing scene label`);

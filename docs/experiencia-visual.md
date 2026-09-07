@@ -34,10 +34,11 @@ por movimento reduzido começa com uma cena estática; economia de dados evita
 carregar o 3D. Falhas de WebGL ou de carregamento mantêm o asset original visível.
 A resolução é limitada a 1,6 vezes a resolução CSS.
 
-A Home e as cinco landing pages têm infográficos de 15 segundos em Remotion
+A Home e as cinco landing pages têm infográficos de 7 segundos em Remotion
 Player 4.0.521. As cenas usam camadas em perspectiva CSS, com animação dirigida
-por quadros. Cada público tem uma história própria. Os controles permitem pausar,
-retomar e escolher uma das três etapas. A reprodução para fora da tela, em segundo
+por quadros. Cada público tem uma história própria. As transições são mais rápidas e as camadas se movem desde o primeiro quadro.
+As etapas seguem disponíveis abaixo da cena. O controle de reprodução é um ícone
+discreto dentro da animação, disponível por interação ou foco, sem texto abaixo dela. A reprodução para fora da tela, em segundo
 plano e quando o visitante pede movimento reduzido. Não há áudio.
 
 O Player é carregado apenas quando a explicação se aproxima da área visível.

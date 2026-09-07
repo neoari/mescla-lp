@@ -207,3 +207,12 @@ body[data-segment="consultorias"] .motion-player{box-shadow:8px 10px 0 #dcebe5;b
 @media print{.motion-player{display:none}.motion-fallback[hidden]{display:block}.technical-backstage{break-inside:avoid}}
 @media(min-width:951px){.home-flow>.wrap{display:grid;grid-template-columns:.72fr 1fr;gap:26px 60px;align-items:center}.home-flow .section-head{display:block;margin:0}.home-flow .section-head h2{font-size:clamp(40px,4.5vw,61px)}.home-flow .section-head .lead{margin:25px 0 0;max-width:370px}.home-flow .animated-work{margin:0}.home-flow .flow-foot{grid-column:2;justify-content:flex-start;margin:0}.home-flow .motion-fallback .flow-line{gap:18px}.home-flow .motion-fallback .flow-node h3{font-size:20px}}
 @media(max-width:480px){.infographic-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.infographic-steps button{justify-content:center;text-align:center;min-width:0;font-size:11px}.infographic-steps button>span{display:none}}
+/* Motion controls belong to the visual, leaving the explanation free of a pause row. */
+.infographic-visual{position:relative}
+.infographic-motion-control,.ribbon-stage .motion-toggle{position:absolute;right:14px;bottom:17px;width:40px;height:40px;min-height:40px;padding:10px;display:grid;place-items:center;border:1px solid #1b193020;border-radius:50%;background:#fbfafdea;color:var(--noite);cursor:pointer;opacity:0;transition:opacity .18s,background .18s;z-index:2}
+.ribbon-stage .motion-toggle{bottom:88px}
+.infographic-visual:hover .infographic-motion-control,.infographic-motion-control:focus-visible,.infographic-motion-control[aria-pressed="true"],.ribbon-stage:hover .motion-toggle,.ribbon-stage .motion-toggle:focus-visible,.ribbon-stage .motion-toggle[aria-pressed="true"]{opacity:1}
+.infographic-motion-control:hover,.ribbon-stage .motion-toggle:hover{background:white}
+.ribbon-stage .motion-toggle[hidden]{display:none}
+.infographic-controls{justify-content:center;padding-bottom:13px}
+@media(hover:none){.infographic-motion-control,.ribbon-stage .motion-toggle{opacity:.55;width:32px;height:32px;min-height:32px;padding:7px;right:10px;bottom:12px}.ribbon-stage .motion-toggle{bottom:82px}}

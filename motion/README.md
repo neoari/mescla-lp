@@ -1,6 +1,6 @@
 # Infográficos Mescla
 
-Seis composições de 15 segundos em Remotion: Home, empreendedores, creators,
+Seis composições de 7 segundos em Remotion: Home, empreendedores, creators,
 consultorias, agências e advocacia. As cenas usam profundidade CSS e marcas
 locais; o Player apresenta a animação diretamente no site.
 

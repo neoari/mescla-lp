@@ -1,6 +1,6 @@
 # Personalização das landing pages
 
-Versão de página: `2026-09-v4`.
+Versão de página: `2026-09-v5`.
 
 | Público | Situação central | Composição | Valor a avaliar |
 | --- | --- | --- | --- |

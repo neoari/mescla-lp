@@ -16,7 +16,7 @@ segments=json.loads((ROOT/'content/segments.json').read_text())
 details=json.loads((ROOT/'content/segment-details.json').read_text())
 for segment in segments: segment.update(details[segment['slug']])
 e=lambda s:escape(str(s),quote=True)
-version='2026-09-v4'
+version='2026-09-v5'
 style_href='/assets/segments.css?v='+hashlib.sha256((ROOT/'assets/segments.css').read_bytes()).hexdigest()[:12]
 experience_href='/assets/experience.css?v='+hashlib.sha256((ROOT/'assets/experience.css').read_bytes()).hexdigest()[:12]
 scene_version=hashlib.sha256((ROOT/'assets/ribbon-scene.js').read_bytes()).hexdigest()[:12]

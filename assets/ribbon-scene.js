@@ -93,7 +93,6 @@ export function mountRibbon(host, motionPreference) {
     control.hidden = false;
     control.setAttribute('aria-pressed', String(paused));
     control.setAttribute('aria-label', paused ? 'Ativar animação' : 'Pausar animação');
-    control.querySelector('span').textContent = paused ? 'Animar' : 'Pausar';
     if (pauseIcon) pauseIcon.innerHTML = paused ? '<polygon points="8 5 19 12 8 19 8 5" />' : initialIcon;
   }
   function render(time = 0) {
@@ -103,10 +102,10 @@ export function mountRibbon(host, motionPreference) {
     last = time;
     currentX += (targetX - currentX) * .055;
     currentY += (targetY - currentY) * .055;
-    weave.rotation.set(-.12 + currentY, .12 + currentX + (paused ? 0 : Math.sin(elapsed * .35) * .15), -.075 + (paused ? 0 : Math.sin(elapsed * .24) * .035));
-    weave.position.y = paused ? 0 : Math.sin(elapsed * .6) * .065;
+    weave.rotation.set(-.12 + currentY, .12 + currentX + (paused ? 0 : Math.sin(elapsed * .9) * .22), -.075 + (paused ? 0 : Math.sin(elapsed * .7) * .06));
+    weave.position.y = paused ? 0 : Math.sin(elapsed * 1.5) * .09;
     flow.children.forEach(marker => {
-      marker.position.copy(marker.userData.path.getPointAt(((paused ? 3 : elapsed) * .075 + marker.userData.offset) % 1));
+      marker.position.copy(marker.userData.path.getPointAt(((paused ? 3 : elapsed) * .2 + marker.userData.offset) % 1));
       marker.position.z += .1;
     });
     try { renderer.render(scene, camera); } catch { cleanup(); return; }
