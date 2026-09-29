@@ -75,8 +75,41 @@ export function mountRibbon(host, motionPreference) {
   ribbon([[-1.15,-.5,0],[-.5,-.5,.16],[0,-.5,0],[.5,-.5,-.16],[1.15,-.5,0]], 0x6fd9c9, .38);
   const flow = new THREE.Group();
   weave.add(flow);
+  // Lucide user-round and bot linework, matching the adjacent participant icons.
+  function flowIcon(kind) {
+    const canvas = document.createElement('canvas');
+    canvas.width = canvas.height = 128;
+    const context = canvas.getContext('2d');
+    context.scale(128 / 28, 128 / 28);
+    context.translate(2, 2);
+    context.lineCap = 'round';
+    context.lineJoin = 'round';
+    const drawing = new Path2D();
+    if (kind === 'human') {
+      drawing.arc(12, 8, 5, 0, Math.PI * 2);
+      drawing.addPath(new Path2D('M20 21a8 8 0 0 0-16 0'));
+    } else {
+      drawing.addPath(new Path2D('M12 8V4H8 M6 8H18Q20 8 20 10V18Q20 20 18 20H6Q4 20 4 18V10Q4 8 6 8Z M2 14H4 M20 14H22 M15 13V15 M9 13V15'));
+    }
+    // A narrow light contour keeps the glyph legible across both ribbon colors.
+    context.strokeStyle = '#FBFAFD';
+    context.lineWidth = 4;
+    context.stroke(drawing);
+    context.strokeStyle = '#1B1930';
+    context.lineWidth = 2.2;
+    context.stroke(drawing);
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.colorSpace = THREE.SRGBColorSpace;
+    return texture;
+  }
+  const flowTextures = [flowIcon('human'), flowIcon('agent')];
   paths.forEach((path, index) => {
-    const marker = new THREE.Mesh(new THREE.SphereGeometry(.049, 12, 10), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: index >= 2 ? 0x6fd9c9 : 0xf2b84b, emissiveIntensity: .8, roughness: .2 }));
+    const marker = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: flowTextures[index >= 2 ? 1 : 0],
+      transparent: true, toneMapped: false, depthTest: false, depthWrite: false,
+    }));
+    marker.scale.set(.52, .52, 1);
+    marker.renderOrder = 2;
     marker.userData.path = path;
     marker.userData.offset = index * .48;
     flow.add(marker);
@@ -150,6 +183,7 @@ export function mountRibbon(host, motionPreference) {
     document.removeEventListener('visibilitychange', visibilityChange);
     motionPreference.removeEventListener('change', preferenceChange);
     scene.traverse(object => { object.geometry?.dispose(); object.material?.dispose(); });
+    flowTextures.forEach(texture => texture.dispose());
     studioLight.dispose();
     renderer.dispose();
     host.classList.remove('ribbon-ready');
