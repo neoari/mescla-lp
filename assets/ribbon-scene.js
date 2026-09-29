@@ -68,12 +68,15 @@ export function mountRibbon(host, motionPreference) {
     weave.add(mesh);
     paths.push(path);
   }
-  ribbon([[-1.95,-.65,.03],[-1.47,.5,.1],[-.94,1.12,.12],[-.4,.56,.2],[.25,-.57,.18],[.95,-1.05,.1],[1.52,-.47,-.3],[1.48,.56,-.4]], 0xf2b84b, .48);
-  ribbon([[-1.3,-.53,-.32],[-1.1,-.96,-.24],[-.49,-.45,-.22],[.16,.66,-.18],[.7,1.16,.12],[1.12,.74,.36],[1.28,-.16,.43],[1.07,-.86,.29]], 0x6fd9c9, .48);
+  // Warp and weft alternate above and below, following the Trama symbol.
+  ribbon([[-.5,-1.15,0],[-.5,-.5,-.16],[-.5,0,0],[-.5,.5,.16],[-.5,1.15,0]], 0xf2b84b, .38);
+  ribbon([[.5,-1.15,0],[.5,-.5,.16],[.5,0,0],[.5,.5,-.16],[.5,1.15,0]], 0xf2b84b, .38);
+  ribbon([[-1.15,.5,0],[-.5,.5,-.16],[0,.5,0],[.5,.5,.16],[1.15,.5,0]], 0x6fd9c9, .38);
+  ribbon([[-1.15,-.5,0],[-.5,-.5,.16],[0,-.5,0],[.5,-.5,-.16],[1.15,-.5,0]], 0x6fd9c9, .38);
   const flow = new THREE.Group();
   weave.add(flow);
   paths.forEach((path, index) => {
-    const marker = new THREE.Mesh(new THREE.SphereGeometry(.049, 12, 10), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: index ? 0x6fd9c9 : 0xf2b84b, emissiveIntensity: .8, roughness: .2 }));
+    const marker = new THREE.Mesh(new THREE.SphereGeometry(.049, 12, 10), new THREE.MeshStandardMaterial({ color: 0xffffff, emissive: index >= 2 ? 0x6fd9c9 : 0xf2b84b, emissiveIntensity: .8, roughness: .2 }));
     marker.userData.path = path;
     marker.userData.offset = index * .48;
     flow.add(marker);
