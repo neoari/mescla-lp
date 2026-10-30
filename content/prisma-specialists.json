@@ -1,0 +1,101 @@
+{
+  "version": 2,
+  "specialists": [
+    {
+      "slug": "cliente-produto",
+      "name": "Cliente e produto",
+      "lens": "Começar pela pessoa",
+      "question": "Que problema merece ser resolvido?",
+      "summary": "Investiga a necessidade por trás do pedido, o contexto de quem usa e as alternativas que já existem.",
+      "methods": [
+        "Necessidade e contexto de uso",
+        "Alternativas e fricção de mudança",
+        "Experimentos de demanda"
+      ],
+      "delivery": "Um problema bem definido, a alternativa atual e um teste que pode confirmar ou derrubar a hipótese.",
+      "challenge": "Ter interesse significa que alguém vai usar?",
+      "limit": "Uma conversa ou uma simulação não comprova demanda.",
+      "example": "Antes de lançar um serviço, pergunta quem enfrenta o problema, como resolve hoje e o que faria essa pessoa mudar."
+    },
+    {
+      "slug": "estrategia-futuros",
+      "name": "Estratégia e futuros",
+      "lens": "Conectar consequências",
+      "question": "O que esta escolha abre — e o que fecha?",
+      "summary": "Conecta a decisão de hoje aos efeitos de amanhã, às alternativas e ao que você deixa de fazer.",
+      "methods": [
+        "Cenários e incertezas críticas",
+        "Consequências de segunda ordem",
+        "Caminhos reversíveis e sinais de revisão"
+      ],
+      "delivery": "Cenários plausíveis, uma ação que resiste a mais de um deles e um sinal para rever a escolha.",
+      "challenge": "Essa recomendação só funciona se um único futuro acontecer?",
+      "limit": "Cenários ajudam a explorar possibilidades; não são previsões.",
+      "example": "Ao escolher um parceiro, examina também dependência, capacidade de mudar e opções que deixam de existir."
+    },
+    {
+      "slug": "economia-preco",
+      "name": "Economia e preço",
+      "lens": "Fazer a conta inteira",
+      "question": "O valor compensa o custo e o esforço?",
+      "summary": "Coloca dinheiro, tempo, manutenção e custo de oportunidade na mesma análise.",
+      "methods": [
+        "Unidade econômica e contribuição",
+        "Custos de tempo e operação",
+        "Sensibilidade e limites de investimento"
+      ],
+      "delivery": "Uma conta verificável, as premissas que faltam e as condições para a decisão fazer sentido.",
+      "challenge": "A conta continua boa quando entra o seu tempo?",
+      "limit": "Uma hipótese de preço não é disposição a pagar comprovada.",
+      "example": "Em um produto gratuito, calcula o subsídio e o retorno necessário, sem contar audiência como receita garantida."
+    },
+    {
+      "slug": "aquisicao-distribuicao",
+      "name": "Aquisição e distribuição",
+      "lens": "Fazer o valor chegar",
+      "question": "Como a pessoa certa vai descobrir e confiar?",
+      "summary": "Examina mensagem, canais e o caminho entre conhecer uma ideia e perceber valor nela.",
+      "methods": [
+        "Clareza da promessa",
+        "Barreiras de confiança e uso",
+        "Funil e experimentos de canal"
+      ],
+      "delivery": "Uma mensagem, um canal plausível e um experimento com uma medida útil de resultado.",
+      "challenge": "As pessoas chegaram a receber valor ou só clicaram?",
+      "limit": "Visitas, cadastros e comunidade não equivalem a vendas.",
+      "example": "Para uma experiência gratuita, distingue uso útil, interesse em aprender e interesse em contratar ajuda."
+    },
+    {
+      "slug": "tecnologia-operacao",
+      "name": "Tecnologia e operação",
+      "lens": "Transformar ideia em trabalho",
+      "question": "Como isso funciona na rotina real?",
+      "summary": "Traduz a proposta em um fluxo viável, com ferramentas, responsabilidades, revisão e continuidade.",
+      "methods": [
+        "Fluxo mínimo e pontos de revisão",
+        "Comparação com uma solução simples",
+        "Falhas, capacidade e manutenção"
+      ],
+      "delivery": "Um caminho de implantação, critérios de funcionamento e tratamento para as falhas relevantes.",
+      "challenge": "Precisamos desse sistema todo para entregar o benefício?",
+      "limit": "Um protótipo funcionando uma vez não comprova confiabilidade.",
+      "example": "Para quem trabalha sozinho, define o que os agentes preparam, o que a pessoa revisa e como retomar uma tarefa."
+    },
+    {
+      "slug": "confianca-riscos",
+      "name": "Confiança e riscos",
+      "lens": "Cuidar de quem decide",
+      "question": "O que pode dar errado — e para quem?",
+      "summary": "Examina consequências, dados sensíveis, limites de autoridade e situações que pedem apoio profissional.",
+      "methods": [
+        "Caminhos de falha e consequências",
+        "Minimização de dados",
+        "Controles e encaminhamento proporcional"
+      ],
+      "delivery": "Riscos concretos, controles possíveis e limites claros para seguir, adaptar ou interromper.",
+      "challenge": "Quem assume a consequência se esta orientação estiver errada?",
+      "limit": "Apoio à decisão não substitui profissionais habilitados nem elimina erros.",
+      "example": "Quando uma decisão depende de orientação clínica, ajuda a organizar dúvidas para a consulta e limita a recomendação."
+    }
+  ]
+}

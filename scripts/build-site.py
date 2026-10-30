@@ -9,6 +9,7 @@ sys.dont_write_bytecode = True
 from segment_visuals import hero_surface, value_section, tools_section, ai_section, pilot_section
 from experience import ui_icon, motion_surface, home_hero
 from home_sections import home_story
+from prisma_page import render_prisma
 from public_bundle import PUBLIC_FILES
 ROOT=Path(__file__).resolve().parents[1]
 subprocess.run(['npm','run','build:web'],cwd=ROOT/'motion',check=True)
@@ -88,6 +89,10 @@ for d in segments:
 # Public data-use notice describes the actual contact behavior; no legal or compliance claims.
 privacy=f'''<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mescla · Uso das informações</title><meta name="description" content="Como a Mescla usa as informações de contato e a origem das campanhas."><link rel="canonical" href="https://mescla.ai/privacidade/"><link rel="icon" type="image/svg+xml" href="{favicon}">{font}<style>{css}</style><link rel="stylesheet" href="{style_href}"><link rel="stylesheet" href="{experience_href}"></head><body data-segment="privacidade" data-page-version="{version}"><header class="nav"><div class="wrap nav-inner">{brand('/')}<a class="back-home" href="/">Página principal</a></div></header><main class="section" id="principal"><div class="wrap" style="max-width:800px"><p class="eyebrow">Uso das informações · atualizado em outubro de 2026</p><h1 style="font-size:54px;margin:24px 0">Uma conversa começa com clareza.</h1><p class="lead">A Mescla usa as informações que você compartilha para entender sua rotina, responder ao contato e avaliar um projeto com você. Você também pode entrar em contato sobre aprendizagem ou sobre o Prisma; esse contato não realiza uma inscrição automática.</p><h2 style="font-size:32px;margin:36px 0 15px">O que você informa</h2><p>Nas páginas de aplicações, você pode indicar o tamanho da equipe, a área de interesse e o resultado desejado. Ao continuar, essas respostas compõem uma mensagem no WhatsApp. Você pode revisar a mensagem antes de enviá-la. O formulário não grava suas respostas em um banco de dados do site.</p><h2 style="font-size:32px;margin:36px 0 15px">De onde veio o contato</h2><p>O endereço que trouxe você ao site pode conter identificadores de campanha, como origem, anúncio e público. Essas referências podem acompanhar a mensagem para ajudar a Mescla a entender quais aplicações despertam interesse. O navegador pode manter essas referências durante a sessão para preservar a origem entre as páginas.</p><h2 style="font-size:32px;margin:36px 0 15px">Serviços envolvidos</h2><p>O site é servido com apoio de serviços de hospedagem e distribuição de conteúdo, que podem registrar dados técnicos de acesso. Os links de conversa abrem o WhatsApp, sujeito às condições e políticas do próprio serviço. Não compartilhe senhas, documentos de clientes ou informações confidenciais no primeiro contato.</p><h2 style="font-size:32px;margin:36px 0 15px">Suas informações</h2><p>Para conversar sobre o uso das suas informações, pedir correção ou solicitar exclusão dos dados que compartilhou com a Mescla, entre em contato pelo <a href="https://wa.me/{phone}?text=Quero%20conversar%20sobre%20o%20uso%20das%20minhas%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer">WhatsApp da Mescla</a>.</p><p style="margin-top:30px"><a href="/">Voltar para a página principal</a></p></div></main>{footer}</body></html>'''
 (ROOT/'privacidade').mkdir(exist_ok=True);(ROOT/'privacidade/index.html').write_text(privacy)
+prisma_profiles=json.loads((ROOT/'content/prisma-specialists.json').read_text())['specialists']
+prisma_href='/assets/prisma.css?v='+hashlib.sha256((ROOT/'assets/prisma.css').read_bytes()).hexdigest()[:12]
+(ROOT/'prisma').mkdir(exist_ok=True)
+(ROOT/'prisma/index.html').write_text(render_prisma(profiles=prisma_profiles,css=css,font=font,favicon=favicon,brand=brand,footer=footer,style_href=style_href,prisma_href=prisma_href,phone=phone))
 # This explicit list prevents docs, raw leads, local configuration or repository files entering the web root.
 files=PUBLIC_FILES
 if all((ROOT/f).is_file() for f in files):
@@ -96,5 +101,5 @@ if all((ROOT/f).is_file() for f in files):
         for f in sorted(files):
             b=(ROOT/f).read_bytes();info=tarfile.TarInfo(f);info.size=len(b);info.mode=0o644;info.mtime=0;tar.addfile(info,io.BytesIO(b))
     (ROOT/'site.tar.gz').write_bytes(gzip.compress(stream.getvalue(),mtime=0))
-    print(f'Built Home + 5 landing pages + privacy; deployment bundle: {(ROOT/"site.tar.gz").stat().st_size} bytes.')
+    print(f'Built Home + 5 segment pages + Prisma + privacy; deployment bundle: {(ROOT/"site.tar.gz").stat().st_size} bytes.')
 else:print('Pages built. Bundle waits for measurement assets.')

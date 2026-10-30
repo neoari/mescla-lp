@@ -2,6 +2,8 @@
 PUBLIC_FILES = (
     'index.html',
     'privacidade/index.html',
+    'prisma/index.html',
+    'assets/prisma.css',
     'para/empreendedores/index.html',
     'para/creators/index.html',
     'para/consultorias/index.html',

@@ -2,7 +2,7 @@
   'use strict';
   const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id'];
   const CLICK_KEYS = ['gclid', 'gbraid', 'wbraid', 'fbclid'];
-  const SEGMENTS = ['home', 'empreendedores', 'creators', 'consultorias', 'agencias', 'advocacia'];
+  const SEGMENTS = ['home', 'prisma', 'empreendedores', 'creators', 'consultorias', 'agencias', 'advocacia'];
   const ATTR_KEY = 'mescla.attribution.v1';
   const TTL = 30 * 60 * 1000;
   function clean(value, limit = 120) {

@@ -18,7 +18,7 @@ class Structure(HTMLParser):
         assert self.stack and self.stack[-1]==tag,(tag,self.stack)
         self.stack.pop()
 segments=json.loads((ROOT/'content/segments.json').read_text())
-paths=[ROOT/'index.html',ROOT/'privacidade/index.html']+[ROOT/'para'/d['slug']/'index.html' for d in segments]
+paths=[ROOT/'index.html',ROOT/'privacidade/index.html',ROOT/'prisma/index.html']+[ROOT/'para'/d['slug']/'index.html' for d in segments]
 canonicals=[]
 for path in paths:
     source=path.read_text();c=Structure();c.feed(source);assert not c.stack,path
@@ -66,12 +66,12 @@ assert len(home.xpath('//*[@data-ribbon-scene]'))==1
 assert len(home.xpath('//button[@data-motion-toggle and @hidden]'))==1
 for path in paths:
     root=html.fromstring(path.read_text())
-    if path.parent.name!='privacidade':
+    if path.parent.name not in ('privacidade','prisma'):
         assert len(root.xpath('//script[@type="module" and starts-with(@src,"/assets/experience.js?v=")]'))==1
         assert len(root.xpath('//link[starts-with(@href,"/assets/experience.css?v=")]'))==1
         assert len(root.xpath('//img[contains(@src,"/assets/platforms/")]'))==4
         assert len(root.xpath('//svg[contains(@class,"ui-icon")]'))>=10
-    if path.parent.name!='privacidade':
+    if path.parent.name not in ('privacidade','prisma'):
         assert len(root.xpath('//*[@data-motion-scene]'))==1
         assert root.xpath('//*[contains(@class,"motion-fallback")]')
         assert root.xpath('//*[contains(@class,"motion-equivalent")]')
@@ -84,4 +84,4 @@ for asset in PUBLIC_FILES:
         for relative in re.findall(r"(?:from\s*|import\s*\(?)['\"](\.[^'\"]+)['\"]", source):
             dependency=((ROOT/asset).parent/relative.split('?')[0]).resolve().relative_to(ROOT).as_posix()
             assert dependency in PUBLIC_FILES,(asset,dependency)
-print(f'Passed: 7 pages; links, forms, accessible IDs; module assets; logos; reproducible {len(PUBLIC_FILES)}-file public bundle and matching deployment allowlist.')
+print(f'Passed: 8 pages; links, forms, accessible IDs; module assets; logos; reproducible {len(PUBLIC_FILES)}-file public bundle and matching deployment allowlist.')

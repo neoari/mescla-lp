@@ -33,7 +33,7 @@ git diff --check
 ```
 
 O build usa apenas a biblioteca padrão do Python. A validação HTML usa `lxml`.
-O pacote público contém apenas as sete páginas e três arquivos de assets;
+O pacote público contém apenas as páginas e assets da allowlist em `scripts/public_bundle.py`;
 documentação e fontes de geração não são servidas pelo site.
 
 ## Publicação
@@ -66,3 +66,6 @@ Ver `docs/medicao.md` e `docs/validacao.md`. Abrir WhatsApp é uma intenção de
 contato; nunca registrar esse clique como entrevista agendada ou venda.
 Não incluir respostas livres, nomes, telefones ou e-mails nos eventos analíticos.
 Ativar um coletor exige revisar suas tags e atualizar o aviso de privacidade.
+
+## Prisma
+`content/prisma-specialists.json` é o catálogo público exportado do projeto Prisma. `scripts/prisma_page.py` gera `prisma/index.html`; não editar o HTML gerado. O conteúdo apresenta método em preparação, sem simular aplicativo disponível. Estilos em `assets/prisma.css`.
