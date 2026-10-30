@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "specialists": [
     {
       "slug": "cliente-produto",
@@ -22,19 +22,18 @@
       "name": "Estratégia e Futuros",
       "lens": "Explorar possibilidades e escolher caminhos",
       "question": "O que esta escolha abre — e o que fecha?",
-      "summary": "Investiga mudanças, conecta consequências e escolhe entre dez instrumentos para preparar decisões que continuem fazendo sentido em futuros diferentes.",
+      "summary": "Investiga sinais de mudança, questiona pressupostos e seleciona entre 14 instrumentos para explorar futuros e orientar escolhas no presente.",
       "methods": [
-        "Varredura de sinais e PESTLE",
-        "Mapa de forças e incertezas",
-        "Cenários e teste de robustez",
-        "Roda de futuros e Três Horizontes",
-        "Backcasting e roteiro por condições",
-        "Opções reversíveis e sinais de revisão"
+        "Horizon scanning, STEEPED/PESTLE e Impacto × Incerteza",
+        "Análise Causal em Camadas (CLA) e Roda de Futuros",
+        "Cone de Futuros, cenários 2×2 e arquétipos de Dator",
+        "Backcasting, Artefatos do Futuro e wind tunnelling",
+        "Três Horizontes, roteiro por condições e opções reversíveis"
       ],
       "delivery": "Os métodos adequados à pergunta, suas implicações e uma ação ou experimento com condições claras para avançar ou rever.",
       "challenge": "Essa recomendação só funciona se um único futuro acontecer?",
       "limit": "Cenários ajudam a explorar possibilidades; não são previsões.",
-      "example": "Ao transformar um serviço com IA, pode usar Três Horizontes para conectar o trabalho atual ao desejado e backcasting para descobrir o primeiro experimento. Em outra decisão, escolhe outros métodos."
+      "example": "Antes de transformar um serviço com IA, pode investigar sinais, explorar cenários de Dator e testar a estratégia em cada um. Se o impasse estiver nas premissas, usa CLA. A seleção depende da pergunta."
     },
     {
       "slug": "economia-preco",
