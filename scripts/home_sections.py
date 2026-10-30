@@ -10,14 +10,26 @@ def contact_link(phone, message, label, placement, description):
     return f'<a class="btn" href="{url}" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="{escape(message, quote=True)}" data-placement="{placement}" aria-describedby="{description}">{brand_icon("whatsapp")}<span>{label}</span></a>'
 
 
+def audiences(phone):
+    personal = contact_link(phone, 'Quero um time de agentes de IA para mim. Minha atividade: O que quero melhorar na minha rotina:', 'Quero um time de IA para mim', 'personal', 'personal-contact-note')
+    business = contact_link(phone, 'Quero integrar agentes de IA à equipe da minha empresa. Nossa atividade: A rotina que queremos melhorar:', 'Quero IA na minha equipe', 'business', 'business-contact-note')
+    return f'''<section class="section home-audiences" id="para-voce" aria-labelledby="audiences-title"><div class="wrap">
+<div class="section-head"><div><p class="eyebrow">Pessoas físicas e pessoas jurídicas</p><h2 id="audiences-title">Um time para você.<br>Mais força para sua equipe.</h2></div><p class="lead">Você não precisa ter uma empresa nem uma equipe para contar com a Mescla. O ponto de partida é o trabalho que quer realizar.</p></div>
+<div class="audience-paths">
+<article class="audience-path audience-path--personal" aria-labelledby="personal-title"><p class="eyebrow">Para você · pessoa física</p><h3 id="personal-title">Trabalha sozinho?<br>Monte seu time de IA.</h3><p>Agentes preparados para apoiar suas atividades, organizar referências e adiantar tarefas. Você direciona, revisa e decide; a Mescla cuida da implantação.</p><p class="audience-example"><strong>Uma aplicação possível:</strong> um agente organiza materiais de um projeto, outro prepara um rascunho e você revisa antes de usar.</p>{personal}<p class="contact-expectation" id="personal-contact-note">Conte sua rotina pelo WhatsApp.<br>Começamos por uma necessidade e um escopo definidos.</p></article>
+<article class="audience-path audience-path--business" id="para-empresas" aria-labelledby="business-title"><p class="eyebrow">Para sua empresa · pessoa jurídica</p><h3 id="business-title">Sua equipe,<br>com mais capacidade.</h3><p>Agentes compartilhados, conhecimento organizado e processos conectados para o trabalho continuar entre as pessoas. Definimos os acessos e os pontos de revisão com sua equipe.</p><p class="audience-example"><strong>Uma aplicação possível:</strong> o comercial registra um pedido, o agente prepara a proposta e a operação revisa com o contexto do cliente.</p>{business}<p class="contact-expectation" id="business-contact-note">Conte a rotina da equipe pelo WhatsApp.<br>Escopo, ferramentas e investimento definidos em proposta.</p></article>
+</div><p class="audience-learning">Prefere aprender a construir? <a class="text-link" href="#aprender">Conheça o caminho de aprendizagem {ui_icon('arrow-right')}</a></p>
+</div></section>'''
+
+
 def comparison():
     rows = [
-        ('network', 'Mais força para o time', 'Cada pessoa conduz suas conversas e repassa as respostas.', 'Pessoas pedem, contribuem e revisam com os mesmos agentes.'),
+        ('network', 'Mais capacidade para realizar', 'Você conduz cada conversa e conecta as respostas ao trabalho.', 'Agentes preparados para etapas da sua rotina, com orientação e revisão de quem usa.'),
         ('book-open', 'Menos contexto repetido', 'Referências ficam entre conversas pessoais e arquivos.', 'Processos, referências e decisões reunidos numa memória do negócio.'),
-        ('route', 'Mais continuidade', 'Quem assume a tarefa precisa reunir o histórico.', 'O time retoma com os registros do projeto e os acessos definidos.'),
+        ('route', 'Mais continuidade', 'Retomar uma tarefa exige reunir o histórico e as referências.', 'Você ou sua equipe retoma o trabalho com os registros do projeto e os acessos definidos.'),
     ]
     other = '<strong class="comparison-title">Com outras IAs</strong><span class="comparison-subtitle">No uso individual</span>'
-    mescla = '<strong class="comparison-title">Com a Mescla</strong><span class="comparison-subtitle">Implantação para a equipe</span>'
+    mescla = '<strong class="comparison-title">Com a Mescla</strong><span class="comparison-subtitle">Implantação para sua rotina</span>'
     body = ''.join(f'<tr role="row"><th scope="row" role="rowheader"><span><span class="gain-icon">{ui_icon(icon)}</span>{gain}</span></th><td role="cell"><span class="comparison-mobile-label" aria-hidden="true">{other}</span><p>{before}</p></td><td role="cell"><span class="comparison-mobile-label" aria-hidden="true">{mescla}</span><p><strong>{after}</strong></p></td></tr>' for icon, gain, before, after in rows)
     return f'''<section class="section mescla-value" id="possibilidades" aria-labelledby="possibilities-title"><div class="wrap">
 <div class="section-head"><div><p class="eyebrow">O que muda na prática</p><h2 id="possibilities-title">O trabalho avança.<br>O conhecimento fica.</h2></div><p class="lead">Organizamos agentes e referências para o trabalho continuar com contexto, com uma pessoa ou com a equipe.</p></div>
@@ -30,8 +42,8 @@ def implementation(phone):
     steps = [
         ('target', 'Escolher o trabalho', 'Escolhemos com você uma rotina, um objetivo e os limites do primeiro projeto.', 'Fluxo e entrega definidos'),
         ('network', 'Preparar o ambiente', 'Configuramos os agentes, as fontes de consulta e os acessos para esse trabalho.', 'Agentes, fontes e acessos prontos para teste'),
-        ('file-check-2', 'Testar com a equipe', 'A equipe testa com materiais autorizados; definimos onde uma pessoa revisa ou aprova.', 'Critérios e revisões definidos'),
-        ('user-round', 'Colocar em uso', 'Orientamos quem participa a direcionar, revisar e decidir no ambiente configurado.', 'Equipe orientada para o uso'),
+        ('file-check-2', 'Testar com quem vai usar', 'Você ou sua equipe testa com materiais autorizados; definimos onde uma pessoa revisa ou aprova.', 'Critérios e revisões definidos'),
+        ('user-round', 'Colocar em uso', 'Orientamos quem participa a direcionar, revisar e decidir no ambiente configurado.', 'Quem usa sabe direcionar e revisar'),
     ]
     items = ''.join(f'<li class="delivery-step"><div class="delivery-number"><span aria-hidden="true">0{i + 1}</span>{ui_icon(icon)}</div><div class="delivery-copy"><h3>{title}</h3><p>{description}</p><p class="delivery-result"><span>Saída da etapa</span><strong>{result}</strong></p></div></li>' for i, (icon, title, description, result) in enumerate(steps))
     cta = contact_link(phone, 'Quero conversar sobre uma rotina que gostaria de melhorar com a Mescla.\n\nMinha atividade:\nA rotina que quero melhorar:', 'Conversar sobre minha rotina', 'implementation', 'implementation-contact-note')
@@ -93,9 +105,9 @@ def questions():
     entries = [
         ('Posso aprender a construir, em vez de contratar a implantação?', ['Sim. Estamos preparando encontros práticos de aprendizagem. Conte pelo WhatsApp o que você quer aprender; formato, datas e valores serão apresentados antes de qualquer inscrição.']),
         ('Já tenho ChatGPT, Claude ou Gemini. O que a Mescla acrescenta?', ['Se o seu uso atual já resolve o trabalho, ele pode ser suficiente. A Mescla entra para implantar uma rotina com agentes compartilhados, referências do negócio e revisão pela equipe. Avaliamos com você se esse trabalho de implantação faz sentido.']),
-        ('Funciona para quem trabalha sozinho?', ['Sim. Podemos começar com uma pessoa e uma rotina. Se você pretende ampliar a equipe, consideramos o compartilhamento dos agentes e dos registros na escolha do ambiente.']),
+        ('Vocês atendem pessoas físicas ou só empresas?', ['Atendemos pessoas físicas e pessoas jurídicas. Se você trabalha sozinho, montamos e configuramos um time de agentes para apoiar sua rotina, sob sua orientação. Se já tem uma equipe, implantamos agentes compartilhados e processos para o trabalho em conjunto. Não é preciso ter CNPJ para conversar com a Mescla.']),
         ('Quem pode acessar a memória do negócio?', ['Definimos fontes, responsáveis pela atualização e acessos por equipe ou projeto. Entram os processos, referências e decisões que você autoriza registrar. Conversas pessoais e documentos de outros clientes não entram automaticamente.', 'Onde os dados ficam e quais fornecedores participam são definidos antes de conectar suas informações.']),
-        ('Quem revisa o trabalho dos agentes?', ['As pessoas responsáveis por cada etapa. Saídas de IA podem conter erros; por isso, configuramos limites e pontos de revisão ou aprovação. A equipe orienta, confere as informações e decide antes das ações que exigem autorização.']),
+        ('Quem revisa o trabalho dos agentes?', ['As pessoas responsáveis por cada etapa. Saídas de IA podem conter erros; por isso, configuramos limites e pontos de revisão ou aprovação. Você ou as pessoas responsáveis na equipe orientam, conferem as informações e decidem antes das ações que exigem autorização.']),
         ('Como funciona o investimento?', ['A proposta separa implantação, acompanhamento e custos de ferramentas. Licenças, infraestrutura e consumo de IA são esclarecidos antes de começar, incluindo o que entra no serviço e o que você contrata diretamente.']),
         ('O que acontece depois da implantação?', ['O processo entra em uso com orientação para a equipe. Suporte, ajustes dos agentes e novas integrações dependem do acompanhamento contratado. A evolução começa pela avaliação das entregas.']),
     ]
@@ -108,9 +120,9 @@ def purpose():
 
 
 def closing(phone):
-    cta = contact_link(phone, 'Quero conversar sobre como a Mescla pode ajudar meu negócio.\n\nMinha atividade:\nO trabalho que quero melhorar:', 'Conversar sobre meu negócio', 'footer', 'closing-contact-note')
-    return f'''<section class="contact home-closing" id="conversar" aria-labelledby="contact-title"><div class="wrap contact-grid"><div><p class="eyebrow">Vamos começar pelo seu trabalho</p><h2 id="contact-title">Qual trabalho está tomando<br>o tempo do seu negócio?</h2></div><div><p>Conte uma rotina que você quer melhorar. Vamos entender o que faria diferença e avaliar um primeiro projeto.</p>{cta}<p class="contact-expectation" id="closing-contact-note">O botão abre o WhatsApp.<br>Você revisa e envia a mensagem.</p></div></div></section>'''
+    cta = contact_link(phone, 'Quero conversar sobre como a Mescla pode ajudar na minha rotina.\n\nMinha atividade:\nO trabalho que quero melhorar:', 'Conversar sobre minha rotina', 'footer', 'closing-contact-note')
+    return f'''<section class="contact home-closing" id="conversar" aria-labelledby="contact-title"><div class="wrap contact-grid"><div><p class="eyebrow">Vamos começar pelo seu trabalho</p><h2 id="contact-title">O que você gostaria<br>de tirar das suas costas?</h2></div><div><p>Trabalhando sozinho ou em equipe, conte uma rotina que você quer melhorar. Vamos entender o que faria diferença e avaliar um primeiro projeto.</p>{cta}<p class="contact-expectation" id="closing-contact-note">O botão abre o WhatsApp.<br>Você revisa e envia a mensagem.</p></div></div></section>'''
 
 
 def home_story(segments, phone):
-    return '<div class="home-story">' + '\n'.join([comparison(), home_flow(), implementation(phone), applications(segments), technology(), learning(phone), prisma(phone), questions(), purpose(), closing(phone)]) + '</div>'
+    return '<div class="home-story">' + '\n'.join([audiences(phone), comparison(), home_flow(), implementation(phone), applications(segments), technology(), learning(phone), prisma(phone), questions(), purpose(), closing(phone)]) + '</div>'
