@@ -93,6 +93,12 @@ prisma_profiles=json.loads((ROOT/'content/prisma-specialists.json').read_text())
 prisma_href='/assets/prisma.css?v='+hashlib.sha256((ROOT/'assets/prisma.css').read_bytes()).hexdigest()[:12]
 (ROOT/'prisma').mkdir(exist_ok=True)
 (ROOT/'prisma/index.html').write_text(render_prisma(profiles=prisma_profiles,css=css,font=font,favicon=favicon,brand=brand,footer=footer,style_href=style_href,prisma_href=prisma_href,phone=phone))
+# Version the contact script so cached prior releases recognize new page segments.
+measurement_href='/assets/measurement.js?v='+hashlib.sha256((ROOT/'assets/measurement.js').read_bytes()).hexdigest()[:12]
+for public_path in PUBLIC_FILES:
+    if public_path.endswith('.html'):
+        page=ROOT/public_path
+        page.write_text(re.sub(r'src="/assets/measurement\.js(?:\?[^\"]*)?"',lambda _:f'src="{measurement_href}"',page.read_text()))
 # This explicit list prevents docs, raw leads, local configuration or repository files entering the web root.
 files=PUBLIC_FILES
 if all((ROOT/f).is_file() for f in files):
