@@ -28,7 +28,7 @@
     return url.pathname + url.search + url.hash;
   }
   function message(base, label, answers, attr, version) {
-    const lines = [clean(base, 500), '', 'Segmento: ' + clean(label)];
+    const lines = [clean(String(base || '').replace(/[\r\n]+/g, ' '), 500), '', 'Segmento: ' + clean(label)];
     if (answers.team) lines.push('Equipe: ' + clean(answers.team));
     if (answers.interest) lines.push('Apoio desejado: ' + clean(answers.interest));
     if (answers.goal) lines.push('Resultado desejado: ' + clean(answers.goal, 500));
@@ -64,7 +64,7 @@
   }
   const contacts = doc.querySelectorAll('a[data-contact]');
   contacts.forEach(link => {
-    const base = segment === 'home' ? 'Quero conversar sobre como a Mescla pode ampliar minha capacidade de entrega.' : 'Quero combinar uma conversa sobre um time de IA para o meu trabalho.';
+    const base = link.dataset.contactMessage || (segment === 'home' ? 'Quero conversar sobre como a Mescla pode ampliar minha capacidade de entrega.' : 'Quero combinar uma conversa sobre um time de IA para o meu trabalho.');
     link.href = contactUrl(message(base, label, {}, attr, version));
     link.addEventListener('click', () => emit('mescla_whatsapp_open', { placement: link.dataset.placement || 'contact' }));
   });

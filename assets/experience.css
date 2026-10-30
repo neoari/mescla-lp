@@ -468,3 +468,13 @@ body[data-workflow="sector"] .infographic-steps button{font-size:14px;padding:8p
 body[data-workflow="sector"] .infographic-steps button>span{display:none}
 body[data-workflow="sector"] .infographic-caption{font-size:15px;min-height:125px;color:#5d576b}
 @media(max-width:480px){body[data-workflow="sector"] .infographic-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}body[data-workflow="sector"] .infographic-steps button{justify-content:center;padding:8px 5px}body[data-workflow="sector"] .infographic-caption{min-height:155px;padding-top:8px}}
+
+/* Learning and Prisma share the existing Mescla palette and typography. */
+.pathway-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+.pathway-grid h2{margin:22px 0}.pathway-grid .lead{margin-bottom:20px}.pathway-grid .btn{margin-top:28px}.pathway-grid .contact-expectation{margin-top:14px}
+.home-learning{background:#f1eee6}.home-prisma{background:#eaf4f1}
+.learning-outline,.prisma-outline{padding:36px;border:1px solid var(--linha);border-radius:14px;background:var(--branco)}
+.learning-outline ol{padding:0;list-style:none;counter-reset:learn;margin:24px 0}.learning-outline li{counter-increment:learn;display:grid;grid-template-columns:30px 1fr;gap:6px 12px;padding:18px 0;border-bottom:1px solid var(--linha)}.learning-outline li::before{content:'0' counter(learn);grid-row:span 2;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ambar)}.learning-outline li span{grid-column:2;color:var(--cinza)}
+.learning-outline>p:last-child,.prisma-outline>p:last-child{font-size:14px;color:var(--cinza)}
+.pathway-status{display:inline-block;border:1px solid var(--verde);color:var(--verde);padding:5px 12px;border-radius:20px;font-size:12px}.prisma-question{font-family:'Fraunces',serif;font-size:30px;line-height:1.2;margin:24px 0}.prisma-outline ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:24px 0}.prisma-outline li{padding:7px 11px;background:#eaf4f1;border-radius:4px;font-size:14px}
+@media(max-width:800px){.pathway-grid{grid-template-columns:1fr;gap:32px}.learning-outline,.prisma-outline{padding:24px}.pathway-grid .btn{max-width:100%;text-align:center}.hero-team .hero-copy .eyebrow{max-width:320px}}

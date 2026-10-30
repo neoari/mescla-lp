@@ -7,7 +7,7 @@ from experience import SEGMENT_ICONS, SEGMENT_TOOLS, brand_icon, home_flow, plat
 
 def contact_link(phone, message, label, placement, description):
     url = 'https://wa.me/' + phone + '?text=' + quote(message)
-    return f'<a class="btn" href="{url}" target="_blank" rel="noopener noreferrer" data-contact data-placement="{placement}" aria-describedby="{description}">{brand_icon("whatsapp")}<span>{label}</span></a>'
+    return f'<a class="btn" href="{url}" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="{escape(message, quote=True)}" data-placement="{placement}" aria-describedby="{description}">{brand_icon("whatsapp")}<span>{label}</span></a>'
 
 
 def comparison():
@@ -36,7 +36,7 @@ def implementation(phone):
     items = ''.join(f'<li class="delivery-step"><div class="delivery-number"><span aria-hidden="true">0{i + 1}</span>{ui_icon(icon)}</div><div class="delivery-copy"><h3>{title}</h3><p>{description}</p><p class="delivery-result"><span>Saída da etapa</span><strong>{result}</strong></p></div></li>' for i, (icon, title, description, result) in enumerate(steps))
     cta = contact_link(phone, 'Quero conversar sobre uma rotina que gostaria de melhorar com a Mescla.\n\nMinha atividade:\nA rotina que quero melhorar:', 'Conversar sobre minha rotina', 'implementation', 'implementation-contact-note')
     return f'''<section class="section home-implementation" id="como-funciona" aria-labelledby="implementation-title"><div class="wrap">
-<div class="section-head"><div><p class="eyebrow">Do exemplo para a sua rotina</p><h2 id="implementation-title">Comece por um trabalho<br>que precisa andar.</h2></div><p class="lead">Escolhemos uma rotina, preparamos o ambiente com você e colocamos o primeiro fluxo em uso.</p></div>
+<div class="section-head"><div><p class="eyebrow">Consultoria e implantação</p><h2 id="implementation-title">Antes da ferramenta,<br>a escolha do trabalho.</h2></div><p class="lead">Entendemos sua rotina, avaliamos onde a IA pode ajudar e definimos um primeiro projeto com objetivo, limites e critérios de qualidade. Depois, construímos e testamos com você.</p></div>
 <ol class="delivery-steps">{items}</ol>
 <div class="delivery-finish"><div class="delivery-summary">{ui_icon('check')}<p>Uma rotina em uso, com <strong>agentes configurados, referências organizadas e pessoas orientadas</strong> para direcionar e revisar.</p></div><p class="delivery-observe">Combinamos o que observar nas primeiras entregas — por exemplo, tempo dedicado, retrabalho e critérios de qualidade.</p></div>
 <div class="implementation-next"><div class="implementation-context"><p>Escopo, entregas e custos definidos em proposta. Suporte e evolução conforme o acompanhamento contratado.</p><a class="text-link" href="#segmentos">Ver aplicações para meu trabalho {ui_icon('arrow-right')}</a></div><div class="implementation-contact">{cta}<p class="contact-expectation" id="implementation-contact-note">Conte um trabalho que você quer melhorar.<br>A conversa começa no WhatsApp.</p></div></div>
@@ -79,8 +79,19 @@ def technology():
 </div></section>'''
 
 
+
+def learning(phone):
+    cta = contact_link(phone, 'Tenho interesse em aprender a construir soluções com IA com a Mescla. Tema que quero aprender:', 'Quero saber dos próximos encontros', 'learning', 'learning-contact-note')
+    return f'''<section class="section home-learning" id="aprender" aria-labelledby="learning-title"><div class="wrap pathway-grid"><div><p class="eyebrow">Aprender com a Mescla</p><h2 id="learning-title">Aprenda a construir.<br>Comece pelo seu trabalho.</h2><p class="lead">Transforme uma necessidade real em uma solução que você consegue usar, revisar e melhorar.</p><p>Estamos preparando encontros práticos para quem quer aplicar IA com mais autonomia. Conte o que você quer aprender e se o interesse é seu ou da sua equipe.</p>{cta}<p class="contact-expectation" id="learning-contact-note">Converse pelo WhatsApp sobre seu interesse.<br>Formatos, datas e valores ainda serão definidos.</p></div><div class="learning-outline"><p class="eyebrow">Da necessidade à prática</p><ol><li><strong>Escolher um problema real</strong><span>Entender a rotina e o resultado que faria diferença.</span></li><li><strong>Construir com contexto</strong><span>Organizar referências e orientar os agentes.</span></li><li><strong>Testar e melhorar</strong><span>Revisar as entregas e reconhecer os limites da solução.</span></li></ol><p>Para quem quer aprender a fazer — sozinho ou com uma equipe.</p></div></div></section>'''
+
+
+def prisma(phone):
+    cta = contact_link(phone, 'Quero saber mais sobre o Prisma, da Mescla, e o futuro acesso à experiência.', 'Quero saber mais sobre o Prisma', 'prisma', 'prisma-contact-note')
+    return f'''<section class="section home-prisma" id="prisma" aria-labelledby="prisma-title"><div class="wrap pathway-grid"><div><p class="eyebrow">Prisma · da Mescla</p><h2 id="prisma-title">Uma decisão.<br>Diferentes perspectivas.</h2><p class="lead">Estamos preparando uma experiência gratuita para ajudar você a explorar alternativas antes de decidir.</p><p>A proposta: especialistas de IA examinam sua questão, confrontam argumentos e apresentam riscos, incertezas e próximos passos. A decisão continua com você.</p>{cta}<p class="contact-expectation" id="prisma-contact-note">Em preparação. O acesso ainda não está disponível.<br>O botão abre uma conversa com a Mescla no WhatsApp.</p></div><div class="prisma-outline"><span class="pathway-status">Em preparação</span><p class="prisma-question">O que muda quando você olha a mesma decisão por outros ângulos?</p><ul><li>Cliente e produto</li><li>Estratégia e futuros</li><li>Economia e preço</li><li>Aquisição e distribuição</li><li>Tecnologia e operação</li><li>Confiança e riscos</li></ul><p>Perspectivas que se complementam e também podem discordar.</p></div></div></section>'''
+
 def questions():
     entries = [
+        ('Posso aprender a construir, em vez de contratar a implantação?', ['Sim. Estamos preparando encontros práticos de aprendizagem. Conte pelo WhatsApp o que você quer aprender; formato, datas e valores serão apresentados antes de qualquer inscrição.']),
         ('Já tenho ChatGPT, Claude ou Gemini. O que a Mescla acrescenta?', ['Se o seu uso atual já resolve o trabalho, ele pode ser suficiente. A Mescla entra para implantar uma rotina com agentes compartilhados, referências do negócio e revisão pela equipe. Avaliamos com você se esse trabalho de implantação faz sentido.']),
         ('Funciona para quem trabalha sozinho?', ['Sim. Podemos começar com uma pessoa e uma rotina. Se você pretende ampliar a equipe, consideramos o compartilhamento dos agentes e dos registros na escolha do ambiente.']),
         ('Quem pode acessar a memória do negócio?', ['Definimos fontes, responsáveis pela atualização e acessos por equipe ou projeto. Entram os processos, referências e decisões que você autoriza registrar. Conversas pessoais e documentos de outros clientes não entram automaticamente.', 'Onde os dados ficam e quais fornecedores participam são definidos antes de conectar suas informações.']),
@@ -102,4 +113,4 @@ def closing(phone):
 
 
 def home_story(segments, phone):
-    return '<div class="home-story">' + '\n'.join([comparison(), home_flow(), implementation(phone), applications(segments), technology(), questions(), purpose(), closing(phone)]) + '</div>'
+    return '<div class="home-story">' + '\n'.join([comparison(), home_flow(), implementation(phone), applications(segments), technology(), learning(phone), prisma(phone), questions(), purpose(), closing(phone)]) + '</div>'
