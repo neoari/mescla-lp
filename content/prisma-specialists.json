@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "specialists": [
     {
       "slug": "cliente-produto",
@@ -19,19 +19,22 @@
     },
     {
       "slug": "estrategia-futuros",
-      "name": "Estratégia e futuros",
-      "lens": "Conectar consequências",
+      "name": "Estratégia e Futuros",
+      "lens": "Explorar possibilidades e escolher caminhos",
       "question": "O que esta escolha abre — e o que fecha?",
-      "summary": "Conecta a decisão de hoje aos efeitos de amanhã, às alternativas e ao que você deixa de fazer.",
+      "summary": "Investiga mudanças, conecta consequências e escolhe entre dez instrumentos para preparar decisões que continuem fazendo sentido em futuros diferentes.",
       "methods": [
-        "Cenários e incertezas críticas",
-        "Consequências de segunda ordem",
-        "Caminhos reversíveis e sinais de revisão"
+        "Varredura de sinais e PESTLE",
+        "Mapa de forças e incertezas",
+        "Cenários e teste de robustez",
+        "Roda de futuros e Três Horizontes",
+        "Backcasting e roteiro por condições",
+        "Opções reversíveis e sinais de revisão"
       ],
-      "delivery": "Cenários plausíveis, uma ação que resiste a mais de um deles e um sinal para rever a escolha.",
+      "delivery": "Os métodos adequados à pergunta, suas implicações e uma ação ou experimento com condições claras para avançar ou rever.",
       "challenge": "Essa recomendação só funciona se um único futuro acontecer?",
       "limit": "Cenários ajudam a explorar possibilidades; não são previsões.",
-      "example": "Ao escolher um parceiro, examina também dependência, capacidade de mudar e opções que deixam de existir."
+      "example": "Ao transformar um serviço com IA, pode usar Três Horizontes para conectar o trabalho atual ao desejado e backcasting para descobrir o primeiro experimento. Em outra decisão, escolhe outros métodos."
     },
     {
       "slug": "economia-preco",
@@ -96,6 +99,40 @@
       "challenge": "Quem assume a consequência se esta orientação estiver errada?",
       "limit": "Apoio à decisão não substitui profissionais habilitados nem elimina erros.",
       "example": "Quando uma decisão depende de orientação clínica, ajuda a organizar dúvidas para a consulta e limita a recomendação."
+    },
+    {
+      "slug": "ia-dados",
+      "name": "IA e Dados",
+      "lens": "Testar a capacidade real",
+      "question": "A IA ajuda aqui — e como saberemos?",
+      "summary": "Examina a tarefa, a qualidade dos dados e os testes necessários para separar uma demonstração convincente de uma solução útil.",
+      "methods": [
+        "Adequação da IA e alternativas simples",
+        "Qualidade, origem e cobertura dos dados",
+        "Avaliação com casos reais e falhas críticas",
+        "Custo por resultado aceito"
+      ],
+      "delivery": "Uma hipótese técnica, comparação com uma alternativa simples e critérios para testar qualidade, custo e limites.",
+      "challenge": "O resultado funciona fora dos exemplos que usamos para ajustar o sistema?",
+      "limit": "Acertar em uma demonstração não comprova qualidade no uso real.",
+      "example": "Antes de recomendar um time de agentes, compara o ganho esperado com um assistente simples e define o que a pessoa precisa revisar."
+    },
+    {
+      "slug": "pesquisa-evidencias",
+      "name": "Pesquisa e Evidências",
+      "lens": "Investigar antes de concluir",
+      "question": "O que sustenta esta afirmação?",
+      "summary": "Busca e verifica informações para todas as disciplinas. Rastreia fontes, confronta versões e mostra o que ainda não sabemos.",
+      "methods": [
+        "Pesquisa documental e verificação de fontes",
+        "Triangulação e evidência contrária",
+        "Leitura crítica de estudos e dados",
+        "Planejamento de entrevistas e testes"
+      ],
+      "delivery": "Um mapa de evidências com origem, data, limites e lacunas que podem mudar a decisão.",
+      "challenge": "São confirmações independentes ou todo mundo está repetindo a mesma fonte?",
+      "limit": "Pesquisa rápida não comprova demanda nem substitui ouvir pessoas reais.",
+      "example": "Diante de uma tendência, procura a origem da afirmação e verifica se ela se aplica ao setor, ao público e ao momento da decisão."
     }
   ]
 }
