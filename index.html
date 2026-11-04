@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#FBFAFD">
-<title>Mescla · Consultoria, implantação e aprendizagem em IA.</title>
-<meta name="description" content="Seu próprio time de agentes de IA ou mais capacidade para sua equipe. Consultoria, implantação e aprendizagem para pessoas físicas e empresas.">
+<title>Mescla · Seu trabalho pode ir mais longe. Com um time de IA.</title>
+<meta name="description" content="A Mescla monta equipes de pessoas e agentes de IA para o seu trabalho. Comece pelo Diagnóstico Prisma gratuito e descubra qual rotina melhorar primeiro.">
 <link rel="canonical" href="https://mescla.ai/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Mescla · Consultoria, implantação e aprendizagem em IA.">
-<meta property="og:description" content="A Mescla monta seu time de IA e integra agentes à sua equipe. Atendemos pessoas físicas e empresas. Você também pode aprender a construir.">
+<meta property="og:title" content="Mescla · Seu trabalho pode ir mais longe. Com um time de IA.">
+<meta property="og:description" content="Pessoas e agentes de IA trabalhando juntos. Comece pelo Diagnóstico Prisma gratuito.">
 <meta property="og:url" content="https://mescla.ai/">
 <link rel="icon" type="image/svg+xml" href="/assets/mescla-favicon.svg?v=0e52f55790c3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,997 +41,306 @@
 </style>
 <link rel="stylesheet" href="/assets/segments.css?v=0d8f6bfbaabb">
 <link rel="stylesheet" href="/assets/experience.css?v=c28f76d97e28">
+<style id="home-v2">
+.v2{--v2-r:24px;overflow-x:clip}
+.v2 section{padding:112px 0;position:relative}
+.v2 .v2-eyebrow{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--verde);margin:0 0 20px}
+.v2 h2{font-size:clamp(36px,4.6vw,62px);max-width:860px}
+.v2 h3{font-family:'Instrument Sans',sans-serif;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.v2 .v2-lead{font-size:clamp(18px,1.6vw,21px);line-height:1.6;max-width:640px;margin-top:26px;color:var(--noite)}
+.v2 .v2-muted{color:var(--cinza)}
+.v2 .v2-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:12px;padding:4px 11px;border-radius:999px;background:var(--nevoa);color:var(--cinza)}
+.v2 .v2-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;background:var(--verde);color:var(--branco);text-decoration:none;font-weight:600;font-size:16px;transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s}
+.v2 .v2-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(17,108,96,.55)}
+.v2 .v2-btn.v2-ghost{background:transparent;color:var(--noite);box-shadow:inset 0 0 0 1.5px var(--noite)}
+.v2 .v2-btn.v2-sun{background:var(--sol);color:var(--noite)}
+.v2 .v2-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.v2 .v2-card{background:#fff;border:1px solid var(--linha);border-radius:var(--v2-r);padding:30px;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
+.v2 .v2-card:hover{transform:translateY(-3px);box-shadow:0 22px 44px -28px rgba(27,25,48,.35)}
+.v2 .v2-card p{margin-top:10px;color:var(--cinza)}
+.v2 .v2-grid{display:grid;gap:18px;margin-top:52px}
+.v2 .v2-g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:920px){.v2 .v2-g3{grid-template-columns:1fr}}
+/* hero */
+.v2 .v2-hero{padding:72px 0 104px;background:radial-gradient(1200px 520px at 85% 10%,rgba(111,217,201,.18),transparent 60%),radial-gradient(900px 480px at 100% 90%,rgba(242,184,75,.14),transparent 60%)}
+.v2 .v2-hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center}
+@media(max-width:980px){.v2 .v2-hero-grid{grid-template-columns:1fr}}
+.v2 .v2-hero h1{font-size:clamp(46px,6.2vw,90px)}
+.v2 .v2-hero h1 span{display:block;color:var(--verde)}
+.v2 .v2-assure{display:flex;gap:18px;flex-wrap:wrap;margin-top:30px;font-size:15px;color:var(--cinza)}
+.v2 .v2-assure span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--mare);margin-right:8px;vertical-align:1px}
+.v2 .v2-prism-art{width:100%;max-width:560px;margin-left:auto;display:block}
+.v2 .v2-ray{stroke-dasharray:420;stroke-dashoffset:420;animation:v2-draw 1.3s cubic-bezier(.16,1,.3,1) forwards}
+.v2 .v2-ray:nth-of-type(2){animation-delay:.12s}.v2 .v2-ray:nth-of-type(3){animation-delay:.24s}.v2 .v2-ray:nth-of-type(4){animation-delay:.36s}
+.v2 .v2-beam{stroke-dasharray:300;stroke-dashoffset:300;animation:v2-draw 1s cubic-bezier(.16,1,.3,1) forwards}
+.v2 .v2-chip{opacity:0;animation:v2-fade .6s cubic-bezier(.16,1,.3,1) forwards}
+.v2 .v2-chip:nth-of-type(1){animation-delay:.9s}.v2 .v2-chip:nth-of-type(2){animation-delay:1s}.v2 .v2-chip:nth-of-type(3){animation-delay:1.1s}.v2 .v2-chip:nth-of-type(4){animation-delay:1.2s}
+@keyframes v2-draw{to{stroke-dashoffset:0}}
+@keyframes v2-fade{to{opacity:1}}
+/* rotina */
+.v2 .v2-day{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+@media(max-width:920px){.v2 .v2-day{grid-template-columns:1fr}}
+.v2 .v2-timeline{display:grid;gap:12px;position:relative}
+.v2 .v2-step{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:20px 22px;border-radius:18px;background:#fff;border:1px solid var(--linha)}
+.v2 .v2-step b{font-family:'JetBrains Mono',monospace;font-weight:500;color:var(--verde);font-size:15px}
+.v2 .v2-step.v2-night{background:var(--noite);color:var(--branco);border-color:var(--noite)}
+.v2 .v2-step.v2-night b{color:var(--mare)}
+/* contraste */
+.v2 .v2-vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:52px}
+@media(max-width:820px){.v2 .v2-vs{grid-template-columns:1fr}}
+.v2 .v2-vs-col{border-radius:var(--v2-r);padding:32px}
+.v2 .v2-vs-col h3{margin-bottom:18px}
+.v2 .v2-vs-col ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.v2 .v2-vs-col li{padding-left:30px;position:relative}
+.v2 .v2-solo{background:var(--nevoa);color:var(--cinza)}
+.v2 .v2-solo li::before{content:"–";position:absolute;left:6px;color:var(--cinza)}
+.v2 .v2-team{background:var(--noite);color:var(--branco)}
+.v2 .v2-team li::before{content:"";position:absolute;left:2px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--mare)}
+.v2 .v2-line{font-family:'Fraunces',serif;font-size:clamp(28px,3.2vw,42px);letter-spacing:-.035em;margin-top:52px}
+.v2 .v2-line em{font-style:normal;background:linear-gradient(transparent 62%,rgba(242,184,75,.55) 62%)}
+/* prisma */
+.v2 .v2-prisma{background:var(--noite);color:var(--branco);overflow:hidden}
+.v2 .v2-prisma::before{content:"";position:absolute;inset:auto -10% -40% auto;width:720px;height:720px;background:conic-gradient(from 200deg,rgba(111,217,201,.0),rgba(111,217,201,.22),rgba(242,184,75,.2),rgba(207,62,39,.18),rgba(111,217,201,0));filter:blur(60px);pointer-events:none}
+.v2 .v2-prisma .v2-eyebrow{color:var(--mare)}
+.v2 .v2-prisma h2{color:var(--branco)}
+.v2 .v2-prisma .v2-lead{color:#E3E1EC}
+.v2 .v2-spectrum{height:6px;border-radius:6px;margin-top:38px;max-width:440px;background:linear-gradient(90deg,var(--mare),var(--verde) 34%,var(--sol) 66%,var(--roma))}
+.v2 .v2-arch{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px;position:relative}
+@media(max-width:920px){.v2 .v2-arch{grid-template-columns:1fr}}
+.v2 .v2-arch .v2-card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);color:var(--branco)}
+.v2 .v2-arch .v2-card p{color:#C9C7D6}
+.v2 .v2-arch .v2-tag{background:rgba(111,217,201,.16);color:var(--mare)}
+.v2 .v2-arch .v2-main{background:var(--branco);color:var(--noite)}
+.v2 .v2-arch .v2-main p{color:var(--cinza)}
+.v2 .v2-arch .v2-main .v2-tag{background:var(--sol);color:var(--noite)}
+.v2 .v2-arch h3{margin-top:16px;font-size:24px}
+/* diagnóstico */
+.v2 .v2-diag{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;margin-top:20px}
+@media(max-width:980px){.v2 .v2-diag{grid-template-columns:1fr;gap:40px}}
+.v2 .v2-list{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px}
+.v2 .v2-list li{display:flex;gap:14px;align-items:flex-start}
+.v2 .v2-list li i{flex:0 0 28px;height:28px;border-radius:50%;background:var(--nevoa);color:var(--verde);font-style:normal;font-family:'JetBrains Mono',monospace;font-size:13px;display:grid;place-items:center}
+.v2 .v2-matrix{display:grid;grid-template-columns:auto 1fr 1fr;grid-template-rows:1fr 1fr auto;gap:10px;max-width:540px;aspect-ratio:1.04/1}
+.v2 .v2-q{border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;font-size:14px;line-height:1.4}
+.v2 .v2-q b{display:block;font-size:17px;margin-bottom:4px}
+.v2 .v2-q small{font-size:13px;opacity:.8}
+.v2 .v2-q1{background:var(--mare);grid-column:2;grid-row:1}
+.v2 .v2-q2{background:var(--sol);grid-column:3;grid-row:1}
+.v2 .v2-q3{background:var(--nevoa);grid-column:2;grid-row:2}
+.v2 .v2-q4{background:#F5D9D3;grid-column:3;grid-row:2}
+.v2 .v2-ax{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--cinza)}
+.v2 .v2-axy{grid-column:1;grid-row:1/3;writing-mode:vertical-rl;transform:rotate(180deg);text-align:center}
+.v2 .v2-axx{grid-column:2/4;grid-row:3;text-align:center}
+@media(max-width:520px){.v2 .v2-q{padding:12px;font-size:12px}.v2 .v2-q b{font-size:14px}.v2 .v2-q small{display:none}}
+/* método */
+.v2 .v2-method{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:52px;counter-reset:v2m}
+@media(max-width:1080px){.v2 .v2-method{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.v2 .v2-method{grid-template-columns:1fr}}
+.v2 .v2-method .v2-card{padding:26px;border-radius:20px;display:flex;flex-direction:column}
+.v2 .v2-method .v2-card::before{counter-increment:v2m;content:"0" counter(v2m);font-family:'JetBrains Mono',monospace;color:var(--verde);font-size:14px;margin-bottom:16px}
+.v2 .v2-deliv{margin-top:auto!important;padding-top:16px;border-top:1px dashed var(--linha);font-size:14px;color:var(--noite)!important}
+.v2 .v2-method p:not(.v2-deliv){margin-bottom:16px}
+.v2 .v2-deliv span{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--verde);margin-bottom:4px}
+/* controle */
+.v2 .v2-control{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+@media(max-width:920px){.v2 .v2-control{grid-template-columns:1fr}}
+.v2 .v2-checks{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.v2 .v2-checks li{padding:20px 22px 20px 58px;background:#fff;border:1px solid var(--linha);border-radius:18px;position:relative}
+.v2 .v2-checks li::before{content:"✓";position:absolute;left:20px;top:19px;width:24px;height:24px;border-radius:50%;background:var(--verde);color:#fff;font-size:13px;display:grid;place-items:center}
+/* dono */
+.v2 .v2-own{background:linear-gradient(180deg,rgba(236,235,241,.6),rgba(236,235,241,0))}
+.v2 .v2-dark{background:var(--verde);color:var(--branco);border-color:var(--verde)}
+.v2 .v2-dark p{color:#D9F2EE}
+/* quem */
+.v2 .v2-who{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:center;margin-top:12px}
+@media(max-width:900px){.v2 .v2-who{grid-template-columns:1fr;gap:36px}}
+.v2 .v2-photo{border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--nevoa);position:relative}
+.v2 .v2-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block}
+.v2 .v2-photo::after{content:"";position:absolute;inset:auto 0 0 0;height:8px;background:linear-gradient(90deg,var(--mare),var(--verde),var(--sol),var(--roma))}
+.v2 .v2-quote{font-family:'Fraunces',serif;font-size:clamp(26px,2.8vw,36px);letter-spacing:-.03em;line-height:1.2;margin-top:26px}
+/* áreas */
+.v2 .v2-areas{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.v2 .v2-areas a{padding:12px 18px;border-radius:999px;border:1px solid var(--linha);background:#fff;text-decoration:none;font-weight:500;transition:border-color .2s,background .2s}
+.v2 .v2-areas a:hover{border-color:var(--verde);background:rgba(111,217,201,.12)}
+/* faq */
+.v2 details{border-bottom:1px solid var(--linha);padding:22px 0;max-width:880px}
+.v2 summary{cursor:pointer;font-weight:600;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+.v2 summary::-webkit-details-marker{display:none}
+.v2 summary::after{content:"+";color:var(--verde);font-size:24px;line-height:1}
+.v2 details[open] summary::after{content:"–"}
+.v2 details p{margin-top:12px;color:var(--cinza);max-width:760px}
+/* final */
+.v2 .v2-final{background:var(--verde);color:var(--branco);text-align:center;overflow:hidden}
+.v2 .v2-final h2{margin:0 auto;color:var(--branco)}
+.v2 .v2-final .v2-actions{justify-content:center}
+.v2 .v2-final .v2-ghost{color:var(--branco);box-shadow:inset 0 0 0 1.5px var(--branco)}
+/* revelação */
+.v2 [data-v2-reveal]{opacity:0;transform:translateY(18px);transition:opacity .42s cubic-bezier(.16,1,.3,1),transform .42s cubic-bezier(.16,1,.3,1)}
+.v2 [data-v2-reveal].v2-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.v2 [data-v2-reveal]{opacity:1;transform:none;transition:none}.v2 .v2-ray,.v2 .v2-beam{animation:none;stroke-dashoffset:0}.v2 .v2-chip{animation:none;opacity:1}.v2 .v2-btn,.v2 .v2-card{transition:none}}
+@media(max-width:620px){.v2 section{padding:76px 0}.v2 .v2-hero{padding:44px 0 76px}}
+</style>
 </head>
-<body data-segment="home" data-page-version="2026-10-pessoas-e-empresas-v1">
+<body data-segment="home" data-page-version="2026-11-metodo-prisma-v1">
 <a class="skip" href="#principal">Pular para o conteúdo</a>
 
 <header class="nav"><div class="wrap nav-inner">
 <a class="brand" href="#principal" aria-label="Mescla, início"><img class="brand-mark" src="/assets/mescla-logo.svg?v=f1db7c5b4382" width="44" height="44" alt="" decoding="async"><span class="brand-word">mescla</span></a>
-<nav class="nav-links" aria-label="Navegação principal"><a href="#para-voce">Para você</a><a href="#para-empresas">Para empresas</a><a href="#aprender">Aprender</a><a href="/prisma/" data-attribution-link>Prisma</a></nav>
-<a class="nav-contact" href="#conversar">Vamos conversar <span aria-hidden="true">↗</span></a>
+<nav class="nav-links" aria-label="Navegação principal"><a href="#metodo">Método Prisma</a><a href="#diagnostico">Diagnóstico</a><a href="#seu-time">Seu time</a><a href="#quem">Quem somos</a></nav>
+<a class="nav-contact" href="#diagnostico">Diagnóstico gratuito <span aria-hidden="true">↗</span></a>
 </div></header>
 <main id="principal">
-<section class="hero hero-team" aria-labelledby="hero-title"><div class="wrap"><div class="hero-grid"><div class="hero-copy"><p class="eyebrow">Consultoria, implantação e aprendizagem em IA</p><h1 id="hero-title"><span class="hero-promise">Seu trabalho.</span> <span class="hero-completion">Com um time de IA.</span></h1><p class="lead"><strong>Trabalha sozinho? Montamos seu time de agentes de IA.</strong> Já tem uma equipe? Integramos agentes à rotina de vocês. Atendemos <strong>pessoas físicas e empresas</strong>, da escolha do que melhorar à implantação.</p><p class="hero-reassurance"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M20 6 9 17l-5-5" />
-</svg><span>A parte técnica fica com a Mescla.</span></p><div class="hero-actions"><a class="btn" href="https://wa.me/5561993973584?text=Quero%20conversar%20sobre%20como%20a%20Mescla%20pode%20ampliar%20minha%20capacidade%20de%20entrega.%0A%0AMinha%20atividade%3A%0AO%20trabalho%20que%20quero%20melhorar%3A" target="_blank" rel="noopener noreferrer" data-contact data-placement="hero" aria-describedby="hero-contact-note"><span class="brand-symbol brand-symbol--whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span>Conversar sobre minha rotina</span></a><a class="text-link" href="#aprender">Quero aprender a fazer <svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M5 12h14" />
-  <path d="m12 5 7 7-7 7" />
-</svg></a></div><p class="hero-contact-note" id="hero-contact-note">No WhatsApp. Para entender sua rotina.</p></div><figure class="ribbon-stage hero-team-figure" aria-labelledby="hero-figure-title"><figcaption class="hero-figure-heading"><span id="hero-figure-title">Pessoas + agentes</span></figcaption><div class="hero-figure-work"><ol class="hero-participants" aria-label="Pessoas e agentes trabalhando em conjunto"><li class="hero-participant hero-participant--human"><span class="hero-participant-icon"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg></span><span class="hero-participant-copy"><span class="hero-step-number" aria-hidden="true">01</span><strong>Você direciona</strong></span></li><li class="hero-participant hero-participant--agent"><span class="hero-participant-icon"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg></span><span class="hero-participant-copy"><span class="hero-step-number" aria-hidden="true">02</span><strong>Agentes preparam</strong></span></li><li class="hero-participant hero-participant--human"><span class="hero-participant-icon"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg></span><span class="hero-participant-copy"><span class="hero-step-number" aria-hidden="true">03</span><strong>Pessoas revisam</strong></span></li></ol><div class="ribbon-art" data-ribbon-scene aria-hidden="true"><img class="ribbon-fallback" src="/assets/mescla-logo.svg?v=f1db7c5b4382" alt="" width="440" height="440" decoding="async"></div></div><div class="hero-shared-memory"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 5v16" />
-  <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" />
-</svg><div><strong>Memória do trabalho</strong><p>Processos · referências · decisões</p></div></div><button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false" aria-label="Pausar animação" hidden><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <rect x="14" y="3" width="5" height="18" rx="1" />
-  <rect x="5" y="3" width="5" height="18" rx="1" />
-</svg></button></figure></div></div></section>
-<div class="home-story"><section class="section home-audiences" id="para-voce" aria-labelledby="audiences-title"><div class="wrap">
-<div class="section-head"><div><p class="eyebrow">Pessoas físicas e pessoas jurídicas</p><h2 id="audiences-title">Um time para você.<br>Mais força para sua equipe.</h2></div><p class="lead">Você não precisa ter uma empresa nem uma equipe para contar com a Mescla. O ponto de partida é o trabalho que quer realizar.</p></div>
-<div class="audience-paths">
-<article class="audience-path audience-path--personal" aria-labelledby="personal-title"><p class="eyebrow">Para você · pessoa física</p><h3 id="personal-title">Trabalha sozinho?<br>Monte seu time de IA.</h3><p>Agentes preparados para apoiar suas atividades, organizar referências e adiantar tarefas. Você direciona, revisa e decide; a Mescla cuida da implantação.</p><p class="audience-example"><strong>Uma aplicação possível:</strong> um agente organiza materiais de um projeto, outro prepara um rascunho e você revisa antes de usar.</p><a class="btn" href="https://wa.me/5561993973584?text=Quero%20um%20time%20de%20agentes%20de%20IA%20para%20mim.%20Minha%20atividade%3A%20O%20que%20quero%20melhorar%20na%20minha%20rotina%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero um time de agentes de IA para mim. Minha atividade: O que quero melhorar na minha rotina:" data-placement="personal" aria-describedby="personal-contact-note"><span class="brand-symbol brand-symbol--whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span>Quero um time de IA para mim</span></a><p class="contact-expectation" id="personal-contact-note">Conte sua rotina pelo WhatsApp.<br>Começamos por uma necessidade e um escopo definidos.</p></article>
-<article class="audience-path audience-path--business" id="para-empresas" aria-labelledby="business-title"><p class="eyebrow">Para sua empresa · pessoa jurídica</p><h3 id="business-title">Sua equipe,<br>com mais capacidade.</h3><p>Agentes compartilhados, conhecimento organizado e processos conectados para o trabalho continuar entre as pessoas. Definimos os acessos e os pontos de revisão com sua equipe.</p><p class="audience-example"><strong>Uma aplicação possível:</strong> o comercial registra um pedido, o agente prepara a proposta e a operação revisa com o contexto do cliente.</p><a class="btn" href="https://wa.me/5561993973584?text=Quero%20integrar%20agentes%20de%20IA%20%C3%A0%20equipe%20da%20minha%20empresa.%20Nossa%20atividade%3A%20A%20rotina%20que%20queremos%20melhorar%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero integrar agentes de IA à equipe da minha empresa. Nossa atividade: A rotina que queremos melhorar:" data-placement="business" aria-describedby="business-contact-note"><span class="brand-symbol brand-symbol--whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span>Quero IA na minha equipe</span></a><p class="contact-expectation" id="business-contact-note">Conte a rotina da equipe pelo WhatsApp.<br>Escopo, ferramentas e investimento definidos em proposta.</p></article>
-</div><p class="audience-learning">Prefere aprender a construir? <a class="text-link" href="#aprender">Conheça o caminho de aprendizagem <svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M5 12h14" />
-  <path d="m12 5 7 7-7 7" />
-</svg></a></p>
+<div class="v2">
+<section class="v2-hero" aria-labelledby="hero-title"><div class="wrap v2-hero-grid">
+<div>
+<p class="v2-eyebrow">Consultoria, implantação e aprendizagem em IA</p>
+<h1 id="hero-title">Seu trabalho pode ir mais longe. <span>Com um time de IA.</span></h1>
+<p class="v2-lead">A Mescla monta equipes de pessoas e agentes de IA para tirar tarefas do caminho, organizar o conhecimento e ampliar o que você consegue fazer, aproveitando sempre que possível as ferramentas que você já tem.</p>
+<div class="v2-actions"><a class="v2-btn" href="#diagnostico">Começar pelo Diagnóstico Prisma <span aria-hidden="true">→</span></a><a class="v2-btn v2-ghost" href="https://wa.me/5561993973584?text=Quero%20conhecer%20meu%20primeiro%20agente%20de%20IA.%0A%0AMinha%20atividade%3A%0AO%20que%20eu%20gostaria%20de%20tirar%20das%20minhas%20costas%3A" target="_blank" rel="noopener noreferrer" data-contact data-placement="home">Conhecer meu primeiro agente</a></div>
+<p class="v2-assure"><span>Para pessoas e empresas</span><span>Diagnóstico gratuito</span><span>A parte técnica fica com a Mescla</span></p>
+</div>
+<div><svg class="v2-prism-art" viewBox="0 0 560 440" role="img" aria-labelledby="v2-prism-t"><title id="v2-prism-t">Um feixe de luz entra no prisma e sai separado em quatro caminhos: comece aqui, aposta, quando sobrar tempo e evitar por ora.</title>
+<defs><linearGradient id="v2-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#ECEBF1" stop-opacity=".9"/></linearGradient></defs>
+<path class="v2-beam" d="M10 230 L200 214" stroke="#1B1930" stroke-width="5" stroke-linecap="round" fill="none"/>
+<g fill="none" stroke-width="10" stroke-linecap="round">
+<path class="v2-ray" d="M262 206 C320 170 360 112 412 82" stroke="#6FD9C9"/>
+<path class="v2-ray" d="M268 214 C330 200 372 178 420 168" stroke="#F2B84B"/>
+<path class="v2-ray" d="M268 224 C330 236 372 258 420 268" stroke="#ECEBF1"/>
+<path class="v2-ray" d="M262 232 C320 268 360 326 412 356" stroke="#CF3E27" stroke-opacity=".75"/>
+</g>
+<path d="M232 118 L312 300 L152 300 Z" fill="url(#v2-glass)" stroke="#1B1930" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M232 146 L290 286" stroke="#6FD9C9" stroke-width="2" opacity=".7"/>
+<g font-family="Instrument Sans, sans-serif" font-size="15" font-weight="600" fill="#1B1930">
+<g class="v2-chip"><rect x="418" y="62" width="132" height="38" rx="19" fill="#6FD9C9"/><text x="484" y="86" text-anchor="middle">Comece aqui</text></g>
+<g class="v2-chip"><rect x="426" y="149" width="116" height="38" rx="19" fill="#F2B84B"/><text x="484" y="173" text-anchor="middle">Aposta</text></g>
+<g class="v2-chip"><rect x="426" y="249" width="126" height="38" rx="19" fill="#ECEBF1" stroke="#DDDAE5"/><text x="489" y="273" text-anchor="middle" font-size="13">Quando sobrar</text></g>
+<g class="v2-chip"><rect x="418" y="337" width="132" height="38" rx="19" fill="#F5D9D3"/><text x="484" y="361" text-anchor="middle">Evitar por ora</text></g>
+</g>
+<text x="16" y="208" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="1.2" fill="#625F72">SEU TRABALHO</text>
+</svg></div>
 </div></section>
-<section class="section mescla-value" id="possibilidades" aria-labelledby="possibilities-title"><div class="wrap">
-<div class="section-head"><div><p class="eyebrow">O que muda na prática</p><h2 id="possibilities-title">O trabalho avança.<br>O conhecimento fica.</h2></div><p class="lead">Organizamos agentes e referências para o trabalho continuar com contexto, com uma pessoa ou com a equipe.</p></div>
-<table class="value-comparison" role="table" aria-labelledby="possibilities-title" aria-describedby="comparison-scope"><thead role="rowgroup"><tr role="row"><th scope="col" role="columnheader">O que você ganha</th><th scope="col" role="columnheader"><strong class="comparison-title">Com outras IAs</strong><span class="comparison-subtitle">No uso individual</span></th><th scope="col" role="columnheader"><span class="comparison-brand"><img src="/assets/mescla-logo.svg?v=f1db7c5b4382" width="43" height="43" alt=""><strong class="comparison-title">Com a Mescla</strong><span class="comparison-subtitle">Implantação para sua rotina</span></span></th></tr></thead><tbody role="rowgroup"><tr role="row"><th scope="row" role="rowheader"><span><span class="gain-icon"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <rect x="16" y="16" width="6" height="6" rx="1" />
-  <rect x="2" y="16" width="6" height="6" rx="1" />
-  <rect x="9" y="2" width="6" height="6" rx="1" />
-  <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" />
-  <path d="M12 12V8" />
-</svg></span>Mais capacidade para realizar</span></th><td role="cell"><span class="comparison-mobile-label" aria-hidden="true"><strong class="comparison-title">Com outras IAs</strong><span class="comparison-subtitle">No uso individual</span></span><p>Você conduz cada conversa e conecta as respostas ao trabalho.</p></td><td role="cell"><span class="comparison-mobile-label" aria-hidden="true"><strong class="comparison-title">Com a Mescla</strong><span class="comparison-subtitle">Implantação para sua rotina</span></span><p><strong>Agentes preparados para etapas da sua rotina, com orientação e revisão de quem usa.</strong></p></td></tr><tr role="row"><th scope="row" role="rowheader"><span><span class="gain-icon"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 5v16" />
-  <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" />
-</svg></span>Menos contexto repetido</span></th><td role="cell"><span class="comparison-mobile-label" aria-hidden="true"><strong class="comparison-title">Com outras IAs</strong><span class="comparison-subtitle">No uso individual</span></span><p>Referências ficam entre conversas pessoais e arquivos.</p></td><td role="cell"><span class="comparison-mobile-label" aria-hidden="true"><strong class="comparison-title">Com a Mescla</strong><span class="comparison-subtitle">Implantação para sua rotina</span></span><p><strong>Processos, referências e decisões reunidos numa memória do negócio.</strong></p></td></tr><tr role="row"><th scope="row" role="rowheader"><span><span class="gain-icon"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="6" cy="19" r="3" />
-  <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
-  <circle cx="18" cy="5" r="3" />
-</svg></span>Mais continuidade</span></th><td role="cell"><span class="comparison-mobile-label" aria-hidden="true"><strong class="comparison-title">Com outras IAs</strong><span class="comparison-subtitle">No uso individual</span></span><p>Retomar uma tarefa exige reunir o histórico e as referências.</p></td><td role="cell"><span class="comparison-mobile-label" aria-hidden="true"><strong class="comparison-title">Com a Mescla</strong><span class="comparison-subtitle">Implantação para sua rotina</span></span><p><strong>Você ou sua equipe retoma o trabalho com os registros do projeto e os acessos definidos.</strong></p></td></tr></tbody></table>
-<p class="comparison-scope" id="comparison-scope">A comparação considera o uso individual. Ferramentas e planos também podem oferecer recursos de equipe; a Mescla faz a implantação para a sua rotina.</p>
-</div></section>
-<section class="section home-flow" id="exemplo" aria-labelledby="example-title"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Um exemplo no dia a dia</p><h2 id="example-title">Uma pessoa começa.<br>O time continua.</h2></div><p class="lead">Do pedido à proposta: o comercial traz o contexto, o agente prepara e a operação revisa.</p></div><div class="animated-work" data-motion-scene="home"><div class="motion-fallback"><ol class="flow-line"><li class="flow-node flow-node--human"><span class="flow-emblem"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg></span><h3>O comercial inicia</h3><p>Registra o pedido do cliente.</p></li><li class="flow-node flow-node--agent"><span class="flow-emblem"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg></span><h3>O agente prepara</h3><p>Consulta referências do negócio.</p></li><li class="flow-node flow-node--result"><span class="flow-emblem"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg></span><h3>A operação continua</h3><p>Revisa com o contexto do projeto.</p></li></ol><div class="shared-memory-base"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 5v16" />
-  <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" />
-</svg><div><strong>Memória da empresa</strong><p>Processos, referências e decisões registradas.</p></div></div></div><div class="motion-player" hidden></div><p class="motion-equivalent">Um time. Uma memória. Uma pessoa do comercial registra o pedido e as referências do cliente. O agente compartilhado consulta a memória do negócio e prepara a proposta. Uma pessoa da operação revisa com o contexto do projeto. Decisões selecionadas ficam registradas na memória da empresa. Exemplo ilustrativo; etapas definidas no projeto.</p></div><p class="flow-foot"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="6" cy="19" r="3" />
-  <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
-  <circle cx="18" cy="5" r="3" />
-</svg>Exemplo ilustrativo. A empresa define o que registrar e quem pode acessar.</p></div></section>
-<section class="section home-implementation" id="como-funciona" aria-labelledby="implementation-title"><div class="wrap">
-<div class="section-head"><div><p class="eyebrow">Consultoria e implantação</p><h2 id="implementation-title">Antes da ferramenta,<br>a escolha do trabalho.</h2></div><p class="lead">Entendemos sua rotina, avaliamos onde a IA pode ajudar e definimos um primeiro projeto com objetivo, limites e critérios de qualidade. Depois, construímos e testamos com você.</p></div>
-<ol class="delivery-steps"><li class="delivery-step"><div class="delivery-number"><span aria-hidden="true">01</span><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="12" r="10" />
-  <circle cx="12" cy="12" r="6" />
-  <circle cx="12" cy="12" r="2" />
-</svg></div><div class="delivery-copy"><h3>Escolher o trabalho</h3><p>Escolhemos com você uma rotina, um objetivo e os limites do primeiro projeto.</p><p class="delivery-result"><span>Saída da etapa</span><strong>Fluxo e entrega definidos</strong></p></div></li><li class="delivery-step"><div class="delivery-number"><span aria-hidden="true">02</span><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <rect x="16" y="16" width="6" height="6" rx="1" />
-  <rect x="2" y="16" width="6" height="6" rx="1" />
-  <rect x="9" y="2" width="6" height="6" rx="1" />
-  <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" />
-  <path d="M12 12V8" />
-</svg></div><div class="delivery-copy"><h3>Preparar o ambiente</h3><p>Configuramos os agentes, as fontes de consulta e os acessos para esse trabalho.</p><p class="delivery-result"><span>Saída da etapa</span><strong>Agentes, fontes e acessos prontos para teste</strong></p></div></li><li class="delivery-step"><div class="delivery-number"><span aria-hidden="true">03</span><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M10.5 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v6" />
-  <path d="M14 2v5a1 1 0 0 0 1 1h5" />
-  <path d="m14 20 2 2 4-4" />
-</svg></div><div class="delivery-copy"><h3>Testar com quem vai usar</h3><p>Você ou sua equipe testa com materiais autorizados; definimos onde uma pessoa revisa ou aprova.</p><p class="delivery-result"><span>Saída da etapa</span><strong>Critérios e revisões definidos</strong></p></div></li><li class="delivery-step"><div class="delivery-number"><span aria-hidden="true">04</span><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg></div><div class="delivery-copy"><h3>Colocar em uso</h3><p>Orientamos quem participa a direcionar, revisar e decidir no ambiente configurado.</p><p class="delivery-result"><span>Saída da etapa</span><strong>Quem usa sabe direcionar e revisar</strong></p></div></li></ol>
-<div class="delivery-finish"><div class="delivery-summary"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M20 6 9 17l-5-5" />
-</svg><p>Uma rotina em uso, com <strong>agentes configurados, referências organizadas e pessoas orientadas</strong> para direcionar e revisar.</p></div><p class="delivery-observe">Combinamos o que observar nas primeiras entregas — por exemplo, tempo dedicado, retrabalho e critérios de qualidade.</p></div>
-<div class="implementation-next"><div class="implementation-context"><p>Escopo, entregas e custos definidos em proposta. Suporte e evolução conforme o acompanhamento contratado.</p><a class="text-link" href="#segmentos">Ver aplicações para meu trabalho <svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M5 12h14" />
-  <path d="m12 5 7 7-7 7" />
-</svg></a></div><div class="implementation-contact"><a class="btn" href="https://wa.me/5561993973584?text=Quero%20conversar%20sobre%20uma%20rotina%20que%20gostaria%20de%20melhorar%20com%20a%20Mescla.%0A%0AMinha%20atividade%3A%0AA%20rotina%20que%20quero%20melhorar%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero conversar sobre uma rotina que gostaria de melhorar com a Mescla.
 
-Minha atividade:
-A rotina que quero melhorar:" data-placement="implementation" aria-describedby="implementation-contact-note"><span class="brand-symbol brand-symbol--whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span>Conversar sobre minha rotina</span></a><p class="contact-expectation" id="implementation-contact-note">Conte um trabalho que você quer melhorar.<br>A conversa começa no WhatsApp.</p></div></div>
+<section aria-labelledby="v2-day-t"><div class="wrap v2-day">
+<div data-v2-reveal><p class="v2-eyebrow">Uma rotina funcionando</p><h2 id="v2-day-t">Uma terça-feira com o seu time de IA.</h2><p class="v2-lead">O time adianta o que é repetitivo. Você entra onde o seu olhar faz diferença.</p><p style="margin-top:22px"><span class="v2-tag">exemplo ilustrativo</span></p></div>
+<div class="v2-timeline">
+<div class="v2-step" data-v2-reveal><b>08:00</b><span>O pedido chegou pelo WhatsApp. O agente comercial já reuniu o histórico do cliente.</span></div>
+<div class="v2-step" data-v2-reveal><b>08:05</b><span>A primeira versão da proposta está pronta para você revisar.</span></div>
+<div class="v2-step" data-v2-reveal><b>10:00</b><span>Você ajusta o preço. O agente aprende o critério para a próxima vez.</span></div>
+<div class="v2-step" data-v2-reveal><b>18:00</b><span>O resumo do dia chega no seu e-mail, com decisões e pendências.</span></div>
+<div class="v2-step v2-night" data-v2-reveal><b>03:00</b><span>Enquanto você dorme, o time organiza os documentos da semana.</span></div>
+</div>
 </div></section>
-<section class="section home-applications" id="segmentos" aria-labelledby="segments-title"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Aplicações para o seu negócio</p><h2 id="segments-title">Onde o trabalho<br>pode render mais?</h2></div><p class="lead">Para quem trabalha sozinho ou com uma equipe. Explore um exemplo próximo da sua rotina.</p></div><p class="applications-scope">Aplicações possíveis. As etapas e ferramentas são definidas em cada projeto.</p><div class="applications-list"><a class="application-card application-card--empreendedores" href="/para/empreendedores/" data-attribution-link data-segment-link="empreendedores"><div class="case-intro"><p class="case-audience"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
-  <path d="M9 18h6" />
-  <path d="M10 22h4" />
-</svg><span>Empreendedores</span></p><h3>Pedidos viram propostas. A conversa continua.</h3></div><ol class="case-pipeline" aria-label="Fluxo ilustrativo para Empreendedores"><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">01</span><span>Pedido</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li><li class="case-stage--agent"><span class="case-step-number" aria-hidden="true">02</span><span>Proposta</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg>Agente</small></li><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">03</span><span>Aprovação</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li><li class="case-stage--agent"><span class="case-step-number" aria-hidden="true">04</span><span>Retorno</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg>Agente</small></li><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">05</span><span>Negociação</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li></ol><div class="case-destination"><div class="tool-marks compact"><span class="tool-mark"><span class="brand-symbol brand-symbol--whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span>WhatsApp</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--googledocs"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.727 6.727H14V0H4.91c-.905 0-1.637.732-1.637 1.636v20.728c0 .904.732 1.636 1.636 1.636h14.182c.904 0 1.636-.732 1.636-1.636V6.727h-6zm-.545 10.455H7.09v-1.364h7.09v1.364zm2.727-3.273H7.091v-1.364h9.818v1.364zm0-3.273H7.091V9.273h9.818v1.363zM14.727 6h6l-6-6v6z"/></svg></span><span>Docs</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--trello"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.147 0H2.853A2.86 2.86 0 000 2.853v18.294A2.86 2.86 0 002.853 24h18.294A2.86 2.86 0 0024 21.147V2.853A2.86 2.86 0 0021.147 0zM10.34 17.287a.953.953 0 01-.953.953h-4a.954.954 0 01-.954-.953V5.38a.953.953 0 01.954-.953h4a.954.954 0 01.953.953zm9.233-5.467a.944.944 0 01-.953.947h-4a.947.947 0 01-.953-.947V5.38a.953.953 0 01.953-.953h4a.954.954 0 01.953.953z"/></svg></span><span>Trello</span></span></div><span class="case-link">Ver aplicação <svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M7 7h10v10" />
-  <path d="M7 17 17 7" />
-</svg></span></div></a><a class="application-card application-card--creators" href="/para/creators/" data-attribution-link data-segment-link="creators"><div class="case-intro"><p class="case-audience"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="m12.296 3.464 3.02 3.956" />
-  <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z" />
-  <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-  <path d="m6.18 5.276 3.1 3.899" />
-</svg><span>Creators</span></p><h3>Você grava. Seu time de IA edita.</h3></div><ol class="case-pipeline" aria-label="Fluxo ilustrativo para Creators"><li class="case-stage--agent"><span class="case-step-number" aria-hidden="true">01</span><span>Roteiro</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg>Agente</small></li><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">02</span><span>Gravação</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li><li class="case-stage--agent"><span class="case-step-number" aria-hidden="true">03</span><span>Edição</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg>Agente</small></li><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">04</span><span>Aprovação</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li><li class="case-stage--agent"><span class="case-step-number" aria-hidden="true">05</span><span>Publicação</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg>Agente</small></li></ol><div class="case-destination"><div class="tool-marks compact"><span class="tool-mark"><span class="brand-symbol brand-symbol--remotion"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g transform="translate(.424 0) scale(.0564705882)"><path xmlns="http://www.w3.org/2000/svg" d="M116.44 45.697C109.454 46.0762 103.824 47.1846 98.1503 49.3432C95.3208 50.4079 90.6828 52.7269 88.1304 54.3313C77.4543 61.0258 69.3159 71.0894 65.0717 82.8011C64.2257 85.1201 61.9359 92.5146 60.4628 97.6048C50.6472 131.631 45.0757 168.838 43.8798 208.217C43.6901 214.488 43.6901 229.423 43.8798 235.593C44.6819 261.7 47.1759 285.269 51.6973 309.305C53.535 319.033 56.4811 332.101 58.1876 338.037C61.6734 350.099 68.7908 360.367 78.9128 367.893C85.6948 372.939 93.3956 376.323 101.928 377.986C106.041 378.788 111.466 379.152 115.463 378.89C120.99 378.525 131.958 377.052 140.87 375.462C181.036 368.301 218.141 355.481 251.788 337.133C273.097 325.509 291.313 312.922 308.888 297.652C326.405 282.454 341.34 266.105 354.481 247.757C357.529 243.512 359.06 241.033 360.592 237.912C364.53 229.861 366.382 221.854 366.367 212.899C366.367 204.556 364.792 197.147 361.394 189.563C359.76 185.902 358.2 183.277 354.699 178.289C341.806 159.926 327.498 143.927 310.055 128.379C283.014 104.285 250.898 84.5221 215.034 69.8934C207.26 66.7285 199.603 63.9427 190.385 60.9237C170.871 54.55 146.718 49.0224 126.285 46.2658C123.076 45.8282 118.715 45.5803 116.44 45.697Z" fill="#0B84F3" fill-opacity="0.2"/>
-<path xmlns="http://www.w3.org/2000/svg" d="M92.3905 0.603638C83.5124 1.08554 76.358 2.49417 69.1481 5.2373C65.5523 6.59033 59.6583 9.53735 56.4148 11.5762C42.8474 20.0836 32.5051 32.8724 27.1115 47.7558C26.0365 50.7028 23.1266 60.0998 21.2546 66.5684C8.78078 109.81 1.70055 157.092 0.180713 207.135C-0.0602375 215.105 -0.0602375 234.084 0.180713 241.925C1.20012 275.102 4.36954 305.053 10.1153 335.599C12.4506 347.961 16.1946 364.568 18.3632 372.112C22.793 387.44 31.8379 400.488 44.7009 410.052C53.3195 416.465 63.1058 420.765 73.9485 422.878C79.1753 423.897 86.0702 424.361 91.1487 424.027C98.1733 423.564 112.111 421.692 123.436 419.672C174.48 410.571 221.632 394.279 264.392 370.963C291.471 356.19 314.621 340.195 336.955 320.789C359.215 301.476 378.194 280.699 394.894 257.382C398.768 251.989 400.714 248.838 402.66 244.872C407.665 234.64 410.018 224.465 410 213.085C410 202.483 407.998 193.067 403.68 183.429C401.604 178.777 399.62 175.441 395.172 169.102C378.788 145.767 360.605 125.434 338.438 105.676C304.074 75.0573 263.261 49.9428 217.685 31.3526C207.806 27.3306 198.075 23.7905 186.361 19.9538C161.562 11.8542 130.868 4.82956 104.901 1.32651C100.824 0.770477 95.2819 0.455353 92.3905 0.603638Z" fill="#0B84F3" fill-opacity="0.1"/>
-<path xmlns="http://www.w3.org/2000/svg" d="M141.332 92.4681C136.307 92.7408 132.259 93.5379 128.179 95.0902C126.144 95.8559 122.809 97.5236 120.973 98.6774C113.295 103.492 107.443 110.729 104.391 119.151C103.782 120.819 102.136 126.137 101.076 129.797C94.0174 154.267 90.0107 181.023 89.1506 209.343C89.0143 213.853 89.0143 224.593 89.1506 229.03C89.7275 247.804 91.5211 264.754 94.7725 282.039C96.0941 289.035 98.2128 298.433 99.44 302.702C101.947 311.376 107.065 318.76 114.344 324.172C119.221 327.801 124.759 330.235 130.895 331.43C133.853 332.007 137.755 332.269 140.629 332.081C144.604 331.818 152.491 330.759 158.9 329.616C187.786 324.466 214.469 315.246 238.666 302.052C253.99 293.692 267.09 284.641 279.729 273.659C292.326 262.73 303.066 250.972 312.516 237.777C314.708 234.725 315.81 232.942 316.911 230.698C319.743 224.908 321.075 219.15 321.064 212.71C321.064 206.71 319.932 201.382 317.488 195.928C316.313 193.295 315.191 191.407 312.674 187.82C303.402 174.615 293.112 163.109 280.568 151.928C261.122 134.601 238.026 120.389 212.235 109.869C206.644 107.593 201.138 105.589 194.509 103.418C180.475 98.8347 163.106 94.8595 148.411 92.8771C146.104 92.5625 142.968 92.3842 141.332 92.4681Z" fill="#0B84F3"/>
-</g></svg>
-</span><span>Remotion</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--capcut"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" transform="translate(0 2.58) scale(.9425)" d="M25.462 4.15V.18l-4.773 2.508v-.15C20.69.954 19.554 0 17.912 0H2.778C1.045 0 0 .955 0 2.537v4.009L6.688 10 0 13.49v4C0 19.047 1.052 20 2.778 20h15.13c1.642 0 2.778-.955 2.778-2.507v-.208l4.775 2.536v-4.03l-11.103-5.79zm-14.955 7.822 8.208 4.297H2.271zm8.149-8.24-8.15 4.27-8.236-4.27z"/></svg>
-</span><span>CapCut</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--davinciresolve"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.621 0 5.977.004c-1.37 0-2.756.345-3.762 1.11a4.925 4.925 0 0 0-1.61 2.003C.233 3.93 0 5.02 0 5.951l.012 12.2c.002 1.604.479 3.057 1.461 4.112.984 1.056 2.462 1.683 4.331 1.691L16.856 24c1.26.005 3.095-.036 4.303-.714 1.075-.605 2.025-1.556 2.497-2.984.278-.84.345-2.084.344-3.147l-.021-11.13c-.002-.888-.15-2.023-.547-2.934-.425-.976-1.181-1.815-2.322-2.425C20.353.26 19.123 0 17.622 0zm0 .93c1.378 0 2.538.295 3.04.565.977.523 1.544 1.166 1.889 1.96.315.721.47 1.793.473 2.572l.018 11.13c.002 1.013-.097 2.257-.298 2.86-.396 1.202-1.146 1.946-2.063 2.462-.814.457-2.612.593-3.82.588l-11.05-.044c-1.657-.007-2.832-.534-3.626-1.386-.792-.851-1.212-2.06-1.212-3.485L.999 5.95c0-.829.196-1.827.474-2.437.345-.757.75-1.207 1.365-1.674C3.585 1.27 4.868.97 6.08.97zm-5.66 3.423c-1.976.089-3.204 1.658-3.214 3.29.019 1.443 1.635 3.481 2.884 4.53.12.099.154.109.33.18.062.025.198-.047.327-.135.36-.245.993-.947 1.648-1.738a7.67 7.67 0 0 0 1.031-1.683c.409-.89.261-1.599.235-1.888a3.983 3.983 0 0 0-.99-1.692 3.36 3.36 0 0 0-2.251-.864zm4.172 7.922a10.185 10.185 0 0 0-3.244.61c-.15.058-.26.1-.374.17-.057.036-.11.135-.105.292.017.433.29 1.278.624 2.27.384 1.135 1.066 2.27 1.844 2.74a3.23 3.23 0 0 0 2.53.342c.832-.243 1.595-.868 1.962-1.546.986-1.818.19-3.548-1.121-4.417-.447-.296-1.133-.445-1.89-.46-.074 0-.15-.002-.226-.001zm-8.432.038a6.201 6.201 0 0 0-.752.047c-.596.078-.932.273-1.29.51a3.177 3.177 0 0 0-1.365 1.979c-.075.552-.086 1.053.033 1.507.433 1.389 1.326 2.222 2.847 2.452.636.028 1.37-.063 1.99-.45 1.269-.782 2.08-3.17 2.412-4.742.053-.176.035-.357-.013-.42-.005-.067-.044-.113-.19-.183-.398-.192-1.32-.417-2.375-.6a7.68 7.68 0 0 0-1.297-.1z"/></svg></span><span>DaVinci Resolve</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--youtube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span><span>YouTube</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--tiktok"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span>TikTok</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></span><span>Instagram</span></span></div><span class="case-link">Ver aplicação <svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M7 7h10v10" />
-  <path d="M7 17 17 7" />
-</svg></span></div></a><a class="application-card application-card--consultorias" href="/para/consultorias/" data-attribution-link data-segment-link="consultorias"><div class="case-intro"><p class="case-audience"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 12h.01" />
-  <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
-  <path d="M22 13a18.15 18.15 0 0 1-20 0" />
-  <rect width="20" height="14" x="2" y="6" rx="2" />
-</svg><span>Consultorias com equipes enxutas</span></p><h3>Da entrevista à apresentação.</h3></div><ol class="case-pipeline" aria-label="Fluxo ilustrativo para Consultorias com equipes enxutas"><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">01</span><span>Método</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li><li class="case-stage--agent"><span class="case-step-number" aria-hidden="true">02</span><span>Evidências</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg>Agente</small></li><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">03</span><span>Análise</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li><li class="case-stage--agent"><span class="case-step-number" aria-hidden="true">04</span><span>Entregável</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg>Agente</small></li><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">05</span><span>Entrega</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li></ol><div class="case-destination"><div class="tool-marks compact"><span class="tool-mark"><span class="brand-symbol brand-symbol--microsoftexcel"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23 1.5q.41 0 .7.3.3.29.3.7v19q0 .41-.3.7-.29.3-.7.3H7q-.41 0-.7-.3-.3-.29-.3-.7V18H1q-.41 0-.7-.3-.3-.29-.3-.7V7q0-.41.3-.7Q.58 6 1 6h5V2.5q0-.41.3-.7.29-.3.7-.3zM6 13.28l1.42 2.66h2.14l-2.38-3.87 2.34-3.8H7.46l-1.3 2.4-.05.08-.04.09-.64-1.28-.66-1.29H2.59l2.27 3.82-2.48 3.85h2.16zM14.25 21v-3H7.5v3zm0-4.5v-3.75H12v3.75zm0-5.25V7.5H12v3.75zm0-5.25V3H7.5v3zm8.25 15v-3h-6.75v3zm0-4.5v-3.75h-6.75v3.75zm0-5.25V7.5h-6.75v3.75zm0-5.25V3h-6.75v3Z"/></svg></span><span>Excel</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--microsoftpowerpoint"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 1.5q1.453 0 2.795.375 1.342.375 2.508 1.06 1.166.686 2.12 1.641.956.955 1.641 2.121.686 1.166 1.061 2.508Q24 10.547 24 12q0 1.453-.375 2.795-.375 1.342-1.06 2.508-.686 1.166-1.641 2.12-.955.956-2.121 1.641-1.166.686-2.508 1.061-1.342.375-2.795.375-1.29 0-2.52-.305-1.23-.304-2.337-.884-1.108-.58-2.063-1.418-.955-.838-1.693-1.893H.997q-.411 0-.704-.293T0 17.004V6.996q0-.41.293-.703T.996 6h3.89q.739-1.055 1.694-1.893.955-.837 2.063-1.418 1.107-.58 2.337-.884Q12.21 1.5 13.5 1.5zm.75 1.535v8.215h8.215q-.14-1.64-.826-3.076-.686-1.436-1.782-2.531-1.095-1.096-2.537-1.782-1.441-.685-3.07-.826zm-5.262 7.57q0-.68-.228-1.166-.229-.486-.627-.79-.399-.305-.938-.446-.539-.14-1.172-.14H2.848v7.863h1.84v-2.742H5.93q.574 0 1.119-.17t.978-.493q.434-.322.698-.802.263-.48.263-1.114zM13.5 21q1.172 0 2.262-.287t2.056-.82q.967-.534 1.776-1.278.808-.744 1.418-1.664.61-.92.984-1.986.375-1.067.469-2.227h-9.703V3.035q-1.735.14-3.27.908T6.797 6h4.207q.41 0 .703.293t.293.703v10.008q0 .41-.293.703t-.703.293H6.797q.644.715 1.412 1.271.768.557 1.623.944.855.387 1.781.586Q12.54 21 13.5 21zM5.812 9.598q.575 0 .915.228.34.229.34.838 0 .27-.124.44-.123.17-.31.275-.188.105-.422.146-.234.041-.445.041H4.687V9.598Z"/></svg></span><span>PowerPoint</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--zoom"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.033 14.649H.743a.74.74 0 0 1-.686-.458.74.74 0 0 1 .16-.808L3.19 10.41H1.06A1.06 1.06 0 0 1 0 9.35h3.957c.301 0 .57.18.686.458a.74.74 0 0 1-.161.808L1.51 13.59h2.464c.585 0 1.06.475 1.06 1.06zM24 11.338c0-1.14-.927-2.066-2.066-2.066-.61 0-1.158.265-1.537.686a2.061 2.061 0 0 0-1.536-.686c-1.14 0-2.066.926-2.066 2.066v3.311a1.06 1.06 0 0 0 1.06-1.06v-2.251a1.004 1.004 0 0 1 2.013 0v2.251c0 .586.474 1.06 1.06 1.06v-3.311a1.004 1.004 0 0 1 2.012 0v2.251c0 .586.475 1.06 1.06 1.06zM16.265 12a2.728 2.728 0 1 1-5.457 0 2.728 2.728 0 0 1 5.457 0zm-1.06 0a1.669 1.669 0 1 0-3.338 0 1.669 1.669 0 0 0 3.338 0zm-4.82 0a2.728 2.728 0 1 1-5.458 0 2.728 2.728 0 0 1 5.457 0zm-1.06 0a1.669 1.669 0 1 0-3.338 0 1.669 1.669 0 0 0 3.338 0z"/></svg></span><span>Zoom</span></span></div><span class="case-link">Ver aplicação <svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M7 7h10v10" />
-  <path d="M7 17 17 7" />
-</svg></span></div></a><a class="application-card application-card--agencias" href="/para/agencias/" data-attribution-link data-segment-link="agencias"><div class="case-intro"><p class="case-audience"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" />
-  <path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14" />
-  <path d="M8 6v8" />
-</svg><span>Agências de publicidade e marketing</span></p><h3>Peças e ajustes com o contexto da conta.</h3></div><ol class="case-pipeline" aria-label="Fluxo ilustrativo para Agências de publicidade e marketing"><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">01</span><span>Briefing</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li><li class="case-stage--agent"><span class="case-step-number" aria-hidden="true">02</span><span>Produção</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg>Agente</small></li><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">03</span><span>Direção</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li><li class="case-stage--agent"><span class="case-step-number" aria-hidden="true">04</span><span>Ajustes</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg>Agente</small></li><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">05</span><span>Aprovação</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li></ol><div class="case-destination"><div class="tool-marks compact"><span class="tool-mark"><span class="brand-symbol brand-symbol--trello"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.147 0H2.853A2.86 2.86 0 000 2.853v18.294A2.86 2.86 0 002.853 24h18.294A2.86 2.86 0 0024 21.147V2.853A2.86 2.86 0 0021.147 0zM10.34 17.287a.953.953 0 01-.953.953h-4a.954.954 0 01-.954-.953V5.38a.953.953 0 01.954-.953h4a.954.954 0 01.953.953zm9.233-5.467a.944.944 0 01-.953.947h-4a.947.947 0 01-.953-.947V5.38a.953.953 0 01.953-.953h4a.954.954 0 01.953.953z"/></svg></span><span>Trello</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--slack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg></span><span>Slack</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--canva"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zM6.962 7.68c.754 0 1.337.549 1.405 1.2.069.583-.171 1.097-.822 1.406-.343.171-.48.172-.549.069-.034-.069 0-.137.069-.206.617-.514.617-.926.548-1.508-.034-.378-.308-.618-.583-.618-1.2 0-2.914 2.674-2.674 4.629.103.754.549 1.646 1.509 1.646.308 0 .65-.103.96-.24.5-.264.799-.47 1.097-.8-.073-.885.704-2.046 1.851-2.046.515 0 .926.205.96.583.068.514-.377.582-.514.582s-.378-.034-.378-.17c-.034-.138.309-.07.275-.378-.035-.206-.24-.274-.446-.274-.72 0-1.131.994-1.029 1.611.035.275.172.549.447.549.205 0 .514-.31.617-.755.068-.308.343-.514.583-.514.102 0 .17.034.205.171v.138c-.034.137-.137.548-.102.651 0 .069.034.171.17.171.092 0 .436-.18.777-.459.117-.59.253-1.298.253-1.357.034-.24.137-.48.617-.48.103 0 .171.034.205.171v.138l-.136.617c.445-.583 1.097-.994 1.508-.994.172 0 .309.102.309.274 0 .103 0 .274-.069.446-.137.377-.309.96-.412 1.474 0 .137.035.274.207.274.171 0 .685-.206 1.096-.754l.007-.004c-.002-.068-.007-.134-.007-.202 0-.411.035-.754.104-.994.068-.274.411-.514.617-.514.103 0 .205.069.205.171 0 .035 0 .103-.034.137-.137.446-.24.857-.24 1.269 0 .24.034.582.102.788 0 .034.035.069.07.069.068 0 .548-.445.89-1.028-.308-.206-.48-.549-.48-.96 0-.72.446-1.097.858-1.097.343 0 .617.24.617.72 0 .308-.103.65-.274.96h.102a.77.77 0 0 0 .584-.24.293.293 0 0 1 .134-.117c.335-.425.83-.74 1.41-.74.48 0 .924.205.959.582.068.515-.378.618-.515.618l-.002-.002c-.138 0-.377-.035-.377-.172 0-.137.309-.068.274-.376-.034-.206-.24-.275-.446-.275-.686 0-1.13.891-1.028 1.611.034.275.171.583.445.583.206 0 .515-.308.652-.754.068-.274.343-.514.583-.514.103 0 .17.034.205.171 0 .069 0 .206-.137.652-.17.308-.171.48-.137.617.034.274.171.48.309.583.034.034.068.102.068.102 0 .069-.034.138-.137.138-.034 0-.068 0-.103-.035-.514-.205-.72-.548-.789-.891-.205.24-.445.377-.72.377-.445 0-.89-.411-.96-.926a1.609 1.609 0 0 1 .075-.649c-.203.13-.422.203-.623.203h-.17c-.447.652-.927 1.098-1.27 1.303a.896.896 0 0 1-.377.104c-.068 0-.171-.035-.205-.104-.095-.152-.156-.392-.193-.667-.481.527-1.145.805-1.453.805-.343 0-.548-.206-.582-.55v-.376c.102-.754.377-1.2.377-1.337a.074.074 0 0 0-.069-.07c-.24 0-1.028.824-1.166 1.373l-.103.445c-.068.309-.377.515-.582.515-.103 0-.172-.035-.206-.172v-.137l.046-.233c-.435.31-.87.508-1.075.508-.308 0-.48-.172-.514-.412-.206.274-.445.412-.754.412-.352 0-.696-.24-.862-.593-.244.275-.523.553-.852.764-.48.309-1.028.549-1.68.549-.582 0-1.097-.309-1.371-.583-.412-.377-.651-.96-.686-1.509-.205-1.68.823-3.84 2.4-4.8.378-.205.755-.343 1.132-.343zm9.77 3.291c-.104 0-.172.172-.172.343 0 .274.137.583.309.755a1.74 1.74 0 0 0 .102-.583c0-.343-.137-.515-.24-.515z"/></svg></span><span>Canva</span></span></div><span class="case-link">Ver aplicação <svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M7 7h10v10" />
-  <path d="M7 17 17 7" />
-</svg></span></div></a><a class="application-card application-card--advocacia" href="/para/advocacia/" data-attribution-link data-segment-link="advocacia"><div class="case-intro"><p class="case-audience"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 3v18" />
-  <path d="m19 8 3 8a5 5 0 0 1-6 0zV7" />
-  <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1" />
-  <path d="m5 8 3 8a5 5 0 0 1-6 0zV7" />
-  <path d="M7 21h10" />
-</svg><span>Escritórios de advocacia</span></p><h3>Documentos em ordem para analisar o caso.</h3></div><ol class="case-pipeline" aria-label="Fluxo ilustrativo para Escritórios de advocacia"><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">01</span><span>Documentos</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li><li class="case-stage--agent"><span class="case-step-number" aria-hidden="true">02</span><span>Organização</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg>Agente</small></li><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">03</span><span>Análise</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li><li class="case-stage--agent"><span class="case-step-number" aria-hidden="true">04</span><span>Minuta</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 8V4H8" />
-  <rect width="16" height="12" x="4" y="8" rx="2" />
-  <path d="M2 14h2" />
-  <path d="M20 14h2" />
-  <path d="M15 13v2" />
-  <path d="M9 13v2" />
-</svg>Agente</small></li><li class="case-stage--human"><span class="case-step-number" aria-hidden="true">05</span><span>Revisão</span><small class="case-actor"><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <circle cx="12" cy="8" r="5" />
-  <path d="M20 21a8 8 0 0 0-16 0" />
-</svg>Pessoa</small></li></ol><div class="case-destination"><div class="tool-marks compact"><span class="tool-mark"><span class="brand-symbol brand-symbol--microsoftword"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.004 1.5q.41 0 .703.293t.293.703v19.008q0 .41-.293.703t-.703.293H6.996q-.41 0-.703-.293T6 21.504V18H.996q-.41 0-.703-.293T0 17.004V6.996q0-.41.293-.703T.996 6H6V2.496q0-.41.293-.703t.703-.293zM6.035 11.203l1.442 4.735h1.64l1.57-7.876H9.036l-.937 4.653-1.325-4.5H5.38l-1.406 4.523-.938-4.675H1.312l1.57 7.874h1.641zM22.5 21v-3h-15v3zm0-4.5v-3.75H12v3.75zm0-5.25V7.5H12v3.75zm0-5.25V3h-15v3Z"/></svg></span><span>Word</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--adobeacrobatreader"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.63 15.3c-.71-.745-2.166-1.17-4.224-1.17-1.1 0-2.377.106-3.761.354a19.443 19.443 0 0 1-2.307-2.661c-.532-.71-.994-1.49-1.42-2.236.817-2.484 1.207-4.507 1.207-5.962 0-1.632-.603-3.336-2.342-3.336-.532 0-1.065.32-1.349.781-.78 1.384-.425 4.4.923 7.381a60.277 60.277 0 0 1-1.703 4.507c-.568 1.349-1.207 2.733-1.917 4.01C2.834 18.53.314 20.34.03 21.758c-.106.533.071 1.03.462 1.42.142.107.639.533 1.49.533 2.59 0 5.323-4.188 6.707-6.707 1.065-.355 2.13-.71 3.194-.994a34.963 34.963 0 0 1 3.407-.745c2.732 2.448 5.145 2.839 6.352 2.839 1.49 0 2.023-.604 2.2-1.1.32-.64.106-1.349-.213-1.704zm-1.42 1.03c-.107.532-.64.887-1.384.887-.213 0-.39-.036-.604-.071-1.348-.32-2.626-.994-3.903-2.059a17.717 17.717 0 0 1 2.98-.248c.746 0 1.385.035 1.81.142.497.106 1.278.426 1.1 1.348zm-7.524-1.668a38.01 38.01 0 0 0-2.945.674 39.68 39.68 0 0 0-2.52.745 40.05 40.05 0 0 0 1.207-2.555c.426-.994.78-2.023 1.136-2.981.354.603.745 1.207 1.135 1.739a50.127 50.127 0 0 0 1.987 2.378zM10.038 1.46a.768.768 0 0 1 .674-.425c.745 0 .887.851.887 1.526 0 1.135-.355 2.874-.958 4.861-1.03-2.768-1.1-5.074-.603-5.962zM6.134 17.997c-1.81 2.981-3.549 4.826-4.613 4.826a.872.872 0 0 1-.532-.177c-.213-.213-.32-.461-.249-.745.213-1.065 2.271-2.555 5.394-3.904Z"/></svg></span><span>Acrobat</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--googledrive"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.01 1.485c-2.082 0-3.754.02-3.743.047.01.02 1.708 3.001 3.774 6.62l3.76 6.574h3.76c2.081 0 3.753-.02 3.742-.047-.005-.02-1.708-3.001-3.775-6.62l-3.76-6.574zm-4.76 1.73a789.828 789.861 0 0 0-3.63 6.319L0 15.868l1.89 3.298 1.885 3.297 3.62-6.335 3.618-6.33-1.88-3.287C8.1 4.704 7.255 3.22 7.25 3.214zm2.259 12.653-.203.348c-.114.198-.96 1.672-1.88 3.287a423.93 423.948 0 0 1-1.698 2.97c-.01.026 3.24.042 7.222.042h7.244l1.796-3.157c.992-1.734 1.85-3.23 1.906-3.323l.104-.167h-7.249z"/></svg></span><span>Drive</span></span></div><span class="case-link">Ver aplicação <svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M7 7h10v10" />
-  <path d="M7 17 17 7" />
-</svg></span></div></a></div></div></section>
-<section class="section home-technology dark" aria-labelledby="technology-title"><div class="wrap">
-<div class="section-head"><div><p class="eyebrow">A parte técnica fica com a Mescla</p><h2 id="technology-title">Você não precisa virar<br>especialista em IA.</h2></div><p class="lead">Você traz o conhecimento do negócio e revisa as entregas. A Mescla escolhe, conecta e configura a tecnologia prevista no projeto.</p></div>
-<p class="technology-scope">Exemplos de ferramentas. Integrações, arquivos e permissões são avaliados por projeto.</p><div class="home-tool-groups"><div class="home-tool-group"><h3>IAs</h3><div class="tool-marks compact"><span class="tool-mark"><span class="brand-symbol brand-symbol--openai"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg></span><span>ChatGPT</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--claude"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/></svg></span><span>Claude</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--googlegemini"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"/></svg></span><span>Gemini</span></span></div></div><div class="home-tool-group"><h3>Conhecimento e gestão</h3><div class="tool-marks compact"><span class="tool-mark"><span class="brand-symbol brand-symbol--googledrive"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.01 1.485c-2.082 0-3.754.02-3.743.047.01.02 1.708 3.001 3.774 6.62l3.76 6.574h3.76c2.081 0 3.753-.02 3.742-.047-.005-.02-1.708-3.001-3.775-6.62l-3.76-6.574zm-4.76 1.73a789.828 789.861 0 0 0-3.63 6.319L0 15.868l1.89 3.298 1.885 3.297 3.62-6.335 3.618-6.33-1.88-3.287C8.1 4.704 7.255 3.22 7.25 3.214zm2.259 12.653-.203.348c-.114.198-.96 1.672-1.88 3.287a423.93 423.948 0 0 1-1.698 2.97c-.01.026 3.24.042 7.222.042h7.244l1.796-3.157c.992-1.734 1.85-3.23 1.906-3.323l.104-.167h-7.249z"/></svg></span><span>Drive</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--notion"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></span><span>Notion</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--microsoftword"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.004 1.5q.41 0 .703.293t.293.703v19.008q0 .41-.293.703t-.703.293H6.996q-.41 0-.703-.293T6 21.504V18H.996q-.41 0-.703-.293T0 17.004V6.996q0-.41.293-.703T.996 6H6V2.496q0-.41.293-.703t.703-.293zM6.035 11.203l1.442 4.735h1.64l1.57-7.876H9.036l-.937 4.653-1.325-4.5H5.38l-1.406 4.523-.938-4.675H1.312l1.57 7.874h1.641zM22.5 21v-3h-15v3zm0-4.5v-3.75H12v3.75zm0-5.25V7.5H12v3.75zm0-5.25V3h-15v3Z"/></svg></span><span>Word</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--trello"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.147 0H2.853A2.86 2.86 0 000 2.853v18.294A2.86 2.86 0 002.853 24h18.294A2.86 2.86 0 0024 21.147V2.853A2.86 2.86 0 0021.147 0zM10.34 17.287a.953.953 0 01-.953.953h-4a.954.954 0 01-.954-.953V5.38a.953.953 0 01.954-.953h4a.954.954 0 01.953.953zm9.233-5.467a.944.944 0 01-.953.947h-4a.947.947 0 01-.953-.947V5.38a.953.953 0 01.953-.953h4a.954.954 0 01.953.953z"/></svg></span><span>Trello</span></span></div></div><div class="home-tool-group"><h3>Conteúdo e canais</h3><div class="tool-marks compact"><span class="tool-mark"><span class="brand-symbol brand-symbol--canva"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zM6.962 7.68c.754 0 1.337.549 1.405 1.2.069.583-.171 1.097-.822 1.406-.343.171-.48.172-.549.069-.034-.069 0-.137.069-.206.617-.514.617-.926.548-1.508-.034-.378-.308-.618-.583-.618-1.2 0-2.914 2.674-2.674 4.629.103.754.549 1.646 1.509 1.646.308 0 .65-.103.96-.24.5-.264.799-.47 1.097-.8-.073-.885.704-2.046 1.851-2.046.515 0 .926.205.96.583.068.514-.377.582-.514.582s-.378-.034-.378-.17c-.034-.138.309-.07.275-.378-.035-.206-.24-.274-.446-.274-.72 0-1.131.994-1.029 1.611.035.275.172.549.447.549.205 0 .514-.31.617-.755.068-.308.343-.514.583-.514.102 0 .17.034.205.171v.138c-.034.137-.137.548-.102.651 0 .069.034.171.17.171.092 0 .436-.18.777-.459.117-.59.253-1.298.253-1.357.034-.24.137-.48.617-.48.103 0 .171.034.205.171v.138l-.136.617c.445-.583 1.097-.994 1.508-.994.172 0 .309.102.309.274 0 .103 0 .274-.069.446-.137.377-.309.96-.412 1.474 0 .137.035.274.207.274.171 0 .685-.206 1.096-.754l.007-.004c-.002-.068-.007-.134-.007-.202 0-.411.035-.754.104-.994.068-.274.411-.514.617-.514.103 0 .205.069.205.171 0 .035 0 .103-.034.137-.137.446-.24.857-.24 1.269 0 .24.034.582.102.788 0 .034.035.069.07.069.068 0 .548-.445.89-1.028-.308-.206-.48-.549-.48-.96 0-.72.446-1.097.858-1.097.343 0 .617.24.617.72 0 .308-.103.65-.274.96h.102a.77.77 0 0 0 .584-.24.293.293 0 0 1 .134-.117c.335-.425.83-.74 1.41-.74.48 0 .924.205.959.582.068.515-.378.618-.515.618l-.002-.002c-.138 0-.377-.035-.377-.172 0-.137.309-.068.274-.376-.034-.206-.24-.275-.446-.275-.686 0-1.13.891-1.028 1.611.034.275.171.583.445.583.206 0 .515-.308.652-.754.068-.274.343-.514.583-.514.103 0 .17.034.205.171 0 .069 0 .206-.137.652-.17.308-.171.48-.137.617.034.274.171.48.309.583.034.034.068.102.068.102 0 .069-.034.138-.137.138-.034 0-.068 0-.103-.035-.514-.205-.72-.548-.789-.891-.205.24-.445.377-.72.377-.445 0-.89-.411-.96-.926a1.609 1.609 0 0 1 .075-.649c-.203.13-.422.203-.623.203h-.17c-.447.652-.927 1.098-1.27 1.303a.896.896 0 0 1-.377.104c-.068 0-.171-.035-.205-.104-.095-.152-.156-.392-.193-.667-.481.527-1.145.805-1.453.805-.343 0-.548-.206-.582-.55v-.376c.102-.754.377-1.2.377-1.337a.074.074 0 0 0-.069-.07c-.24 0-1.028.824-1.166 1.373l-.103.445c-.068.309-.377.515-.582.515-.103 0-.172-.035-.206-.172v-.137l.046-.233c-.435.31-.87.508-1.075.508-.308 0-.48-.172-.514-.412-.206.274-.445.412-.754.412-.352 0-.696-.24-.862-.593-.244.275-.523.553-.852.764-.48.309-1.028.549-1.68.549-.582 0-1.097-.309-1.371-.583-.412-.377-.651-.96-.686-1.509-.205-1.68.823-3.84 2.4-4.8.378-.205.755-.343 1.132-.343zm9.77 3.291c-.104 0-.172.172-.172.343 0 .274.137.583.309.755a1.74 1.74 0 0 0 .102-.583c0-.343-.137-.515-.24-.515z"/></svg></span><span>Canva</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--youtube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span><span>YouTube</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></span><span>Instagram</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--slack"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg></span><span>Slack</span></span><span class="tool-mark"><span class="brand-symbol brand-symbol--whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span>WhatsApp</span></span></div></div></div>
-<p class="technical-vocabulary">RAG, MCP, APIs, tokens, parâmetros, ontologias e repositórios: a configuração fica com a Mescla.</p>
-<details class="environment-options"><summary><span><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
-  <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
-  <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
-</svg>Ambientes que podemos avaliar</span></summary><div class="environment-content"><p>Você não precisa escolher uma plataforma antes. Avaliamos o ambiente conforme a equipe, o compartilhamento dos agentes, a memória, os acessos e os custos do projeto.</p><div class="platform-grid"><a class="platform-item" href="https://github.com/block/buzz" target="_blank" rel="noopener noreferrer"><span class="platform-mark"><img src="/assets/platforms/buzz.svg" width="44" height="44" alt="" loading="lazy" decoding="async"></span><span>Buzz</span><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M7 7h10v10" />
-  <path d="M7 17 17 7" />
-</svg></a><a class="platform-item" href="https://docs.openclaw.ai/start/teams" target="_blank" rel="noopener noreferrer"><span class="platform-mark"><img src="/assets/platforms/openclaw.svg" width="44" height="44" alt="" loading="lazy" decoding="async"></span><span>OpenClaw</span><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M7 7h10v10" />
-  <path d="M7 17 17 7" />
-</svg></a><a class="platform-item" href="https://www.hyperagent.com/" target="_blank" rel="noopener noreferrer"><span class="platform-mark"><img src="/assets/platforms/hyperagent.svg" width="44" height="44" alt="" loading="lazy" decoding="async"></span><span>Hyperagent</span><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M7 7h10v10" />
-  <path d="M7 17 17 7" />
-</svg></a><a class="platform-item" href="https://hermes-agent.nousresearch.com/" target="_blank" rel="noopener noreferrer"><span class="platform-mark"><img src="/assets/platforms/hermes.png" width="44" height="44" alt="" loading="lazy" decoding="async"></span><span>Hermes</span><svg aria-hidden="true" focusable="false"
-  class="ui-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M7 7h10v10" />
-  <path d="M7 17 17 7" />
-</svg></a></div><p class="environment-note">Exemplos para avaliação. Os recursos e as condições variam por ambiente; os links abrem os sites das ferramentas.</p></div></details>
-</div></section>
-<section class="section home-learning" id="aprender" aria-labelledby="learning-title"><div class="wrap pathway-grid"><div><p class="eyebrow">Aprender com a Mescla</p><h2 id="learning-title">Aprenda a construir.<br>Comece pelo seu trabalho.</h2><p class="lead">Transforme uma necessidade real em uma solução que você consegue usar, revisar e melhorar.</p><p>Estamos preparando encontros práticos para quem quer aplicar IA com mais autonomia. Conte o que você quer aprender e se o interesse é seu ou da sua equipe.</p><a class="btn" href="https://wa.me/5561993973584?text=Tenho%20interesse%20em%20aprender%20a%20construir%20solu%C3%A7%C3%B5es%20com%20IA%20com%20a%20Mescla.%20Tema%20que%20quero%20aprender%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Tenho interesse em aprender a construir soluções com IA com a Mescla. Tema que quero aprender:" data-placement="learning" aria-describedby="learning-contact-note"><span class="brand-symbol brand-symbol--whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span>Quero saber dos próximos encontros</span></a><p class="contact-expectation" id="learning-contact-note">Converse pelo WhatsApp sobre seu interesse.<br>Formatos, datas e valores ainda serão definidos.</p></div><div class="learning-outline"><p class="eyebrow">Da necessidade à prática</p><ol><li><strong>Escolher um problema real</strong><span>Entender a rotina e o resultado que faria diferença.</span></li><li><strong>Construir com contexto</strong><span>Organizar referências e orientar os agentes.</span></li><li><strong>Testar e melhorar</strong><span>Revisar as entregas e reconhecer os limites da solução.</span></li></ol><p>Para quem quer aprender a fazer — sozinho ou com uma equipe.</p></div></div></section>
-<section class="section home-prisma" id="prisma" aria-labelledby="prisma-title"><div class="wrap pathway-grid"><div><p class="eyebrow">Prisma · da Mescla</p><h2 id="prisma-title">Uma decisão.<br>Diferentes perspectivas.</h2><p class="lead">Estamos preparando uma experiência gratuita para ajudar você a explorar alternativas antes de decidir.</p><p>A proposta: especialistas de IA examinam sua questão, confrontam argumentos e apresentam riscos, incertezas e próximos passos. A decisão continua com você.</p><a class="btn" href="/prisma/" data-attribution-link>Conheça os especialistas do Prisma <span aria-hidden="true">↗</span></a><p class="contact-expectation" id="prisma-contact-note">Em preparação. O acesso ainda não está disponível.<br>Conheça o método e os especialistas na página do Prisma.</p></div><div class="prisma-outline"><span class="pathway-status">Em preparação</span><p class="prisma-question">O que muda quando você olha a mesma decisão por outros ângulos?</p><ul><li>Cliente e produto</li><li>Estratégia e futuros</li><li>Economia e preço</li><li>Aquisição e distribuição</li><li>Tecnologia e operação</li><li>Confiança e riscos</li></ul><p>Perspectivas que se complementam e também podem discordar.</p></div></div></section>
-<section class="section home-questions" id="perguntas" aria-labelledby="faq-title"><div class="wrap faq-grid"><div><p class="eyebrow">Antes de começar</p><h2 id="faq-title">Boas perguntas.<br>Respostas diretas.</h2></div><div class="faq-list"><details open><summary>Posso aprender a construir, em vez de contratar a implantação?</summary><div class="home-answer"><p>Sim. Estamos preparando encontros práticos de aprendizagem. Conte pelo WhatsApp o que você quer aprender; formato, datas e valores serão apresentados antes de qualquer inscrição.</p></div></details><details><summary>Já tenho ChatGPT, Claude ou Gemini. O que a Mescla acrescenta?</summary><div class="home-answer"><p>Se o seu uso atual já resolve o trabalho, ele pode ser suficiente. A Mescla entra para implantar uma rotina com agentes compartilhados, referências do negócio e revisão pela equipe. Avaliamos com você se esse trabalho de implantação faz sentido.</p></div></details><details><summary>Vocês atendem pessoas físicas ou só empresas?</summary><div class="home-answer"><p>Atendemos pessoas físicas e pessoas jurídicas. Se você trabalha sozinho, montamos e configuramos um time de agentes para apoiar sua rotina, sob sua orientação. Se já tem uma equipe, implantamos agentes compartilhados e processos para o trabalho em conjunto. Não é preciso ter CNPJ para conversar com a Mescla.</p></div></details><details><summary>Quem pode acessar a memória do negócio?</summary><div class="home-answer"><p>Definimos fontes, responsáveis pela atualização e acessos por equipe ou projeto. Entram os processos, referências e decisões que você autoriza registrar. Conversas pessoais e documentos de outros clientes não entram automaticamente.</p><p>Onde os dados ficam e quais fornecedores participam são definidos antes de conectar suas informações.</p></div></details><details><summary>Quem revisa o trabalho dos agentes?</summary><div class="home-answer"><p>As pessoas responsáveis por cada etapa. Saídas de IA podem conter erros; por isso, configuramos limites e pontos de revisão ou aprovação. Você ou as pessoas responsáveis na equipe orientam, conferem as informações e decidem antes das ações que exigem autorização.</p></div></details><details><summary>Como funciona o investimento?</summary><div class="home-answer"><p>A proposta separa implantação, acompanhamento e custos de ferramentas. Licenças, infraestrutura e consumo de IA são esclarecidos antes de começar, incluindo o que entra no serviço e o que você contrata diretamente.</p></div></details><details><summary>O que acontece depois da implantação?</summary><div class="home-answer"><p>O processo entra em uso com orientação para a equipe. Suporte, ajustes dos agentes e novas integrações dependem do acompanhamento contratado. A evolução começa pela avaliação das entregas.</p></div></details></div></div></section>
-<section class="home-purpose" id="proposito" aria-labelledby="purpose-title"><div class="wrap"><div><p class="eyebrow">Por que existimos</p><h2 id="purpose-title">Ampliar o possível<br>para cada pessoa.</h2></div><p>Aproximamos pessoas e inteligência artificial para dar mais alcance ao que cada um sabe, imagina e quer realizar.</p></div></section>
-<section class="contact home-closing" id="conversar" aria-labelledby="contact-title"><div class="wrap contact-grid"><div><p class="eyebrow">Vamos começar pelo seu trabalho</p><h2 id="contact-title">O que você gostaria<br>de tirar das suas costas?</h2></div><div><p>Trabalhando sozinho ou em equipe, conte uma rotina que você quer melhorar. Vamos entender o que faria diferença e avaliar um primeiro projeto.</p><a class="btn" href="https://wa.me/5561993973584?text=Quero%20conversar%20sobre%20como%20a%20Mescla%20pode%20ajudar%20na%20minha%20rotina.%0A%0AMinha%20atividade%3A%0AO%20trabalho%20que%20quero%20melhorar%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero conversar sobre como a Mescla pode ajudar na minha rotina.
 
-Minha atividade:
-O trabalho que quero melhorar:" data-placement="footer" aria-describedby="closing-contact-note"><span class="brand-symbol brand-symbol--whatsapp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span>Conversar sobre minha rotina</span></a><p class="contact-expectation" id="closing-contact-note">O botão abre o WhatsApp.<br>Você revisa e envia a mensagem.</p></div></div></section></div>
+<section id="seu-time" aria-labelledby="v2-vs-t"><div class="wrap">
+<div data-v2-reveal><p class="v2-eyebrow">A diferença</p><h2 id="v2-vs-t">Tem gente trabalhando sozinha. E tem gente trabalhando com um time de IA.</h2></div>
+<div class="v2-vs">
+<div class="v2-vs-col v2-solo" data-v2-reveal><h3>Trabalhando sozinho</h3><ul><li>Tarefas repetitivas toda semana, na mão</li><li>O conhecimento fica na cabeça de cada um</li><li>Quando alguém sai, o trabalho para</li><li>Crescer exige contratar</li><li>IA é um chat aberto de vez em quando</li></ul></div>
+<div class="v2-vs-col v2-team" data-v2-reveal><h3>Com um time de IA</h3><ul><li>Os agentes adiantam e você revisa</li><li>O conhecimento fica organizado e disponível</li><li>Quando alguém sai, o time continua</li><li>Crescer é escolher o próximo trabalho</li><li>Agentes com papel, limites e revisão</li></ul></div>
+</div>
+<p class="v2-line" data-v2-reveal>O trabalho avança. <em>O conhecimento fica.</em></p>
+</div></section>
+
+<section aria-labelledby="v2-does-t"><div class="wrap">
+<div data-v2-reveal><p class="v2-eyebrow">O que o seu time faz</p><h2 id="v2-does-t">Agentes com função, memória e agenda.</h2></div>
+<div class="v2-grid v2-g3">
+<div class="v2-card" data-v2-reveal><h3>Explique uma vez. O time lembra.</h3><p>Preferências, referências e decisões ficam guardadas.</p></div>
+<div class="v2-card" data-v2-reveal><h3>Está onde você já conversa.</h3><p>WhatsApp, e-mail e as ferramentas da sua equipe.</p></div>
+<div class="v2-card" data-v2-reveal><h3>Trabalha em equipe.</h3><p>Um agente passa o trabalho para o outro, sem você repetir o contexto.</p></div>
+<div class="v2-card" data-v2-reveal><h3>Tem agenda.</h3><p>Relatórios, resumos e acompanhamentos no horário combinado.</p></div>
+<div class="v2-card" data-v2-reveal><h3>Cada agente tem função e responsável.</h3><p>Você sabe quem faz o quê e quem responde por cada agente.</p></div>
+<div class="v2-card" data-v2-reveal><h3>Aproveita o que você já tem.</h3><p>Na maioria dos casos, usamos o plano de IA e as ferramentas que você já paga.</p></div>
+</div>
+</div></section>
+
+<section class="v2-prisma" id="metodo" aria-labelledby="v2-prisma-t"><div class="wrap">
+<div data-v2-reveal><p class="v2-eyebrow">Método Prisma</p><h2 id="v2-prisma-t">Uma luz entra. Um espectro de possibilidades sai.</h2>
+<p class="v2-lead">Como um prisma, olhamos o seu trabalho por vários ângulos antes de escolher qualquer ferramenta. Especialistas humanos e de IA analisam a rotina, separam as oportunidades e mostram o que fazer primeiro.</p><div class="v2-spectrum" aria-hidden="true"></div></div>
+<div class="v2-arch">
+<div class="v2-card v2-main" data-v2-reveal><span class="v2-tag">gratuito · comece aqui</span><h3>Diagnóstico Prisma</h3><p>Você conta como é o seu trabalho. Devolvemos a matriz de prioridades e o primeiro trabalho recomendado.</p></div>
+<div class="v2-card" data-v2-reveal><span class="v2-tag">consultoria e implantação</span><h3>Método Prisma</h3><p>Do entendimento à evolução, em cinco etapas, cada uma com um entregável que você vê.</p></div>
+<div class="v2-card" data-v2-reveal><span class="v2-tag">em preparação</span><h3>Conselho Prisma</h3><p>Especialistas de IA com métodos diferentes analisam uma decisão importante e confrontam argumentos. <a href="/prisma/" data-attribution-link style="color:var(--mare)">Conheça os especialistas</a></p></div>
+</div>
+</div></section>
+
+<section id="diagnostico" aria-labelledby="v2-diag-t"><div class="wrap">
+<div class="v2-diag">
+<div data-v2-reveal><p class="v2-eyebrow">Diagnóstico Prisma · gratuito</p><h2 id="v2-diag-t">Descubra qual rotina melhorar primeiro.</h2>
+<p class="v2-lead">Conte como é o seu trabalho. Analisamos a sua rotina pelo Método Prisma e devolvemos:</p>
+<ul class="v2-list"><li><i>1</i><span>a lista das suas rotinas e onde está o peso;</span></li><li><i>2</i><span>a <strong>matriz de prioridades</strong> do seu trabalho;</span></li><li><i>3</i><span>o primeiro trabalho recomendado, com o que ele exige e o próximo passo.</span></li></ul>
+<div class="v2-actions"><a class="v2-btn" href="https://wa.me/5561993973584?text=Quero%20o%20meu%20Diagn%C3%B3stico%20Prisma.%0A%0AMinha%20atividade%3A%0AO%20trabalho%20que%20mais%20pesa%20hoje%3A" target="_blank" rel="noopener noreferrer" data-contact data-placement="home">Quero o meu Diagnóstico Prisma</a></div></div>
+<div data-v2-reveal>
+<div class="v2-matrix" role="img" aria-label="Matriz de impacto por esforço, exemplo ilustrativo">
+<span class="v2-ax v2-axy">impacto →</span>
+<div class="v2-q v2-q1"><div><b>Comece aqui</b><small>Alto impacto, pouco esforço</small></div><span>Resumo diário de e-mails e reuniões</span></div>
+<div class="v2-q v2-q2"><div><b>Aposta</b><small>Alto impacto, mais esforço</small></div><span>Atendimento com memória de cada cliente</span></div>
+<div class="v2-q v2-q3"><div><b>Quando sobrar tempo</b><small>Pouco impacto, pouco esforço</small></div><span>Organizar arquivos antigos</span></div>
+<div class="v2-q v2-q4"><div><b>Evitar por ora</b><small>Pouco impacto, muito esforço</small></div><span>Automatizar um processo que muda toda semana</span></div>
+<span class="v2-ax v2-axx">esforço →</span>
+</div>
+<p style="margin-top:14px"><span class="v2-tag">exemplo ilustrativo · o seu diagnóstico usa as suas rotinas</span></p>
+</div>
+</div>
+</div></section>
+
+<section aria-labelledby="v2-method-t"><div class="wrap">
+<div data-v2-reveal><p class="v2-eyebrow">Método Prisma · como funciona</p><h2 id="v2-method-t">Antes da ferramenta, a escolha do trabalho.</h2></div>
+<div class="v2-method">
+<div class="v2-card" data-v2-reveal><h3>Entendimento</h3><p>Diagnóstico Prisma e escolha do primeiro trabalho.</p><p class="v2-deliv"><span>Você recebe</span>Matriz de prioridades</p></div>
+<div class="v2-card" data-v2-reveal><h3>Imersão</h3><p>Como a rotina acontece hoje, com os gargalos.</p><p class="v2-deliv"><span>Você recebe</span>Retrato da rotina e medida inicial de tempo ou retrabalho</p></div>
+<div class="v2-card" data-v2-reveal><h3>Desenho</h3><p>Uma tarefa completa, do pedido à entrega.</p><p class="v2-deliv"><span>Você recebe</span>Demonstração do que cada agente faz e de onde você entra</p></div>
+<div class="v2-card" data-v2-reveal><h3>Implantação</h3><p>O time funcionando na rotina real.</p><p class="v2-deliv"><span>Você recebe</span>Piloto com critérios de aceite combinados</p></div>
+<div class="v2-card" data-v2-reveal><h3>Evolução</h3><p>Medir, ajustar e escolher a próxima melhoria.</p><p class="v2-deliv"><span>Você recebe</span>Comparação com o ponto de partida</p></div>
+</div>
+</div></section>
+
+<section aria-labelledby="v2-ctrl-t"><div class="wrap v2-control">
+<div data-v2-reveal><p class="v2-eyebrow">Autonomia com limites e recibo</p><h2 id="v2-ctrl-t">Os agentes fazem. Você decide o que sai para o mundo.</h2></div>
+<ul class="v2-checks">
+<li data-v2-reveal><strong>Mensagem a cliente, pagamento ou publicação passa por você.</strong> O resto o time adianta.</li>
+<li data-v2-reveal><strong>Cada entrega tem recibo:</strong> o que foi feito, com que fonte e quanto custou.</li>
+<li data-v2-reveal><strong>Cada correção vira aprendizado</strong> para o time.</li>
+<li data-v2-reveal><strong>Acessos e limites de gasto</strong> definidos com a sua equipe.</li>
+</ul>
+</div></section>
+
+<section class="v2-own" aria-labelledby="v2-own-t"><div class="wrap">
+<div data-v2-reveal><p class="v2-eyebrow">Seu time, suas contas, seus dados</p><h2 id="v2-own-t">O que construímos fica com você.</h2></div>
+<div class="v2-grid v2-g3">
+<div class="v2-card" data-v2-reveal><h3>No seu nome</h3><p>Contas, documentação e conhecimento organizados em nome do cliente.</p></div>
+<div class="v2-card" data-v2-reveal><h3>Se a ferramenta mudar, o time continua</h3><p>O conhecimento não fica preso a um fornecedor.</p></div>
+<div class="v2-card v2-dark" data-v2-reveal><h3>A parte técnica fica com a Mescla</h3><p>Você não precisa virar especialista em IA.</p></div>
+</div>
+</div></section>
+
+<section id="quem" aria-labelledby="v2-who-t"><div class="wrap v2-who">
+<div class="v2-photo" data-v2-reveal><img src="https://andredemoraes.com/foto-hero.jpg" alt="André de Moraes, fundador da Mescla" width="1067" height="1600" loading="lazy" decoding="async"></div>
+<div data-v2-reveal><p class="v2-eyebrow">Quem está por trás</p><h2 id="v2-who-t">André de Moraes</h2>
+<p class="v2-lead">Fundador da Mescla. Ex-CEO e fundador da Edoo. Constrói agentes de IA desde 2024 e trabalha todos os dias com o próprio time de agentes.</p>
+<p class="v2-quote">“A Mescla usa no próprio trabalho tudo o que implanta para os clientes.”</p></div>
+</div></section>
+
+<section id="segmentos" aria-labelledby="v2-areas-t"><div class="wrap">
+<div data-v2-reveal><p class="v2-eyebrow">Aplicações por área</p><h2 id="v2-areas-t">Veja como um time de IA funciona no seu tipo de trabalho.</h2></div>
+<div class="v2-areas" data-v2-reveal><a href="/para/empreendedores/" data-segment-link data-attribution-link>Empreendedores</a><a href="/para/creators/" data-segment-link data-attribution-link>Creators</a><a href="/para/consultorias/" data-segment-link data-attribution-link>Consultorias com equipes enxutas</a><a href="/para/agencias/" data-segment-link data-attribution-link>Agências de publicidade e marketing</a><a href="/para/advocacia/" data-segment-link data-attribution-link>Escritórios de advocacia</a></div>
+</div></section>
+
+<section aria-labelledby="v2-faq-t"><div class="wrap">
+<div data-v2-reveal><p class="v2-eyebrow">Perguntas</p><h2 id="v2-faq-t">Boas perguntas. Respostas diretas.</h2></div>
+<div style="margin-top:36px">
+<details><summary>O Diagnóstico Prisma é gratuito mesmo?</summary><p>Sim. Você recebe a matriz de prioridades e a recomendação do primeiro trabalho, sem compromisso de contratar.</p></details>
+<details><summary>Meus dados ficam seguros?</summary><p>Os acessos são definidos com você, e as contas e o conhecimento ficam no seu nome. Não compartilhe senhas ou documentos confidenciais no primeiro contato.</p></details>
+<details><summary>Preciso trocar minhas ferramentas?</summary><p>Na maioria dos casos, não. Aproveitamos o que você já usa sempre que possível.</p></details>
+<details><summary>E se a ferramenta mudar?</summary><p>O time e o conhecimento continuam, porque não ficam presos a um fornecedor.</p></details>
+<details><summary>Quanto custa a implantação?</summary><p>Depende do trabalho escolhido. O valor sai do Diagnóstico Prisma, em uma proposta.</p></details>
+</div>
+</div></section>
+
+<section class="v2-final" id="conversar" aria-labelledby="v2-final-t"><div class="wrap">
+<h2 id="v2-final-t">O que você gostaria de tirar das suas costas?</h2>
+<div class="v2-actions"><a class="v2-btn v2-sun" href="https://wa.me/5561993973584?text=Quero%20o%20meu%20Diagn%C3%B3stico%20Prisma.%0A%0AMinha%20atividade%3A%0AO%20trabalho%20que%20mais%20pesa%20hoje%3A" target="_blank" rel="noopener noreferrer" data-contact data-placement="home">Começar pelo Diagnóstico Prisma</a><a class="v2-btn v2-ghost" href="https://wa.me/5561993973584?text=Quero%20conversar%20sobre%20um%20time%20de%20IA%20para%20o%20meu%20trabalho." target="_blank" rel="noopener noreferrer" data-contact data-placement="home">Conversar no WhatsApp</a></div>
+</div></section>
+</div>
+<script>(()=>{const els=document.querySelectorAll('[data-v2-reveal]');if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(e=>e.classList.add('v2-in'));return}const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v2-in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});els.forEach((e,i)=>{e.style.transitionDelay=(i%4)*90+'ms';io.observe(e)})})();</script>
 </main>
 <footer class="footer">
   <div class="wrap footer-grid">

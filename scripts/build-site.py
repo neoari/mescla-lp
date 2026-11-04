@@ -9,6 +9,7 @@ sys.dont_write_bytecode = True
 from segment_visuals import hero_surface, value_section, tools_section, ai_section, pilot_section
 from experience import ui_icon, motion_surface, home_hero
 from home_sections import home_story
+from home_v2 import home_v2, CSS as HOME_V2_CSS
 from prisma_page import render_prisma
 from public_bundle import PUBLIC_FILES
 ROOT=Path(__file__).resolve().parents[1]
@@ -19,7 +20,7 @@ details=json.loads((ROOT/'content/segment-details.json').read_text())
 for segment in segments: segment.update(details[segment['slug']])
 e=lambda s:escape(str(s),quote=True)
 version='2026-09-v7'
-home_version='2026-10-pessoas-e-empresas-v1'
+home_version='2026-11-metodo-prisma-v1'
 style_href='/assets/segments.css?v='+hashlib.sha256((ROOT/'assets/segments.css').read_bytes()).hexdigest()[:12]
 experience_href='/assets/experience.css?v='+hashlib.sha256((ROOT/'assets/experience.css').read_bytes()).hexdigest()[:12]
 scene_version=hashlib.sha256((ROOT/'assets/ribbon-scene.js').read_bytes()).hexdigest()[:12]
@@ -35,7 +36,9 @@ css=re.search(r'<style>(.*?)</style>',home,re.S).group(1)
 font=re.search(r'<link href="https://fonts.googleapis.com/css2[^>]+>',home).group(0)
 brand=lambda href: f'<a class="brand" href="{href}" aria-label="Mescla, página principal"><img class="brand-mark" src="{logo}" width="44" height="44" alt="" decoding="async"><span class="brand-word">mescla</span></a>'
 footer=f'''<footer class="footer"><div class="wrap footer-grid"><div>{brand('/')}<small>mescla.ai · neoari · brasília</small><div class="footer-links"><a href="/#segmentos" data-attribution-link>Outras aplicações</a><a href="/privacidade/" data-attribution-link>Privacidade</a></div></div><p class="definition"><em>mescla</em>, s.f.<br>Tecido feito de fios diferentes.</p></div></footer>'''
-home,count=re.subn(r'<main id="principal">.*?</main>',lambda _: '<main id="principal">\n'+home_hero()+'\n'+home_story(segments,phone)+'\n</main>',home,count=1,flags=re.S)
+home,count=re.subn(r'<main id="principal">.*?</main>',lambda _: '<main id="principal">\n'+home_v2(segments,phone)+'\n</main>',home,count=1,flags=re.S)
+home=re.sub(r'<style id="home-v2">.*?</style>\n?','',home,flags=re.S)
+home=home.replace('</head>','<style id="home-v2">'+HOME_V2_CSS+'</style>\n</head>',1)
 assert count==1, 'Home main region not found'
 if '/assets/segments.css' not in home: home=home.replace('</head>','<link rel="stylesheet" href="/assets/segments.css">\n</head>')
 home=re.sub(r'href="/assets/segments\.css(?:\?[^\"]*)?"',lambda _:f'href="{style_href}"',home)

@@ -62,16 +62,19 @@ with tarfile.open(archive) as tar:
 expected = re.search(r'^mescla_expected="([^"\n]+)"', (ROOT/'scripts/container-start.sh').read_text(), re.M).group(1).split()
 assert expected==list(PUBLIC_FILES), 'Container allowlist differs from the built bundle'
 # Motion is Home-only; every other page has an independent, usable static surface.
-assert len(home.xpath('//*[@data-ribbon-scene]'))==1
-assert len(home.xpath('//button[@data-motion-toggle and @hidden]'))==1
+# Home v2 (nov/2026): sem cena 3D nem lista de plataformas; seções e entrada do Diagnóstico Prisma.
+assert len(home.xpath('//div[@class="v2"]'))==1
+for anchor in ('metodo','diagnostico','seu-time','quem','segmentos','conversar'):assert home.xpath(f'//*[@id="{anchor}"]'),anchor
+assert len(home.xpath('//style[@id="home-v2"]'))==1
+assert home.xpath('//a[@data-contact]')
 for path in paths:
     root=html.fromstring(path.read_text())
-    if path.parent.name not in ('privacidade','prisma'):
+    if path.parent.name not in ('privacidade','prisma') and 'para' in path.parts:
         assert len(root.xpath('//script[@type="module" and starts-with(@src,"/assets/experience.js?v=")]'))==1
         assert len(root.xpath('//link[starts-with(@href,"/assets/experience.css?v=")]'))==1
         assert len(root.xpath('//img[contains(@src,"/assets/platforms/")]'))==4
         assert len(root.xpath('//svg[contains(@class,"ui-icon")]'))>=10
-    if path.parent.name not in ('privacidade','prisma'):
+    if path.parent.name not in ('privacidade','prisma') and 'para' in path.parts:
         assert len(root.xpath('//*[@data-motion-scene]'))==1
         assert root.xpath('//*[contains(@class,"motion-fallback")]')
         assert root.xpath('//*[contains(@class,"motion-equivalent")]')
