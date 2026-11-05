@@ -180,7 +180,7 @@ def home_v2(segments, phone):
     diag = _wa(phone, 'Quero o meu Diagnóstico Prisma.\n\nMinha atividade:\nO trabalho que mais pesa hoje:')
     agent = _wa(phone, 'Quero conhecer meu primeiro agente de IA.\n\nMinha atividade:\nO que eu gostaria de tirar das minhas costas:')
     talk = _wa(phone, 'Quero conversar sobre um time de IA para o meu trabalho.')
-    areas = ''.join(f'<a href="/para/{escape(d["slug"])}/" data-segment-link data-attribution-link>{escape(d["label"])}</a>' for d in segments)
+    areas = ''.join(f'<a href="/para/{escape(d["slug"])}/" data-segment-link="{escape(d["slug"])}" data-attribution-link>{escape(d["label"])}</a>' for d in segments)
     return f'''<div class="v2">
 <section class="v2-hero" aria-labelledby="hero-title"><div class="wrap v2-hero-grid">
 <div>

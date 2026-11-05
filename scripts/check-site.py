@@ -49,6 +49,7 @@ for path in paths:
 assert len(canonicals)==len(set(canonicals))
 home=html.fromstring((ROOT/'index.html').read_text())
 assert len(home.xpath('//a[@data-segment-link]'))==5
+assert set(home.xpath('//a/@data-segment-link'))=={d['slug'] for d in segments}, 'Segment click events require a destination identifier'
 assert {n.get('href') for n in home.xpath('//a[@data-segment-link]')}=={'/para/'+d['slug']+'/' for d in segments}
 archive=ROOT/'site.tar.gz';before=hashlib.sha256(archive.read_bytes()).hexdigest()
 subprocess.run(['python3',str(ROOT/'scripts/build-site.py')],check=True,cwd=ROOT,stdout=subprocess.DEVNULL)
