@@ -7,22 +7,17 @@ no `dataLayer`. Os links para WhatsApp incluem o segmento, a versão da página 
 as UTMs. O visitante revisa e envia a mensagem. Não há gravação das respostas
 em um banco de leads do site.
 
-O container GTM ainda precisa ser identificado. PostHog, GA4, Meta Pixel e as
-conversões de Google Ads **não estão ativados por este código**. Eventos no
-`dataLayer` só serão coletados depois de uma integração real.
+O contêiner `GTM-PSBP9DGT` envia ao GA4 `G-RYVJGFER3S` as visitas e os seis
+eventos abaixo, somente após o visitante permitir a medição. A tag base dispara
+na inicialização e uma tag de eventos aceita somente esses seis nomes.
 
-## Stack proposta
+Captura automática de formulários, cliques de saída e dados fornecidos pelo
+usuário está desativada. Assim, a URL do WhatsApp com respostas não é coletada
+como evento automático. Google Signals e personalização de anúncios ficam
+desativados; o consentimento de publicidade permanece negado.
 
-- GTM existente: distribuição e controle das tags.
-- PostHog: comparação de segmentos e funis. Marketing Analytics permite conectar
-  custos de Meta e Google Ads, mas é uma funcionalidade opt-in em beta.
-- GA4: análise do tráfego e integração com Google Ads.
-- Conversões confirmadas: encaminhar ao Google Ads e à Meta a partir do sistema
-  que confirma a ação, com identificadores consistentes para deduplicação.
-
-Escolher uma única origem primária por conversão no Google Ads. Não somar a
-mesma conversão via tag nativa e importação do GA4. Meta Pixel e CAPI exigem
-deduplicação da mesma ação com `event_name` e `event_id` correspondentes.
+PostHog, Meta Pixel, Google Ads e gravação de sessões não estão ativados.
+Não configurar eventos de intenção como conversões de venda ou lead recebido.
 
 ## Eventos preparados no site
 
@@ -74,20 +69,20 @@ a anterior. IDs de clique não são colocados na mensagem de WhatsApp.
 As UTMs são referências de origem, não prova independente de atribuição. Visitas
 diretas, bloqueadores e recusas de medição devem aparecer nas limitações da análise.
 
-## Ativação
+## Consentimento e manutenção
 
-1. Identificar o GTM existente e conferir suas tags publicadas.
-2. Criar ou reutilizar os projetos e propriedades de analytics da Mescla.
-3. Definir quais eventos cada destino recebe; desabilitar captura automática de
-   campos de formulário e de texto livre. Revisar também URLs e replays.
-4. Atualizar privacidade e configurar consentimento antes de ativar as tags.
-5. Configurar apenas identificadores públicos no front-end. Tokens de CAPI,
-   credenciais de calendário e chaves privadas ficam no servidor.
-6. Validar recebimento dos eventos e conversões, ausência de duplicatas e o
-   comportamento ao aceitar ou recusar a medição.
+O código só carrega GTM após aceitação. Recusar mantém o contato disponível.
+A preferência pode ser alterada no rodapé; retirar a permissão remove os cookies
+GA deste domínio e recarrega a página sem o coletor. A versão da preferência é
+`2026-11-ga4-v1`. Scripts de configuração e medição recebem versão por hash no build.
 
-O código só carrega GTM após aceitação, quando existe um ID válido. O contato
-funciona sem aceitar. Sem ID, não mostra um pedido de consentimento inútil.
+Somente IDs públicos ficam no front-end. As credenciais de leitura dos relatórios
+ficam fora deste repositório. Antes de ampliar a coleta ou ativar anúncios,
+revisar as tags, o consentimento e o aviso de privacidade.
+
+Validar em produção: nenhuma requisição GTM/GA antes da permissão ou após recusa;
+uma tag base por página depois da permissão; eventos recebidos sem texto livre;
+e nenhum clique tratado como mensagem recebida, reunião ou venda.
 
 ## Fontes consultadas
 

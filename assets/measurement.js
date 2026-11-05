@@ -58,7 +58,8 @@
   scope.dataLayer = scope.dataLayer || [];
   function emit(name, properties = {}) {
     const id = scope.crypto && scope.crypto.randomUUID ? scope.crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2);
-    const event = { event: name, event_id: id, segment, page_path: scope.location.pathname, page_version: version, ...properties };
+    const event = { event: name, event_id: id, segment, page_path: scope.location.pathname, page_version: version,
+      destination_segment: null, placement: null, team_size: null, interest_code: null, ...properties };
     UTM_KEYS.forEach(key => { if (attr.values[key]) event[key] = attr.values[key]; });
     scope.dataLayer.push(event);
   }
@@ -91,27 +92,41 @@
     if (fallback) fallback.hidden = true;
   }
   // Basic consent gating: no GTM request occurs until consent is granted.
-  // Only activate after the existing container and its tags have been checked.
+  // The container sends only the reviewed analytics events; advertising stays denied.
   if (/^GTM-[A-Z0-9]+$/.test(config.gtmId || '')) {
     let loaded = false;
     const consentKey = 'mescla.measurement-consent.' + clean(config.consentVersion || 'v1');
     function loadGtm() {
       if (loaded) return;
       loaded = true;
+      function gtag() { scope.dataLayer.push(arguments); }
+      gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+      gtag('set', { allow_google_signals: false, allow_ad_personalization_signals: false });
       scope.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
       const script = doc.createElement('script');
       script.async = true;
       script.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(config.gtmId);
       doc.head.appendChild(script);
     }
+    function clearAnalyticsCookies() {
+      doc.cookie.split(';').forEach(cookie => {
+        const name = cookie.split('=')[0].trim();
+        if (!/^_ga(?:_|$)/.test(name)) return;
+        [undefined, scope.location.hostname, '.mescla.ai'].forEach(domain => {
+          doc.cookie = name + '=; Max-Age=0; Path=/' + (domain ? '; Domain=' + domain : '');
+        });
+      });
+    }
     let choice = null;
     try { choice = scope.localStorage.getItem(consentKey); } catch (_) { /* Use the choice only in this view. */ }
     if (choice === 'yes') loadGtm();
+    // GA may renew its session cookie while the previous page unloads.
+    if (choice === 'no') clearAnalyticsCookies();
     const notice = doc.createElement('aside');
     notice.className = 'measurement-consent';
     notice.setAttribute('aria-label', 'Preferências de medição');
     const copy = doc.createElement('p');
-    copy.textContent = 'Podemos usar ferramentas de analytics e anúncios para entender quais páginas ajudam você? O contato funciona com qualquer escolha.';
+    copy.textContent = 'Podemos usar o Google Analytics e cookies para entender as visitas e os cliques no site? O contato funciona com qualquer escolha.';
     const accept = doc.createElement('button'); accept.type = 'button'; accept.textContent = 'Permitir medição';
     const decline = doc.createElement('button'); decline.type = 'button'; decline.textContent = 'Continuar sem medição';
     const more = doc.createElement('a'); more.href = '/privacidade/'; more.textContent = 'Como usamos os dados';
@@ -119,7 +134,11 @@
       try { scope.localStorage.setItem(consentKey, value); } catch (_) { /* No persistence is required. */ }
       notice.hidden = true;
       if (value === 'yes') loadGtm();
-      else if (loaded) scope.location.reload();
+      else {
+        // Remove this site's GA cookies when permission is withdrawn.
+        clearAnalyticsCookies();
+        if (loaded) scope.location.reload();
+      }
     }
     accept.addEventListener('click', () => choose('yes'));
     decline.addEventListener('click', () => choose('no'));
