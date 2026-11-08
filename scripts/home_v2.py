@@ -182,7 +182,7 @@ def home_v2(segments, phone):
 <p class="v2-eyebrow">Consultoria, implantação e aprendizagem em IA</p>
 <h1 id="hero-title">Seu trabalho pode ir mais longe. <span>Com um time de IA.</span></h1>
 <p class="v2-lead">A Mescla monta equipes de pessoas e agentes de IA para tirar tarefas do caminho, organizar o conhecimento e ampliar o que você consegue fazer, aproveitando sempre que possível as ferramentas que você já tem.</p>
-<div class="v2-actions"><a class="v2-btn" href="#diagnostico">Fazer o diagnóstico gratuito <span aria-hidden="true">→</span></a><a class="v2-btn v2-ghost" href="{agent}" target="_blank" rel="noopener noreferrer">Conhecer meu primeiro agente</a></div>
+<div class="v2-actions"><a class="v2-btn" href="#diagnostico">Fazer o diagnóstico gratuito <span aria-hidden="true">→</span></a><a class="v2-btn v2-ghost" href="{agent}" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero conhecer meu primeiro funcionário digital." data-placement="hero-agente">Conhecer meu primeiro agente</a></div>
 <p class="v2-assure"><span>Para pessoas e empresas</span><span>Diagnóstico gratuito</span><span>A parte técnica fica com a Mescla</span></p>
 </div>
 <div>{PRISM_SVG}</div>
@@ -226,7 +226,7 @@ def home_v2(segments, phone):
 <div data-v2-reveal><p class="v2-eyebrow">Diagnóstico gratuito</p><h2 id="v2-diag-t">Descubra qual rotina melhorar primeiro.</h2>
 <p class="v2-lead">Conte como é o seu trabalho. Analisamos a sua rotina e devolvemos:</p>
 <ul class="v2-list"><li><i>1</i><span>a lista das suas rotinas e onde está o peso;</span></li><li><i>2</i><span>a <strong>matriz de prioridades</strong> do seu trabalho;</span></li><li><i>3</i><span>o primeiro trabalho recomendado, com o que ele exige e o próximo passo.</span></li></ul>
-<div class="v2-actions"><a class="v2-btn" href="{diag}" target="_blank" rel="noopener noreferrer">Quero o meu diagnóstico</a></div></div>
+<div class="v2-actions"><a class="v2-btn" href="{diag}" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero o diagnóstico gratuito da Mescla." data-placement="diagnostico">Quero o meu diagnóstico</a></div></div>
 <div data-v2-reveal>
 <div class="v2-matrix" role="img" aria-label="Matriz de impacto por esforço, exemplo ilustrativo">
 <span class="v2-ax v2-axy">impacto →</span>
@@ -296,7 +296,7 @@ def home_v2(segments, phone):
 
 <section class="v2-final" id="conversar" aria-labelledby="v2-final-t"><div class="wrap">
 <h2 id="v2-final-t">O que você gostaria de tirar das suas costas?</h2>
-<div class="v2-actions"><a class="v2-btn v2-sun" href="{diag}" target="_blank" rel="noopener noreferrer">Fazer o diagnóstico gratuito</a><a class="v2-btn v2-ghost" href="{talk}" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a></div>
+<div class="v2-actions"><a class="v2-btn v2-sun" href="{diag}" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero o diagnóstico gratuito da Mescla." data-placement="diagnostico">Fazer o diagnóstico gratuito</a><a class="v2-btn v2-ghost" href="{talk}" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero conversar sobre funcionários digitais para o meu negócio." data-placement="fechamento">Conversar no WhatsApp</a></div>
 </div></section>
 </div>
 {REVEAL_JS}'''
