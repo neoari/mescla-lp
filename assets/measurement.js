@@ -63,9 +63,11 @@
     UTM_KEYS.forEach(key => { if (attr.values[key]) event[key] = attr.values[key]; });
     scope.dataLayer.push(event);
   }
+  // Without a page-specific message, every contact starts as a request for the free diagnosis.
+  const DEFAULT_MESSAGE = 'Quero o diagnóstico gratuito da Mescla.';
   const contacts = doc.querySelectorAll('a[data-contact]');
   contacts.forEach(link => {
-    const base = link.dataset.contactMessage || (segment === 'home' ? 'Quero conversar sobre como a Mescla pode ampliar minha capacidade de entrega.' : 'Quero combinar uma conversa sobre um time de IA para o meu trabalho.');
+    const base = link.dataset.contactMessage || DEFAULT_MESSAGE;
     link.href = contactUrl(message(base, label, {}, attr, version));
     link.addEventListener('click', () => emit('mescla_whatsapp_open', { placement: link.dataset.placement || 'contact' }));
   });
@@ -83,7 +85,7 @@
       const interest = form.querySelector('#interest');
       const goal = form.querySelector('#goal');
       const answers = { team: team.selectedOptions[0].textContent, interest: interest.selectedOptions[0].textContent, goal: goal.value };
-      form.querySelector('[name="text"]').value = message('Quero combinar uma conversa sobre um time de IA para o meu trabalho.', label, answers, attr, version);
+      form.querySelector('[name="text"]').value = message(form.dataset.contactMessage || DEFAULT_MESSAGE, label, answers, attr, version);
       // A WhatsApp handoff is not a submitted lead, booked meeting or completed interview.
       emit('mescla_whatsapp_open', { placement: 'qualification', team_size: team.value, interest_code: interest.value });
     });

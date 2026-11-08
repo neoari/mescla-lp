@@ -8,7 +8,6 @@
     "description": "Um time de IA para organizar pedidos, montar propostas comerciais e preparar retornos aos clientes. Você aprova as condições e conduz a negociação.",
     "intro": "Para quem vende serviços e concentra o comercial",
     "context": "Você conhece o cliente. Seus agentes preparam o próximo passo.",
-    "cta": "Quero agilizar minhas propostas",
     "value_title": "Do pedido à proposta. Veja o que seus agentes fazem.",
     "value_intro": "O cliente pede um orçamento enquanto você está atendendo ou entregando. Seus agentes preparam o trabalho comercial para a conversa continuar.",
     "tools_title": "O pedido vem de onde seu cliente já fala.",
@@ -78,7 +77,7 @@
     ],
     "measure": "Avaliamos tempo até a proposta, correções nas condições e retornos que ficaram sem responsável.",
     "contact_title": "Qual pedido está esperando uma proposta?",
-    "contact_text": "Conte que serviço você vende e onde o orçamento trava. Vamos escolher um primeiro fluxo de pedido, proposta e retorno.",
+    "contact_text": "Conte que serviço você vende e onde o orçamento trava. No diagnóstico gratuito, você recebe a lista das suas rotinas, a matriz de prioridades e o primeiro trabalho recomendado.",
     "faq": [
       [
         "Já uso ChatGPT. O que ganho com a Mescla?",
@@ -98,7 +97,7 @@
       ]
     ],
     "secondary_cta": "Ver o pedido virar proposta",
-    "contact_note": "Conte onde o orçamento trava. A conversa começa no WhatsApp.",
+    "contact_note": "Conte onde o orçamento trava. O diagnóstico é gratuito, pelo WhatsApp.",
     "tasks": [
       {
         "icon": "file-text",
@@ -160,7 +159,6 @@
     "description": "Destrave a edição de vídeos com um time de IA: agentes roteirizam, editam e publicam; você grava e aprova antes da publicação.",
     "intro": "Para creators que travam na edição",
     "context": "Sua voz na gravação. Sua decisão na aprovação. Agentes no roteiro, na edição e na publicação.",
-    "cta": "Quero destravar minha edição",
     "value_title": "O que seu agente faz na edição.",
     "value_intro": "Do arquivo bruto a uma versão pronta para você aprovar. Definimos o seu padrão e configuramos o agente para executar o trabalho com as ferramentas do projeto.",
     "value_cards": [
@@ -269,7 +267,7 @@
     ],
     "measure": "Combinamos o que avaliar: tempo dedicado à edição, rodadas de ajuste e fidelidade ao seu padrão.",
     "contact_title": "Sua gravação está esperando a edição?",
-    "contact_text": "Conte o que você grava e onde a edição trava. Vamos definir um primeiro fluxo para levar seu conteúdo até a publicação.",
+    "contact_text": "Conte o que você grava e onde a edição trava. No diagnóstico gratuito, você recebe a lista das suas rotinas, a matriz de prioridades e o primeiro trabalho recomendado.",
     "faq": [
       [
         "Já tenho ChatGPT, Claude ou Gemini. Por que contratar a Mescla?",
@@ -299,7 +297,6 @@
     "description": "Agentes de IA para organizar entrevistas, consolidar dados e montar relatórios e apresentações editáveis. Consultores conferem as fontes e formulam as recomendações.",
     "intro": "Para consultorias com equipes enxutas",
     "context": "Seu método orienta. Seus consultores recomendam. Os agentes preparam a entrega.",
-    "cta": "Quero agilizar meu próximo entregável",
     "value_title": "Seu método aplicado ao trabalho de base.",
     "value_intro": "Entrevistas, planilhas e documentos chegam em formatos diferentes. Seus agentes ajudam a transformar esse material em evidências conferíveis e arquivos para apresentar.",
     "tools_title": "Da reunião ao arquivo que o cliente recebe.",
@@ -375,7 +372,7 @@
     ],
     "measure": "Registramos esforço de preparação, conferência das fontes e rodadas de revisão para avaliar o que melhorou.",
     "contact_title": "Qual entrega consome horas antes da análise?",
-    "contact_text": "Conte o tipo de projeto, de onde vêm as informações e o arquivo que você precisa entregar. Vamos escolher uma primeira rotina.",
+    "contact_text": "Conte o tipo de projeto, de onde vêm as informações e o arquivo que você precisa entregar. No diagnóstico gratuito, você recebe a lista das suas rotinas, a matriz de prioridades e o primeiro trabalho recomendado.",
     "faq": [
       [
         "Já usamos Claude ou ChatGPT. O que muda?",
@@ -395,7 +392,7 @@
       ]
     ],
     "secondary_cta": "Ver as fontes virarem uma entrega",
-    "contact_note": "Conte qual relatório ou apresentação se repete. A conversa começa no WhatsApp.",
+    "contact_note": "Conte qual relatório ou apresentação se repete. O diagnóstico é gratuito, pelo WhatsApp.",
     "tasks": [
       {
         "icon": "audio-lines",
@@ -456,7 +453,6 @@
     "description": "Um time de IA para conferir briefings, criar textos, adaptar peças aos modelos da agência e aplicar feedbacks por versão. Criação dirige e o cliente aprova.",
     "intro": "Para agências com produção recorrente",
     "context": "Uma marca, suas referências e o ajuste ligado à peça certa.",
-    "cta": "Quero destravar as entregas",
     "value_title": "Seu time de IA entre o briefing e a aprovação.",
     "value_intro": "O pedido vem incompleto. O ajuste chega em outra conversa. A versão se perde. Organizamos a produção para que o próximo passo parta do que já foi combinado.",
     "tools_title": "A marca e os modelos já fazem parte do trabalho.",
@@ -536,7 +532,7 @@
     ],
     "measure": "Avaliamos horas de produção, rodadas de ajuste e pedidos parados por falta de informação ou aprovação.",
     "contact_title": "Qual peça volta mais vezes para ajuste?",
-    "contact_text": "Conte o que sua agência produz, onde a rodada trava e como chegam os feedbacks. Vamos escolher uma entrega para começar.",
+    "contact_text": "Conte o que sua agência produz, onde a rodada trava e como chegam os feedbacks. No diagnóstico gratuito, você recebe a lista das suas rotinas, a matriz de prioridades e o primeiro trabalho recomendado.",
     "faq": [
       [
         "A entrega inclui arte ou só texto?",
@@ -556,7 +552,7 @@
       ]
     ],
     "secondary_cta": "Ver uma rodada de produção",
-    "contact_note": "Conte qual peça volta mais vezes para ajuste. A conversa começa no WhatsApp.",
+    "contact_note": "Conte qual peça volta mais vezes para ajuste. O diagnóstico é gratuito, pelo WhatsApp.",
     "tasks": [
       {
         "icon": "file-check-2",
@@ -617,7 +613,6 @@
     "description": "Agentes de IA para organizar documentos autorizados, montar cronologias e preparar minutas orientadas pelo advogado. Fontes e materiais passam por conferência profissional.",
     "intro": "Para escritórios com rotina documental intensa",
     "context": "Agentes preparam. O advogado interpreta, revisa e decide.",
-    "cta": "Quero agilizar uma rotina documental",
     "value_title": "O trabalho que vem antes da análise jurídica.",
     "value_intro": "Arquivos espalhados, datas para reconstruir e informações para comparar. Os agentes preparam a base documental que o advogado precisa conferir.",
     "tools_title": "Dos arquivos recebidos ao Word que você revisa.",
@@ -683,7 +678,7 @@
     ],
     "measure": "Avaliamos tempo para localizar informações, correspondência com as fontes e esforço de conferência. A leitura de documentos ruins ou incompletos é testada antes de ampliar o fluxo.",
     "contact_title": "Onde a preparação documental toma o tempo da equipe?",
-    "contact_text": "Descreva o processo e o tipo de documento, sem enviar materiais de clientes ou informações sigilosas neste primeiro contato.",
+    "contact_text": "Descreva o processo e o tipo de documento, sem enviar materiais de clientes ou informações sigilosas neste primeiro contato. No diagnóstico gratuito, você recebe a lista das suas rotinas, a matriz de prioridades e o primeiro trabalho recomendado.",
     "faq": [
       [
         "A IA decide a estratégia ou assina a peça?",
@@ -703,7 +698,7 @@
       ]
     ],
     "secondary_cta": "Ver a preparação de um caso",
-    "contact_note": "Descreva a rotina, sem documentos de clientes. A conversa começa no WhatsApp.",
+    "contact_note": "Descreva a rotina, sem documentos de clientes. O diagnóstico é gratuito, pelo WhatsApp.",
     "tasks": [
       {
         "icon": "layers",

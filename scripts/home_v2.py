@@ -173,16 +173,15 @@ PRISM_SVG = """<svg class="v2-prism-art" viewBox="0 0 560 440" role="img" aria-l
 
 def home_v2(segments, phone):
     diag = _wa(phone, 'Quero o diagnóstico gratuito da Mescla.\n\nMinha atividade:\nO trabalho que mais pesa hoje:')
-    agent = _wa(phone, 'Quero conhecer meu primeiro agente de IA.\n\nMinha atividade:\nO que eu gostaria de tirar das minhas costas:')
     talk = _wa(phone, 'Quero conversar sobre um time de IA para o meu trabalho.')
     areas = ''.join(f'<a href="/para/{escape(d["slug"])}/" data-segment-link="{escape(d["slug"])}" data-attribution-link>{escape(d["label"])}</a>' for d in segments)
     return f'''<div class="v2">
 <section class="v2-hero" aria-labelledby="hero-title"><div class="wrap v2-hero-grid">
 <div>
-<p class="v2-eyebrow">Consultoria, implantação e aprendizagem em IA</p>
+<p class="v2-eyebrow">Consultoria e implantação de IA para pequenos negócios</p>
 <h1 id="hero-title">Seu trabalho pode ir mais longe. <span>Com um time de IA.</span></h1>
 <p class="v2-lead">A Mescla monta equipes de pessoas e agentes de IA para tirar tarefas do caminho, organizar o conhecimento e ampliar o que você consegue fazer, aproveitando sempre que possível as ferramentas que você já tem.</p>
-<div class="v2-actions"><a class="v2-btn" href="#diagnostico">Fazer o diagnóstico gratuito <span aria-hidden="true">→</span></a><a class="v2-btn v2-ghost" href="{agent}" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero conhecer meu primeiro funcionário digital." data-placement="hero-agente">Conhecer meu primeiro agente</a></div>
+<div class="v2-actions"><a class="v2-btn" href="#diagnostico">Fazer o diagnóstico gratuito <span aria-hidden="true">→</span></a><a class="v2-btn v2-ghost" href="#metodo">Ver como funciona <span aria-hidden="true">↓</span></a></div>
 <p class="v2-assure"><span>Para pessoas e empresas</span><span>Diagnóstico gratuito</span><span>A parte técnica fica com a Mescla</span></p>
 </div>
 <div>{PRISM_SVG}</div>
@@ -295,7 +294,7 @@ def home_v2(segments, phone):
 </div></section>
 
 <section class="v2-final" id="conversar" aria-labelledby="v2-final-t"><div class="wrap">
-<h2 id="v2-final-t">O que você gostaria de tirar das suas costas?</h2>
+<h2 id="v2-final-t">Qual trabalho, se andasse sozinho, faria você faturar mais?</h2>
 <div class="v2-actions"><a class="v2-btn v2-sun" href="{diag}" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero o diagnóstico gratuito da Mescla." data-placement="diagnostico">Fazer o diagnóstico gratuito</a><a class="v2-btn v2-ghost" href="{talk}" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero conversar sobre funcionários digitais para o meu negócio." data-placement="fechamento">Conversar no WhatsApp</a></div>
 </div></section>
 </div>

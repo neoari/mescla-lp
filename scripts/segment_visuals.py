@@ -2,7 +2,7 @@
 from pathlib import Path
 from html import escape
 import re
-from experience import ui_icon, brand_icon, platforms
+from experience import ui_icon, brand_icon
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -64,10 +64,10 @@ def tools_section(d):
 def ai_section(d):
     badges = ''.join(f'<span class="ai-tool">{icon(key)}{escape(name)}</span>' for key,name in d['ai_tools'])
     gains = ''.join(f'<li>{ui_icon(key)}<div><h3>{escape(title)}</h3><p>{escape(text)}</p></div></li>' for key,title,text in d['ai_gains'])
-    return f'''<section class="section ai-section" aria-labelledby="ai-title"><div class="wrap ai-layout"><div class="ai-badges">{badges}<span class="ai-caption">A IA que você já usa pode fazer parte do projeto.</span></div><div><p class="eyebrow">Já uso IA. O que ganho com a Mescla?</p><h2 id="ai-title">{escape(d['ai_title'])}</h2><p class="lead">{escape(d['ai_text'])}</p><ul class="ai-gains">{gains}</ul><div class="platform-note"><strong>Pessoas, agentes e memória no mesmo trabalho.</strong><p>Escolhemos um ambiente que comporte o compartilhamento necessário. Configuramos agentes, memória e acessos e orientamos sua equipe. Suporte e evolução são definidos na proposta.</p>{platforms()}</div></div></div></section>'''
+    return f'''<section class="section ai-section" aria-labelledby="ai-title"><div class="wrap ai-layout"><div class="ai-badges">{badges}<span class="ai-caption">A IA que você já usa pode fazer parte do projeto.</span></div><div><p class="eyebrow">Já uso IA. O que ganho com a Mescla?</p><h2 id="ai-title">{escape(d['ai_title'])}</h2><p class="lead">{escape(d['ai_text'])}</p><ul class="ai-gains">{gains}</ul><div class="platform-note"><strong>Você não precisa escolher plataforma.</strong><p>Escolhemos o ambiente certo para o seu caso e cuidamos da parte técnica. Você vê o trabalho, não a ferramenta.</p></div></div></div></section>'''
 
 def pilot_section(d):
     items = ''.join(f'<li>{ui_icon("check")}{escape(x)}</li>' for i,x in enumerate(d['deliverables']))
     inputs = '<div class="pilot-inputs"><h3>Você traz</h3><ul>' + ''.join(f'<li>{escape(x)}</li>' for x in d['pilot_inputs']) + '</ul></div>' if d.get('pilot_inputs') else ''
     result_title = '<h3 class="pilot-result-title">O primeiro trabalho entrega</h3>' if inputs else ''
-    return f'''<section class="section pilot-section" aria-labelledby="method-title"><div class="wrap pilot-grid"><div><p class="eyebrow">Um primeiro trabalho, bem definido</p><h2 id="method-title">{escape(d['pilot_title'])}</h2><p class="lead">{escape(d['pilot_text'])}</p>{inputs}</div><div>{result_title}<ul class="pilot-deliverables">{items}</ul><p class="measure-note">{escape(d['measure'])}</p></div></div></section>'''
+    return f'''<section class="section pilot-section" aria-labelledby="method-title"><div class="wrap pilot-grid"><div><p class="eyebrow">Depois do diagnóstico, um primeiro trabalho</p><h2 id="method-title">{escape(d['pilot_title'])}</h2><p class="lead">{escape(d['pilot_text'])}</p>{inputs}</div><div>{result_title}<ul class="pilot-deliverables">{items}</ul><p class="measure-note">{escape(d['measure'])}</p></div></div></section>'''

@@ -8,6 +8,8 @@ import re, sys
 sys.dont_write_bytecode=True
 from public_bundle import PUBLIC_FILES
 ROOT=Path(__file__).resolve().parents[1]
+THIRD_PARTY_PLATFORMS=('github.com/block/buzz','openclaw','hyperagent','hermes-agent','nousresearch')
+DIAGNOSIS_MESSAGE='Quero o diagnóstico gratuito da Mescla.'
 class Structure(HTMLParser):
     void={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
     def __init__(self):super().__init__();self.stack=[]
@@ -73,7 +75,8 @@ for path in paths:
     if path.parent.name not in ('privacidade','prisma') and 'para' in path.parts:
         assert len(root.xpath('//script[@type="module" and starts-with(@src,"/assets/experience.js?v=")]'))==1
         assert len(root.xpath('//link[starts-with(@href,"/assets/experience.css?v=")]'))==1
-        assert len(root.xpath('//img[contains(@src,"/assets/platforms/")]'))==4
+        # Nov/2026: as páginas não levam a ferramentas de terceiros nem mostram seus logos.
+        assert not root.xpath('//img[contains(@src,"/assets/platforms/")]'),path
         assert len(root.xpath('//svg[contains(@class,"ui-icon")]'))>=10
     if path.parent.name not in ('privacidade','prisma') and 'para' in path.parts:
         assert len(root.xpath('//*[@data-motion-scene]'))==1
@@ -81,6 +84,11 @@ for path in paths:
         assert root.xpath('//*[contains(@class,"motion-equivalent")]')
         assert 'RAG' in path.read_text() and 'MCP' in path.read_text()
     if 'para' in path.parts:assert not root.xpath('//*[@data-ribbon-scene]')
+    for href in root.xpath('//a/@href'):assert not any(x in href.lower() for x in THIRD_PARTY_PLATFORMS),(path,href)
+    # Toda mensagem de contato das páginas /para começa pelo pedido do diagnóstico gratuito.
+    if 'para' in path.parts:
+        messages=root.xpath('//a[@data-contact]/@data-contact-message')+root.xpath('//form[@class="qualifier"]/@data-contact-message')
+        assert len(messages)==2 and all(m.startswith(DIAGNOSIS_MESSAGE) for m in messages),(path,messages)
 # All local JS module dependencies resolve inside the published allowlist.
 for asset in PUBLIC_FILES:
     if asset.endswith('.js'):

@@ -69,3 +69,10 @@ Ativar um coletor exige revisar suas tags e atualizar o aviso de privacidade.
 
 ## /prisma/ (redirecionamento)
 O nome Prisma foi abolido em 08/11/2026: a marca é só Mescla. `/prisma/` existe apenas como redirecionamento para `/#diagnostico` (gerado em `scripts/build-site.py`), para não quebrar links antigos. Não criar páginas, seções, textos ou produtos com o nome Prisma. `assets/prisma.css` ainda está na allowlist só para não exigir troca do Compose; sai na próxima mudança de allowlist.
+
+## Pendências para a próxima troca de allowlist
+- `assets/prisma.css`: sem uso (ver acima).
+- `assets/platforms/` (buzz.svg, openclaw.svg, hyperagent.svg, hermes.png): sem uso desde 08/11/2026. As páginas /para não linkam nem mostram ferramentas de terceiros, e `scripts/check-site.py` exige zero links e zero imagens delas. Os arquivos continuam no pacote só para não exigir troca do Compose. Na próxima mudança de allowlist, tirar de `scripts/public_bundle.py`, de `mescla_expected` em `scripts/container-start.sh` e do repositório, junto com a função `platforms()` de `scripts/experience.py` (hoje só referenciada pela Home antiga em `scripts/home_sections.py`, que não entra no build).
+
+## Porta de entrada (nov/2026)
+Todo contato das páginas /para começa por "Quero o diagnóstico gratuito da Mescla." (`contact_message` em `scripts/build-site.py`, gravado em `data-contact-message` no link e no formulário; `assets/measurement.js` usa a mesma frase como padrão). Não prometer número, prazo ou preço. Não usar "clareza" nem "pessoas e agentes trabalhando juntos" nas páginas da Mescla (são de outra marca).
