@@ -1,4 +1,4 @@
-"""Home v2 (nov/2026): Método Prisma, Diagnóstico Prisma e time de IA.
+"""Home v2 (nov/2026): diagnóstico gratuito, método da Mescla e time de IA.
 
 Retorna o CSS escopado (prefixo v2-) e o conteúdo de <main>. O menu, o rodapé,
 a medição e os links de contato continuam vindo de index.html e build-site.py.
@@ -70,13 +70,6 @@ CSS = r"""
 .v2 .v2-team li::before{content:"";position:absolute;left:2px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--mare)}
 .v2 .v2-line{font-family:'Fraunces',serif;font-size:clamp(28px,3.2vw,42px);letter-spacing:-.035em;margin-top:52px}
 .v2 .v2-line em{font-style:normal;background:linear-gradient(transparent 62%,rgba(242,184,75,.55) 62%)}
-/* prisma */
-.v2 .v2-prisma{background:var(--noite);color:var(--branco);overflow:hidden}
-.v2 .v2-prisma::before{content:"";position:absolute;inset:auto -10% -40% auto;width:720px;height:720px;background:conic-gradient(from 200deg,rgba(111,217,201,.0),rgba(111,217,201,.22),rgba(242,184,75,.2),rgba(207,62,39,.18),rgba(111,217,201,0));filter:blur(60px);pointer-events:none}
-.v2 .v2-prisma .v2-eyebrow{color:var(--mare)}
-.v2 .v2-prisma h2{color:var(--branco)}
-.v2 .v2-prisma .v2-lead{color:#E3E1EC}
-.v2 .v2-spectrum{height:6px;border-radius:6px;margin-top:38px;max-width:440px;background:linear-gradient(90deg,var(--mare),var(--verde) 34%,var(--sol) 66%,var(--roma))}
 .v2 .v2-arch{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px;position:relative}
 @media(max-width:920px){.v2 .v2-arch{grid-template-columns:1fr}}
 .v2 .v2-arch .v2-card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);color:var(--branco)}
@@ -155,29 +148,31 @@ CSS = r"""
 
 REVEAL_JS = """<script>(()=>{const els=document.querySelectorAll('[data-v2-reveal]');if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(e=>e.classList.add('v2-in'));return}const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v2-in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});els.forEach((e,i)=>{e.style.transitionDelay=(i%4)*90+'ms';io.observe(e)})})();</script>"""
 
-PRISM_SVG = """<svg class="v2-prism-art" viewBox="0 0 560 440" role="img" aria-labelledby="v2-prism-t"><title id="v2-prism-t">Um feixe de luz entra no prisma e sai separado em quatro caminhos: comece aqui, aposta, quando sobrar tempo e evitar por ora.</title>
-<defs><linearGradient id="v2-glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#ECEBF1" stop-opacity=".9"/></linearGradient></defs>
-<path class="v2-beam" d="M10 230 L200 214" stroke="#1B1930" stroke-width="5" stroke-linecap="round" fill="none"/>
-<g fill="none" stroke-width="10" stroke-linecap="round">
-<path class="v2-ray" d="M262 206 C320 170 360 112 412 82" stroke="#6FD9C9"/>
-<path class="v2-ray" d="M268 214 C330 200 372 178 420 168" stroke="#F2B84B"/>
-<path class="v2-ray" d="M268 224 C330 236 372 258 420 268" stroke="#ECEBF1"/>
-<path class="v2-ray" d="M262 232 C320 268 360 326 412 356" stroke="#CF3E27" stroke-opacity=".75"/>
+PRISM_SVG = """<svg class="v2-prism-art" viewBox="0 0 560 440" role="img" aria-labelledby="v2-prism-t"><title id="v2-prism-t">Dois fios, pessoas e agentes de IA, se cruzam numa trama e saem em quatro caminhos: comece aqui, aposta, quando sobrar tempo e evitar por ora.</title>
+<defs><mask id="v2-trama-gaps" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="white"/><path d="M59 21H75V25H59ZM59 41H75V45H59ZM25 55H41V59H25ZM25 75H41V79H25ZM21 25H25V41H21ZM41 25H45V41H41ZM55 59H59V75H55ZM75 59H79V75H75Z" fill="black"/></mask></defs>
+<g fill="none" stroke-linecap="round">
+<path class="v2-beam" d="M10 170 C90 170 120 196 170 204" stroke="#F2B84B" stroke-width="7"/>
+<path class="v2-beam" d="M10 262 C90 262 120 232 170 224" stroke="#6FD9C9" stroke-width="7"/>
 </g>
-<path d="M232 118 L312 300 L152 300 Z" fill="url(#v2-glass)" stroke="#1B1930" stroke-width="2.5" stroke-linejoin="round"/>
-<path d="M232 146 L290 286" stroke="#6FD9C9" stroke-width="2" opacity=".7"/>
+<g fill="none" stroke-width="10" stroke-linecap="round">
+<path class="v2-ray" d="M292 196 C340 160 370 112 412 82" stroke="#6FD9C9"/>
+<path class="v2-ray" d="M296 206 C340 196 378 178 420 168" stroke="#F2B84B"/>
+<path class="v2-ray" d="M296 226 C340 240 378 258 420 268" stroke="#ECEBF1"/>
+<path class="v2-ray" d="M292 236 C340 272 370 326 412 356" stroke="#CF3E27" stroke-opacity=".75"/>
+</g>
+<g transform="translate(166 150) scale(1.3)"><g mask="url(#v2-trama-gaps)"><rect x="25" y="10" width="16" height="80" rx="8" fill="#F2B84B"/><rect x="59" y="10" width="16" height="80" rx="8" fill="#F2B84B"/><rect x="10" y="25" width="80" height="16" rx="8" fill="#6FD9C9"/><rect x="10" y="59" width="80" height="16" rx="8" fill="#6FD9C9"/><rect x="25" y="22" width="16" height="22" fill="#F2B84B"/><rect x="59" y="56" width="16" height="22" fill="#F2B84B"/></g></g>
 <g font-family="Instrument Sans, sans-serif" font-size="15" font-weight="600" fill="#1B1930">
 <g class="v2-chip"><rect x="418" y="62" width="132" height="38" rx="19" fill="#6FD9C9"/><text x="484" y="86" text-anchor="middle">Comece aqui</text></g>
 <g class="v2-chip"><rect x="426" y="149" width="116" height="38" rx="19" fill="#F2B84B"/><text x="484" y="173" text-anchor="middle">Aposta</text></g>
 <g class="v2-chip"><rect x="426" y="249" width="126" height="38" rx="19" fill="#ECEBF1" stroke="#DDDAE5"/><text x="489" y="273" text-anchor="middle" font-size="13">Quando sobrar</text></g>
 <g class="v2-chip"><rect x="418" y="337" width="132" height="38" rx="19" fill="#F5D9D3"/><text x="484" y="361" text-anchor="middle">Evitar por ora</text></g>
 </g>
-<text x="16" y="208" font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="1.2" fill="#625F72">SEU TRABALHO</text>
+<g font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="1.2" fill="#625F72"><text x="16" y="156">PESSOAS</text><text x="16" y="288">AGENTES DE IA</text></g>
 </svg>"""
 
 
 def home_v2(segments, phone):
-    diag = _wa(phone, 'Quero o meu Diagnóstico Prisma.\n\nMinha atividade:\nO trabalho que mais pesa hoje:')
+    diag = _wa(phone, 'Quero o diagnóstico gratuito da Mescla.\n\nMinha atividade:\nO trabalho que mais pesa hoje:')
     agent = _wa(phone, 'Quero conhecer meu primeiro agente de IA.\n\nMinha atividade:\nO que eu gostaria de tirar das minhas costas:')
     talk = _wa(phone, 'Quero conversar sobre um time de IA para o meu trabalho.')
     areas = ''.join(f'<a href="/para/{escape(d["slug"])}/" data-segment-link="{escape(d["slug"])}" data-attribution-link>{escape(d["label"])}</a>' for d in segments)
@@ -187,7 +182,7 @@ def home_v2(segments, phone):
 <p class="v2-eyebrow">Consultoria, implantação e aprendizagem em IA</p>
 <h1 id="hero-title">Seu trabalho pode ir mais longe. <span>Com um time de IA.</span></h1>
 <p class="v2-lead">A Mescla monta equipes de pessoas e agentes de IA para tirar tarefas do caminho, organizar o conhecimento e ampliar o que você consegue fazer, aproveitando sempre que possível as ferramentas que você já tem.</p>
-<div class="v2-actions"><a class="v2-btn" href="#diagnostico">Começar pelo Diagnóstico Prisma <span aria-hidden="true">→</span></a><a class="v2-btn v2-ghost" href="{agent}" target="_blank" rel="noopener noreferrer">Conhecer meu primeiro agente</a></div>
+<div class="v2-actions"><a class="v2-btn" href="#diagnostico">Fazer o diagnóstico gratuito <span aria-hidden="true">→</span></a><a class="v2-btn v2-ghost" href="{agent}" target="_blank" rel="noopener noreferrer">Conhecer meu primeiro agente</a></div>
 <p class="v2-assure"><span>Para pessoas e empresas</span><span>Diagnóstico gratuito</span><span>A parte técnica fica com a Mescla</span></p>
 </div>
 <div>{PRISM_SVG}</div>
@@ -225,22 +220,13 @@ def home_v2(segments, phone):
 </div>
 </div></section>
 
-<section class="v2-prisma" id="metodo" aria-labelledby="v2-prisma-t"><div class="wrap">
-<div data-v2-reveal><p class="v2-eyebrow">Método Prisma</p><h2 id="v2-prisma-t">Uma luz entra. Um espectro de possibilidades sai.</h2>
-<p class="v2-lead">Como um prisma, olhamos o seu trabalho por vários ângulos antes de escolher qualquer ferramenta. Especialistas humanos e de IA analisam a rotina, separam as oportunidades e mostram o que fazer primeiro.</p><div class="v2-spectrum" aria-hidden="true"></div></div>
-<div class="v2-arch">
-<div class="v2-card v2-main" data-v2-reveal><span class="v2-tag">gratuito · comece aqui</span><h3>Diagnóstico Prisma</h3><p>Você conta como é o seu trabalho. Devolvemos a matriz de prioridades e o primeiro trabalho recomendado.</p></div>
-<div class="v2-card" data-v2-reveal><span class="v2-tag">consultoria e implantação</span><h3>Método Prisma</h3><p>Do entendimento à evolução, em cinco etapas, cada uma com um entregável que você vê.</p></div>
-<div class="v2-card" data-v2-reveal><span class="v2-tag">em preparação</span><h3>Conselho Prisma</h3><p>Especialistas de IA com métodos diferentes analisam uma decisão importante e confrontam argumentos. <a href="/prisma/" data-attribution-link style="color:var(--mare)">Conheça os especialistas</a></p></div>
-</div>
-</div></section>
 
 <section id="diagnostico" aria-labelledby="v2-diag-t"><div class="wrap">
 <div class="v2-diag">
-<div data-v2-reveal><p class="v2-eyebrow">Diagnóstico Prisma · gratuito</p><h2 id="v2-diag-t">Descubra qual rotina melhorar primeiro.</h2>
-<p class="v2-lead">Conte como é o seu trabalho. Analisamos a sua rotina pelo Método Prisma e devolvemos:</p>
+<div data-v2-reveal><p class="v2-eyebrow">Diagnóstico gratuito</p><h2 id="v2-diag-t">Descubra qual rotina melhorar primeiro.</h2>
+<p class="v2-lead">Conte como é o seu trabalho. Analisamos a sua rotina e devolvemos:</p>
 <ul class="v2-list"><li><i>1</i><span>a lista das suas rotinas e onde está o peso;</span></li><li><i>2</i><span>a <strong>matriz de prioridades</strong> do seu trabalho;</span></li><li><i>3</i><span>o primeiro trabalho recomendado, com o que ele exige e o próximo passo.</span></li></ul>
-<div class="v2-actions"><a class="v2-btn" href="{diag}" target="_blank" rel="noopener noreferrer">Quero o meu Diagnóstico Prisma</a></div></div>
+<div class="v2-actions"><a class="v2-btn" href="{diag}" target="_blank" rel="noopener noreferrer">Quero o meu diagnóstico</a></div></div>
 <div data-v2-reveal>
 <div class="v2-matrix" role="img" aria-label="Matriz de impacto por esforço, exemplo ilustrativo">
 <span class="v2-ax v2-axy">impacto →</span>
@@ -255,10 +241,10 @@ def home_v2(segments, phone):
 </div>
 </div></section>
 
-<section aria-labelledby="v2-method-t"><div class="wrap">
-<div data-v2-reveal><p class="v2-eyebrow">Método Prisma · como funciona</p><h2 id="v2-method-t">Antes da ferramenta, a escolha do trabalho.</h2></div>
+<section id="metodo" aria-labelledby="v2-method-t"><div class="wrap">
+<div data-v2-reveal><p class="v2-eyebrow">Como a Mescla trabalha</p><h2 id="v2-method-t">Antes da ferramenta, a escolha do trabalho.</h2></div>
 <div class="v2-method">
-<div class="v2-card" data-v2-reveal><h3>Entendimento</h3><p>Diagnóstico Prisma e escolha do primeiro trabalho.</p><p class="v2-deliv"><span>Você recebe</span>Matriz de prioridades</p></div>
+<div class="v2-card" data-v2-reveal><h3>Entendimento</h3><p>Diagnóstico e escolha do primeiro trabalho.</p><p class="v2-deliv"><span>Você recebe</span>Matriz de prioridades</p></div>
 <div class="v2-card" data-v2-reveal><h3>Imersão</h3><p>Como a rotina acontece hoje, com os gargalos.</p><p class="v2-deliv"><span>Você recebe</span>Retrato da rotina e medida inicial de tempo ou retrabalho</p></div>
 <div class="v2-card" data-v2-reveal><h3>Desenho</h3><p>Uma tarefa completa, do pedido à entrega.</p><p class="v2-deliv"><span>Você recebe</span>Demonstração do que cada agente faz e de onde você entra</p></div>
 <div class="v2-card" data-v2-reveal><h3>Implantação</h3><p>O time funcionando na rotina real.</p><p class="v2-deliv"><span>Você recebe</span>Piloto com critérios de aceite combinados</p></div>
@@ -300,17 +286,17 @@ def home_v2(segments, phone):
 <section aria-labelledby="v2-faq-t"><div class="wrap">
 <div data-v2-reveal><p class="v2-eyebrow">Perguntas</p><h2 id="v2-faq-t">Boas perguntas. Respostas diretas.</h2></div>
 <div style="margin-top:36px">
-<details><summary>O Diagnóstico Prisma é gratuito mesmo?</summary><p>Sim. Você recebe a matriz de prioridades e a recomendação do primeiro trabalho, sem compromisso de contratar.</p></details>
+<details><summary>O diagnóstico é gratuito mesmo?</summary><p>Sim. Você recebe a matriz de prioridades e a recomendação do primeiro trabalho, sem compromisso de contratar.</p></details>
 <details><summary>Meus dados ficam seguros?</summary><p>Os acessos são definidos com você, e as contas e o conhecimento ficam no seu nome. Não compartilhe senhas ou documentos confidenciais no primeiro contato.</p></details>
 <details><summary>Preciso trocar minhas ferramentas?</summary><p>Na maioria dos casos, não. Aproveitamos o que você já usa sempre que possível.</p></details>
 <details><summary>E se a ferramenta mudar?</summary><p>O time e o conhecimento continuam, porque não ficam presos a um fornecedor.</p></details>
-<details><summary>Quanto custa a implantação?</summary><p>Depende do trabalho escolhido. O valor sai do Diagnóstico Prisma, em uma proposta.</p></details>
+<details><summary>Quanto custa a implantação?</summary><p>Depende do trabalho escolhido. O valor sai do diagnóstico, em uma proposta.</p></details>
 </div>
 </div></section>
 
 <section class="v2-final" id="conversar" aria-labelledby="v2-final-t"><div class="wrap">
 <h2 id="v2-final-t">O que você gostaria de tirar das suas costas?</h2>
-<div class="v2-actions"><a class="v2-btn v2-sun" href="{diag}" target="_blank" rel="noopener noreferrer">Começar pelo Diagnóstico Prisma</a><a class="v2-btn v2-ghost" href="{talk}" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a></div>
+<div class="v2-actions"><a class="v2-btn v2-sun" href="{diag}" target="_blank" rel="noopener noreferrer">Fazer o diagnóstico gratuito</a><a class="v2-btn v2-ghost" href="{talk}" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp</a></div>
 </div></section>
 </div>
 {REVEAL_JS}'''
