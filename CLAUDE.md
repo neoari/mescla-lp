@@ -67,5 +67,5 @@ contato; nunca registrar esse clique como entrevista agendada ou venda.
 Não incluir respostas livres, nomes, telefones ou e-mails nos eventos analíticos.
 Ativar um coletor exige revisar suas tags e atualizar o aviso de privacidade.
 
-## Prisma
-`content/prisma-specialists.json` é o catálogo público exportado do projeto Prisma. `scripts/prisma_page.py` gera `prisma/index.html`; não editar o HTML gerado. O conteúdo apresenta método em preparação, sem simular aplicativo disponível. Estilos em `assets/prisma.css`.
+## /prisma/ (redirecionamento)
+O nome Prisma foi abolido em 08/11/2026: a marca é só Mescla. `/prisma/` existe apenas como redirecionamento para `/#diagnostico` (gerado em `scripts/build-site.py`), para não quebrar links antigos. Não criar páginas, seções, textos ou produtos com o nome Prisma. `assets/prisma.css` ainda está na allowlist só para não exigir troca do Compose; sai na próxima mudança de allowlist.

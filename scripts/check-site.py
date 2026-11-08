@@ -63,7 +63,7 @@ with tarfile.open(archive) as tar:
 expected = re.search(r'^mescla_expected="([^"\n]+)"', (ROOT/'scripts/container-start.sh').read_text(), re.M).group(1).split()
 assert expected==list(PUBLIC_FILES), 'Container allowlist differs from the built bundle'
 # Motion is Home-only; every other page has an independent, usable static surface.
-# Home v2 (nov/2026): sem cena 3D nem lista de plataformas; seções e entrada do Diagnóstico Prisma.
+# Home v2 (nov/2026): sem cena 3D nem lista de plataformas; seções e entrada do diagnóstico gratuito.
 assert len(home.xpath('//div[@class="v2"]'))==1
 for anchor in ('metodo','diagnostico','seu-time','quem','segmentos','conversar'):assert home.xpath(f'//*[@id="{anchor}"]'),anchor
 assert len(home.xpath('//style[@id="home-v2"]'))==1
