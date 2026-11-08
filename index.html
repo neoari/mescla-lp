@@ -15,328 +15,535 @@
 <link rel="icon" type="image/svg+xml" href="/assets/mescla-favicon.svg?v=0e52f55790c3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@650&amp;display=swap" rel="stylesheet">
-<style>
-:root{--noite:#1B1930;--nevoa:#ECEBF1;--branco:#FBFAFD;--sol:#F2B84B;--mare:#6FD9C9;--roma:#CF3E27;--cinza:#625F72;--linha:#DDDAE5;--verde:#116C60;--ambar:#7B5209}
-*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--branco);color:var(--noite);font-family:'Instrument Sans',sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}h1,h2,h3,p{margin:0}h1,h2,.serif{font-family:'Fraunces',serif;font-weight:400;letter-spacing:-.05em;line-height:1.07;font-optical-sizing:auto}h1{font-size:clamp(56px,6.7vw,93px)}h2{font-size:clamp(38px,4.9vw,66px)}h3{font-size:23px;font-weight:600;line-height:1.25;letter-spacing:-.025em}em{font-weight:400}a{color:inherit}button{font:inherit}a,button{-webkit-tap-highlight-color:transparent}svg{display:block;max-width:100%}::selection{background:var(--sol);color:var(--noite)}
-.wrap{width:min(1240px,calc(100% - 96px));margin-inline:auto}.section{padding-block:105px}.eyebrow{display:flex;gap:12px;align-items:center;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;line-height:1.5}.eyebrow::before{content:'';width:24px;height:2px;background:currentColor;flex-shrink:0}.lead{font-size:19px;line-height:1.6;color:var(--cinza)}.muted{color:var(--cinza)}.mono{font-family:'JetBrains Mono',monospace}.section-head{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:end;margin-bottom:50px}.section-head .eyebrow{margin-bottom:22px}.section-head .lead{max-width:420px;margin-left:auto}.section-no{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--cinza);letter-spacing:0}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:28px;padding:17px 23px;min-height:56px;background:var(--roma);border:1px solid var(--roma);border-radius:6px;color:white;text-decoration:none;font-size:16px;line-height:1.25;font-weight:600;transition:background .2s,transform .2s}.btn:hover{background:#B4311C;border-color:#B4311C;transform:translateY(-2px)}.arrow{font-size:23px;line-height:1;font-weight:400}.text-link{display:inline-flex;align-items:center;gap:14px;text-underline-offset:5px;font-size:15px;font-weight:500}.text-link:hover{color:var(--roma)}:focus-visible{outline:3px solid var(--roma);outline-offset:5px}.dark :focus-visible{outline-color:var(--sol)}.skip{position:fixed;top:10px;left:20px;transform:translateY(-160%);z-index:100;background:var(--noite);color:white;padding:12px 18px;border-radius:4px}.skip:focus{transform:none}
-.nav{border-bottom:1px solid var(--linha);background:rgba(251,250,253,.96);position:sticky;top:0;z-index:30;backdrop-filter:blur(12px)}.nav-inner{height:84px;display:flex;justify-content:space-between;align-items:center;gap:30px}.brand{display:inline-flex;gap:12px;align-items:center;text-decoration:none;line-height:1}.brand-word{font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:650;letter-spacing:-.025em}.brand-mark{display:block;width:44px;height:44px;flex-shrink:0;object-fit:contain}.nav-links{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:500}.nav-links a{text-decoration:none}.nav-links a:hover{color:var(--roma)}.nav-contact{display:flex;min-height:44px;gap:20px;align-items:center;border:1px solid var(--noite);padding:10px 17px;border-radius:5px;font-size:14px;text-decoration:none;font-weight:600}.nav-contact:hover{background:var(--noite);color:var(--branco)}
-.hero{padding:66px 0 45px}.hero-grid{display:grid;grid-template-columns:1.17fr 1fr;gap:58px;align-items:center}.hero .eyebrow{margin-bottom:27px;color:var(--cinza)}.hero h1 span,.hero h1 em{display:block}.hero h1 em{line-height:1.15}.hero-copy>.lead{max-width:520px;margin-top:27px;font-size:18px}.hero-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:30px}.hero .audience{margin-top:19px;font-size:13px;color:var(--cinza);max-width:450px}.hero-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:50px;border-top:1px solid var(--linha);padding-top:20px;font-size:13px;color:var(--cinza)}.hero-foot strong{font-weight:500;color:var(--noite)}.foot-colors{display:flex;gap:18px;align-items:center}.foot-colors span{display:flex;align-items:center;gap:7px}.foot-colors i{display:block;width:9px;height:9px;background:var(--sol);border-radius:50%}.foot-colors span+span i{background:var(--mare);border-radius:2px}
-.work-scene{background:var(--nevoa);border:1px solid var(--linha);border-radius:12px;padding:23px}.scene-top{display:flex;justify-content:space-between;gap:15px;align-items:center;padding-bottom:18px;border-bottom:1px solid #D0CCDC;font-size:12px;color:var(--cinza)}.scene-top strong{font-weight:500;color:var(--noite)}.scene-flow{padding:24px 0 7px;position:relative}.scene-flow::before{content:'';position:absolute;width:2px;top:57px;bottom:58px;left:27px;background:linear-gradient(var(--sol),var(--mare),var(--sol))}.scene-step{display:grid;grid-template-columns:56px 1fr;gap:14px;position:relative}.scene-step+.scene-step{margin-top:17px}.avatar{height:39px;width:39px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;position:relative;margin:9px auto 0;border:5px solid var(--nevoa);box-sizing:content-box}.avatar.human{border-radius:50%;background:var(--sol)}.avatar.agent{border-radius:13px;background:var(--mare)}.bubble{background:var(--branco);padding:17px 19px;border-radius:8px;box-shadow:0 3px 8px #1B193004}.bubble-head{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:14px;line-height:1.3;margin-bottom:8px}.bubble-head b{font-weight:600}.role{padding:3px 6px;border-radius:3px;font-size:12px;font-weight:500}.role.human{background:#FFF0D2;color:var(--ambar)}.role.agent{background:#D7F1EA;color:var(--verde)}.bubble p{font-size:14px;line-height:1.5;color:#474355}.bubble ul{padding:0;margin:11px 0 0;list-style:none;font-size:14px}.bubble li{display:flex;gap:8px;margin-top:5px;align-items:center}.bubble li::before{content:'↳';color:var(--verde)}.file{display:flex;gap:10px;align-items:center;margin-top:14px;padding:10px;border:1px solid var(--linha);border-radius:5px;font-size:13px}.file-icon{display:flex;justify-content:center;align-items:center;border-radius:3px;width:26px;height:32px;background:var(--nevoa);font-size:15px}.file small{display:block;color:var(--cinza);font-size:12px}.scene-caption{margin-top:17px;padding-top:16px;border-top:1px solid #D0CCDC;font-size:12px;color:var(--cinza)}
-.possibilities{border-top:1px solid var(--linha);padding-top:88px}.routine-grid{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--linha)}.routine{padding:31px 32px 34px 0;display:flex;flex-direction:column}.routine+.routine{border-left:1px solid var(--linha);padding-left:32px}.routine .section-no{margin-bottom:30px}.routine h3{margin-bottom:16px}.routine p{color:var(--cinza);font-size:16px}.routine .routine-bottom{margin-top:auto;padding-top:29px;font-size:14px;color:var(--noite)}.section-note{font-size:13px;color:var(--cinza);margin-top:20px}
-.dark{background:var(--noite);color:var(--branco)}.purpose{padding:98px 0 90px}.purpose .eyebrow{color:var(--mare);margin-bottom:37px}.purpose-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:70px;align-items:end}.purpose h2{font-size:clamp(46px,6vw,82px);line-height:1.09}.purpose h2 em{color:var(--sol)}.purpose-text{font-size:20px;color:#D0CCDF;max-width:415px;padding-bottom:6px}.purpose-line{margin-top:60px;display:flex;align-items:center;gap:16px;font-size:12px;color:#BCB8D0}.purpose-line::before{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--sol) 0%,var(--sol) 42%,var(--mare) 43%,var(--mare) 100%)}
-.example{background:var(--nevoa)}.example-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}.example-copy h2{margin-top:22px}.example-copy>.lead{margin-top:25px;font-size:18px}.example-copy .example-label{display:inline-flex;align-items:center;gap:8px;margin-top:30px;padding:8px 11px;border:1px solid #C6C2D2;font-size:12px;border-radius:4px;color:var(--cinza)}.process-list{list-style:none;margin:0;padding:0;counter-reset:process}.process-list li{display:grid;grid-template-columns:34px 1fr;gap:20px;padding:22px 0;border-top:1px solid #CDC9D8;counter-increment:process}.process-list li::before{content:'0' counter(process);font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--cinza);padding-top:3px}.process-list li:last-child{padding-bottom:0}.process-meta{display:flex;align-items:center;gap:9px;font-size:12px;margin-bottom:8px;color:var(--ambar)}.process-meta::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--sol);border:1px solid #AA7625}.process-meta.agent{color:var(--verde)}.process-meta.agent::before{background:var(--mare);border-color:#357E72;border-radius:1px}.process-list h3{font-size:21px;margin-bottom:6px}.process-list p{font-size:16px;color:var(--cinza)}
-.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:55px}.method-step{border-top:2px solid var(--noite);padding-top:22px}.method-step .section-no{display:block;margin-bottom:35px}.method-step h3{font-size:21px;margin-bottom:13px}.method-step p{color:var(--cinza);font-size:16px}.roles{display:grid;grid-template-columns:1fr 1fr;margin-top:60px;background:var(--nevoa);border-radius:8px;overflow:hidden}.role-block{padding:32px 38px}.role-block+.role-block{border-left:1px solid #D4D0DF}.role-block h3{display:flex;align-items:center;gap:12px;font-size:19px;margin-bottom:12px}.role-block h3::before{content:'';width:12px;height:12px;background:var(--mare);border-radius:3px}.role-block+.role-block h3::before{background:var(--sol);border-radius:50%}.role-block p{font-size:16px;color:var(--cinza)}
-.tools{border-top:1px solid var(--linha);padding:65px 0}.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}.tools h2{font-size:36px;max-width:410px}.tools p{font-size:16px;color:var(--cinza);margin-top:16px;max-width:490px}.tool-names{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.tool-names a{font-size:21px;letter-spacing:-.04em;font-weight:500;border:1px solid var(--linha);border-radius:6px;padding:13px 20px;text-decoration:none}.tool-names a:hover{border-color:var(--noite)}.tools-right .muted{margin-top:14px;font-size:13px}
-.offer{background:var(--nevoa)}.offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.offer-card{padding:36px 38px 33px;border:1px solid #D1CDDC;background:var(--branco);border-radius:8px}.offer-card .eyebrow{font-size:12px;color:var(--cinza);margin-bottom:23px}.offer-card h3{font-family:'Fraunces',serif;font-weight:400;font-size:35px;letter-spacing:-.04em;line-height:1.12;margin-bottom:18px}.offer-card p{font-size:16px;color:var(--cinza)}.offer-card ul{list-style:none;padding:0;margin:25px 0 0;border-top:1px solid var(--linha)}.offer-card li{font-size:16px;padding-top:13px;display:flex;gap:12px;line-height:1.4}.offer-card li::before{content:'↗';color:var(--verde)}.offer-bottom{display:flex;align-items:center;justify-content:space-between;gap:35px;margin-top:28px}.offer-bottom p{max-width:690px;font-size:14px;color:var(--cinza)}.offer-bottom .text-link{flex-shrink:0}
-.faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:90px}.faq-grid h2{margin-top:22px;font-size:53px}.faq-list details{border-top:1px solid var(--linha)}.faq-list details:last-child{border-bottom:1px solid var(--linha)}.faq-list summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:26px;cursor:pointer;font-weight:500;font-size:17px;padding:23px 0;line-height:1.4}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary::after{content:'+';font-size:25px;color:var(--cinza);font-weight:400;flex-shrink:0}.faq-list details[open] summary::after{content:'−'}.faq-list details[open] summary{color:var(--verde)}.faq-list details p{color:var(--cinza);font-size:16px;line-height:1.6;padding:0 36px 23px 0}
-.contact{padding:87px 0 94px;background:var(--sol)}.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:100px;align-items:end}.contact .eyebrow{margin-bottom:26px;color:var(--noite)}.contact h2{font-size:clamp(44px,5vw,70px);max-width:690px}.contact p{font-size:18px;margin-bottom:28px;max-width:380px}.contact .btn{background:var(--noite);border-color:var(--noite)}.contact .btn:hover{background:#34304F}.contact .contact-note{display:block;margin-top:14px;font-size:12px}.footer{background:var(--noite);color:var(--branco);padding:38px 0}.footer-grid{display:flex;align-items:center;justify-content:space-between;gap:30px}.footer .brand-word{font-size:32px}.footer .brand-mark{width:36px;height:36px;border-radius:9px}.footer small{display:block;color:#BCB8D0;font-size:12px}.footer .definition{font-size:13px;color:#BCB8D0;text-align:right}.footer .definition em{font-family:'Fraunces',serif;font-size:19px;color:var(--branco)}
-@media(min-width:1600px){.hero{padding-block:82px 55px}}
-@media(max-width:1100px){.wrap{width:calc(100% - 64px)}.hero-grid{gap:32px;grid-template-columns:1.08fr 1fr}.hero h1{font-size:70px}.hero-actions{gap:20px}.nav-links{gap:20px}.work-scene{padding:18px}.bubble{padding:14px}.scene-step{grid-template-columns:43px 1fr;gap:10px}.avatar{width:32px;height:32px}.scene-flow::before{left:21px}.scene-top{font-size:12px}.purpose-grid{gap:45px}.example-layout,.faq-grid{gap:50px}.contact-grid{gap:55px}.method-grid{gap:22px}.method-step h3{font-size:19px}}
-@media(max-width:800px){.wrap{width:calc(100% - 40px)}.nav-inner{height:72px}.nav-links{display:none}.brand{gap:8px}.brand-word{font-size:28px}.brand-mark{width:36px;height:36px}.nav-contact{font-size:14px;padding:10px 12px;gap:12px}.section{padding-block:70px}.hero{padding-top:43px;padding-bottom:35px}.hero-grid{grid-template-columns:1fr;gap:40px}.hero h1{font-size:clamp(53px,9.3vw,78px)}.hero-copy>.lead{max-width:540px;font-size:18px}.hero .eyebrow{font-size:12px;margin-bottom:22px}.hero-actions{gap:22px}.hero .audience{max-width:100%}.work-scene{padding:22px;max-width:570px;width:100%;justify-self:center}.scene-top{font-size:12px}.scene-step{grid-template-columns:50px 1fr;gap:14px}.avatar{width:37px;height:37px}.scene-flow::before{left:25px}.bubble{padding:17px 19px}.hero-foot{margin-top:32px;font-size:12px}.hero-foot>span{max-width:240px}.foot-colors{gap:12px;flex-shrink:0}.section-head{grid-template-columns:1fr;gap:22px;margin-bottom:33px}.section-head .lead{margin:0;max-width:560px;font-size:18px}.routine-grid{grid-template-columns:1fr}.routine{padding:25px 0}.routine+.routine{padding-left:0;border-left:none;border-top:1px solid var(--linha)}.routine .section-no{margin-bottom:16px}.routine h3{font-size:25px}.routine .routine-bottom{padding-top:19px}.purpose{padding-block:68px}.purpose-grid{grid-template-columns:1fr;gap:28px}.purpose h2{font-size:clamp(44px,8.5vw,70px)}.purpose-text{font-size:18px;max-width:500px}.purpose .eyebrow{margin-bottom:28px}.purpose-line{margin-top:40px}.example-layout{grid-template-columns:1fr;gap:35px}.example-copy h2{max-width:490px}.example-copy>.lead{max-width:570px;margin-top:20px}.example-copy .example-label{margin-top:22px}.method-grid{grid-template-columns:1fr 1fr;gap:32px 25px;margin-top:36px}.method-step .section-no{margin-bottom:20px}.method-step h3{font-size:22px}.roles{grid-template-columns:1fr;margin-top:38px}.role-block{padding:26px}.role-block+.role-block{border-left:none;border-top:1px solid #D4D0DF}.tools-grid{grid-template-columns:1fr;gap:30px}.tools{padding-block:50px}.tools h2{font-size:36px}.offer-grid{grid-template-columns:1fr}.offer-card{padding:28px}.offer-bottom{display:block}.offer-bottom .text-link{margin-top:19px}.faq-grid{grid-template-columns:1fr;gap:35px}.faq-grid h2{font-size:45px}.contact-grid{grid-template-columns:1fr;gap:30px}.contact{padding-block:67px}.contact h2{max-width:520px}.contact p{max-width:470px}.footer-grid{align-items:flex-start}.footer .definition{max-width:160px;font-size:12px}}
-@media(max-width:380px){.nav-inner{gap:12px}.nav-contact{padding:10px}.nav-contact>span{display:none}.wrap{width:calc(100% - 32px)}.hero h1{font-size:49px}.hero-actions{align-items:flex-start;flex-direction:column;gap:18px}.work-scene{padding:14px}.scene-step{grid-template-columns:34px 1fr;gap:9px}.avatar{width:27px;height:27px;font-size:12px}.scene-flow::before{left:17px}.bubble{padding:13px}.scene-top{font-size:12px;flex-wrap:wrap}.hero-foot{align-items:flex-start;flex-direction:column;gap:12px}.method-grid{grid-template-columns:1fr}.tool-names a{font-size:18px;padding:10px 13px}.footer-grid{flex-direction:column}.footer .definition{text-align:left;max-width:none}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
-@media print{.nav{position:static}.nav-links,.nav-contact,.hero-actions,.contact .btn{display:none}.section{padding-block:35px}.wrap{width:100%}.dark,.contact{background:white;color:var(--noite)}.purpose h2 em,.purpose-text,.footer small,.footer .definition,.footer .definition em{color:var(--noite)}details{break-inside:avoid}}
-</style>
-<link rel="stylesheet" href="/assets/segments.css?v=0d8f6bfbaabb">
-<link rel="stylesheet" href="/assets/experience.css?v=c28f76d97e28">
-<style id="home-v2">
-.v2{--v2-r:24px;overflow-x:clip}
-.v2 section{padding:112px 0;position:relative}
-.v2 .v2-eyebrow{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--verde);margin:0 0 20px}
-.v2 h2{font-size:clamp(36px,4.6vw,62px);max-width:860px}
-.v2 h3{font-family:'Instrument Sans',sans-serif;font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
-.v2 .v2-lead{font-size:clamp(18px,1.6vw,21px);line-height:1.6;max-width:640px;margin-top:26px;color:var(--noite)}
-.v2 .v2-muted{color:var(--cinza)}
-.v2 .v2-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:12px;padding:4px 11px;border-radius:999px;background:var(--nevoa);color:var(--cinza)}
-.v2 .v2-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;background:var(--verde);color:var(--branco);text-decoration:none;font-weight:600;font-size:16px;transition:transform .25s cubic-bezier(.16,1,.3,1),box-shadow .25s}
-.v2 .v2-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(17,108,96,.55)}
-.v2 .v2-btn.v2-ghost{background:transparent;color:var(--noite);box-shadow:inset 0 0 0 1.5px var(--noite)}
-.v2 .v2-btn.v2-sun{background:var(--sol);color:var(--noite)}
-.v2 .v2-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
-.v2 .v2-card{background:#fff;border:1px solid var(--linha);border-radius:var(--v2-r);padding:30px;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s}
-.v2 .v2-card:hover{transform:translateY(-3px);box-shadow:0 22px 44px -28px rgba(27,25,48,.35)}
-.v2 .v2-card p{margin-top:10px;color:var(--cinza)}
-.v2 .v2-grid{display:grid;gap:18px;margin-top:52px}
-.v2 .v2-g3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:920px){.v2 .v2-g3{grid-template-columns:1fr}}
-/* hero */
-.v2 .v2-hero{padding:72px 0 104px;background:radial-gradient(1200px 520px at 85% 10%,rgba(111,217,201,.18),transparent 60%),radial-gradient(900px 480px at 100% 90%,rgba(242,184,75,.14),transparent 60%)}
-.v2 .v2-hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center}
-@media(max-width:980px){.v2 .v2-hero-grid{grid-template-columns:1fr}}
-.v2 .v2-hero h1{font-size:clamp(46px,6.2vw,90px)}
-.v2 .v2-hero h1 span{display:block;color:var(--verde)}
-.v2 .v2-assure{display:flex;gap:18px;flex-wrap:wrap;margin-top:30px;font-size:15px;color:var(--cinza)}
-.v2 .v2-assure span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--mare);margin-right:8px;vertical-align:1px}
-.v2 .v2-prism-art{width:100%;max-width:560px;margin-left:auto;display:block}
-.v2 .v2-ray{stroke-dasharray:420;stroke-dashoffset:420;animation:v2-draw 1.3s cubic-bezier(.16,1,.3,1) forwards}
-.v2 .v2-ray:nth-of-type(2){animation-delay:.12s}.v2 .v2-ray:nth-of-type(3){animation-delay:.24s}.v2 .v2-ray:nth-of-type(4){animation-delay:.36s}
-.v2 .v2-beam{stroke-dasharray:300;stroke-dashoffset:300;animation:v2-draw 1s cubic-bezier(.16,1,.3,1) forwards}
-.v2 .v2-chip{opacity:0;animation:v2-fade .6s cubic-bezier(.16,1,.3,1) forwards}
-.v2 .v2-chip:nth-of-type(1){animation-delay:.9s}.v2 .v2-chip:nth-of-type(2){animation-delay:1s}.v2 .v2-chip:nth-of-type(3){animation-delay:1.1s}.v2 .v2-chip:nth-of-type(4){animation-delay:1.2s}
-@keyframes v2-draw{to{stroke-dashoffset:0}}
-@keyframes v2-fade{to{opacity:1}}
-/* rotina */
-.v2 .v2-day{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-@media(max-width:920px){.v2 .v2-day{grid-template-columns:1fr}}
-.v2 .v2-timeline{display:grid;gap:12px;position:relative}
-.v2 .v2-step{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:20px 22px;border-radius:18px;background:#fff;border:1px solid var(--linha)}
-.v2 .v2-step b{font-family:'JetBrains Mono',monospace;font-weight:500;color:var(--verde);font-size:15px}
-.v2 .v2-step.v2-night{background:var(--noite);color:var(--branco);border-color:var(--noite)}
-.v2 .v2-step.v2-night b{color:var(--mare)}
-/* contraste */
-.v2 .v2-vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:52px}
-@media(max-width:820px){.v2 .v2-vs{grid-template-columns:1fr}}
-.v2 .v2-vs-col{border-radius:var(--v2-r);padding:32px}
-.v2 .v2-vs-col h3{margin-bottom:18px}
-.v2 .v2-vs-col ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-.v2 .v2-vs-col li{padding-left:30px;position:relative}
-.v2 .v2-solo{background:var(--nevoa);color:var(--cinza)}
-.v2 .v2-solo li::before{content:"–";position:absolute;left:6px;color:var(--cinza)}
-.v2 .v2-team{background:var(--noite);color:var(--branco)}
-.v2 .v2-team li::before{content:"";position:absolute;left:2px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--mare)}
-.v2 .v2-line{font-family:'Fraunces',serif;font-size:clamp(28px,3.2vw,42px);letter-spacing:-.035em;margin-top:52px}
-.v2 .v2-line em{font-style:normal;background:linear-gradient(transparent 62%,rgba(242,184,75,.55) 62%)}
-.v2 .v2-arch{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px;position:relative}
-@media(max-width:920px){.v2 .v2-arch{grid-template-columns:1fr}}
-.v2 .v2-arch .v2-card{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);color:var(--branco)}
-.v2 .v2-arch .v2-card p{color:#C9C7D6}
-.v2 .v2-arch .v2-tag{background:rgba(111,217,201,.16);color:var(--mare)}
-.v2 .v2-arch .v2-main{background:var(--branco);color:var(--noite)}
-.v2 .v2-arch .v2-main p{color:var(--cinza)}
-.v2 .v2-arch .v2-main .v2-tag{background:var(--sol);color:var(--noite)}
-.v2 .v2-arch h3{margin-top:16px;font-size:24px}
-/* diagnóstico */
-.v2 .v2-diag{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center;margin-top:20px}
-@media(max-width:980px){.v2 .v2-diag{grid-template-columns:1fr;gap:40px}}
-.v2 .v2-list{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:12px}
-.v2 .v2-list li{display:flex;gap:14px;align-items:flex-start}
-.v2 .v2-list li i{flex:0 0 28px;height:28px;border-radius:50%;background:var(--nevoa);color:var(--verde);font-style:normal;font-family:'JetBrains Mono',monospace;font-size:13px;display:grid;place-items:center}
-.v2 .v2-matrix{display:grid;grid-template-columns:auto 1fr 1fr;grid-template-rows:1fr 1fr auto;gap:10px;max-width:540px;aspect-ratio:1.04/1}
-.v2 .v2-q{border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;font-size:14px;line-height:1.4}
-.v2 .v2-q b{display:block;font-size:17px;margin-bottom:4px}
-.v2 .v2-q small{font-size:13px;opacity:.8}
-.v2 .v2-q1{background:var(--mare);grid-column:2;grid-row:1}
-.v2 .v2-q2{background:var(--sol);grid-column:3;grid-row:1}
-.v2 .v2-q3{background:var(--nevoa);grid-column:2;grid-row:2}
-.v2 .v2-q4{background:#F5D9D3;grid-column:3;grid-row:2}
-.v2 .v2-ax{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--cinza)}
-.v2 .v2-axy{grid-column:1;grid-row:1/3;writing-mode:vertical-rl;transform:rotate(180deg);text-align:center}
-.v2 .v2-axx{grid-column:2/4;grid-row:3;text-align:center}
-@media(max-width:520px){.v2 .v2-q{padding:12px;font-size:12px}.v2 .v2-q b{font-size:14px}.v2 .v2-q small{display:none}}
-/* método */
-.v2 .v2-method{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:52px;counter-reset:v2m}
-@media(max-width:1080px){.v2 .v2-method{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.v2 .v2-method{grid-template-columns:1fr}}
-.v2 .v2-method .v2-card{padding:26px;border-radius:20px;display:flex;flex-direction:column}
-.v2 .v2-method .v2-card::before{counter-increment:v2m;content:"0" counter(v2m);font-family:'JetBrains Mono',monospace;color:var(--verde);font-size:14px;margin-bottom:16px}
-.v2 .v2-deliv{margin-top:auto!important;padding-top:16px;border-top:1px dashed var(--linha);font-size:14px;color:var(--noite)!important}
-.v2 .v2-method p:not(.v2-deliv){margin-bottom:16px}
-.v2 .v2-deliv span{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--verde);margin-bottom:4px}
-/* controle */
-.v2 .v2-control{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-@media(max-width:920px){.v2 .v2-control{grid-template-columns:1fr}}
-.v2 .v2-checks{list-style:none;padding:0;margin:0;display:grid;gap:12px}
-.v2 .v2-checks li{padding:20px 22px 20px 58px;background:#fff;border:1px solid var(--linha);border-radius:18px;position:relative}
-.v2 .v2-checks li::before{content:"✓";position:absolute;left:20px;top:19px;width:24px;height:24px;border-radius:50%;background:var(--verde);color:#fff;font-size:13px;display:grid;place-items:center}
-/* dono */
-.v2 .v2-own{background:linear-gradient(180deg,rgba(236,235,241,.6),rgba(236,235,241,0))}
-.v2 .v2-dark{background:var(--verde);color:var(--branco);border-color:var(--verde)}
-.v2 .v2-dark p{color:#D9F2EE}
-/* quem */
-.v2 .v2-who{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:center;margin-top:12px}
-@media(max-width:900px){.v2 .v2-who{grid-template-columns:1fr;gap:36px}}
-.v2 .v2-photo{border-radius:28px;overflow:hidden;aspect-ratio:4/5;background:var(--nevoa);position:relative}
-.v2 .v2-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block}
-.v2 .v2-photo::after{content:"";position:absolute;inset:auto 0 0 0;height:8px;background:linear-gradient(90deg,var(--mare),var(--verde),var(--sol),var(--roma))}
-.v2 .v2-quote{font-family:'Fraunces',serif;font-size:clamp(26px,2.8vw,36px);letter-spacing:-.03em;line-height:1.2;margin-top:26px}
-/* áreas */
-.v2 .v2-areas{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
-.v2 .v2-areas a{padding:12px 18px;border-radius:999px;border:1px solid var(--linha);background:#fff;text-decoration:none;font-weight:500;transition:border-color .2s,background .2s}
-.v2 .v2-areas a:hover{border-color:var(--verde);background:rgba(111,217,201,.12)}
-/* faq */
-.v2 details{border-bottom:1px solid var(--linha);padding:22px 0;max-width:880px}
-.v2 summary{cursor:pointer;font-weight:600;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:20px}
-.v2 summary::-webkit-details-marker{display:none}
-.v2 summary::after{content:"+";color:var(--verde);font-size:24px;line-height:1}
-.v2 details[open] summary::after{content:"–"}
-.v2 details p{margin-top:12px;color:var(--cinza);max-width:760px}
-/* final */
-.v2 .v2-final{background:var(--verde);color:var(--branco);text-align:center;overflow:hidden}
-.v2 .v2-final h2{margin:0 auto;color:var(--branco)}
-.v2 .v2-final .v2-actions{justify-content:center}
-.v2 .v2-final .v2-ghost{color:var(--branco);box-shadow:inset 0 0 0 1.5px var(--branco)}
-/* revelação */
-.v2 [data-v2-reveal]{opacity:0;transform:translateY(18px);transition:opacity .42s cubic-bezier(.16,1,.3,1),transform .42s cubic-bezier(.16,1,.3,1)}
-.v2 [data-v2-reveal].v2-in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.v2 [data-v2-reveal]{opacity:1;transform:none;transition:none}.v2 .v2-ray,.v2 .v2-beam{animation:none;stroke-dashoffset:0}.v2 .v2-chip{animation:none;opacity:1}.v2 .v2-btn,.v2 .v2-card{transition:none}}
-@media(max-width:620px){.v2 section{padding:76px 0}.v2 .v2-hero{padding:44px 0 76px}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/home.css?v=5cc075d3110d">
+<script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduz');</script>
 </head>
-<body data-segment="home" data-page-version="home-2026-11-08">
-<a class="skip" href="#principal">Pular para o conteúdo</a>
+<body data-segment="home" data-page-version="home-2026-11-08b">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="nav"><div class="wrap nav-inner">
-<a class="brand" href="#principal" aria-label="Mescla, início"><img class="brand-mark" src="/assets/mescla-logo.svg?v=f1db7c5b4382" width="44" height="44" alt="" decoding="async"><span class="brand-word">mescla</span></a>
-<nav class="nav-links" aria-label="Navegação principal"><a href="#metodo">Como trabalhamos</a><a href="#diagnostico">Diagnóstico</a><a href="#seu-time">Seu time</a><a href="#quem">Quem somos</a></nav>
-<a class="nav-contact" href="#diagnostico">Diagnóstico gratuito <span aria-hidden="true">↗</span></a>
-</div></header>
-<main id="principal">
-<div class="v2">
-<section class="v2-hero" aria-labelledby="hero-title"><div class="wrap v2-hero-grid">
-<div>
-<p class="v2-eyebrow">Consultoria e implantação de IA para pequenos negócios</p>
-<h1 id="hero-title">Seu trabalho pode ir mais longe. <span>Com um time de IA.</span></h1>
-<p class="v2-lead">A Mescla monta equipes de pessoas e agentes de IA para tirar tarefas do caminho, organizar o conhecimento e ampliar o que você consegue fazer, aproveitando sempre que possível as ferramentas que você já tem.</p>
-<div class="v2-actions"><a class="v2-btn" href="#diagnostico">Fazer o diagnóstico gratuito <span aria-hidden="true">→</span></a><a class="v2-btn v2-ghost" href="#metodo">Ver como funciona <span aria-hidden="true">↓</span></a></div>
-<p class="v2-assure"><span>Para pessoas e empresas</span><span>Diagnóstico gratuito</span><span>A parte técnica fica com a Mescla</span></p>
-</div>
-<div><svg class="v2-prism-art" viewBox="0 0 560 440" role="img" aria-labelledby="v2-prism-t"><title id="v2-prism-t">Dois fios, pessoas e agentes de IA, se cruzam numa trama e saem em quatro caminhos: comece aqui, aposta, quando sobrar tempo e evitar por ora.</title>
-<defs><mask id="v2-trama-gaps" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="white"/><path d="M59 21H75V25H59ZM59 41H75V45H59ZM25 55H41V59H25ZM25 75H41V79H25ZM21 25H25V41H21ZM41 25H45V41H41ZM55 59H59V75H55ZM75 59H79V75H75Z" fill="black"/></mask></defs>
-<g fill="none" stroke-linecap="round">
-<path class="v2-beam" d="M10 170 C90 170 120 196 170 204" stroke="#F2B84B" stroke-width="7"/>
-<path class="v2-beam" d="M10 262 C90 262 120 232 170 224" stroke="#6FD9C9" stroke-width="7"/>
-</g>
-<g fill="none" stroke-width="10" stroke-linecap="round">
-<path class="v2-ray" d="M292 196 C340 160 370 112 412 82" stroke="#6FD9C9"/>
-<path class="v2-ray" d="M296 206 C340 196 378 178 420 168" stroke="#F2B84B"/>
-<path class="v2-ray" d="M296 226 C340 240 378 258 420 268" stroke="#ECEBF1"/>
-<path class="v2-ray" d="M292 236 C340 272 370 326 412 356" stroke="#CF3E27" stroke-opacity=".75"/>
-</g>
-<g transform="translate(166 150) scale(1.3)"><g mask="url(#v2-trama-gaps)"><rect x="25" y="10" width="16" height="80" rx="8" fill="#F2B84B"/><rect x="59" y="10" width="16" height="80" rx="8" fill="#F2B84B"/><rect x="10" y="25" width="80" height="16" rx="8" fill="#6FD9C9"/><rect x="10" y="59" width="80" height="16" rx="8" fill="#6FD9C9"/><rect x="25" y="22" width="16" height="22" fill="#F2B84B"/><rect x="59" y="56" width="16" height="22" fill="#F2B84B"/></g></g>
-<g font-family="Instrument Sans, sans-serif" font-size="15" font-weight="600" fill="#1B1930">
-<g class="v2-chip"><rect x="418" y="62" width="132" height="38" rx="19" fill="#6FD9C9"/><text x="484" y="86" text-anchor="middle">Comece aqui</text></g>
-<g class="v2-chip"><rect x="426" y="149" width="116" height="38" rx="19" fill="#F2B84B"/><text x="484" y="173" text-anchor="middle">Aposta</text></g>
-<g class="v2-chip"><rect x="426" y="249" width="126" height="38" rx="19" fill="#ECEBF1" stroke="#DDDAE5"/><text x="489" y="273" text-anchor="middle" font-size="13">Quando sobrar</text></g>
-<g class="v2-chip"><rect x="418" y="337" width="132" height="38" rx="19" fill="#F5D9D3"/><text x="484" y="361" text-anchor="middle">Evitar por ora</text></g>
-</g>
-<g font-family="JetBrains Mono, monospace" font-size="12" letter-spacing="1.2" fill="#625F72"><text x="16" y="156">PESSOAS</text><text x="16" y="288">AGENTES DE IA</text></g>
-</svg></div>
-</div></section>
+<header class="topo" id="topo">
+  <div class="wrap topo-in">
+    <a class="marca" href="#principal" aria-label="Mescla, início">
+      <img src="/assets/mescla-logo.svg?v=f1db7c5b4382" width="34" height="34" alt="">
+      <span class="marca-nome">mescla</span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Seções da página">
+      <a href="#funcionando">Ver funcionando</a>
+      <a href="#metodo">Como trabalhamos</a>
+      <a href="#aplicacoes">Aplicações</a>
+      <a href="#quem">Quem somos</a>
+      <a class="btn btn-contorno btn-menu" href="https://wa.me/5561993973584?text=Quero%20o%20diagn%C3%B3stico%20gratuito%20da%20Mescla.%0A%0AO%20que%20eu%20fa%C3%A7o%3A%0AO%20trabalho%20que%20mais%20pesa%20hoje%3A%0AAs%20ferramentas%20que%20j%C3%A1%20uso%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero o diagnóstico gratuito da Mescla." data-placement="menu">Diagnóstico gratuito <span aria-hidden="true">↗</span></a>
+    </nav>
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu"><span class="menu-icone" aria-hidden="true"></span>Menu</button>
+  </div>
+</header>
 
-<section aria-labelledby="v2-day-t"><div class="wrap v2-day">
-<div data-v2-reveal><p class="v2-eyebrow">Uma rotina funcionando</p><h2 id="v2-day-t">Uma terça-feira com o seu time de IA.</h2><p class="v2-lead">O time adianta o que é repetitivo. Você entra onde o seu olhar faz diferença.</p><p style="margin-top:22px"><span class="v2-tag">exemplo ilustrativo</span></p></div>
-<div class="v2-timeline">
-<div class="v2-step" data-v2-reveal><b>08:00</b><span>O pedido chegou pelo WhatsApp. O agente comercial já reuniu o histórico do cliente.</span></div>
-<div class="v2-step" data-v2-reveal><b>08:05</b><span>A primeira versão da proposta está pronta para você revisar.</span></div>
-<div class="v2-step" data-v2-reveal><b>10:00</b><span>Você ajusta o preço. O agente aprende o critério para a próxima vez.</span></div>
-<div class="v2-step" data-v2-reveal><b>18:00</b><span>O resumo do dia chega no seu e-mail, com decisões e pendências.</span></div>
-<div class="v2-step v2-night" data-v2-reveal><b>03:00</b><span>Enquanto você dorme, o time organiza os documentos da semana.</span></div>
-</div>
-</div></section>
+<div class="espinha" aria-hidden="true"><svg id="espinha"></svg></div>
 
-<section id="seu-time" aria-labelledby="v2-vs-t"><div class="wrap">
-<div data-v2-reveal><p class="v2-eyebrow">A diferença</p><h2 id="v2-vs-t">Tem gente trabalhando sozinha. E tem gente trabalhando com um time de IA.</h2></div>
-<div class="v2-vs">
-<div class="v2-vs-col v2-solo" data-v2-reveal><h3>Trabalhando sozinho</h3><ul><li>Tarefas repetitivas toda semana, na mão</li><li>O conhecimento fica na cabeça de cada um</li><li>Quando alguém sai, o trabalho para</li><li>Crescer exige contratar</li><li>IA é um chat aberto de vez em quando</li></ul></div>
-<div class="v2-vs-col v2-team" data-v2-reveal><h3>Com um time de IA</h3><ul><li>Os agentes adiantam e você revisa</li><li>O conhecimento fica organizado e disponível</li><li>Quando alguém sai, o time continua</li><li>Crescer é escolher o próximo trabalho</li><li>Agentes com papel, limites e revisão</li></ul></div>
-</div>
-<p class="v2-line" data-v2-reveal>O trabalho avança. <em>O conhecimento fica.</em></p>
-</div></section>
+<main id="conteudo">
 
-<section aria-labelledby="v2-does-t"><div class="wrap">
-<div data-v2-reveal><p class="v2-eyebrow">O que o seu time faz</p><h2 id="v2-does-t">Agentes com função, memória e agenda.</h2></div>
-<div class="v2-grid v2-g3">
-<div class="v2-card" data-v2-reveal><h3>Explique uma vez. O time lembra.</h3><p>Preferências, referências e decisões ficam guardadas.</p></div>
-<div class="v2-card" data-v2-reveal><h3>Está onde você já conversa.</h3><p>WhatsApp, e-mail e as ferramentas da sua equipe.</p></div>
-<div class="v2-card" data-v2-reveal><h3>Trabalha em equipe.</h3><p>Um agente passa o trabalho para o outro, sem você repetir o contexto.</p></div>
-<div class="v2-card" data-v2-reveal><h3>Tem agenda.</h3><p>Relatórios, resumos e acompanhamentos no horário combinado.</p></div>
-<div class="v2-card" data-v2-reveal><h3>Cada agente tem função e responsável.</h3><p>Você sabe quem faz o quê e quem responde por cada agente.</p></div>
-<div class="v2-card" data-v2-reveal><h3>Aproveita o que você já tem.</h3><p>Na maioria dos casos, usamos o plano de IA e as ferramentas que você já paga.</p></div>
-</div>
-</div></section>
+<!-- 1 · TOPO -->
+<section class="s-topo" id="principal" aria-labelledby="t-principal">
+  <div class="wrap topo-grid">
+    <div class="topo-texto">
+      <p class="eyebrow">Consultoria e implantação de IA para pequenos negócios</p>
+      <h1 id="t-principal" class="h1"><span>Mais faturamento.</span> <span>Mesma equipe.</span> <span class="destaque">Com funcionários digitais.</span></h1>
+      <p class="lead">A Mescla monta, sob medida, agentes de IA que atendem, organizam e entregam junto com o seu time. Você aprova o que sai e vê quanto custou cada entrega.</p>
+      <div class="acoes" id="acoes-topo">
+        <a class="btn btn-principal" href="https://wa.me/5561993973584?text=Quero%20o%20diagn%C3%B3stico%20gratuito%20da%20Mescla.%0A%0AO%20que%20eu%20fa%C3%A7o%3A%0AO%20trabalho%20que%20mais%20pesa%20hoje%3A%0AAs%20ferramentas%20que%20j%C3%A1%20uso%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero o diagnóstico gratuito da Mescla." data-placement="topo">Fazer o diagnóstico gratuito <span aria-hidden="true">→</span></a>
+        <a class="btn btn-contorno" href="#funcionando">Ver um pedido sendo atendido <span aria-hidden="true">↓</span></a>
+      </div>
+      <p class="micro">Gratuito, pelo WhatsApp, sem compromisso de contratar. Para quem trabalha sozinho ou com equipe.</p>
+    </div>
+    <figure class="topo-cena cena" data-cena="topo">
+      <svg class="cena-svg" id="cena-topo" role="img" aria-labelledby="cena-topo-desc"></svg>
+      <figcaption id="cena-topo-desc" class="so-leitor">Ilustração: quatro fiandeiros, as peças do logo da Mescla com carinha, chegam, se abraçam e formam o logo. Os dois âmbar são as pessoas, os dois maré são os agentes de IA. Do logo saem fios para os quatro quadrantes do diagnóstico: Comece aqui, Aposta, Quando sobrar tempo e Evitar por ora.</figcaption>
+      <button class="de-novo" type="button" data-de-novo="topo">Ver de novo</button>
+    </figure>
+  </div>
+</section>
 
+<!-- 2 · A LEITURA -->
+<section class="s-leitura escuro" id="leitura" aria-labelledby="t-leitura">
+  <div class="wrap">
+    <div class="leitura-grid">
+      <div class="leitura-cabeca">
+        <p class="eyebrow">O problema não é a IA</p>
+        <h2 id="t-leitura" class="h2">Você já usa IA. E o trabalho continua se acumulando.</h2>
+        <p class="h2-sub">A IA ficou fácil de comprar. E fácil de usar mal.</p>
+        <p class="lead">Antes de falar de solução, vale olhar o que está acontecendo.</p>
+      </div>
+      <figure class="leitura-cena cena" data-cena="novelo">
+        <svg class="cena-svg" id="cena-novelo" role="img" aria-labelledby="cena-novelo-desc"></svg>
+        <figcaption id="cena-novelo-desc" class="so-leitor">Ilustração: um fio maré embolado com ferramentas presas (WhatsApp, planilha, e-mail, ChatGPT, Drive) se desembola e vira uma trama com fios âmbar. Cada ferramenta fica no seu fio.</figcaption>
+        <div class="cena-legenda" aria-hidden="true">
+          <p class="leg leg-solta"><span>IA solta</span>Muita ferramenta. Nenhum trabalho pronto.</p>
+          <p class="leg leg-trabalho"><span>IA no trabalho</span>Cada ferramenta no seu fio. Pessoas e agentes juntos.</p>
+        </div>
+        <p class="nota-cena">ferramentas de exemplo</p>
+        <button class="de-novo de-novo-escuro" type="button" data-de-novo="novelo">Ver de novo</button>
+      </figure>
+    </div>
 
-<section id="diagnostico" aria-labelledby="v2-diag-t"><div class="wrap">
-<div class="v2-diag">
-<div data-v2-reveal><p class="v2-eyebrow">Diagnóstico gratuito</p><h2 id="v2-diag-t">Descubra qual rotina melhorar primeiro.</h2>
-<p class="v2-lead">Conte como é o seu trabalho. Analisamos a sua rotina e devolvemos:</p>
-<ul class="v2-list"><li><i>1</i><span>a lista das suas rotinas e onde está o peso;</span></li><li><i>2</i><span>a <strong>matriz de prioridades</strong> do seu trabalho;</span></li><li><i>3</i><span>o primeiro trabalho recomendado, com o que ele exige e o próximo passo.</span></li></ul>
-<div class="v2-actions"><a class="v2-btn" href="https://wa.me/5561993973584?text=Quero%20o%20diagn%C3%B3stico%20gratuito%20da%20Mescla.%0A%0AMinha%20atividade%3A%0AO%20trabalho%20que%20mais%20pesa%20hoje%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero o diagnóstico gratuito da Mescla." data-placement="diagnostico">Quero o meu diagnóstico</a></div></div>
-<div data-v2-reveal>
-<div class="v2-matrix" role="img" aria-label="Matriz de impacto por esforço, exemplo ilustrativo">
-<span class="v2-ax v2-axy">impacto →</span>
-<div class="v2-q v2-q1"><div><b>Comece aqui</b><small>Alto impacto, pouco esforço</small></div><span>Resumo diário de e-mails e reuniões</span></div>
-<div class="v2-q v2-q2"><div><b>Aposta</b><small>Alto impacto, mais esforço</small></div><span>Atendimento com memória de cada cliente</span></div>
-<div class="v2-q v2-q3"><div><b>Quando sobrar tempo</b><small>Pouco impacto, pouco esforço</small></div><span>Organizar arquivos antigos</span></div>
-<div class="v2-q v2-q4"><div><b>Evitar por ora</b><small>Pouco impacto, muito esforço</small></div><span>Automatizar um processo que muda toda semana</span></div>
-<span class="v2-ax v2-axx">esforço →</span>
-</div>
-<p style="margin-top:14px"><span class="v2-tag">exemplo ilustrativo · o seu diagnóstico usa as suas rotinas</span></p>
-</div>
-</div>
-</div></section>
+    <div class="colunas3">
+      <div class="coluna">
+        <h3 class="col-tit"><span class="ponto ponto-roma" aria-hidden="true"></span>O que se vê por aí</h3>
+        <ul>
+          <li>Abrir o chat, colar um texto e torcer pelo resultado.</li>
+          <li>Assinar mais uma ferramenta antes de saber que trabalho ela vai fazer.</li>
+          <li>Automação que ninguém confere, até mandar a mensagem errada para um cliente.</li>
+          <li>Curso de atalho que funciona na aula e quebra na segunda-feira.</li>
+        </ul>
+      </div>
+      <div class="coluna">
+        <h3 class="col-tit"><span class="ponto ponto-sol" aria-hidden="true"></span>O que mudou</h3>
+        <ul>
+          <li>As ferramentas ficaram parecidas e ao alcance de qualquer um. O seu concorrente tem as mesmas que você.</li>
+          <li>Ter a ferramenta deixou de ser vantagem. A vantagem está em saber em que trabalho usar, com que regra e quem confere.</li>
+        </ul>
+      </div>
+      <div class="coluna">
+        <h3 class="col-tit"><span class="ponto ponto-mare" aria-hidden="true"></span>O que fazer</h3>
+        <ul>
+          <li>Começar pela rotina, e não pela ferramenta.</li>
+          <li>Escolher um trabalho só e colocar pessoas e agentes nele, cada um com papel, limite e revisão.</li>
+          <li>Medir como era antes para saber se melhorou.</li>
+        </ul>
+      </div>
+    </div>
 
-<section id="metodo" aria-labelledby="v2-method-t"><div class="wrap">
-<div data-v2-reveal><p class="v2-eyebrow">Como a Mescla trabalha</p><h2 id="v2-method-t">Antes da ferramenta, a escolha do trabalho.</h2></div>
-<div class="v2-method">
-<div class="v2-card" data-v2-reveal><h3>Entendimento</h3><p>Diagnóstico e escolha do primeiro trabalho.</p><p class="v2-deliv"><span>Você recebe</span>Matriz de prioridades</p></div>
-<div class="v2-card" data-v2-reveal><h3>Imersão</h3><p>Como a rotina acontece hoje, com os gargalos.</p><p class="v2-deliv"><span>Você recebe</span>Retrato da rotina e medida inicial de tempo ou retrabalho</p></div>
-<div class="v2-card" data-v2-reveal><h3>Desenho</h3><p>Uma tarefa completa, do pedido à entrega.</p><p class="v2-deliv"><span>Você recebe</span>Demonstração do que cada agente faz e de onde você entra</p></div>
-<div class="v2-card" data-v2-reveal><h3>Implantação</h3><p>O time funcionando na rotina real.</p><p class="v2-deliv"><span>Você recebe</span>Piloto com critérios de aceite combinados</p></div>
-<div class="v2-card" data-v2-reveal><h3>Evolução</h3><p>Medir, ajustar e escolher a próxima melhoria.</p><p class="v2-deliv"><span>Você recebe</span>Comparação com o ponto de partida</p></div>
-</div>
-</div></section>
+    <blockquote class="frase-leitura">
+      <p><span>Desconfie de quem começa a conversa pela ferramenta.</span> Quem conhece o trabalho começa perguntando para onde vai o seu tempo.</p>
+    </blockquote>
+    <a class="link-seta" href="#funcionando">Ver como isso fica na prática <span aria-hidden="true">↓</span></a>
+  </div>
+</section>
 
-<section aria-labelledby="v2-ctrl-t"><div class="wrap v2-control">
-<div data-v2-reveal><p class="v2-eyebrow">Autonomia com limites e recibo</p><h2 id="v2-ctrl-t">Os agentes fazem. Você decide o que sai para o mundo.</h2></div>
-<ul class="v2-checks">
-<li data-v2-reveal><strong>Mensagem a cliente, pagamento ou publicação passa por você.</strong> O resto o time adianta.</li>
-<li data-v2-reveal><strong>Cada entrega tem recibo:</strong> o que foi feito, com que fonte e quanto custou.</li>
-<li data-v2-reveal><strong>Cada correção vira aprendizado</strong> para o time.</li>
-<li data-v2-reveal><strong>Acessos e limites de gasto</strong> definidos com a sua equipe.</li>
-</ul>
-</div></section>
+<!-- 3 · VER FUNCIONANDO -->
+<section class="s-funcionando" id="funcionando" aria-labelledby="t-funcionando">
+  <div class="wrap">
+    <div class="cabeca-secao">
+      <p class="eyebrow">Exemplo ilustrativo · um pedido fora do horário</p>
+      <h2 id="t-funcionando" class="h2">21h47. Chegou um pedido.<br>Você estava jantando.</h2>
+      <p class="lead">Veja o que um time de pessoas e agentes faz com esse pedido até a manhã seguinte. E repare onde você entra.</p>
+    </div>
 
-<section class="v2-own" aria-labelledby="v2-own-t"><div class="wrap">
-<div data-v2-reveal><p class="v2-eyebrow">Seu time, suas contas, seus dados</p><h2 id="v2-own-t">O que construímos fica com você.</h2></div>
-<div class="v2-grid v2-g3">
-<div class="v2-card" data-v2-reveal><h3>No seu nome</h3><p>Contas, documentação e conhecimento organizados em nome do cliente.</p></div>
-<div class="v2-card" data-v2-reveal><h3>Se a ferramenta mudar, o time continua</h3><p>O conhecimento não fica preso a um fornecedor.</p></div>
-<div class="v2-card v2-dark" data-v2-reveal><h3>A parte técnica fica com a Mescla</h3><p>Você não precisa virar especialista em IA.</p></div>
-</div>
-</div></section>
+    <div class="sim" id="sim-pedido" data-cena="pedido">
+      <p class="selo"><span aria-hidden="true">●</span> Exemplo ilustrativo · negócio, pessoas e conversa fictícios.</p>
+      <div class="sim-grid">
+        <div class="celular-col">
+          <div class="celular" id="celular">
+            <div class="cel-status"><span class="cel-hora" id="cel-hora">21:47</span><span class="cel-icones" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <p class="regra"><b>Regra combinada com a Júlia:</b> o assistente tira dúvidas e pede informações. Preço, prazo e desconto passam por ela.</p>
+            <div class="paineis">
+              <!-- cena 1 -->
+              <div class="painel is-ativo" data-painel="1" role="group" aria-label="Conversa da Marina com o Ateliê Rocha, 21h47">
+                <div class="cel-cab"><span class="avatar avatar-agente" aria-hidden="true">AR</span><div><b>Ateliê Rocha</b><small>assistente virtual</small></div></div>
+                <ol class="chat">
+                  <li class="msg pessoa" data-m="1" data-hora="21:47"><span class="quem">Marina</span>Oi! Vocês fazem armário de cozinha? Queria um orçamento<time>21:47</time></li>
+                  <li class="msg agente" data-m="2" data-hora="21:47"><span class="quem">Assistente</span>Oi, Marina! Aqui é o assistente virtual do Ateliê Rocha. Fazemos, sim. Para o orçamento sair certo, me conta três coisas: 1. as medidas da parede (largura e altura), 2. o acabamento que você imagina, 3. para quando você precisa.<time>21:47</time></li>
+                  <li class="msg pessoa" data-m="3" data-hora="21:52"><span class="quem">Marina</span>3,20 de largura por 2,60 de altura. Branco fosco, puxador embutido. Queria para o fim de janeiro<time>21:52</time></li>
+                  <li class="msg pessoa msg-foto" data-m="4" data-hora="21:52"><span class="quem">Marina</span>
+                    <svg class="foto-parede" viewBox="0 0 200 120" role="img" aria-label="Foto da parede da cozinha"><rect width="200" height="120" rx="8" fill="#ECEBF1"/><rect x="0" y="92" width="200" height="28" fill="#DDDAE5"/><rect x="88" y="54" width="22" height="16" rx="3" fill="#FBFAFD" stroke="#625F72" stroke-width="2"/><circle cx="95" cy="62" r="2" fill="#625F72"/><circle cx="103" cy="62" r="2" fill="#625F72"/><path d="M14 22 H186" stroke="#7B5209" stroke-width="1.5" stroke-dasharray="4 4"/><text x="100" y="17" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#7B5209">3,20 m</text></svg>
+                    <time>21:52</time></li>
+                  <li class="msg agente" data-m="5" data-hora="21:53"><span class="quem">Assistente</span>Recebi as medidas e a foto. Vi uma tomada no meio da parede e já anotei para o projeto. A Júlia confere os valores e te manda a proposta amanhã de manhã. Pode ser?<time>21:53</time></li>
+                  <li class="msg pessoa" data-m="6" data-hora="21:53"><span class="quem">Marina</span>Pode sim, obrigada!<time>21:53</time></li>
+                  <li class="digitando" aria-hidden="true"><i></i><i></i><i></i></li>
+                </ol>
+              </div>
+              <!-- cena 2 -->
+              <div class="painel" data-painel="2" role="group" aria-label="Conversa do assistente com a Júlia, 07h58">
+                <div class="cel-cab"><span class="avatar avatar-agente" aria-hidden="true">AR</span><div><b>Assistente do ateliê</b><small>conversa com a Júlia</small></div></div>
+                <ol class="chat">
+                  <li class="msg agente" data-m="7" data-hora="07:58"><span class="quem">Assistente</span>Bom dia, Júlia. A proposta da Marina (armário de cozinha) está pronta para você revisar. 1 pendência: o preço do branco fosco.
+                    <span class="doc-mini" id="doc-proposta"><span class="doc-ic" aria-hidden="true"></span><span>Proposta · armário de cozinha</span><span class="doc-abrir">Abrir proposta</span><span class="carimbo" id="carimbo">Aprovado por Júlia · 08:06</span></span>
+                    <time>07:58</time></li>
+                  <li class="msg pessoa" data-m="8" data-hora="08:06"><span class="quem">Júlia</span>O fosco subiu. Já corrigi na planilha. Pode mandar.<time>08:06</time></li>
+                  <li class="msg agente" data-m="9" data-hora="08:07"><span class="quem">Assistente</span>Proposta atualizada com o preço novo. Vou enviar para a Marina com a sua aprovação. Anotei: quando o acabamento for fosco, confiro o preço com você antes de montar.<time>08:07</time></li>
+                  <li class="digitando" aria-hidden="true"><i></i><i></i><i></i></li>
+                </ol>
+              </div>
+              <!-- cena 3 -->
+              <div class="painel" data-painel="3" role="group" aria-label="Conversa da Marina com o Ateliê Rocha, 08h07">
+                <div class="cel-cab"><span class="avatar avatar-agente" aria-hidden="true">AR</span><div><b>Ateliê Rocha</b><small>assistente virtual</small></div></div>
+                <ol class="chat">
+                  <li class="msg agente" data-m="10" data-hora="08:07"><span class="quem">Assistente</span>Bom dia, Marina! Segue a proposta do seu armário, revisada pela Júlia. Qualquer dúvida, é só falar por aqui.<time>08:07</time></li>
+                  <li class="msg agente msg-pdf" data-m="11" data-hora="08:07"><span class="quem">Assistente</span><span class="pdf"><span class="pdf-ic" aria-hidden="true">PDF</span>Proposta-armario-cozinha-Marina.pdf</span><time>08:07</time></li>
+                  <li class="msg pessoa" data-m="12" data-hora="08:15"><span class="quem">Marina</span>Recebi! Vou olhar com calma 😊<time>08:15</time></li>
+                  <li class="digitando" aria-hidden="true"><i></i><i></i><i></i></li>
+                </ol>
+              </div>
+            </div>
+            <div class="noite-vira" aria-hidden="true"><span class="lua"></span><span>Na manhã seguinte</span><b>07:58</b></div>
+          </div>
+          <div class="abas" role="group" aria-label="Escolher o momento da conversa">
+            <button type="button" data-aba="1" aria-pressed="true">21:47 · Marina</button>
+            <button type="button" data-aba="2" aria-pressed="false">07:58 · Júlia</button>
+            <button type="button" data-aba="3" aria-pressed="false">08:07 · Marina</button>
+          </div>
+        </div>
 
-<section id="quem" aria-labelledby="v2-who-t"><div class="wrap v2-who">
-<div class="v2-photo" data-v2-reveal><img src="https://andredemoraes.com/foto-hero.jpg" alt="André de Moraes, fundador da Mescla" width="1067" height="1600" loading="lazy" decoding="async"></div>
-<div data-v2-reveal><p class="v2-eyebrow">Quem está por trás</p><h2 id="v2-who-t">André de Moraes</h2>
-<p class="v2-lead">Fundador da Mescla. Ex-CEO e fundador da Edoo. Constrói agentes de IA desde 2024 e trabalha todos os dias com o próprio time de agentes.</p>
-<p class="v2-quote">“A Mescla usa no próprio trabalho tudo o que implanta para os clientes.”</p></div>
-</div></section>
+        <aside class="bastidores" aria-labelledby="t-bastidores">
+          <div class="bast-cab">
+            <svg class="bast-fiandeiro" id="fiandeiro-atendimento" viewBox="0 0 160 190" aria-hidden="true"></svg>
+            <div>
+              <p class="eyebrow eyebrow-mare">Bastidores</p>
+              <h3 id="t-bastidores" class="bast-tit">Atendimento <span>· funcionário digital</span></h3>
+              <p class="bast-sub">O que o agente faz fora da conversa.</p>
+            </div>
+          </div>
+          <ol class="bast-lista">
+            <li data-b="1"><time>21:53</time>Consultou a tabela de preços do ateliê (planilha).</li>
+            <li data-b="2"><time>21:54</time>Montou a proposta no modelo do ateliê (documento).</li>
+            <li data-b="3"><time>21:54</time>Marcou 1 pendência: preço do acabamento branco fosco.</li>
+            <li data-b="4"><time>21:55</time>Avisou a Júlia. Não enviou nenhum preço à cliente.</li>
+            <li data-b="5"><time>08:07</time>Atualizou a proposta com o preço corrigido.</li>
+            <li data-b="6"><time>08:07</time>Guardou o aprendizado: acabamento fosco, conferir o preço antes de montar.</li>
+          </ol>
+          <ol class="pontos">
+            <li data-p="1"><b>Responde na hora e pergunta o que falta.</b> Medidas, acabamento, prazo.</li>
+            <li data-p="2"><b>Monta a proposta com a sua tabela e o seu modelo.</b> Nada inventado.</li>
+            <li data-p="3"><b>Preço, prazo e desconto só saem com a sua aprovação.</b> O agente avisa e espera.</li>
+            <li data-p="4"><b>A sua correção vira regra.</b> A próxima proposta já sai certa.</li>
+          </ol>
+        </aside>
+      </div>
+      <div class="sim-pe">
+        <a class="btn btn-principal" href="https://wa.me/5561993973584?text=Vi%20no%20site%20da%20Mescla%20o%20exemplo%20do%20pedido%20atendido%20%C3%A0%20noite%20e%20quero%20algo%20assim%20no%20meu%20trabalho.%0A%0AO%20que%20eu%20vendo%3A%0AO%20que%20mais%20chega%20pelo%20meu%20WhatsApp%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Vi no site da Mescla o exemplo do pedido atendido à noite e quero algo assim no meu trabalho." data-placement="funcionando">Quero isso no meu WhatsApp <span aria-hidden="true">→</span></a>
+        <button class="de-novo de-novo-inline" type="button" data-de-novo="pedido">Ver de novo</button>
+      </div>
+      <p class="micro">Exemplo ilustrativo. Negócio, pessoas e conversa fictícios. O que o agente pode responder sozinho é combinado com você antes.</p>
+    </div>
+  </div>
+</section>
 
-<section id="segmentos" aria-labelledby="v2-areas-t"><div class="wrap">
-<div data-v2-reveal><p class="v2-eyebrow">Aplicações por área</p><h2 id="v2-areas-t">Veja como um time de IA funciona no seu tipo de trabalho.</h2></div>
-<div class="v2-areas" data-v2-reveal><a href="/para/empreendedores/" data-segment-link="empreendedores" data-attribution-link>Empreendedores</a><a href="/para/creators/" data-segment-link="creators" data-attribution-link>Creators</a><a href="/para/consultorias/" data-segment-link="consultorias" data-attribution-link>Consultorias com equipes enxutas</a><a href="/para/agencias/" data-segment-link="agencias" data-attribution-link>Agências de publicidade e marketing</a><a href="/para/advocacia/" data-segment-link="advocacia" data-attribution-link>Escritórios de advocacia</a></div>
-</div></section>
+<!-- 4 · DIAGNÓSTICO -->
+<section class="s-diagnostico" id="diagnostico" aria-labelledby="t-diagnostico">
+  <div class="wrap diag-grid">
+    <div class="diag-texto">
+      <p class="eyebrow">Diagnóstico gratuito · pelo WhatsApp</p>
+      <h2 id="t-diagnostico" class="h2">Antes de gastar com IA, descubra por onde começar.</h2>
+      <p class="lead">Você conta como é a sua semana, por escrito ou em áudio. A Mescla lê a rotina e, em poucos minutos, devolve três coisas:</p>
+      <ol class="entregas">
+        <li><b>A lista das suas rotinas</b>, com onde está o peso.</li>
+        <li><b>A matriz de prioridades</b> do seu trabalho: o que fazer agora, o que vale a aposta, o que pode esperar e o que evitar por ora.</li>
+        <li><b>O primeiro trabalho recomendado</b>, com o que ele exige e o próximo passo.</li>
+      </ol>
+      <div class="diag-cta">
+        <a class="btn btn-principal" href="https://wa.me/5561993973584?text=Quero%20o%20diagn%C3%B3stico%20gratuito%20da%20Mescla.%0A%0AO%20que%20eu%20fa%C3%A7o%3A%0AO%20trabalho%20que%20mais%20pesa%20hoje%3A%0AAs%20ferramentas%20que%20j%C3%A1%20uso%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero o diagnóstico gratuito da Mescla." data-placement="diagnostico">Quero o meu diagnóstico <span aria-hidden="true">→</span></a>
+        <ul class="micro-lista">
+          <li>Gratuito e sem compromisso de contratar.</li>
+          <li>Não mande senhas nem documentos de clientes nesta conversa.</li>
+        </ul>
+      </div>
+      <div class="conversa-passos">
+        <h3 class="mini-tit">Como é a conversa</h3>
+        <ol>
+          <li>Você manda a mensagem pronta pelo botão.</li>
+          <li>Respondemos com algumas perguntas sobre a sua semana. Você responde por escrito ou em áudio.</li>
+          <li>Em poucos minutos, você recebe a lista, a matriz e a recomendação. Contrata só se fizer sentido.</li>
+        </ol>
+      </div>
+    </div>
 
-<section aria-labelledby="v2-faq-t"><div class="wrap">
-<div data-v2-reveal><p class="v2-eyebrow">Perguntas</p><h2 id="v2-faq-t">Boas perguntas. Respostas diretas.</h2></div>
-<div style="margin-top:36px">
-<details><summary>O diagnóstico é gratuito mesmo?</summary><p>Sim. Você recebe a matriz de prioridades e a recomendação do primeiro trabalho, sem compromisso de contratar.</p></details>
-<details><summary>Meus dados ficam seguros?</summary><p>Os acessos são definidos com você, e as contas e o conhecimento ficam no seu nome. Não compartilhe senhas ou documentos confidenciais no primeiro contato.</p></details>
-<details><summary>Preciso trocar minhas ferramentas?</summary><p>Na maioria dos casos, não. Aproveitamos o que você já usa sempre que possível.</p></details>
-<details><summary>E se a ferramenta mudar?</summary><p>O time e o conhecimento continuam, porque não ficam presos a um fornecedor.</p></details>
-<details><summary>Quanto custa a implantação?</summary><p>Depende do trabalho escolhido. O valor sai do diagnóstico, em uma proposta.</p></details>
-</div>
-</div></section>
+    <div class="diag-painel" id="diag-painel" data-cena="matriz">
+      <div class="diag-cab">
+        <p class="selo selo-claro"><span aria-hidden="true">●</span> Exemplo ilustrativo · pessoa e rotina fictícias.</p>
+        <div class="abas abas-diag" role="group" aria-label="Etapas do diagnóstico de exemplo">
+          <button type="button" data-etapa="1" aria-pressed="true">1 · Conversa</button>
+          <button type="button" data-etapa="2" aria-pressed="false">2 · Rotinas</button>
+          <button type="button" data-etapa="3" aria-pressed="false">3 · Matriz</button>
+        </div>
+      </div>
+      <div class="diag-etapas">
+        <div class="diag-etapa is-ativo" data-etapa-painel="1">
+          <ol class="chat chat-diag">
+            <li class="msg pessoa" data-d="1"><span class="quem">Fernanda</span>Quero o diagnóstico gratuito da Mescla. O que eu faço: consultoria de gestão para clínicas, eu e mais duas pessoas. O trabalho que mais pesa hoje: montar o relatório depois de cada visita. As ferramentas que já uso: Google Drive, Zoom e ChatGPT.</li>
+            <li class="msg agente" data-d="2"><span class="quem">Mescla</span>Obrigado, Fernanda. Para montar a sua matriz, quatro perguntas: 1. Como é uma semana normal, do pedido do cliente à entrega? 2. O que vocês fazem toda semana do mesmo jeito? 3. Onde o trabalho para esperando alguém? 4. Tem alguma coisa em que você não quer que a IA mexa?</li>
+            <li class="msg pessoa" data-d="3"><span class="quem">Fernanda</span>Visito a clínica, gravo as entrevistas no Zoom e depois passo dois dias montando relatório e slides. Toda segunda faço o resumo de pendências para a equipe. O arquivo de clientes antigos está uma bagunça. E não quero IA falando com cliente meu.</li>
+          </ol>
+        </div>
+        <div class="diag-etapa" data-etapa-painel="2">
+          <p class="etapa-tit">As rotinas da Fernanda</p>
+          <ul class="rotinas">
+            <li data-r="1" class="peso-alto"><span>Relatório e slides depois da visita</span><i class="barra" aria-hidden="true"></i><small>peso alto</small></li>
+            <li data-r="2" class="peso-medio"><span>Resumo de pendências de segunda</span><i class="barra" aria-hidden="true"></i><small>peso médio</small></li>
+            <li data-r="3" class="peso-alto"><span>Transcrever e organizar entrevistas</span><i class="barra" aria-hidden="true"></i><small>peso alto</small></li>
+            <li data-r="4" class="peso-baixo"><span>Organizar o arquivo de clientes antigos</span><i class="barra" aria-hidden="true"></i><small>peso baixo</small></li>
+            <li data-r="5" class="peso-medio"><span>Montar a agenda de visitas, que muda toda semana</span><i class="barra" aria-hidden="true"></i><small>peso médio</small></li>
+            <li data-r="6" class="fora"><span><s>Responder clientes no WhatsApp</s></span><small>fora: você pediu</small></li>
+          </ul>
+        </div>
+        <div class="diag-etapa" data-etapa-painel="3">
+          <div class="matriz-wrap">
+            <span class="eixo eixo-y" aria-hidden="true">impacto ↑</span>
+            <div class="matriz">
+              <div class="q q-comece"><p class="q-nome">Comece aqui</p><p class="q-leg">muito impacto, pouco esforço</p><p class="q-item" data-q="1">Resumo de pendências de segunda</p></div>
+              <div class="q q-aposta"><p class="q-nome">Aposta</p><p class="q-leg">muito impacto, mais esforço</p><p class="q-item" data-q="2">Das entrevistas ao rascunho do relatório e dos slides</p></div>
+              <div class="q q-sobrar"><p class="q-nome">Quando sobrar tempo</p><p class="q-leg">pouco impacto, pouco esforço</p><p class="q-item" data-q="3">Organizar o arquivo de clientes antigos</p></div>
+              <div class="q q-evitar"><p class="q-nome">Evitar por ora</p><p class="q-leg">pouco impacto, muito esforço</p><p class="q-item" data-q="4">Automatizar a agenda de visitas, que muda toda semana</p></div>
+            </div>
+            <span class="eixo eixo-x" aria-hidden="true">esforço →</span>
+          </div>
+          <div class="recomendacao" data-q="5">
+            <p class="eyebrow">Primeiro trabalho recomendado</p>
+            <p class="rec-tit">Resumo de pendências de segunda.</p>
+            <dl>
+              <dt>Por quê</dt><dd>É rápido de testar e organiza as informações que o relatório vai usar depois. Prepara a aposta.</dd>
+              <dt>O que exige</dt><dd>Acesso de leitura à pasta da equipe no Drive e uma pessoa para revisar o primeiro resumo.</dd>
+              <dt>Próximo passo</dt><dd>Uma conversa para ver como a semana acontece hoje (etapa de imersão).</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <p class="micro diag-nota">Exemplo ilustrativo. O seu diagnóstico usa as suas rotinas. <button class="de-novo de-novo-inline" type="button" data-de-novo="matriz">Ver de novo</button></p>
+    </div>
+  </div>
+</section>
 
-<section class="v2-final" id="conversar" aria-labelledby="v2-final-t"><div class="wrap">
-<h2 id="v2-final-t">Qual trabalho, se andasse sozinho, faria você faturar mais?</h2>
-<div class="v2-actions"><a class="v2-btn v2-sun" href="https://wa.me/5561993973584?text=Quero%20o%20diagn%C3%B3stico%20gratuito%20da%20Mescla.%0A%0AMinha%20atividade%3A%0AO%20trabalho%20que%20mais%20pesa%20hoje%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero o diagnóstico gratuito da Mescla." data-placement="diagnostico">Fazer o diagnóstico gratuito</a><a class="v2-btn v2-ghost" href="https://wa.me/5561993973584?text=Quero%20conversar%20sobre%20um%20time%20de%20IA%20para%20o%20meu%20trabalho." target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero conversar sobre funcionários digitais para o meu negócio." data-placement="fechamento">Conversar no WhatsApp</a></div>
-</div></section>
-</div>
-<script>(()=>{const els=document.querySelectorAll('[data-v2-reveal]');if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(e=>e.classList.add('v2-in'));return}const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v2-in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});els.forEach((e,i)=>{e.style.transitionDelay=(i%4)*90+'ms';io.observe(e)})})();</script>
+<!-- 5 · COMO A MESCLA TRABALHA -->
+<section class="s-metodo" id="metodo" aria-labelledby="t-metodo">
+  <div class="wrap">
+    <div class="cabeca-secao">
+      <p class="eyebrow">Como a Mescla trabalha</p>
+      <h2 id="t-metodo" class="h2">Primeiro o trabalho.<br>Depois a ferramenta.</h2>
+      <p class="lead">Cinco etapas. Cada uma termina com uma entrega que você vê.</p>
+    </div>
+    <ol class="etapas" id="etapas">
+      <li class="etapa" style="--i:0"><div class="fio-etapa" data-n="1" aria-hidden="true"></div><span class="etapa-num">01</span><h3>Entendimento</h3><p>Lemos a sua rotina e escolhemos com você o primeiro trabalho.</p><p class="recebe"><span>Você recebe</span>A matriz de prioridades.</p></li>
+      <li class="etapa" style="--i:1"><div class="fio-etapa" data-n="2" aria-hidden="true"></div><span class="etapa-num">02</span><h3>Imersão</h3><p>Acompanhamos como o trabalho acontece hoje e onde ele trava.</p><p class="recebe"><span>Você recebe</span>O retrato da rotina e uma medida inicial de tempo ou retrabalho.</p></li>
+      <li class="etapa" style="--i:2"><div class="fio-etapa" data-n="3" aria-hidden="true"></div><span class="etapa-num">03</span><h3>Desenho</h3><p>Desenhamos uma tarefa inteira, do pedido à entrega.</p><p class="recebe"><span>Você recebe</span>Uma demonstração do que cada agente faz e de onde você entra.</p></li>
+      <li class="etapa" style="--i:3"><div class="fio-etapa" data-n="4" aria-hidden="true"></div><span class="etapa-num">04</span><h3>Implantação</h3><p>O time entra na rotina real, primeiro como piloto.</p><p class="recebe"><span>Você recebe</span>O piloto, com critérios de aceite combinados antes.</p><p class="dica">Critérios de aceite: o que precisa acontecer para o piloto ser considerado bom, combinado por escrito antes de começar.</p></li>
+      <li class="etapa" style="--i:4"><div class="fio-etapa" data-n="5" aria-hidden="true"></div><span class="etapa-num">05</span><h3>Evolução</h3><p>Medimos, ajustamos e escolhemos o próximo trabalho.</p><p class="recebe"><span>Você recebe</span>A comparação com o ponto de partida.</p></li>
+    </ol>
+
+    <div class="formas">
+      <h3 class="mini-tit">Três formas de trabalhar com a Mescla</h3>
+      <ul class="formas-lista">
+        <li><b>Consultoria</b><span>Você quer saber o que fazer.</span></li>
+        <li><b>Implantação</b><span>Você quer o time funcionando na sua rotina.</span></li>
+        <li><b>Aprendizagem</b><span>Você quer aprender a construir. Encontros práticos em preparação.</span><a class="link-seta" href="https://wa.me/5561993973584?text=Tenho%20interesse%20em%20aprender%20a%20construir%20solu%C3%A7%C3%B5es%20com%20IA%20com%20a%20Mescla.%0A%0AO%20que%20eu%20quero%20aprender%3A%0A%C3%89%20para%20mim%20ou%20para%20a%20minha%20equipe%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Tenho interesse em aprender a construir soluções com IA com a Mescla." data-placement="aprendizagem">Quero saber dos próximos encontros <span aria-hidden="true">↗</span></a></li>
+      </ul>
+      <p class="micro">Formatos, datas e valores dos encontros ainda serão definidos. Escopo, entregas e custos da consultoria e da implantação vêm em proposta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · AS REGRAS DO TIME -->
+<section class="s-regras escuro" id="regras" aria-labelledby="t-regras">
+  <div class="wrap regras-grid">
+    <div class="regras-texto">
+      <p class="eyebrow">As regras do time</p>
+      <h2 id="t-regras" class="h2">Os agentes fazem.<br>Quem decide é você.</h2>
+      <p class="lead">IA erra. Por isso, cada time que a Mescla monta tem regras combinadas antes de começar.</p>
+      <ol class="regras">
+        <li><b>O que sai para o mundo passa por você.</b> Mensagem a cliente, pagamento e publicação só saem com a sua aprovação ou dentro de uma regra que você autorizou.</li>
+        <li><b>Cada entrega tem recibo.</b> O que foi feito, com que fonte e quanto custou.</li>
+        <li><b>Limite de gasto e acessos definidos.</b> Cada agente acessa só o que foi combinado para aquele trabalho.</li>
+        <li><b>O que construímos fica com você.</b> Contas, dados e conhecimento no seu nome. Se a ferramenta mudar, o time continua.</li>
+        <li><b>Usa o que você já paga.</b> Na maioria dos casos, partimos do plano de IA e das ferramentas que você já tem.</li>
+        <li><b>Cada correção vira aprendizado.</b> Você explica uma vez. O time guarda.</li>
+      </ol>
+    </div>
+
+    <div class="etiqueta-col">
+      <div class="etiqueta-pendurada">
+        <span class="cordao" aria-hidden="true"></span>
+        <article class="etiqueta" id="etiqueta" aria-labelledby="t-etiqueta" data-estado="aprovado">
+          <span class="ilho" aria-hidden="true"></span>
+          <header class="etq-cab">
+            <p id="t-etiqueta" class="etq-tit">Recibo de entrega</p>
+            <p class="etq-ex">exemplo ilustrativo · continuação do pedido das 21h47</p>
+            <p class="etq-quem">Ateliê Rocha · assistente virtual</p>
+          </header>
+          <dl class="etq-linhas">
+            <div><dt>Trabalho</dt><dd>Proposta · armário de cozinha · Marina</dd></div>
+            <div><dt>Pedido</dt><dd>WhatsApp, 21:47</dd></div>
+            <div class="etq-feito"><dt>O que foi feito</dt><dd><ul><li>Atendeu e pediu medidas, acabamento e prazo</li><li>Montou a proposta no modelo do ateliê</li><li>Marcou 1 pendência para revisão</li><li>Atualizou a proposta com o preço corrigido</li></ul></dd></div>
+            <div><dt>Fontes usadas</dt><dd>Tabela de preços (planilha, só leitura) · Modelo de proposta (documento) · Conversa com a cliente</dd></div>
+            <div class="etq-aprov"><dt>Aprovado por</dt><dd><span class="v-ok">Júlia · 08:06</span><span class="v-pend">aguardando o ponto da Júlia</span></dd></div>
+            <div class="etq-saiu"><dt>Saiu para fora</dt><dd><span class="v-ok">1 mensagem e 1 proposta em PDF, depois da aprovação</span><span class="v-pend">nada, até a aprovação</span></dd></div>
+            <div><dt>Acessos usados</dt><dd>WhatsApp do ateliê · planilha de preços · pasta de propostas</dd></div>
+            <div><dt>Custo de IA</dt><dd>registrado nesta tarefa · dentro do limite do mês</dd></div>
+            <div><dt>Aprendizado</dt><dd>Acabamento fosco: conferir o preço antes de montar</dd></div>
+          </dl>
+          <svg class="costura" id="costura" viewBox="0 0 300 30" aria-hidden="true"></svg>
+          <span class="selo-aprovado" aria-hidden="true">Aprovado</span>
+        </article>
+      </div>
+      <div class="ponto-ctrl">
+        <button class="segure" id="segure" type="button" aria-describedby="segure-ajuda"><span class="segure-txt">Segure para dar o ponto</span><span class="segure-fill" aria-hidden="true"><span class="segure-txt2">Segure para dar o ponto</span></span></button>
+        <p id="segure-ajuda" class="segure-ajuda">Faça o papel da Júlia: segure o botão (ou a barra de espaço) até a agulha fechar a costura. Nada sai antes disso.</p>
+        <p class="segure-feito" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="ferramentas">
+      <p class="ferr-tit">Ferramentas que podem entrar no trabalho</p>
+      <ul class="ferr-lista">
+        <li>ChatGPT</li><li>Claude</li><li>Gemini</li><li>Google Drive</li><li>Notion</li><li>Word</li><li>Trello</li><li>Canva</li><li>YouTube</li><li>Instagram</li><li>Slack</li><li>WhatsApp</li>
+      </ul>
+      <p class="micro">Exemplos. Integrações, arquivos e permissões são avaliados em cada projeto. A parte técnica fica com a Mescla.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ELENCO · OS FUNCIONÁRIOS DIGITAIS -->
+<section class="s-elenco" id="elenco" aria-labelledby="t-elenco" data-cena="elenco">
+  <div class="wrap">
+    <div class="cabeca-secao cabeca-centro">
+      <p class="eyebrow">O elenco</p>
+      <h2 id="t-elenco" class="h2">Funcionários digitais, cada um com a sua função.</h2>
+      <p class="lead">Na Mescla, eles têm nome: são os fiandeiros. Os de cor maré são os agentes. O âmbar é você, que aprova. Cada time é montado sob medida para o seu trabalho.</p>
+    </div>
+    <ul class="elenco">
+      <li><svg class="fiandeiro" data-f="comercial" viewBox="0 0 160 190" aria-hidden="true"></svg><h3>Comercial</h3><p class="papel">agente</p><p>Responde o pedido e monta a proposta.</p></li>
+      <li><svg class="fiandeiro" data-f="financeiro" viewBox="0 0 160 190" aria-hidden="true"></svg><h3>Financeiro</h3><p class="papel">agente</p><p>Organiza cobranças e confere valores.</p></li>
+      <li><svg class="fiandeiro" data-f="conteudo" viewBox="0 0 160 190" aria-hidden="true"></svg><h3>Conteúdo</h3><p class="papel">agente</p><p>Roteiriza, edita e prepara a publicação.</p></li>
+      <li class="elenco-voce"><svg class="fiandeiro" data-f="voce" viewBox="0 0 160 190" aria-hidden="true"></svg><h3>Você</h3><p class="papel papel-voce">aprova</p><p>Decide o que sai para o mundo.</p></li>
+      <li><svg class="fiandeiro" data-f="atendimento" viewBox="0 0 160 190" aria-hidden="true"></svg><h3>Atendimento</h3><p class="papel">agente</p><p>Tira dúvidas e pede o que falta.</p></li>
+      <li><svg class="fiandeiro" data-f="pesquisa" viewBox="0 0 160 190" aria-hidden="true"></svg><h3>Pesquisa</h3><p class="papel">agente</p><p>Junta fontes e prepara a base.</p></li>
+    </ul>
+    <svg class="faixa-tecido" id="faixa-tecido" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true"></svg>
+    <p class="micro centro">Elenco ilustrativo. As funções de cada time saem do diagnóstico.</p>
+  </div>
+</section>
+
+<!-- 7 · APLICAÇÕES -->
+<section class="s-aplicacoes" id="aplicacoes" aria-labelledby="t-aplicacoes">
+  <div class="wrap">
+    <div class="cabeca-secao">
+      <p class="eyebrow">Aplicações por área</p>
+      <h2 id="t-aplicacoes" class="h2">Cada trabalho trava<br>num ponto diferente.</h2>
+      <p class="lead">Escolha o mais parecido com o seu e veja quem faz cada etapa: pessoa ou agente.</p>
+      <p class="legenda-fios"><span class="lf lf-pessoa">pessoa</span><span class="lf lf-agente">agente</span></p>
+    </div>
+    <ul class="cards" id="cards">
+      <li><a class="card" href="/para/empreendedores/" data-attribution-link data-segment-link="empreendedores">
+        <span class="card-pub">Empreendedores</span>
+        <h3>Qual pedido está esperando uma proposta?</h3>
+        <p>O pedido vira proposta. A negociação fica com você.</p>
+        <ol class="fio-card"><li class="h">Pedido</li><li class="a">Proposta</li><li class="h">Aprovação</li><li class="a">Retorno</li><li class="h">Negociação</li></ol>
+        <span class="card-link">Ver aplicação <span aria-hidden="true">↗</span></span></a></li>
+      <li><a class="card" href="/para/creators/" data-attribution-link data-segment-link="creators">
+        <span class="card-pub">Creators</span>
+        <h3>Sua gravação está esperando a edição?</h3>
+        <p>Você grava e aprova. O time roteiriza, edita e publica.</p>
+        <ol class="fio-card"><li class="a">Roteiro</li><li class="h">Gravação</li><li class="a">Edição</li><li class="h">Aprovação</li><li class="a">Publicação</li></ol>
+        <span class="card-link">Ver aplicação <span aria-hidden="true">↗</span></span></a></li>
+      <li><a class="card" href="/para/consultorias/" data-attribution-link data-segment-link="consultorias">
+        <span class="card-pub">Consultorias com equipes enxutas</span>
+        <h3>Qual entrega consome horas antes da análise?</h3>
+        <p>Os agentes preparam a base. A recomendação é sua.</p>
+        <ol class="fio-card"><li class="h">Método</li><li class="a">Evidências</li><li class="h">Análise</li><li class="a">Entregável</li><li class="h">Entrega</li></ol>
+        <span class="card-link">Ver aplicação <span aria-hidden="true">↗</span></span></a></li>
+      <li><a class="card" href="/para/agencias/" data-attribution-link data-segment-link="agencias">
+        <span class="card-pub">Agências de publicidade e marketing</span>
+        <h3>Qual peça volta mais vezes para ajuste?</h3>
+        <p>Cada ajuste vai para a versão certa, com o contexto da conta.</p>
+        <ol class="fio-card"><li class="h">Briefing</li><li class="a">Produção</li><li class="h">Direção</li><li class="a">Ajustes</li><li class="h">Aprovação</li></ol>
+        <span class="card-link">Ver aplicação <span aria-hidden="true">↗</span></span></a></li>
+      <li><a class="card" href="/para/advocacia/" data-attribution-link data-segment-link="advocacia">
+        <span class="card-pub">Escritórios de advocacia</span>
+        <h3>Onde a preparação de documentos toma o tempo da equipe?</h3>
+        <p>Documentos em ordem. Estratégia, prazos e protocolo ficam com o escritório.</p>
+        <ol class="fio-card"><li class="h">Documentos</li><li class="a">Organização</li><li class="h">Análise</li><li class="a">Minuta</li><li class="h">Revisão</li></ol>
+        <span class="card-link">Ver aplicação <span aria-hidden="true">↗</span></span></a></li>
+    </ul>
+    <p class="micro">Aplicações possíveis. Etapas e ferramentas são definidas em cada projeto.</p>
+  </div>
+</section>
+
+<!-- 8 · QUEM ESTÁ POR TRÁS -->
+<section class="s-quem" id="quem" aria-labelledby="t-quem">
+  <div class="wrap quem-grid">
+    <div class="verbete">
+      <p class="eyebrow">Quem está por trás</p>
+      <h2 id="t-quem" class="verbete-palavra">mescla, <em>s.f.</em></h2>
+      <p class="verbete-def">Tecido feito de fios diferentes.</p>
+      <p class="lead">O nome vem daí. Um fio de pessoas, um fio de agentes de IA. Sozinho, cada um aguenta pouco. No mesmo trabalho, seguram a semana.</p>
+    </div>
+    <div class="quem-logo" aria-hidden="true">
+      <img src="/assets/mescla-logo.svg?v=f1db7c5b4382" width="260" height="260" alt="">
+    </div>
+    <div class="fundador">
+      <p class="fundador-nome">André de Moraes</p>
+      <p>Fundador da Mescla. Ex-CEO e fundador da Edoo. Constrói agentes de IA desde 2024 e trabalha todos os dias com o próprio time de agentes.</p>
+      <blockquote><p>“A Mescla usa no próprio trabalho tudo o que implanta para os clientes.”</p></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · PERGUNTAS E FECHAMENTO -->
+<section class="s-perguntas" id="perguntas" aria-labelledby="t-perguntas">
+  <div class="wrap faq-grid">
+    <div>
+      <p class="eyebrow">Antes de chamar</p>
+      <h2 id="t-perguntas" class="h2">Perguntas de quem<br>está decidindo.</h2>
+    </div>
+    <div class="faq">
+      <details open><summary>Quanto custa? Como vocês cobram?</summary><p>O diagnóstico é gratuito. O resto depende do trabalho escolhido, por isso não existe tabela pronta. Depois do diagnóstico, você recebe uma proposta que separa três coisas: implantação, acompanhamento e custos de ferramentas (licenças, infraestrutura e consumo de IA). Ela diz o que entra no serviço e o que você contrata direto. Você sabe o valor antes de começar.</p></details>
+      <details><summary>Preciso saber de tecnologia?</summary><p>Não. Você traz o conhecimento do seu trabalho e revisa as entregas. A Mescla escolhe, conecta e configura. Palavras como API, MCP e RAG ficam com a gente. E você não precisa ter empresa nem CNPJ para conversar.</p></details>
+      <details><summary>O que acontece com os meus dados?</summary><p>Os acessos são definidos com você antes de conectar qualquer coisa. Onde os dados ficam e quais fornecedores participam também é combinado antes. Contas, dados e o que construímos ficam no seu nome. Material de um cliente não entra no trabalho de outro. No primeiro contato, não mande senhas nem documentos confidenciais.</p></details>
+      <details><summary>Quanto tempo leva?</summary><p>O diagnóstico é rápido: você conta a sua semana, por escrito ou em áudio, e recebe a resposta em poucos minutos. O resto depende do tamanho do primeiro trabalho. Por isso a Mescla começa por um trabalho só, e não pelo negócio inteiro. O prazo de cada etapa vem escrito na proposta, antes de você decidir.</p></details>
+      <details><summary>E se der errado?</summary><p>IA erra, e a gente parte desse fato. Por isso o primeiro trabalho entra como piloto, com critérios de aceite combinados antes: se não cumprir o combinado, isso aparece no piloto, e não depois de tudo implantado. Nada sai para o mundo sem passar pela sua aprovação ou por uma regra que você autorizou. E o que foi construído fica no seu nome.</p></details>
+      <details><summary>Já tenho ChatGPT e outras ferramentas. Vou usar o que já tenho?</summary><p>Na maioria dos casos, sim. Partimos do plano de IA e das ferramentas que você já paga. Se faltar alguma, ela aparece na proposta com o custo separado. E se o seu uso atual já resolve o trabalho, o diagnóstico vai dizer isso.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="s-fechamento escuro" id="fechamento" aria-labelledby="t-fechamento" data-cena="fechamento">
+  <div class="wrap fech-grid">
+    <div class="fech-texto">
+      <p class="eyebrow">Comece pelo que mais pesa</p>
+      <h2 id="t-fechamento" class="h2">Qual trabalho você faz toda semana e não aguenta mais fazer?</h2>
+      <p class="lead">Conte pelo WhatsApp, por escrito ou em áudio. Em poucos minutos, a Mescla devolve a lista das suas rotinas, a matriz de prioridades e o primeiro trabalho recomendado. De graça e sem compromisso.</p>
+      <div class="acoes">
+        <a class="btn btn-sol" href="https://wa.me/5561993973584?text=Quero%20o%20diagn%C3%B3stico%20gratuito%20da%20Mescla.%0A%0AO%20que%20eu%20fa%C3%A7o%3A%0AO%20trabalho%20que%20mais%20pesa%20hoje%3A%0AAs%20ferramentas%20que%20j%C3%A1%20uso%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero o diagnóstico gratuito da Mescla." data-placement="fechamento">Fazer o diagnóstico gratuito <span aria-hidden="true">→</span></a>
+        <a class="link-seta link-claro" href="https://wa.me/5561993973584?text=Oi%2C%20Mescla.%20Tenho%20uma%20d%C3%BAvida%20antes%20do%20diagn%C3%B3stico%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Oi, Mescla. Tenho uma dúvida antes do diagnóstico:" data-placement="duvida">Só quero tirar uma dúvida <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="micro">O botão abre o WhatsApp com uma mensagem pronta. Você revisa e envia.</p>
+    </div>
+    <div class="fech-cena" aria-hidden="true">
+      <svg class="cena-svg" id="cena-fechamento"></svg>
+    </div>
+  </div>
+</section>
+
 </main>
-<footer class="footer">
-  <div class="wrap footer-grid">
-    <div><a class="brand" href="#principal" aria-label="Mescla, voltar ao início"><img class="brand-mark" src="/assets/mescla-logo.svg?v=f1db7c5b4382" width="36" height="36" alt="" decoding="async"><span class="brand-word">mescla</span></a><small>Mescla · Brasília</small><div class="footer-links"><a href="/privacidade/">Privacidade</a></div></div>
-    <p class="definition"><em>mescla</em>, s.f.<br>
-Tecido feito de fios diferentes.</p>
+
+<footer class="rodape">
+  <div class="wrap rodape-grid">
+    <div class="rod-marca">
+      <a class="marca marca-clara" href="#principal" aria-label="Mescla, voltar ao início"><img src="/assets/mescla-logo.svg?v=f1db7c5b4382" width="30" height="30" alt=""><span class="marca-nome">mescla</span></a>
+      <p class="assinatura">Fios diferentes. Um trabalho só.</p>
+    </div>
+    <nav aria-label="Aplicações">
+      <p class="rod-tit">Aplicações</p>
+      <ul><li><a href="/para/empreendedores/" data-attribution-link>Empreendedores</a></li><li><a href="/para/creators/" data-attribution-link>Creators</a></li><li><a href="/para/consultorias/" data-attribution-link>Consultorias</a></li><li><a href="/para/agencias/" data-attribution-link>Agências</a></li><li><a href="/para/advocacia/" data-attribution-link>Advocacia</a></li></ul>
+    </nav>
+    <div>
+      <p class="rod-tit">Contato</p>
+      <ul><li><a href="https://wa.me/5561993973584?text=Quero%20conversar%20com%20a%20Mescla%20sobre%20funcion%C3%A1rios%20digitais%20para%20o%20meu%20neg%C3%B3cio." target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero conversar com a Mescla sobre funcionários digitais para o meu negócio." data-placement="rodape">Conversar no WhatsApp ↗</a></li><li><a href="/privacidade/" data-attribution-link>Privacidade</a></li><li><button type="button" class="link-botao" data-measurement-manage hidden>Preferências de medição</button></li></ul>
+    </div>
+  </div>
+  <div class="wrap rod-final">
+    <p>Mescla · Brasília</p>
   </div>
 </footer>
+
+<div class="fixos" id="fixos">
+  <a class="cta-fixo btn btn-principal" id="cta-fixo" href="https://wa.me/5561993973584?text=Quero%20o%20diagn%C3%B3stico%20gratuito%20da%20Mescla.%0A%0AO%20que%20eu%20fa%C3%A7o%3A%0AO%20trabalho%20que%20mais%20pesa%20hoje%3A%0AAs%20ferramentas%20que%20j%C3%A1%20uso%3A" target="_blank" rel="noopener noreferrer" data-contact data-contact-message="Quero o diagnóstico gratuito da Mescla." data-placement="fixo" tabindex="-1" aria-hidden="true">Diagnóstico gratuito <span aria-hidden="true">→</span></a>
+  <aside class="cookies" data-measurement-consent aria-label="Preferências de medição" hidden>
+    <p>Podemos medir as visitas com cookies<span class="ck-longo"> do Google Analytics</span>?<span class="ck-longo"> O contato funciona com qualquer escolha.</span> <a href="/privacidade/">Privacidade</a></p>
+    <div class="cookies-bt"><button type="button" data-consent="yes">Permitir</button><button type="button" data-consent="no">Sem medição</button></div>
+  </aside>
+</div>
+
 <script src="/assets/measurement-config.js?v=05f74b19394f"></script>
-<script src="/assets/measurement.js?v=7fc5fa37e575" defer></script>
-<script type="module" src="/assets/experience.js?v=5324eb1806a8"></script>
+<script src="/assets/measurement.js?v=825c2bb6af9c" defer></script>
+<script src="/assets/fiandeiros.js?v=65029352f291"></script>
+<script src="/assets/home.js?v=b6d0d7a34769"></script>
 </body>
 </html>

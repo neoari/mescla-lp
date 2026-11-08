@@ -1,8 +1,10 @@
 # Experiência visual da Mescla
 
-A Home usa uma composição tridimensional de duas fitas nas cores Sol e Maré,
-com referências ao encontro de pessoas e agentes. É uma interpretação da trama
-da marca, não uma substituição do logo original. O asset da marca foi preservado.
+**Atualização 08/11/2026:** a Home foi refeita (fonte em `content/home.html`, estilos em
+`assets/home.css`, cenas em SVG em `assets/fiandeiros.js` e `assets/home.js`, sem biblioteca).
+A cena 3D (Three.js, `assets/ribbon-scene.js`) e o infográfico Remotion da Home saíram do site.
+As seções abaixo sobre Three.js descrevem a Home anterior e ficam como histórico; o Remotion
+continua nas cinco landing pages.
 
 A página prioriza logos de ferramentas, ícones por público e um fluxo de colaboração.
 A Home reduz a explicação repetida e explicita que a configuração técnica fica com a Mescla. RAG, MCP, APIs e outros termos aparecem como trabalho de bastidores, sem exigir que o visitante os domine.
@@ -61,9 +63,6 @@ a apresentação e o movimento. As versões dos arquivos de entrada usam hashes.
 - `python3 scripts/build-site.py`: empacota o Player, gera páginas e pacote reproduzível.
 - `python3 scripts/check-site.py`: estrutura HTML, referências, formulários,
   marcas, dependências locais e lista exata de arquivos públicos.
-- `node scripts/check-motion.mjs`: geometria real do Three.js e ciclo de movimento
-  com renderizador simulado; enquadramento, pausa, segundo plano, preferência de
-  movimento e falha de WebGL. Não é uma inspeção visual em navegador/GPU.
 - `node scripts/check-attribution.cjs`: preservação de campanha e contato.
 
 A lista pública está em `scripts/public_bundle.py` e é comparada à lista permitida

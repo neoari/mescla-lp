@@ -7,24 +7,19 @@ import gzip, io, json, re, tarfile, hashlib, subprocess
 import sys
 sys.dont_write_bytecode = True
 from segment_visuals import hero_surface, value_section, tools_section, ai_section, pilot_section
-from experience import ui_icon, motion_surface, home_hero
-from home_sections import home_story
-from home_v2 import home_v2, CSS as HOME_V2_CSS
+from experience import ui_icon, motion_surface
+from home_v3 import render_home
 from public_bundle import PUBLIC_FILES
 ROOT=Path(__file__).resolve().parents[1]
 subprocess.run(['npm','run','build:web'],cwd=ROOT/'motion',check=True)
-home=(ROOT/'index.html').read_text()
 segments=json.loads((ROOT/'content/segments.json').read_text())
 details=json.loads((ROOT/'content/segment-details.json').read_text())
 for segment in segments: segment.update(details[segment['slug']])
 e=lambda s:escape(str(s),quote=True)
 version='2026-09-v7'
-home_version='home-2026-11-08'
 style_href='/assets/segments.css?v='+hashlib.sha256((ROOT/'assets/segments.css').read_bytes()).hexdigest()[:12]
 experience_href='/assets/experience.css?v='+hashlib.sha256((ROOT/'assets/experience.css').read_bytes()).hexdigest()[:12]
-scene_version=hashlib.sha256((ROOT/'assets/ribbon-scene.js').read_bytes()).hexdigest()[:12]
 motion_path=ROOT/'assets/experience.js'
-motion_path.write_text(re.sub(r"import\('./ribbon-scene\.js(?:\?[^']*)?'\)",f"import('./ribbon-scene.js?v={scene_version}')",motion_path.read_text()))
 player_version=hashlib.sha256((ROOT/'assets/infographics.js').read_bytes()).hexdigest()[:12]
 motion_path.write_text(re.sub(r"import\('./infographics\.js(?:\?[^']*)?'\)",f"import('./infographics.js?v={player_version}')",motion_path.read_text()))
 motion_href='/assets/experience.js?v='+hashlib.sha256(motion_path.read_bytes()).hexdigest()[:12]
@@ -34,30 +29,13 @@ contact_message='Quero o diagnóstico gratuito da Mescla.'
 start_text='Pelo diagnóstico gratuito, pelo WhatsApp. Você recebe a lista das suas rotinas, a matriz de prioridades e o primeiro trabalho recomendado. Só depois, se fizer sentido, vem a proposta de implantação.'
 logo='/assets/mescla-logo.svg?v='+hashlib.sha256((ROOT/'assets/mescla-logo.svg').read_bytes()).hexdigest()[:12]
 favicon='/assets/mescla-favicon.svg?v='+hashlib.sha256((ROOT/'assets/mescla-favicon.svg').read_bytes()).hexdigest()[:12]
-css=re.search(r'<style>(.*?)</style>',home,re.S).group(1)
-font=re.search(r'<link href="https://fonts.googleapis.com/css2[^>]+>',home).group(0)
+# Tema das páginas /para e /privacidade (era o primeiro <style> da Home antiga; a Home nova usa assets/home.css).
+css=(ROOT/'content/theme.css').read_text()
+font='<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@650&amp;display=swap" rel="stylesheet">'
 brand=lambda href: f'<a class="brand" href="{href}" aria-label="Mescla, página principal"><img class="brand-mark" src="{logo}" width="44" height="44" alt="" decoding="async"><span class="brand-word">mescla</span></a>'
-footer=f'''<footer class="footer"><div class="wrap footer-grid"><div>{brand('/')}<small>Mescla · Brasília</small><div class="footer-links"><a href="/#segmentos" data-attribution-link>Outras aplicações</a><a href="/privacidade/" data-attribution-link>Privacidade</a></div></div><p class="definition"><em>mescla</em>, s.f.<br>Tecido feito de fios diferentes.</p></div></footer>'''
-home,count=re.subn(r'<main id="principal">.*?</main>',lambda _: '<main id="principal">\n'+home_v2(segments,phone)+'\n</main>',home,count=1,flags=re.S)
-home=re.sub(r'<style id="home-v2">.*?</style>\n?','',home,flags=re.S)
-home=home.replace('</head>','<style id="home-v2">'+HOME_V2_CSS+'</style>\n</head>',1)
-assert count==1, 'Home main region not found'
-if '/assets/segments.css' not in home: home=home.replace('</head>','<link rel="stylesheet" href="/assets/segments.css">\n</head>')
-home=re.sub(r'href="/assets/segments\.css(?:\?[^\"]*)?"',lambda _:f'href="{style_href}"',home)
-home=re.sub(r'href="/assets/experience\.css(?:\?[^\"]*)?"',lambda _:f'href="{experience_href}"',home)
-home=re.sub(r'<script type="module" src="/assets/experience\.js[^\"]*"></script>\s*','',home)
-home=home.replace('</body>',f'<script type="module" src="{motion_href}"></script>\n</body>')
-if '/assets/measurement.js' not in home: home=home.replace('</body>','<script src="/assets/measurement-config.js"></script>\n<script src="/assets/measurement.js" defer></script>\n</body>')
-home=home.replace('https://raw.githubusercontent.com/neoari/mescla-lp/main/assets/mescla-logo.svg#escuro', '/assets/mescla-logo.svg').replace('https://raw.githubusercontent.com/neoari/mescla-lp/main/assets/mescla-logo.svg','/assets/mescla-logo.svg')
-home=re.sub(r'(src|href)="/assets/mescla-logo\.svg(?:\?[^\"]*)?"',lambda m: m.group(1)+'="'+logo+'"',home)
-home=re.sub(r'(<link rel="icon"[^>]*href=")[^"]+',lambda m:m.group(1)+favicon,home)
-home=re.sub(r'<body[^>]*>', lambda _: '<body data-segment="home" data-page-version="'+home_version+'">', home, count=1)
-home=home.replace('<a href="#proposito">Por que existimos</a>','<a href="#segmentos">Para o seu negócio</a>')
-# Existing contact links remain functional with JavaScript disabled.
-home=re.sub(r'(<a\s+[^>]*href="https://wa.me/[^>]*)(>)',lambda m:m.group(1)+('' if 'data-contact' in m.group(1) else ' data-contact data-placement="home"')+m.group(2),home)
-if 'href="/privacidade/"' not in home:
-    home=home.replace('<small>Mescla · Brasília</small>', '<small>Mescla · Brasília</small><div class="footer-links"><a href="/privacidade/">Privacidade</a></div>')
-(ROOT/'index.html').write_text(home)
+footer=f'''<footer class="footer"><div class="wrap footer-grid"><div>{brand('/')}<small>Mescla · Brasília</small><div class="footer-links"><a href="/#aplicacoes" data-attribution-link>Outras aplicações</a><a href="/privacidade/" data-attribution-link>Privacidade</a></div></div><p class="definition"><em>mescla</em>, s.f.<br>Tecido feito de fios diferentes.</p></div></footer>'''
+# Home (nov/2026): template versionado em content/home.html, gerado por scripts/home_v3.py.
+(ROOT/'index.html').write_text(render_home())
 for d in segments:
     slug=d['slug'];url=f'https://mescla.ai/para/{slug}/';title=f"Mescla · Funcionários digitais para {d['label'].lower()}"
     page_version=slug+'-2026-11-08'
@@ -81,7 +59,7 @@ for d in segments:
 <html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#FBFAFD"><title>{e(title)}</title><meta name="description" content="{e(d['description'])}"><link rel="canonical" href="{url}"><meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(d['description'])}"><meta property="og:url" content="{url}"><link rel="icon" type="image/svg+xml" href="{favicon}"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>{font}<style>{css}</style><link rel="stylesheet" href="{style_href}"><link rel="stylesheet" href="{experience_href}"></head>
 <body data-segment="{slug}" data-segment-label="{e(d['label'])}" data-page-version="{page_version}"{workflow_attr}>
 <a class="skip" href="#principal">Pular para o conteúdo</a>
-<header class="nav lp-nav"><div class="wrap nav-inner">{brand('/')}<a class="back-home" href="/#segmentos" data-attribution-link>Conhecer a Mescla</a><a class="nav-contact" href="#conversar">Diagnóstico gratuito <span aria-hidden="true">↗</span></a></div></header>
+<header class="nav lp-nav"><div class="wrap nav-inner">{brand('/')}<a class="back-home" href="/#aplicacoes" data-attribution-link>Conhecer a Mescla</a><a class="nav-contact" href="#conversar">Diagnóstico gratuito <span aria-hidden="true">↗</span></a></div></header>
 <main id="principal">
 <section class="hero lp-hero" aria-labelledby="hero-title"><div class="wrap hero-grid"><div class="hero-copy"><p class="eyebrow">{e(d['intro'])}</p><h1 id="hero-title"><span>{e(d['headline'][0])}</span> <em>{e(d['headline'][1])}</em></h1><p class="lead">{e(d['lead'])}</p><div class="hero-actions"><a class="btn" href="#conversar" data-intent>Fazer o diagnóstico gratuito <span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="#aplicacao">{e(d.get("secondary_cta", "Ver uma aplicação"))} <span aria-hidden="true">↓</span></a></div>{contact_note}<p class="audience">{e(d['context'])}</p><p class="technical-promise">{ui_icon("check")}A parte técnica fica com a Mescla.</p></div>{motion_surface(slug,hero_surface(d))}</div></section>
 {value_section(d)}

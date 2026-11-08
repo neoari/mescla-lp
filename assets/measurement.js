@@ -2,7 +2,7 @@
   'use strict';
   const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id'];
   const CLICK_KEYS = ['gclid', 'gbraid', 'wbraid', 'fbclid'];
-  const SEGMENTS = ['home', 'prisma', 'empreendedores', 'creators', 'consultorias', 'agencias', 'advocacia'];
+  const SEGMENTS = ['home', 'empreendedores', 'creators', 'consultorias', 'agencias', 'advocacia'];
   const ATTR_KEY = 'mescla.attribution.v1';
   const TTL = 30 * 60 * 1000;
   function clean(value, limit = 120) {
@@ -124,14 +124,23 @@
     if (choice === 'yes') loadGtm();
     // GA may renew its session cookie while the previous page unloads.
     if (choice === 'no') clearAnalyticsCookies();
-    const notice = doc.createElement('aside');
-    notice.className = 'measurement-consent';
-    notice.setAttribute('aria-label', 'Preferências de medição');
-    const copy = doc.createElement('p');
-    copy.textContent = 'Podemos usar o Google Analytics e cookies para entender as visitas e os cliques no site? O contato funciona com qualquer escolha.';
-    const accept = doc.createElement('button'); accept.type = 'button'; accept.textContent = 'Permitir medição';
-    const decline = doc.createElement('button'); decline.type = 'button'; decline.textContent = 'Continuar sem medição';
-    const more = doc.createElement('a'); more.href = '/privacidade/'; more.textContent = 'Como usamos os dados';
+    // A page may provide its own compact notice ([data-measurement-consent] with [data-consent="yes|no"])
+    // and footer button ([data-measurement-manage]); the choice, storage key and loading stay here.
+    let notice = doc.querySelector('[data-measurement-consent]');
+    let accept = notice && notice.querySelector('[data-consent="yes"]');
+    let decline = notice && notice.querySelector('[data-consent="no"]');
+    const ownNotice = !!(accept && decline);
+    if (!ownNotice) {
+      notice = doc.createElement('aside');
+      notice.className = 'measurement-consent';
+      notice.setAttribute('aria-label', 'Preferências de medição');
+      const copy = doc.createElement('p');
+      copy.textContent = 'Podemos usar o Google Analytics e cookies para entender as visitas e os cliques no site? O contato funciona com qualquer escolha.';
+      accept = doc.createElement('button'); accept.type = 'button'; accept.textContent = 'Permitir medição';
+      decline = doc.createElement('button'); decline.type = 'button'; decline.textContent = 'Continuar sem medição';
+      const more = doc.createElement('a'); more.href = '/privacidade/'; more.textContent = 'Como usamos os dados';
+      notice.append(copy, accept, decline, more);
+    }
     function choose(value) {
       try { scope.localStorage.setItem(consentKey, value); } catch (_) { /* No persistence is required. */ }
       notice.hidden = true;
@@ -144,13 +153,17 @@
     }
     accept.addEventListener('click', () => choose('yes'));
     decline.addEventListener('click', () => choose('no'));
-    notice.append(copy, accept, decline, more);
     notice.hidden = choice === 'yes' || choice === 'no';
-    doc.body.appendChild(notice);
-    const manage = doc.createElement('button');
-    manage.type = 'button'; manage.className = 'manage-consent'; manage.textContent = 'Preferências de medição';
+    if (!ownNotice) doc.body.appendChild(notice);
+    let manage = doc.querySelector('[data-measurement-manage]');
+    if (!manage) {
+      manage = doc.createElement('button');
+      manage.type = 'button'; manage.className = 'manage-consent'; manage.textContent = 'Preferências de medição';
+      const footer = doc.querySelector('.footer .wrap');
+      if (footer) footer.appendChild(manage);
+    }
+    manage.hidden = false;
     manage.addEventListener('click', () => { notice.hidden = false; accept.focus(); });
-    doc.querySelector('.footer .wrap').appendChild(manage);
   }
   emit(segment === 'home' ? 'mescla_home_view' : 'mescla_landing_view');
 })(typeof window !== 'undefined' ? window : {});

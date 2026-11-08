@@ -1,14 +1,5 @@
 /* Motion is progressive enhancement: every page works without it. */
 const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-const scene = document.querySelector('[data-ribbon-scene]');
-
-if (scene && !navigator.connection?.saveData) {
-  const load = () => import('./ribbon-scene.js?v=dc7efe981c5f').then(module => module.mountRibbon(scene, preference)).catch(() => {
-    // Keep the original brand asset visible if WebGL or the module is unavailable.
-  });
-  if ('requestIdleCallback' in window) window.requestIdleCallback(load, { timeout: 1200 });
-  else window.setTimeout(load, 100);
-}
 
 // A small response to the pointer gives the illustrated work surfaces depth.
 // No scrolling interception, automatic section reveals or hidden content.
