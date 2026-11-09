@@ -328,7 +328,14 @@ main>section{overflow-x:clip}
 .ferramentas{grid-column:1/-1;border-top:1px solid #2E2B4A;padding-top:26px}
 .ferr-tit{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mare);margin-bottom:12px}
 .ferr-lista{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-.ferr-lista li{font-size:14.5px;padding:7px 13px;border-radius:999px;border:1.5px solid #3A3756;color:#E5E3EE}
+.ferr-lista li{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;padding:7px 13px;border-radius:999px;border:1.5px solid #3A3756;color:#E5E3EE}
+.ferr-grupos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 32px;margin-bottom:16px}
+.ferr-sub{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#A9A6C2;margin-bottom:9px}
+.ferr-ico{width:15px;height:15px;flex:none;fill:currentColor}
+.ferr-ico-neutro{fill:var(--mare);opacity:.75}
+.ferr-final{margin-bottom:14px}
+.ferr-lista li.ferr-mais{border-style:dashed;color:var(--mare)}
+@media(max-width:720px){.ferr-grupos{grid-template-columns:1fr;gap:18px}}
 
 /* elenco */
 .s-elenco{padding:84px 0 70px;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(242,184,75,.14),transparent 70%),var(--branco);overflow:hidden}

@@ -104,6 +104,7 @@ de tela. Não representam parceria ou certificação.
 - Versão `13.0.0`: Canva, OpenAI e Slack.
 - Versão `11.15.0`: Microsoft Word, Microsoft PowerPoint, Microsoft Excel e
   Adobe Acrobat Reader.
+- Versão `16.37.0` (seção "Ferramentas que podem entrar no trabalho" da Home, nov/2026): DeepSeek, Qwen, Kimi, Figma, ElevenLabs, Jira, Obsidian, GitHub, X, além de Claude, Gemini, YouTube, DaVinci Resolve, Google Drive, Notion, Trello, Instagram, TikTok e WhatsApp. OpenAI, Canva, Microsoft Word e Slack vêm dos arquivos já existentes em `assets/icons/`. FigCraft, Higgsfield, Runway, GBrain, Metricool e Zernio não têm logo em fonte de uso livre conferida: aparecem com um ponto neutro, sem logo.
 - Licença do acervo: https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md
 - Remotion: símbolo vetorial do repositório oficial, revisão
   `670b222bf46c4d73e590f0995c28b7dc43221953`, arquivo
