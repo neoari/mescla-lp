@@ -88,6 +88,8 @@ Ativar um coletor exige revisar suas tags e atualizar o aviso de privacidade.
 ## /prisma/ (redirecionamento)
 O nome Prisma foi abolido em 08/11/2026: a marca é só Mescla. `/prisma/` existe apenas como redirecionamento para `/#diagnostico` (gerado em `scripts/build-site.py`), para não quebrar links antigos. Não criar páginas, seções, textos ou produtos com o nome Prisma. `scripts/check-site.py` recusa "prisma", "neoari", "Mescla.AI" e "Mescla AI" em qualquer HTML, CSS ou JS publicado (exceto o redirecionamento).
 
+Exceção legal aprovada em 16/11/2026: Home, /para/* e /privacidade devem exibir uma única vez, no rodapé, o texto exato "NEOARI EDTECH, IA E CONSULTORIA EM TI LTDA · CNPJ 67.831.478/0001-34". É identificação legal para o gateway de pagamento; Neoari continua proibida fora dessa linha. O check valida a exceção estrita.
+
 Saíram do pacote em 08/11/2026 (Home nova): `assets/prisma.css`, `assets/platforms/*`, `assets/ribbon-scene.js`
 e `assets/vendor/three-0.185.1/*` (a cena 3D era só da Home antiga), com `scripts/home_v2.py`,
 `scripts/home_sections.py` e `scripts/check-motion.mjs`.

@@ -10,6 +10,7 @@ from public_bundle import PUBLIC_FILES
 ROOT=Path(__file__).resolve().parents[1]
 THIRD_PARTY_PLATFORMS=('github.com/block/buzz','openclaw','hyperagent','hermes-agent','nousresearch')
 DIAGNOSIS_MESSAGE='Quero o diagnóstico gratuito da Mescla.'
+LEGAL_FOOTER='NEOARI EDTECH, IA E CONSULTORIA EM TI LTDA · CNPJ 67.831.478/0001-34'
 class Structure(HTMLParser):
     void={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
     def __init__(self):super().__init__();self.stack=[]
@@ -89,6 +90,13 @@ assert 'data-cookie' not in home_source and '?tex=' not in home_source
 for public in PUBLIC_FILES:
     if public=='prisma/index.html' or not public.endswith(('.html','.css','.js')) or public=='assets/infographics.js':continue
     text=(ROOT/public).read_text()
+    # A única exceção de Neoari é a identificação legal aprovada, uma vez no rodapé.
+    if public.endswith('.html'):
+        page=html.fromstring(text)
+        legal=page.xpath('//footer//p[@class="footer-legal"]')
+        assert len(legal)==1 and legal[0].text_content()==LEGAL_FOOTER,(public,'Legal footer missing or changed')
+        assert text.count(LEGAL_FOOTER)==1,(public,'Legal identity must appear once')
+        text=text.replace(LEGAL_FOOTER,'',1)
     for banned in ('prisma','neoari','mescla.ai/prisma'):assert banned not in text.lower(),(public,banned)
     for banned in ('Mescla.AI','Mescla AI'):assert banned not in text,(public,banned)
 for path in paths:

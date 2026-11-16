@@ -33,7 +33,7 @@ favicon='/assets/mescla-favicon.svg?v='+hashlib.sha256((ROOT/'assets/mescla-favi
 css=(ROOT/'content/theme.css').read_text()
 font='<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@650&amp;display=swap" rel="stylesheet">'
 brand=lambda href: f'<a class="brand" href="{href}" aria-label="Mescla, página principal"><img class="brand-mark" src="{logo}" width="44" height="44" alt="" decoding="async"><span class="brand-word">mescla</span></a>'
-footer=f'''<footer class="footer"><div class="wrap footer-grid"><div>{brand('/')}<small>Mescla · Brasília</small><div class="footer-links"><a href="/#aplicacoes" data-attribution-link>Outras aplicações</a><a href="/privacidade/" data-attribution-link>Privacidade</a></div></div><p class="definition"><em>mescla</em>, s.f.<br>Tecido feito de fios diferentes.</p></div></footer>'''
+footer=f'''<footer class="footer"><div class="wrap footer-grid"><div>{brand('/')}<small>Mescla · Brasília</small><div class="footer-links"><a href="/#aplicacoes" data-attribution-link>Outras aplicações</a><a href="/privacidade/" data-attribution-link>Privacidade</a></div></div><p class="definition"><em>mescla</em>, s.f.<br>Tecido feito de fios diferentes.</p></div><div class="wrap"><p class="footer-legal">NEOARI EDTECH, IA E CONSULTORIA EM TI LTDA · CNPJ 67.831.478/0001-34</p></div></footer>'''
 # Home (nov/2026): template versionado em content/home.html, gerado por scripts/home_v3.py.
 (ROOT/'index.html').write_text(render_home())
 for d in segments:
