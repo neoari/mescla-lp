@@ -45,7 +45,7 @@ for path in paths:
         slug=path.parent.name
         assert root.xpath('//body/@data-segment')==[slug]
         assert len(root.xpath('//form[@class="qualifier"]'))==1
-        form=root.xpath('//form')[0];assert form.get('action')=='https://wa.me/5561993973584'
+        form=root.xpath('//form')[0];assert form.get('action')=='https://wa.me/5511978221510'
         assert [n.get('name') for n in form.xpath('.//*[@name]')]==['text']
         assert len(form.xpath('.//select[@required]'))==2
         for label in form.xpath('.//label'):assert label.get('for') in ids

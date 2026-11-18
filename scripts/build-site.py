@@ -23,7 +23,7 @@ motion_path=ROOT/'assets/experience.js'
 player_version=hashlib.sha256((ROOT/'assets/infographics.js').read_bytes()).hexdigest()[:12]
 motion_path.write_text(re.sub(r"import\('./infographics\.js(?:\?[^']*)?'\)",f"import('./infographics.js?v={player_version}')",motion_path.read_text()))
 motion_href='/assets/experience.js?v='+hashlib.sha256(motion_path.read_bytes()).hexdigest()[:12]
-phone='5561993973584'
+phone='5511978221510'
 # Porta de entrada das páginas /para (nov/2026): toda mensagem começa pelo pedido do diagnóstico gratuito.
 contact_message='Quero o diagnóstico gratuito da Mescla.'
 start_text='Pelo diagnóstico gratuito, pelo WhatsApp. Você recebe a lista das suas rotinas, a matriz de prioridades e o primeiro trabalho recomendado. Só depois, se fizer sentido, vem a proposta de implantação.'

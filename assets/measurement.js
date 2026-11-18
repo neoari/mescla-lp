@@ -38,7 +38,7 @@
     return lines.join('\n');
   }
   function contactUrl(text) {
-    const url = new URL('https://wa.me/5561993973584');
+    const url = new URL('https://wa.me/5511978221510');
     url.searchParams.set('text', text);
     return url.toString();
   }

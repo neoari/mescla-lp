@@ -20,5 +20,5 @@ assert.ok(text.includes('Segmento: Creators'));
 assert.ok(text.includes('utm_campaign=creators-v1'));
 assert.ok(!text.includes('CLICK123')); // click IDs are retained on-site, not pasted into WhatsApp.
 const url=new URL(m.contactUrl(text));
-assert.equal(url.origin,'https://wa.me');assert.equal(url.pathname,'/5561993973584');assert.equal(url.searchParams.get('text'),text);
+assert.equal(url.origin,'https://wa.me');assert.equal(url.pathname,'/5511978221510');assert.equal(url.searchParams.get('text'),text);
 console.log('Attribution checks passed: session expiry, new campaigns, click IDs, local links, input limits and WhatsApp encoding.');
