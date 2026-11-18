@@ -77,12 +77,12 @@ Ativar um coletor exige revisar suas tags e atualizar o aviso de privacidade.
 - Âncoras usadas por links externos: `#diagnostico` (bio, YouTube, /prisma) e `#metodo`. As /para voltam
   para `/#aplicacoes`. `assets/home.js` realinha a âncora depois que as fontes carregam.
 - Todo botão de WhatsApp tem `data-contact`, `data-contact-message` e `data-placement`: `measurement.js`
-  reescreve o link a partir de `data-contact-message`. Diagnóstico: "Quero o diagnóstico gratuito da Mescla.".
+  reescreve o link a partir de `data-contact-message`. Diagnóstico: "Quero o diagnóstico da Mescla.".
   `data-page-version` aparece na mensagem do cliente: manter neutro (`home-AAAA-MM-DD`).
 - Consentimento: um mecanismo só, o de `measurement.js`. A Home fornece o aviso compacto
   (`[data-measurement-consent]` com `[data-consent="yes|no"]`) e o botão do rodapé
   (`[data-measurement-manage]`); GTM só carrega depois de "Permitir". Outras páginas usam o aviso padrão.
-- Diagnóstico: "por escrito ou em áudio", resposta "em poucos minutos". Nunca prazo em número.
+- Diagnóstico: "por escrito ou em áudio". Não prometer resposta em minutos ou atendimento imediato; o próximo passo é combinado após a avaliação da rotina.
 - Fiandeiros só na textura de lã. Movimento reduzido mostra o último quadro de cada cena.
 
 ## /prisma/ (redirecionamento)
@@ -95,4 +95,15 @@ e `assets/vendor/three-0.185.1/*` (a cena 3D era só da Home antiga), com `scrip
 `scripts/home_sections.py` e `scripts/check-motion.mjs`.
 
 ## Porta de entrada (nov/2026)
-Todo contato das páginas /para começa por "Quero o diagnóstico gratuito da Mescla." (`contact_message` em `scripts/build-site.py`, gravado em `data-contact-message` no link e no formulário; `assets/measurement.js` usa a mesma frase como padrão). Não prometer número, prazo ou preço. Não usar "clareza" nem "pessoas e agentes trabalhando juntos" nas páginas da Mescla (são de outra marca).
+Todo contato das páginas /para começa por "Quero o diagnóstico da Mescla." (`contact_message` em `scripts/build-site.py`, gravado em `data-contact-message` no link e no formulário; `assets/measurement.js` usa a mesma frase como padrão). Não prometer número, prazo ou preço. Não usar "clareza" nem "pessoas e agentes trabalhando juntos" nas páginas da Mescla (são de outra marca).
+
+## Captação pelo formulário (18/11/2026, integração de frontend preparada)
+- As cinco `.qualifier` enviam JSON por POST same-origin `/api/lead`; o endpoint é responsabilidade do servidor e precisa estar implantado antes da publicação conjunta.
+- Nome e WhatsApp obrigatórios; interesse/equipe preservados; trabalho opcional. Não adicionar inscrição de marketing. Aviso de uso dos dados e privacidade devem acompanhar a alteração.
+- Só HTTP 200/201 com `ok: true` e referência não vazia confirma recebimento. Falha ou timeout preserva os campos e o UUID para retry; sem submissões concorrentes.
+- UUID em sessionStorage, sem nome/telefone/texto livre persistidos por este código. Servidor deve comparar dados na deduplicação e rejeitar o mesmo UUID com conteúdo diferente, sem confirmar um pedido que não gravou.
+- WhatsApp pós-confirmação leva somente a referência e uma mensagem genérica; não navegar automaticamente. Novo pedido exige o botão explícito depois do sucesso.
+- `mescla_lead_received` só após confirmação; `mescla_whatsapp_open` é intenção separada. Nenhum dado de formulário ou referência entra nos eventos.
+- Sem JavaScript ou APIs necessárias, manter o link direto do WhatsApp. Não simular confirmação de servidor na versão pública.
+- Testes sem rede: `npm ci --prefix tests --ignore-scripts` e `npm test --prefix tests`. Fixture opcional em navegador local: `node tests/prepare-browser-fixture.cjs`; nunca incluir `tests/` no pacote público.
+- A allowlist pública continua com os mesmos 22 arquivos. Todo o comportamento de captação fica em `assets/measurement.js` e o estilo em `assets/segments.css`.
