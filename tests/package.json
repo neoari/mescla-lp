@@ -1,0 +1,11 @@
+{
+  "name": "mescla-lead-capture-tests",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node --test lead-capture.test.cjs"
+  },
+  "devDependencies": {
+    "linkedom": "0.18.15"
+  }
+}

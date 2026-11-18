@@ -9,7 +9,7 @@ sys.dont_write_bytecode=True
 from public_bundle import PUBLIC_FILES
 ROOT=Path(__file__).resolve().parents[1]
 THIRD_PARTY_PLATFORMS=('github.com/block/buzz','openclaw','hyperagent','hermes-agent','nousresearch')
-DIAGNOSIS_MESSAGE='Quero o diagnóstico gratuito da Mescla.'
+DIAGNOSIS_MESSAGE='Quero o diagnóstico da Mescla.'
 LEGAL_FOOTER='NEOARI EDTECH, IA E CONSULTORIA EM TI LTDA · CNPJ 67.831.478/0001-34'
 class Structure(HTMLParser):
     void={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
@@ -45,9 +45,15 @@ for path in paths:
         slug=path.parent.name
         assert root.xpath('//body/@data-segment')==[slug]
         assert len(root.xpath('//form[@class="qualifier"]'))==1
-        form=root.xpath('//form')[0];assert form.get('action')=='https://wa.me/5511978221510'
-        assert [n.get('name') for n in form.xpath('.//*[@name]')]==['text']
+        form=root.xpath('//form')[0];assert form.get('action')=='/api/lead' and form.get('method')=='post'
+        assert [n.get('name') for n in form.xpath('.//*[@name]')]==['nome','telefone','equipe','interesse','trabalho']
         assert len(form.xpath('.//select[@required]'))==2
+        assert len(form.xpath('.//input[@required]'))==2
+        assert form.xpath('.//*[@data-lead-submit]') and form.xpath('.//*[@data-lead-status]')
+        assert form.xpath('.//*[@data-lead-success and @hidden]')
+        assert form.xpath('.//*[@id="lead-privacy"]')
+        assert not form.xpath('.//input[@type="checkbox"]')
+        assert root.xpath('//div[@class="contact-fallback"]//a[starts-with(@href,"https://wa.me/5511978221510")]')
         for label in form.xpath('.//label'):assert label.get('for') in ids
         assert root.xpath('//meta[@property="og:url"]/@content')==canonical
         assert root.xpath('//a[@data-contact]')
@@ -114,7 +120,7 @@ for path in paths:
         assert 'RAG' in path.read_text() and 'MCP' in path.read_text()
     if 'para' in path.parts:assert not root.xpath('//*[@data-ribbon-scene]')
     for href in root.xpath('//a/@href'):assert not any(x in href.lower() for x in THIRD_PARTY_PLATFORMS),(path,href)
-    # Toda mensagem de contato das páginas /para começa pelo pedido do diagnóstico gratuito.
+    # Toda mensagem de entrada pede diagnóstico sem qualificar preço na mensagem.
     if 'para' in path.parts:
         messages=root.xpath('//a[@data-contact]/@data-contact-message')+root.xpath('//form[@class="qualifier"]/@data-contact-message')
         assert len(messages)==2 and all(m.startswith(DIAGNOSIS_MESSAGE) for m in messages),(path,messages)
